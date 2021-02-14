@@ -1,0 +1,9 @@
+Entrega de Práctica A, partes I y II
+
+ Se puede entregar en un solo documento, el resultado (las tablas) de rellenar los guiones de las prácticas A.I y A.II.
+
+ Se pueden Incluir los comentarios que creáis convenientes.
+
+ Incluid cualquier bibliografía o referencia que hayáis utilizado (para estimar ancho de banda consumido, por ejemplo).
+
+ Se puede anadir una sección con los "bugs" o errores que se hayan identificado en el "simulador".

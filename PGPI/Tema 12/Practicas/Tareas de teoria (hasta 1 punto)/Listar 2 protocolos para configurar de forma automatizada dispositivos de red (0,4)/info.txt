@@ -1,0 +1,3 @@
+Listar 2 protocolos para configurar de forma automatizada dispositivos de red (0,4)
+
+Incluir un enlace a su especificación.

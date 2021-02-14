@@ -1,0 +1,3 @@
+Listar 1 modelo de router de la capa de núcleo, otro de la capa de distribución, y otra de la capa de acceso (0,3 ptos)
+
+Incluir el nombre del modelo, y enlace a la página oficial del producto con su descripción.

@@ -1,0 +1,7 @@
+Práctica 1. Correcciones sobre la versión inicial
+
+Se pide que se suba una nueva versión del manual de coordinación y propuesta técnica de la práctica 1.
+
+Deberá indicarse en la portada que se trata de una nueva versión e indicar fecha de entrega.
+
+En el interior del documento, habrá que destacar los cambios realizados, para facilitar su control y la supervisión.

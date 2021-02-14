@@ -1,0 +1,12 @@
+Ejercicio 1. Teoría. Proyecto Organización de fiesta fin de curso y graduación Master
+
+Dados unos requisitos referentes a la organización de una fiesta, se trata de realizar una planificación temporal, presupuesto y diseño de plano con espacios.
+
+Subir un único documento por equipo de trabajo.
+
+
+Bien en general.
+
+Falta asignación de recursos (humanos y materiales) a cada una de las tareas. 
+
+Falta agrupar el presupuesto por conceptos ...

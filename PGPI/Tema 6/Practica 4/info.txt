@@ -1,0 +1,12 @@
+Bien en general pero habría que mejorar algunas cosas:
+
+No podéis imputar a un único proyecto todos los gastos de ejecución.
+El inventariable debe prorratearse al tiempo de duración del proyecto.
+Los gastos de alquiler, electricidad, etc. deben incluirse en un apartado de gastos indirectos.
+
+Falta justificar y explicar los gastos de personal. ¿cuántas personas, meses y por qué esas cantidades?  ¿5 meses de duración del proyecto?
+
+Si el presupuesto es de 68000, ¿por qué hay 82000 de ingresos?
+
+
+Falta interpretar los valores de VAN y TIR, ¿para qué hacemos estos cálculos?
