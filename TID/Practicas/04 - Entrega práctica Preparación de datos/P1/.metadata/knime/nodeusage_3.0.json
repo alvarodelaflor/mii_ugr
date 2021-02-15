@@ -1,0 +1,283 @@
+
+{
+    "version": "4.3.0.v202012022156",
+    "created": "2020-12-29 12:41",
+    "nodestats": {
+        "nodes": [
+            {
+                "id": "org.knime.ext.poi2.node.read4.XLSReaderNodeFactory#Excel Reader (XLS) (deprecated)",
+                "nrexecs": 4,
+                "nrfails": 0,
+                "exectime": 60634,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.stringmanipulation.StringManipulationNodeFactory#String Manipulation",
+                "nrexecs": 135,
+                "nrfails": 0,
+                "exectime": 68548,
+                "nrcreated": 1,
+                "successor": "org.knime.base.node.preproc.colconvert.stringtonumber2.StringToNumber2NodeFactory#String To Number"
+            },
+            {
+                "id": "org.knime.base.node.preproc.colconvert.numbertostring2.NumberToString2NodeFactory#Number To String",
+                "nrexecs": 33,
+                "nrfails": 0,
+                "exectime": 11274,
+                "nrcreated": 1,
+                "successor": "NodeContainer"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.missingvaluecolfilter.MissingValueColumnFilterNodeFactory#Missing Value Column Filter",
+                "nrexecs": 9,
+                "nrfails": 0,
+                "exectime": 5488,
+                "nrcreated": 1,
+                "successor": "org.knime.base.node.preproc.sample.SamplingNodeFactory#Row Sampling"
+            },
+            {
+                "id": "org.knime.base.node.preproc.partition.PartitionNodeFactory#Partitioning",
+                "nrexecs": 475,
+                "nrfails": 1,
+                "exectime": 105749,
+                "nrcreated": 1,
+                "successor": "org.knime.base.node.preproc.normalize3.Normalizer3NodeFactory#Normalizer"
+            },
+            {
+                "id": "org.knime.base.node.mine.decisiontree2.learner2.DecisionTreeLearnerNodeFactory3#Decision Tree Learner",
+                "nrexecs": 57,
+                "nrfails": 0,
+                "exectime": 24351,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.decisiontree2.predictor2.DecTreePredictorNodeFactory#Decision Tree Predictor",
+                "nrexecs": 57,
+                "nrfails": 0,
+                "exectime": 36177,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.scorer.accuracy.AccuracyScorer2NodeFactory#Scorer",
+                "nrexecs": 57,
+                "nrfails": 0,
+                "exectime": 916,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.colconvert.stringtonumber2.StringToNumber2NodeFactory#String To Number",
+                "nrexecs": 25,
+                "nrfails": 0,
+                "exectime": 11510,
+                "nrcreated": 0,
+                "successor": "org.knime.base.node.preproc.discretization.caim2.modelapply.Discretization2ApplyNodeFactory#CAIM Applier"
+            },
+            {
+                "id": "org.knime.base.node.preproc.pmml.missingval.compute.MissingValueHandlerNodeFactory#Missing Value",
+                "nrexecs": 14,
+                "nrfails": 0,
+                "exectime": 29722,
+                "nrcreated": 0,
+                "successor": "org.knime.base.node.preproc.pmml.numbertostring3.NumberToString3NodeFactory#Number To String (PMML)"
+            },
+            {
+                "id": "org.knime.base.node.preproc.sample.SamplingNodeFactory#Row Sampling",
+                "nrexecs": 12,
+                "nrfails": 0,
+                "exectime": 3091,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory#Column Filter",
+                "nrexecs": 31,
+                "nrfails": 0,
+                "exectime": 8,
+                "nrcreated": 2,
+                "successor": "org.knime.base.node.preproc.colconvert.numbertostring2.NumberToString2NodeFactory#Number To String"
+            },
+            {
+                "id": "org.knime.base.node.meta.feature.selection.FeatureSelectionLoopStartNodeFactory#Feature Selection Loop Start (1:1)",
+                "nrexecs": 411,
+                "nrfails": 0,
+                "exectime": 211,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.discretization.caim2.modelcreator.CAIMDiscretization2NodeFactory#CAIM Binner",
+                "nrexecs": 83,
+                "nrfails": 12,
+                "exectime": 1448863,
+                "nrcreated": 1,
+                "successor": "org.knime.base.node.preproc.discretization.caim2.modelapply.Discretization2ApplyNodeFactory#CAIM Applier"
+            },
+            {
+                "id": "org.knime.base.node.preproc.discretization.caim2.modelapply.Discretization2ApplyNodeFactory#CAIM Applier",
+                "nrexecs": 83,
+                "nrfails": 0,
+                "exectime": 17834,
+                "nrcreated": 0,
+                "successor": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory#Column Filter"
+            },
+            {
+                "id": "org.knime.base.node.mine.bayes.naivebayes.learner3.NaiveBayesLearnerNodeFactory4#Naive Bayes Learner",
+                "nrexecs": 401,
+                "nrfails": 0,
+                "exectime": 70863,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.bayes.naivebayes.predictor4.NaiveBayesPredictorNodeFactory3#Naive Bayes Predictor",
+                "nrexecs": 401,
+                "nrfails": 0,
+                "exectime": 97093,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.scorer.accuracy.AccuracyScorerNodeFactory#Scorer (deprecated)",
+                "nrexecs": 401,
+                "nrfails": 0,
+                "exectime": 5179,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.meta.feature.selection.FeatureSelectionLoopEndNodeFactory#Feature Selection Loop End",
+                "nrexecs": 401,
+                "nrfails": 0,
+                "exectime": 161,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.regression.linear2.learner.LinReg2LearnerNodeFactory2#Linear Regression Learner",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 4066,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.regression.predict3.RegressionPredictorNodeFactory2#Regression Predictor",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 1677,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.normalize3.Normalizer3NodeFactory#Normalizer",
+                "nrexecs": 11,
+                "nrfails": 0,
+                "exectime": 12869,
+                "nrcreated": 4,
+                "successor": "org.knime.base.node.preproc.discretization.caim2.modelcreator.CAIMDiscretization2NodeFactory#CAIM Binner"
+            },
+            {
+                "id": "org.lhasalimited.generic.discretise.DiscretiseNodeFactory#Discretise",
+                "nrexecs": 6,
+                "nrfails": 0,
+                "exectime": 4000,
+                "nrcreated": 1,
+                "successor": "org.knime.base.node.preproc.discretization.caim2.modelcreator.CAIMDiscretization2NodeFactory#CAIM Binner"
+            },
+            {
+                "id": "org.knime.core.node.workflow.virtual.subnode.VirtualSubNodeInputNodeFactory#Component Input",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 3,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.js.base.node.configuration.filter.column.ColumnFilterDialogNodeFactory#Column Filter Configuration (deprecated)",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.domain.dialog2.DomainNodeFactory#Domain Calculator",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 619,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.columnref.ColumnSplitRefNodeFactory#Reference Column Splitter",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.split2.SplitNodeFactory2#Column Splitter",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 0,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.autobinner3.AutoBinnerLearnNodeFactory#Auto-Binner",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.extractmissingvaluecause.ExtractMissingValueCauseNodeFactory#Extract Missing Value Cause",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "successor": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.pmml.numbertostring3.NumberToString3NodeFactory#Number To String (PMML)",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 95,
+                "nrcreated": 1,
+                "successor": "NodeContainer"
+            },
+            {
+                "id": "org.knime.base.node.meta.feature.selection.FeatureSelectionFilterNodeFactory#Feature Selection Filter",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 5,
+                "nrcreated": 0,
+                "successor": "n/a"
+            }
+        ],
+        "metaNodes": {
+        },
+        "wrappedNodes": {
+            "nrexecs": 0,
+            "nrfails": 1,
+            "exectime": 634,
+            "nrcreated": 0
+        }
+    },
+    "uptime": 10097472,
+    "workflowsOpened": 1,
+    "remoteWorkflowsOpened": 0,
+    "workflowsImported": 0,
+    "workflowsExported": 0,
+    "launches": 3,
+    "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart": 6818012,
+    "crashes": 0,
+    "properlyShutDown": true
+}
