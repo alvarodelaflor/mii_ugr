@@ -1,0 +1,11 @@
+-Shortcomings of the conventional middleware software
+
+-Contemporary Web Services (WS 2.0) 
+
+-SW Programming 
+
+-Software development, based on SW, for business processes 
+
+-Composition of SW: orchestration and choreography
+
+-Current notations and languages

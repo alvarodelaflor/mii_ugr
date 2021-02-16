@@ -1,0 +1,23 @@
+Especificación de la operación IHotelMgt::makeReservation()
+
+Utilizando los operadores: exists, includes, select y asSequence->first, para especificar la operación IHotelMgt::makeReservation (...) completamente con la notación OCL. En la postcondición nos podremos referir al estado antes de realizar la operación con ‘@pre’ de OCL.
+
+Información adicional:
+
+Un sistema de una cadena hoteles permite a los clientes hacer reservas en cualquier de los hoteles de tal cadena. Este sistema de reserva permite ofrecer reservas de un tipo de habitación en diferentes hoteles.
+
+La reserva se inicia con una petición de tipo de habitación, hotel y fechas por parte de un posible cliente; se comprueba la disponibilidad y si está disponible una habitación del tipo que quiere el cliente, se le hace la reserva (“make_reservation(…)”) al cliente . Un cliente también podría pedir que se mejore la reserva que le ofrecen y, después, se necesitaría la confirmación del cliente ya que este podría no presentarse en la fecha de entrada. De cualquier manera, el cliente siempre va a necesitar una factura.
+
+Por lo tanto, después de hacer la reserva, el cliente ha de confirmar los detalles de la reserva por email o podría llegar al hotel y aceptar la reserva (“take_up_reservation()”) o bien podría cancelarla. 
+
+Se pide:  especificar la operación “make_reservation()”; al cliente que hace la reserva se le permite obtener detalles, después de indicar el tipo de habitación que requiere, las fechas de estancia y el precio –por este motivo se ha de diseñar una interfaz “IMakeReservation” con estas operaciones adicionales.
+
+-	El contexto de esta operación es IHotelMgt::makeReservation(in res: ReservationDetails, in cus: CustomerId, out:resRef:String):boolean
+
+-	En la precondición de esta operación hay que comprobar que el cliente (“cus”) está en la base de datos, que el hotel que indica el cliente en los detalles de su reserva y el tipo de habitación existen, así como que hay alguna habitación libre que cumpla con requerimientos del cliente
+
+-	En la poscondición se podría indicar que una nueva reserva (“newReservation”), para ofrecérsela al cliente, ha de cumplir con lo que indica el cliente en su petición (res.datesRange, res.hotelId, res.allocation->Empty), tras lo cual se seleccionaría el número de referencia (“resRef”) que se va a ofrecer al cliente  y que la habitación pasa a no estar disponible (“NotEmpty”).
+
+También, alternativamente, se podría especificar el resultado de la función haciendo la búsqueda por el nombre de hotel y de ahí se obtendría la serie de reservas que se han hecho para ese hotel y se selecciona la última (utilizando el operador “@pre”), entonces el parámetro de salida “resRef” de la función se unifica con los detalles de la última reserva (referencia, rango de fechas para la estancia, tipo de habitación y que la habitación todavía no se “reclamado”). 
+
+Tener en cuenta que tras operación de reserva, la habitación no se ha reclamado aún porque esto se realizará cuando el cliente acepte la reserva con la operación “takeUpReservation()”.

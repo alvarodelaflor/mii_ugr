@@ -1,0 +1,45 @@
+Practical work
+
+CRUD server implementation materials:
+
+-RESTful Web Services Technology presentation
+
+-JPA Tutorial
+
+-REST tutorial ("2nd practical assignment")
+
+mio-xml-jaxb.zip : proyecto Java completo con el primer ejercicio del tutorial: se ejecuta como una aplicación Java
+
+---------------------------------
+
+con fecha 12-11-2020 se ha actualizado el proyecto "mio.jersey.segundo" , incluyendo el cliente para probarlo (test/Probador.java); para resolver los problemas que daban las librerías de jersey en la versión anterior con "WebServicio", se han actualizado las librerías a importar en la clase cliente, que ahora son:
+
+import javax.ws.rs.client.Client;
+
+import javax.ws.rs.client.ClientBuilder;
+
+import javax.ws.rs.client.Entity;
+
+import javax.ws.rs.client.WebTarget;
+
+import javax.ws.rs.core.Form;
+
+import javax.ws.rs.core.MediaType;
+
+import javax.ws.rs.core.Response;
+
+import javax.ws.rs.core.UriBuilder;
+
+import org.glassfish.jersey.client.ClientConfig;
+
+------------------------------------
+
+Con fecha 14-11-2020 se ha cambiado el documento "tutorialJPA" ampliándolo e incluyendo el código del 2do ejemplo tutorial: jpa.familias, cuyo código se ha subido también. 
+
+---------------------------------
+
+Con fecha 15-11-2020 se ha subido una version encuadernada con Maven del 'mio.jersey.segundo' que utiliza las librerias de Jersey 2.31. 
+
+->Importante: Jersey versión 2.x. se basa en la versión 2.x de la API de JAX-RS, que a su vez forma parte de la versión 8 de Java / Jakarta EE 
+
+La versión 3.x de la API de JAX-RS cumple con la versión 5.0 de la API de Servlet, que a su vez forma parte de la versión 9 de Jakarta EE y las aplicaciones web necesitan Tomcat 10.x (que no está instalada aún en Eclipse porque está en versión \alpha)

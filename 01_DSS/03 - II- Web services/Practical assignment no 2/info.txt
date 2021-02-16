@@ -1,0 +1,17 @@
+CRUD-service implementation in Java with Jersey and JPA frameworks:
+
+Problem setting:
+
+Complete development of an application in Java EE using REST technology with Jersey and JPA frameworks (the last one for persistence of relational data in Java applications), which allows users and administrator to search items in a catalogue of an e-commerce company. The application will easily integrate with standard e-applications on Internet (e.g.: Google Maps). 
+
+One version of the Java code as a Web application will allow the administrator or an authorized dealer to access the products of the catalogue and to download the full data-base from the Web site.
+
+Project parts:
+
+A)	Development of a Java application that accesses the catalogue of products  by using the REST interface. The exchange of data must be preferably carried out through JSON interface (see figure). Products should be inserted and deleted in the private shopping cart of the client. Development of the REST server with Jersey, JPA and MySQL.
+
+(Grading 70% of the complete assignment)
+
+B) Development of a Web application, which will give the functionality of the Java application and be accessible to the clients from the Web. The Web application will also provide geographical information about the  location of the server that coincides with the central store of the company. Including and deleting products in the catalogue can only be done by authorized personnel (administrator).
+
+(Grading 30% of the complete assignment)

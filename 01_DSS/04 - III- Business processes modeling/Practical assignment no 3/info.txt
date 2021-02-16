@@ -1,0 +1,11 @@
+BPEL 2.0 modeling of business processes proposed as case studies  
+
+Due date (recommended): November, 26th
+
+1.	Specify, with BPEL 2.0, the following business process (whose activity diagram is shown in figure below), which is next (informally) described:
+
+“Client application calls the BPEL business process and gives the name of the employee, travel destination and dates (date of departure and return). The BPEL process firstly checks the employee’s status to buy the flight tickets in the class (tourist, business, private jet) according with the level of the employee in the company); we assume the existence of a WS that provides the latter information. Afterwards, the BPEL process will check tickets prices with 2 airlines: Iberia and Vueling. We assume again that both flight companies provide a WS for carrying out these consultations. The BPEL process must be able to select the cheaper price and to return a viable trip plan to the client application”.
+
+2. Orchestrate the marketing activity (price haggling) between a buyer and one seller of a solicited product, according to the interaction diagram shown in the figure below:
+
+“The buyer starts by asking a price to the seller and the latter one responds by giving the product’s price or raising an exception if does not know the solicited product or it was not available in the warehouse’s stocks now. The buyer goes on asking for a price to the seller and gets into a repetitive behavior (with updates of the item’s price) up until the buyer decides to accept a price offered by the seller, which he considers as the best possible price for the product. In this assignment, we are asked to develop the complete description of the orchestration above described, which takes place between the buyer and the product’s seller”

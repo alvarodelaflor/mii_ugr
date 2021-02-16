@@ -1,0 +1,5 @@
+Practical assignment no.1
+
+By using the JSF framework and Java EE, develop an application with JavaBeans (controller) that reacts and changes the state (color, text labels, etc.) of a Web page (View/Model) that contains more than 3 buttons, text fields and labels.
+
+The client interface should be, at least, an .xhtml or .jsp page that shows several "reactive" buttons like the ones shown in the following figure:

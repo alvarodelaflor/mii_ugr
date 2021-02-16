@@ -1,0 +1,5 @@
+Practical
+
+1) Presentation about Web application development by using JSF, JSP and Java servlets
+
+2) To be completed...

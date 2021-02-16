@@ -1,0 +1,21 @@
+Programmers using technologies such as Enterprise Java Beans need to be able to unambiguously describe the specifications of their software components. This specification can be realized, without problem, using UML whether the components you want to develop are finally implemented using object technology or not. In addition, it is necessary to have a simple design process that allows to ensure that the specifications correspond correctly with the implementations of the mentioned components.
+
+Contents:
+
+-Component Specification
+
+-Creation process of the Interface Information Model (IIM)
+
+-Creation process of the System IIM
+
+-Component factorization techniques
+
+References:
+
+-Cheesman, J. and Daniels, J. (2001). UML Components: A Simple Process for Specifying Component–based Software. Component Software Series. Addison-Wesley, first edition
+
+-Eden, A., Hirshfeld, Y., and Kazman, R. (2006). Abstraction classes in software design. IEEE Software, 153(4):163–182
+
+-Exposito, D. and Saltarello, A. (2009). Architecting Microsoft .NET solutions for the enterprise. Microsoft Press, Redmond, Washington
+
+-Szyperski, C. (1998). Component Software. Beyond Object-Oriented Programming. Addison–Wesley

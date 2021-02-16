@@ -1,0 +1,20 @@
+HotelMgt::makeReservation(in res: ReservationDetails, in cus: CustomerId, out:resRef:String):boolean
+pre: 
+   ---cus es un identificador valido para un cliente
+	customer  exists(c : Customer | c.id = cus)
+   ---res.hotelId es un identificador válido de un hotel
+	hotel  exists(h : Hotel | Hotel = res.hotelId)
+   ---res.rtName es un identificador válido de un tipo habitación
+	roomType  exists(rt:  RoomType | rt.name = res.name)
+   --- comprobamos que para el hotel y la fecha solicitada no hay una reserva
+     reservation  exists(r: Reservation | r.hotelId = res.hotelId and r.dates = res.dates and r.claimed = r.allocation  Empty)
+post:
+     let newReservation = Reservation
+     newReservation.hotel = Set{select(h : Hotel | h.id = res.hotelId)
+    newReservation.allocation = select(r : Reservation | r.hotelId =
+    res.hotelId and r.dates = res.dates and  
+    r.claimed = r.allocation  Empty)} asSequence()  first
+    newReservation.claimed = newReservation.allocation  NoEmpty
+    newReservation.dates = res.dates        
+   --- se devuelve el valor de la asignación
+    resRef = newReservation.resRef
