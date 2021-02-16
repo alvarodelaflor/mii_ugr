@@ -1,0 +1,11 @@
+Seminar on WS-CDL
+
+The Services Choreography Description Language (WS-CDL) is an XML-based language 
+
+that describes peer-to-peer collaborations of participants by defining, from a 
+
+global viewpoint, their common and complementary observable behavior; where 
+
+ordered message exchanges result in accomplishing a common business goal'', 
+
+2005 W3C(c) (MIT, ERCIM, Keio)

@@ -1,0 +1,29 @@
+
+
+    Página Principal
+    Mis cursos
+    Máster Universitario en Ingeniería Informática (M502)
+    Desarrollo de Sistemas de Software basados en (2021)-M502_56_8_2021
+    Seminar 4
+    Protégé stuff
+
+Protégé stuff
+
+Includes differemt materials: 
+
+-Protege 5..5.0 download
+https://protege.stanford.edu/products.php#desktop-protege
+
+-Protegé 5.5.0 release information: http://protege-project.136.n4.nabble.com/Protege-5-5-0-Available-td4671766.html
+
+-Protegé 5.5.0: Github https://github.com/protegeproject/protege/milestone/1?closed=1
+
+-Protege manual
+
+-OWLViz
+
+-instrucctions for using the visualizer
+
+-Source file of the "pizzas ontology"
+
+-

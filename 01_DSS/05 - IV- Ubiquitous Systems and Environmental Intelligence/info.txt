@@ -1,0 +1,11 @@
+IV- Ubiquitous Systems and Environmental Intelligence
+
+- Introduction to Ubiquitous Computing
+
+- Current Frameworks for the development of ubiquitous systems
+
+-Collaborative services
+
+-Ontological modeling with OWL
+
+-Case studies

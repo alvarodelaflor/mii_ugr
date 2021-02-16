@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" xml:base="http://www.semanticweb.org/usuario/ontologies/2020/11/printers-ontology" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" ontologyIRI="http://www.semanticweb.org/usuario/ontologies/2020/11/printers-ontology">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#HPproduct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LaserJetPrinter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Padid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonalPrinter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Printer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Product"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hpLaserJetPrinter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hpPrinter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#1100Series"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#1100se"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#1100xi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#manufacturedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#price"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#printerResolution"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#printingSpeed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#printingTechnology"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#HPproduct"/>
+        <Class IRI="#Product"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HPproduct"/>
+        <DataHasValue>
+            <DataProperty IRI="#manufacturedBy"/>
+            <Literal>Hewlett-Packard</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LaserJetPrinter"/>
+        <Class IRI="#Printer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LaserJetPrinter"/>
+        <DataHasValue>
+            <DataProperty IRI="#printingTechnology"/>
+            <Literal>Laser jet</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Padid"/>
+        <Class IRI="#Product"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonalPrinter"/>
+        <Class IRI="#Printer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Printer"/>
+        <Class IRI="#Padid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hpLaserJetPrinter"/>
+        <Class IRI="#LaserJetPrinter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hpLaserJetPrinter"/>
+        <Class IRI="#hpPrinter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hpPrinter"/>
+        <Class IRI="#HPproduct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hpPrinter"/>
+        <Class IRI="#Printer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1100Series"/>
+        <Class IRI="#hpLaserJetPrinter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1100Series"/>
+        <DataHasValue>
+            <DataProperty IRI="#printerResolution"/>
+            <Literal>600dpi</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1100Series"/>
+        <DataHasValue>
+            <DataProperty IRI="#printingSpeed"/>
+            <Literal>8ppm</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1100se"/>
+        <Class IRI="#1100Series"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1100se"/>
+        <DataHasValue>
+            <DataProperty IRI="#price"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">450</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1100xi"/>
+        <Class IRI="#1100Series"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#1100xi"/>
+        <DataHasValue>
+            <DataProperty IRI="#price"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">350</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#1100se"/>
+        <Class IRI="#1100xi"/>
+    </DisjointClasses>
+    <DataPropertyDomain>
+        <DataProperty IRI="#manufacturedBy"/>
+        <Class IRI="#Product"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#price"/>
+        <Class IRI="#Product"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#printerResolution"/>
+        <Class IRI="#Printer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#printingSpeed"/>
+        <Class IRI="#Printer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#printingTechnology"/>
+        <Class IRI="#Printer"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#manufacturedBy"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#price"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#printerResolution"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#printingSpeed"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#printingTechnology"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HPproduct</IRI>
+        <Literal>HP products are exac t l y those products manufactured by Hewlet t
+Packard</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LaserJetPrinter</IRI>
+        <Literal>Laser j e t p r i n t e r s are exac t l y those p r i n t e r s t h a t use la s er
+j e t p r i n t i n g technology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Padid</IRI>
+        <Literal>Pr i n t i n g and d i g i t a l imgaging devices are a
+subclass of product</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PersonalPrinter</IRI>
+        <Literal>Pr i n t e r s for personal use form a subclass of p r i n t e r s</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Printer</IRI>
+        <Literal>Pr i n t e r s are p r i n t i n g and d i g i t a l imaging devices</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Product</IRI>
+        <Literal>Mi ejemplo vrsion 1.0</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hpLaserJetPrinter</IRI>
+        <Literal>HP l a se r j e t p r i n t e r s are HP products and l a s er j e t p r i n t e r s</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hpPrinter</IRI>
+        <Literal>HP p r i n t e r s are HP Products and p r i n t e r s</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#1100Series</IRI>
+        <Literal>1100 ser ies p r i n t e r s are 8ppm p r i n t i n g speed and HP la s er j e t
+p r i n t e r s wi th 600 dpi p r i n t i n g r e s o l u t i o n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#1100se</IRI>
+        <Literal>1100se p r i n t e r s belong to the 1100 ser ies and cost 450 EUR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#1100xi</IRI>
+        <Literal>1100 x i p r i n t e r s belong to the 1100 ser ies and cost 350 EUR</Literal>
+    </AnnotationAssertion>
+</Ontology>
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->

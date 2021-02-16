@@ -1,0 +1,73 @@
+Stuff
+
+To run the game you have to download the key file: 
+
+juego-preguntas-android.jks 
+
+in a local key directory and indicate it in the file 'build.gradle (Module: app) as it follows:
+
+ storeFile file ('/ home / user / misclaves / juego-preguntas-android.jks')
+
+You also have to indicate: 
+
+keyPassword 'larissa # 68' in the same file.
+
+Don't forget to add google() to 'allProjects' in the file 'build.gradle':
+
+buildscript {
+
+   repositories {
+
+        jcenter()
+
+       google()
+
+   }
+
+    dependencies {
+
+        classpath 'com.android.tools.build:gradle:3.5.3'
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+
+        // in the individual module build.gradle files
+
+    }
+
+}
+
+
+allprojects {
+
+    repositories {
+
+        jcenter()
+
+        google()
+
+    }
+
+}
+
+------------------------------------------------------
+
+Additionally, take into account that Google Play does not accept a SDK version previous to 26, so check it out that in the build.gradle file is written:
+
+ compileSdkVersion 26
+
+    buildToolsVersion '22.0.0'
+
+    defaultConfig {
+
+        applicationId "com.example.manuel.juego_preguntas"
+
+        minSdkVersion 19
+
+        targetSdkVersion 26
+
+        versionCode 1
+
+        versionName "1.0"
+
+        signingConfig signingConfigs.config

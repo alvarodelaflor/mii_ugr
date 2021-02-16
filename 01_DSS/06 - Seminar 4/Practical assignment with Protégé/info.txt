@@ -1,0 +1,65 @@
+Practical assignment with Protégé
+
+Develop an ontology of vehicles in Protégé with, at least, the following classes of individuals:
+
+-Trucks which includes the subclass: Pickup-truck
+
+-Cars which includes the subclasses: SUV, Berlina, Coupé, Convertible
+
+-Vans which includes the subclasses: Camper, Motorhome, Commercial
+
+-Buses
+
+The subclasses of each of the above class of vehicle are disjoint, i.e.: SUV, Berlina, Coupé and Convertible are disjoint classes
+
+Each vehicle is made up of the following part classes:
+
+-Chassis
+
+-Cabin
+
+-Wheels
+
+-Motor
+
+And every vehicle’s part class has different individuals as the following ones:
+
+Chassis: truck-chassis, car-chassis, van-chassis, bus-frame
+
+Cabin: many-seats, 8-seats, 5-seats, 2-seats
+
+And Wheels have 2 parts:   wheel-rim (“llanta”), tyre (“neumático”)
+
+There are several tyes of wheel-rims: steel, alloy and chrome
+
+There are several types of tyres: winter, summer, touring, sporty and high-speed
+
+Motors have engines that can be of the following types: VEE, In-line, Straight, VR&W, Boxer and Rotary
+
+Create the following object properties for the above ontology:
+
+-hasPart whose sub-properties are: hasChassis, hasCabin, hasWheels and hasMotor and the inverse properties: isChassisOf, isCabinOf, areWheelsOf, is MotorOf. Specify which ones are functional properties or transitive
+
+-isExpensive which has as its range the class CostValuePartition: Expensive, Medium-cost, Low-cost
+
+The following restrictions must be included in your ontology:
+
+-A car must have the following parts: Chassis, Cabin, Wheels and Motor
+
+Create a subclass of Car that includes: Mercedes which is a 5-seats, berlina, wheel-chromed and  expensive car
+
+Create a subclass of van Chrysler which is Commercial with 8-seats, steel-wheeld and medium-cost
+
+Use the CostValuepartition to cover all the parts of vehicles in the ontology. In general, the most expensive motors are: VEE (Audi), VR&W (BMW) and Rotary; the chrome wheel-rims are the most expensive ones and, in general, sporty and high-speed tyres are costly
+
+Create a class named CostlyVehicle and let the reasoned to infer its subclasses
+
+Include the following datatype properties too in the ontology:
+
+-hasPrice that binds vehicle individuals (Pickup-truck, SUV, Berlina, Coupé, Convertible, Camper, Motorhome, Commercial, Camper, Bus) to a value of type xsd:float
+
+-hasMaintenanceCostPerYear to the following RDF literals: “High”, “Medium”, “Low"
+
+-The complete ontology developed with Protégé  (SNAPSHOT)
+
+-PNG files with OWLViz graphs of the most representative class-hierarchies of the ontology

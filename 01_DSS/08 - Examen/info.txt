@@ -1,0 +1,48 @@
+Convocatoria ordinaria 2020-2021
+
+==>Se ha de realizar un proyecto eclipse, exportarlo correctamente y subirlo llamándolo: apellidos_nombre.zip
+
+Se trata de desarrollar una aplicación simple de tarjeta de compras de un cliente de un almacén de música grabada, utilizando para ello el patrón arquitectónico MVC, el marco de trabajo JSP y el lenguaje de programación Java EE.
+
+-Se ha de programar una página index.jsp / index.xhtml / index.jsf en la que podamos picar en el botón de etiqueta: ``Añadir a la Tarjeta" cualquiera de los CDs que se mostrarán en el catálogo para que se añada a la  tarjeta de compras
+
+- Después, la página Web desarrollada mostrará todos los productos (CDs) que han sido incluidos en la tarjeta de compras.
+
+-En la página tarjeta.jsp / tarjeta.xhtml / tarjeta.jsf hemos de poder actualizar la cantidad que vamos a querer comprar de cada artículo insertando un número en la columna de etiqueta "Cantidad" y picando en el botón con la etiqueta: ``Actualizar". 
+
+-También hemos de poder eliminar un item de la tarjeta de compras picando en el botón ``Eliminar artículo", que igualmente ha de aparecer en la citada página  tarjeta.jsp / tarjeta.xhtml / tarjeta.jsf 
+
+-Por último, hemos de poder volver a la página  index.jsp / index.xhtml / index.jsf picando en un botón que nombraremos ``Continuar comprando"o bien comenzar el proceso de pago con una tarjeta de crédito picando en el botón etiquetado:``Terminar compra".
+
+==>Para que el ejercicio sea considerado correcto hay que realizarlo de acuerdo con los siguientes requerimientos:
+
+-Programarlo como un proyecto Web Dinámico Java con Eclipse IDE for Enterprise Java Developers (se ha de indicar la versión del IDE que se ha utilizado para desarrollar la aplicación)
+
+-Utilizar las clases: Producto, LineaArticulo, y Tarjeta que se suministran en el archivo: examen-plantillas.java
+
+-Desplegar y probar un componente software con la aplicación Web que se ah desarrollado, dentro de un archivo .WAR, que se ha de poder ejecutar en Tomcat (indicar que versión y release de Tomcat se ha utilizado para desplegar el componente)
+
+
+English version:
+
+==>An Eclipse project must be carried out, exported correctly and uploaded by calling it: surname_name.zip
+
+We need to develop a simple shopping card application for a customer of a music store, using the MVC architectural pattern, the JSP framework, and the Java EE programming language.
+
+A page index.jsp or index.xhtml or index.jsf must be programmed in which we can click on the  button with label: `` Add to Card ''  in order to add any of the CDs that will be shown in the catalog to the shopping cart
+
+Afterwards, the developed Web page will show all the products (CDs) that have been included in the shopping cart
+
+In the page card.jsp or card.xhtml or card.jsf we must be able to update the quantity that we want to buy of each item by inserting a number in the column labeled "Quantity" and then clicking on the button with the label: `` To update"
+
+We must also be able to delete an item from the shopping cart by clicking on the `` Delete item '' button, which must also appear on the page card.jsp or card.xhtml or card.jsf
+
+Finally, we must be able to return to the page index.jsp or index.xhtml or index.jsf by clicking on a button that we will name `` Continue shopping '' or start the payment process with a credit card by clicking on the labeled button : `` Complete purchase ''
+
+For the exercise to be considered correct, it must be performed according to the following requirements:
+
+--The application must be a Java Dynamic Web project with Eclipse IDE for Enterprise Java Developers (the version of the IDE used to develop the application must be sent)
+
+-Use the classes:  Producto, LineaArticulo, andTarjeta  that are supplied in the file: examen-plantillas.java
+
+-Deploy and test the Web application developed as a software component (.WAR file), which must be executed in Tomcat (indicate which version and release of Tomcat has been used to deploy that component)

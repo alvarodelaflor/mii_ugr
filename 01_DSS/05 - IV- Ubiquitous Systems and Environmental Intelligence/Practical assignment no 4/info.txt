@@ -1,0 +1,16 @@
+Corresponds to "Práctica 4"of the syllabus.
+
+Problem setting:
+
+Complete the code developed in practical assignment no.2 with an app in Java/Android or C++/IOS (client part), which allows app users to search products on  the disclosed catalogue of an e-commerce site. The application will easily integrate with standard geographical location applications (e.g.: Google Maps). Finally, a complete version of the app that must be able to interact with the Web application (RESTful server) will be developed, which will allow downloading the apk from the Web site.
+
+Project parts:
+
+A) Development of an app that virtually accesses a catalogue of products on the REST server and can locate the geographical location of the customer to the app user and to send him/her (by mail or courier) products that previously were bought  in the e-commerce Web-site. There will be a local version of the MySQL DB (in the REST server) locally downloaded, each time the main activity is launched, in the Android device as a SQLite local DB. 
+
+(Grading 70% of the complete assignment)
+
+B) Integrate the app developed in (A)  with the Web application developed in Practical assignment no.2.
+
+(Grading 30% of the complete assignment)
+This assignment can be carried out in groups of two students and it will be presented to the class in January 2021 (the presentation dates and place will be noticed in advance to the students)

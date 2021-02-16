@@ -1,0 +1,3 @@
+Seminar 4
+
+OWL and semantic modeling of ontologies for the Semantic Web
