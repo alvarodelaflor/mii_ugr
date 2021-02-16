@@ -1,4 +1,4 @@
-# Máster Oficial de Ingeniería Informática - Universidad de Granada
+# Máster Oficial de Ingeniería Informática - Universidad de Granada ![Alhambra](00_img/alhambra.jpg)
 
 Repositorio personal para el Máster Oficial de Ingeniería Informática de la Univerdad de Granada, curso 2020 - 2021.
 
@@ -11,7 +11,7 @@ Asignaturas del primer cuatrimestre impartidas:
 5. **DES**:Desarrollo y evaluación de Sistemas Software Interactivos (4 cr.)
 6. **DSS**:Desarrollo de Sistemas Software Basados en Componentes y Servicios (4 cr.)
 
-![Horario primer cuatrimestre](imagenes/00_horario.png)
+![Horario primer cuatrimestre](00_img/00_horario.png)
 
 Asignaturas del segundo cuatrimestre impartidas:
 
@@ -22,6 +22,6 @@ Asignaturas del segundo cuatrimestre impartidas:
 5. **GIW**:Gestión de Información en la Web (4 cr.)
 6. **SSBW**:Sistemas Software Basados en Web (4 cr.)
 
-![Horario segundo cuatrimestre](imagenes/01_horario.png)
+![Horario segundo cuatrimestre](00_img/01_horario.png)
 
 Nota: en algunas asignaturas se ha utilizado un repositorio propio 
