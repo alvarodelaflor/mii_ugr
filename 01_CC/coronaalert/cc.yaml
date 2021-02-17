@@ -1,0 +1,27 @@
+entidad:
+  - coronaalert/app/models.Attendance.scala
+  - coronaalert/app/models.Person.scala
+  - coronaalert/app/models.Schedule.scala
+  - coronaalert/app/models.Test.scala
+  - coronaalert/app/controllers.AccountController.scala
+  - coronaalert/app/controllers.AttendanceController.scala
+  - coronaalert/app/controllers.ContactController.scala
+  - coronaalert/app/controllers.DatabaseController.scala
+  - coronaalert/app/controllers.HomeController.scala
+  - coronaalert/app/controllers.NotificationController.scala
+  - coronaalert/app/controllers.SchedulerController.scala
+
+test:
+  - coronaalert/test/controllers/AttendanceTest.scala
+  - coronaalert/test/controllers/ContactTest.scala
+  - coronaalert/test/controllers/HomeControllerSpec.scala
+  - coronaalert/test/controllers/PersonTest.scala
+  - coronaalert/test/controllers/ScheduleTest.scala
+  - coronaalert/test/controllers/TestTest.scala
+
+lenguaje: scala
+
+fichero_tareas: Makefile
+
+make: mmake
+

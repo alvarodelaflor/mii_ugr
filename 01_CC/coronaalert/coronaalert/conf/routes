@@ -1,0 +1,46 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# SCHEDULLE
+POST     /schedulle                  controllers.HomeController.addSchedulle
+PUT      /schedulle/:id              controllers.HomeController.editSchedulle(id: String)
+GET      /schedulle/:id              controllers.HomeController.getSchedulle(id: String)
+DELETE   /schedulle/:id              controllers.HomeController.deleteSchedulle(id: String)
+# SCHEDULLE
+
+# ATTENDANCE
+POST    /attendance                  controllers.HomeController.addAttendance
+GET     /attendance/:id              controllers.HomeController.getAttendance(id: String)
+DELETE  /attendance/:id              controllers.HomeController.deleteAttendance(id: String)
+# ATTENDANCE
+
+# TEST
+POST    /test                        controllers.HomeController.addTest
+GET     /test/:id                    controllers.HomeController.getTest(id: String)
+# TEST
+
+# INFECTION
+GET     /infection/do/:id            controllers.HomeController.getInfection(id: String)
+# INFECTION
+
+# NOTIFICATION
+GET     /notification/:id            controllers.HomeController.notification(id: String)
+# NOTIFICATION
+
+#EMAIL
+GET     /email/:userId/:testId      controllers.HomeController.email(userId: String, testId: String)
+
+GET     /email/:testId              controllers.HomeController.tracking(testId: String)
+#EMAIL
+
+#TEST DATA
+
+GET     /database/:name      controllers.HomeController.addData(name: String)
+GET     /database      controllers.HomeController.getData()
+
+#TEST DATA
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

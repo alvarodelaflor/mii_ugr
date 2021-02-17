@@ -30,4 +30,4 @@ Asignaturas del segundo cuatrimestre impartidas:
 
 ![Horario segundo cuatrimestre](00_img/01_horario.png)
 
-Nota: en algunas asignaturas se ha utilizado un repositorio propio 
+*Nota: en algunas asignaturas se ha utilizado un repositorio propio* 

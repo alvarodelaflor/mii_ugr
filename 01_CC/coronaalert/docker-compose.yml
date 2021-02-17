@@ -1,0 +1,35 @@
+version: '2'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+
+  postgresql:
+    image: 'bitnami/postgresql:latest'
+    networks:
+      - app-tier
+    environment:
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=postgres
+
+  nginx:
+    build: ./nginx
+    ports:
+      - '80:8080'
+    networks: 
+      - app-tier
+    depends_on: 
+      - play
+
+  play:
+    build: .
+    environment:
+      - KEY=jdbc:postgresql://postgresql:5432/postgres?currentSchema=public
+    ports:
+      - "9000:9000"
+    volumes:
+      - /root
+    networks:
+      - app-tier
