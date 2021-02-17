@@ -1,0 +1,15 @@
+DESSI - Grupo 4
+
+Credenciales y enlaces:
+
+http://unitoo649:99ifS0ZH@www.unitools.com.mialias.net/
+Usuario: unitoo649
+ContraseÃ±a: 99ifS0ZH
+
+DENTRO DE WORDPRESS
+http://www.unitools.com.mialias.net/wp-admin/plugins.php?plugin_status=all&paged=1&s
+Usuario y contraseÃ±a: grupo4DES
+
+Directorio GitHub:
+
+https://github.com/alvarodelaflor/unitools
