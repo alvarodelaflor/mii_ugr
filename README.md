@@ -14,7 +14,7 @@ Asignaturas del primer cuatrimestre impartidas:
 2. [**IC**:Inteligencia Computacional (6 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/01_IC)
 3. [**CC**: Cloud Computing (6 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/01_CC)
 4. [**TID**:Tratamiento Inteligente de Datos (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/01_TID)
-5. **DES**:Desarrollo y evaluación de Sistemas Software Interactivos (4 cr.)
+5. [**DES**:Desarrollo y evaluación de Sistemas Software Interactivos (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/01_DES)
 6. [**DSS**:Desarrollo de Sistemas Software Basados en Componentes y Servicios (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/01_DSS)
 
 ![Horario primer cuatrimestre](00_img/00_horario.png)
