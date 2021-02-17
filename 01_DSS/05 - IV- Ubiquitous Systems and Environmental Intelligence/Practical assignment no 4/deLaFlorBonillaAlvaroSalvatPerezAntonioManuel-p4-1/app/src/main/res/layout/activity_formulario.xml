@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Formulario">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="42dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Genial!"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="268dp"
+            tools:layout_editor_absoluteY="210dp" />
+
+        <ImageView
+            android:id="@+id/img_camiseta"
+            android:layout_margin="20dp"
+            android:layout_width="220dp"
+            android:layout_height="290dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/camiseta"/>
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Introduce tu dirección"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="268dp"
+            tools:layout_editor_absoluteY="210dp" />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:id="@+id/direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Direccion: "/>
+
+        <Button
+            android:id="@+id/enviar"
+            android:backgroundTint="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

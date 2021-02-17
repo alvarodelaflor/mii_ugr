@@ -1,0 +1,980 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.pizza.com/ontologies/pizza.owl#"
+     xml:base="http://www.pizza.com/ontologies/pizza.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:delaFlorBonillaAlvaroP5="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#">
+    <owl:Ontology rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl">
+        <rdfs:comment>An prior example of ontologies with Protégé</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#areWheelsOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#areWheelsOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasWheels"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasCabin -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasCabin">
+        <rdfs:subPropertyOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isCabinOf"/>
+        <rdfs:domain rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+        <rdfs:range rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasChassis -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasChassis">
+        <rdfs:subPropertyOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isChassisOf"/>
+        <rdfs:domain rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+        <rdfs:range rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasCountryOfOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasCountryOfOrigin"/>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasMotor -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasMotor">
+        <rdfs:subPropertyOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isMotorOf"/>
+        <rdfs:domain rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+        <rdfs:range rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart">
+        <owl:inverseOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasWheels -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasWheels">
+        <rdfs:subPropertyOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart"/>
+        <rdfs:domain rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+        <rdfs:range rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Wheels"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isCabinOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isCabinOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isChassisOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isChassisOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#CostValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isMotorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isMotorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isPartOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasMaintenanceCostPerYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasMaintenanceCostPerYear"/>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Berlina -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Berlina">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cars"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Boxer -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Boxer">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Buses -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Buses">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Camper -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Camper">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vans"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cars -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cars">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasCabin"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasChassis"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasMotor"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasWheels"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Wheels"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chrysler -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chrysler">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Commercial"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasCabin"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#8-seats"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasWheels"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#steel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Commercial -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Commercial">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vans"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Convertible -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Convertible">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cars"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cost -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cost">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#High"/>
+                    <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low"/>
+                    <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#CostValuePartition -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#CostValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+                    <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost"/>
+                    <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#CostlyVehicle -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#CostlyVehicle">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasWheels"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Parts"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Coupe -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Coupe">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cars"/>
+        <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#CostValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#In-line -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#In-line">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#CostValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#CostValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Mercedes -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Mercedes">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Berlina"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasCabin"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#5-seats"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasWheels"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#chrome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motorhome -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motorhome">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vans"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Parts -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Parts"/>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Pickup-truck -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Pickup-truck">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Trucks"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Rotary -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Rotary">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#SUV -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#SUV">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cars"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Straight -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Straight">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Trucks -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Trucks">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#VEE -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#VEE">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#ValuePartition"/>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vans -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vans">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Vehicles">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#hasPrice"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Wheels -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Wheels">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Parts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#alloy -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#alloy">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#wheel-rims"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#bus-frame -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#bus-frame">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#car-chassis -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#car-chassis">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#truck-chassis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#chrome -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#chrome">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#wheel-rims"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#high-speed -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#high-speed">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#tyres"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#many-seats -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#many-seats">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#sporty -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#sporty">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#tyres"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#steel -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#steel">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#wheel-rims"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#summer -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#summer">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#tyres"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#touring -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#touring">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#tyres"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#truck-chassis -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#truck-chassis">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#tyres -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#tyres">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Wheels"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#van-chassis -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#van-chassis">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#wheel-rims -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#wheel-rims">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Wheels"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#winter -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#winter">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#tyres"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#2-seats -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#2-seats">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#5-seats -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#5-seats">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#8-seats -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#8-seats">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#VR&amp;W -->
+
+    <owl:Class rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#VR&amp;W">
+        <rdfs:subClassOf rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#isExpensive"/>
+                <owl:someValuesFrom rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Convertible -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Convertible">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Convertible"/>
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">380.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Berlina -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Berlina">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Mercedes"/>
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Bus -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Bus">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Buses"/>
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">843.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Camper -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Camper">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Camper"/>
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">420.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Commercial -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Commercial">
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">369.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Coupe -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Coupe">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Coupe"/>
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">263.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Motorhome -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Motorhome">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motorhome"/>
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">713.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Pickup-truck -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-Pickup-truck">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Pickup-truck"/>
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">580.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-SUV -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Example-SUV">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#SUV"/>
+        <delaFlorBonillaAlvaroP5:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">723.0</delaFlorBonillaAlvaroP5:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#High -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#High">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cost"/>
+        <delaFlorBonillaAlvaroP5:hasMaintenanceCostPerYear rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Hiht</delaFlorBonillaAlvaroP5:hasMaintenanceCostPerYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cost"/>
+        <delaFlorBonillaAlvaroP5:hasMaintenanceCostPerYear rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Low</delaFlorBonillaAlvaroP5:hasMaintenanceCostPerYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium -->
+
+    <owl:NamedIndividual rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium">
+        <rdf:type rdf:resource="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cost"/>
+        <delaFlorBonillaAlvaroP5:hasMaintenanceCostPerYear rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Medium</delaFlorBonillaAlvaroP5:hasMaintenanceCostPerYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Cabin"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Chassis"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Motor"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Wheels"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Convertible"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Coupe"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Mercedes"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#SUV"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Expensive"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Low-cost"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Medium-cost"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#In-line"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#Straight"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#VEE"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#alloy"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#chrome"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#steel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#many-seats"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#2-seats"/>
+            <rdf:Description rdf:about="http://www.car.com/ontologies/delaFlorBonillaAlvaroP5.owl#8-seats"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

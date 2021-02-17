@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:buscaVueloIberia="http://buscaVueloIberia" xmlns:buscaVueloVueling="http://buscaVueloVueling" xmlns:comparaPrecios="http://comparaPrecios" xmlns:comparador="http://comparador" xmlns:comparador_1="https://comparador" xmlns:seleccionarClase="http://seleccionarClase">
+  <process name="seleccionarClase:SeleccionarClase">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="seleccionarClase:SeleccionarClaseService" port="SeleccionarClasePort"/>
+    </provide>
+  </process>
+  <process name="buscaVueloIberia:BuscaVueloIberia">
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="buscaVueloIberia:BuscaVueloIberiaService" port="BuscaVueloIberiaPort"/>
+    </provide>
+  </process>
+  <process name="buscaVueloVueling:BuscaVueloVueling">
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="buscaVueloVueling:BuscaVueloVuelingService" port="BuscaVueloVuelingPort"/>
+    </provide>
+  </process>
+  <process name="comparador:Comparador">
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="comparador:ComparadorService" port="ComparadorPort"/>
+    </provide>
+    <invoke partnerLink="EmpleadoPL">
+      <service name="seleccionarClase:SeleccionarClaseService" port="SeleccionarClasePort"/>
+    </invoke>
+    <invoke partnerLink="IberiaPL">
+      <service name="buscaVueloIberia:BuscaVueloIberiaService" port="BuscaVueloIberiaPort"/>
+    </invoke>
+    <invoke partnerLink="VuelingPL">
+      <service name="buscaVueloVueling:BuscaVueloVuelingService" port="BuscaVueloVuelingPort"/>
+    </invoke>
+  </process>
+</deploy>

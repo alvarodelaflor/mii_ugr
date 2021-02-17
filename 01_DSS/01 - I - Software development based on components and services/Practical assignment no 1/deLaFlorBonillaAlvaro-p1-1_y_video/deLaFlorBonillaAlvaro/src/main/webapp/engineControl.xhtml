@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Práctica 1 - Álvaro de la Flor Bonilla</title>
+<style type="text/css">
+.button-red {
+	background-color: #ff0000;
+}
+
+.button-green {
+	background-color: #00ff00;
+}
+.color-red {
+	color: #ff0000
+}
+.color-green {
+	color: #00ff00
+}
+</style>
+</head>
+<body>
+	<div id="id01">
+
+		<div style="text-align: center;">
+			<h1>Engine Configuration</h1>
+			<p>You can accelerate or stop the engine</p>
+			<table style="margin-left: auto; margin-right: auto;">
+				<tr>
+					<th>Status</th>
+					<th>Acceleration</th>
+					<th>Maximum<br></br>acceleration</th>
+				</tr>
+				<tr>
+					<td style="text-align: center;">
+						<h:outputLabel styleClass="color-red" id='status1' value='#{engineBean.status}' rendered="#{engineBean.acceleration.acceleration==0}"/>
+						<h:outputLabel styleClass="color-green" id='status2' value='#{engineBean.status}' rendered="#{engineBean.acceleration.acceleration!=0}"/>
+					</td>
+					<td style="text-align: center;">
+						<h:outputLabel id='acceleration' value='#{engineBean.acceleration.acceleration}' />
+					</td>
+					<td style="text-align: center;">
+						<h:outputLabel id='maxAcceleration' value='#{engineBean.acceleration.maxAcceleration}' />
+					</td>
+				</tr>
+				<tr>
+					<h:form>
+						<td style="align-items: center;"><h:commandButton
+								styleClass="button-red" value="Stop" action="#{engineBean.stop}"
+								rendered="#{engineBean.acceleration.acceleration!=0}" /></td>
+						<td style="align-items: center;"><h:commandButton
+								styleClass="button-green" value="Accelerate"
+								action="#{engineBean.accelerate}"
+								rendered="#{engineBean.acceleration.maxAcceleration!=engineBean.acceleration.acceleration}" /></td>
+						<td>
+							<h:commandButton
+								value="Increase" action="#{engineBean.increase}" />
+							<br></br>
+							<h:commandButton
+								value="Decrease" action="#{engineBean.decrease}"
+								rendered="#{engineBean.acceleration.maxAcceleration>1}" />
+						</td>
+					</h:form>
+				</tr>
+			</table>
+			<c:if
+				test="#{engineBean.acceleration.maxAcceleration==engineBean.acceleration.acceleration}">
+				<p style="color: #ff0000">Maximum acceleration achieved</p>
+			</c:if>
+			<br></br>
+		    <form action="/deLaFlorBonillaAlvaro/">
+         		<button type="submit">Back</button>
+      		</form>			
+		</div>
+
+	</div>
+</body>
+
+</html>

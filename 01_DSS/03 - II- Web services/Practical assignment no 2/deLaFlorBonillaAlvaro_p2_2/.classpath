@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_271">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/software/jersey-jars-client/jsr311-api-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jersey-client-1.19.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/javax.ws.rs-api-2.0-m01.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/java-json.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/gson-2.6.2-javadoc.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/gson-2.6.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/httpclient-4.3.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/httpcore-4.4.13.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

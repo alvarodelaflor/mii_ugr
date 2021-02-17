@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<definitions name="Precio"
+        targetNamespace="http://precio"
+        xmlns:tns="http://precio"
+        xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        >
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     TYPE DEFINITION - List of types participating in this BPEL process 
+     The BPEL Designer will generate default request and response types
+     but you can define or import any XML Schema type and use them as part 
+     of the message types.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <types>
+        <schema attributeFormDefault="unqualified" elementFormDefault="qualified" 
+                targetNamespace="http://precio" 
+                xmlns="http://www.w3.org/2001/XMLSchema">
+
+            <element name="PrecioRequest">
+                <complexType>
+                    <sequence>
+                        <element name="producto" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="PrecioResponse">
+                <complexType>
+                    <sequence>
+                        <element name="precio" type="double"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     MESSAGE TYPE DEFINITION - Definition of the message types used as 
+     part of the port type defintions
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <message name="PrecioRequestMessage">
+        <part name="payload" element="tns:PrecioRequest"/>
+    </message>
+    <message name="PrecioResponseMessage">
+        <part name="payload" element="tns:PrecioResponse"/>
+    </message>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PORT TYPE DEFINITION - A port type groups a set of operations into
+     a logical service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+
+    <!-- portType implemented by the Precio BPEL process -->
+    <portType name="Precio">
+        <operation name="process">
+            <input  message="tns:PrecioRequestMessage" />
+            <output message="tns:PrecioResponseMessage"/>
+        </operation>
+    </portType>   
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PARTNER LINK TYPE DEFINITION
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <plnk:partnerLinkType name="Precio">
+        <plnk:role name="PrecioProvider" portType="tns:Precio"/>
+    </plnk:partnerLinkType>
+    
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     BINDING DEFINITION - Defines the message format and protocol details
+     for a web service.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <binding name="PrecioBinding" type="tns:Precio">
+    	<soap:binding style="document"
+    		transport="http://schemas.xmlsoap.org/soap/http" />
+    	<operation name="process">
+    		<soap:operation
+    			soapAction="http://precio/process" />
+    		<input>
+    			<soap:body use="literal" />
+    		</input>
+    		<output>
+    			<soap:body use="literal" />
+    		</output>
+    	</operation>
+    </binding>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SERVICE DEFINITION - A service groups a set of ports into
+     a service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <service name="PrecioService">
+    	<port name="PrecioPort" binding="tns:PrecioBinding">
+    		<soap:address location="http://localhost:8080/ode/processes/Precio" />
+    	</port>
+    </service>
+</definitions>

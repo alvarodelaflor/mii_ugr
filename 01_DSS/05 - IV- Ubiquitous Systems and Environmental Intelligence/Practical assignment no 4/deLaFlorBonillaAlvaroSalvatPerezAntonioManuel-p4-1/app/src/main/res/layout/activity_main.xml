@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab3"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/white"
+        app:tint="@color/black"
+        app:fabSize="mini"
+        android:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@id/fab2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
+        android:visibility="invisible"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab2"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/white"
+        app:tint="@color/black"
+        app:fabSize="mini"
+        android:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="25dp"
+        app:layout_constraintBottom_toTopOf="@id/fab"
+        android:src="@drawable/ic_baseline_supervised_user_circle_24"
+        android:visibility="invisible"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/black"
+        app:tint="@color/white"
+        app:fabSize="normal"
+        android:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_white_add_24"
+        />
+
+        <LinearLayout
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/box" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No hay ningún elemento"
+                android:layout_gravity="center_horizontal"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

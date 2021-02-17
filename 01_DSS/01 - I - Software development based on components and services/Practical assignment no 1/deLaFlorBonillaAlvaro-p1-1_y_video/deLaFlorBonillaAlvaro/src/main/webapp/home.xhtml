@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+
+<head>
+<title>Ejemplo de prueba con JSF!</title>
+</head>
+
+	<head>
+		<title>
+			Ejemplo JSF 􀀀 2!
+		</title>
+	</head>
+	<body>
+		<h1>
+			///////////////////////////////////////////
+			<br></br>
+			Important Information
+		</h1>
+		<p>To access the content of the first practice click on this <a href="/deLaFlorBonillaAlvaro/engineControl.xhtml">link</a></p>
+		<h1>//////////////////////////////////////////</h1>
+		<p>#{holaMundo}</p>
+		<p>#{holaMundo.getMensajeP()}</p> <!-- devuelve el valor local de HolaMundo -->
+		<p>#{holaMundo.mensaje}</p><!-- se llama al constructor de Mensaje -->
+		<p>#{mensaje.setMensaje("Hola a todo el mundo!")} </p>
+		<p>#{mensaje.getMensaje()}</p><!-- devuelve el nuevo valor del mensaje -->
+		<p>#{holaMundo.getMensajeP()} </p><!-- la copia local de mensaje en HolaMundo no ha cambiado -->
+		<p>#{holaMundo.getMensaje()} </p> <!--  ahora cambia mensaje en HolaMundo -->
+		<p>#{mensaje.setMensaje("Hi Folks!")}</p>
+		<p>#{holaMundo.getMensaje()}</p><!--ahora cambia mensaje en HolaMundo -->
+		<p>#{holaMundo.getMensajeP()} </p><!-- la copia local de mensaje en HolaMundo ha cambiado -->
+		<p>#{mensaje.setMensaje("Hi Folks all over the World!")} </p>
+		<p>#{holaMUndo.setMensajeBean(mensaje)} </p><!-- realmente este metodo no sirve para nada -->
+		<p>#{holaMundo.getMensajeP()} </p><!-- la copia local de mensaje en HolaMundo no ha cambiado -->
+		<p>#{holaMundo.getMensaje()}</p><!-- ahora cambia mensaje en HolaMundo -->
+		<p>#{holaMundo. getMensajeP()} </p><!-- la copia local de mensaje en HolaMundo ha cambiado -->
+	</body>
+
+</html>
+ 

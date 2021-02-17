@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<definitions name="Vendedor"
+        targetNamespace="http://vendedor"
+        xmlns:tns="http://vendedor"
+        xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        >
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     TYPE DEFINITION - List of types participating in this BPEL process 
+     The BPEL Designer will generate default request and response types
+     but you can define or import any XML Schema type and use them as part 
+     of the message types.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <types>
+        <schema attributeFormDefault="unqualified" elementFormDefault="qualified" 
+                targetNamespace="http://vendedor" 
+                xmlns="http://www.w3.org/2001/XMLSchema">
+
+            <element name="VendedorRequest">
+                <complexType>
+                    <sequence>
+                    	<element name="precioInicial" type="double" />
+                    	<element name="precioRegateo" type="double"></element>
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="VendedorResponse">
+                <complexType>
+                    <sequence>
+                    	<element name="aceptado" type="boolean" />
+                    	<element name="precioRegateo" type="double"></element>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     MESSAGE TYPE DEFINITION - Definition of the message types used as 
+     part of the port type defintions
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <message name="VendedorRequestMessage">
+        <part name="payload" element="tns:VendedorRequest"/>
+    </message>
+    <message name="VendedorResponseMessage">
+        <part name="payload" element="tns:VendedorResponse"/>
+    </message>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PORT TYPE DEFINITION - A port type groups a set of operations into
+     a logical service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+
+    <!-- portType implemented by the Vendedor BPEL process -->
+    <portType name="Vendedor">
+        <operation name="process">
+            <input  message="tns:VendedorRequestMessage" />
+            <output message="tns:VendedorResponseMessage"/>
+        </operation>
+    </portType>   
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PARTNER LINK TYPE DEFINITION
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <plnk:partnerLinkType name="Vendedor">
+        <plnk:role name="VendedorProvider" portType="tns:Vendedor"/>
+    </plnk:partnerLinkType>
+    
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     BINDING DEFINITION - Defines the message format and protocol details
+     for a web service.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <binding name="VendedorBinding" type="tns:Vendedor">
+    	<soap:binding style="document"
+    		transport="http://schemas.xmlsoap.org/soap/http" />
+    	<operation name="process">
+    		<soap:operation
+    			soapAction="http://vendedor/process" />
+    		<input>
+    			<soap:body use="literal" />
+    		</input>
+    		<output>
+    			<soap:body use="literal" />
+    		</output>
+    	</operation>
+    </binding>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SERVICE DEFINITION - A service groups a set of ports into
+     a service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <service name="VendedorService">
+    	<port name="VendedorPort" binding="tns:VendedorBinding">
+    		<soap:address location="http://localhost:8080/ode/processes/Vendedor" />
+    	</port>
+    </service>
+</definitions>
