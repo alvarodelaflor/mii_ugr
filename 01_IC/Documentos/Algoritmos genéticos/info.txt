@@ -1,0 +1,7 @@
+ALGORITMOS GENÉTICOS
+
+Por si a alguien le interesa, con el grupo de prácticas del miércoles hemos estado viendo cómo optimizar la evaluación de la función de fitness cuando se realiza una mutación local de la permutación que representa una solución.
+
+Esto permite pasar de 64K operaciones a 2K operaciones por evaluación en un problema de tamaño 256, lo que agiliza enormemente la ejecución de las variantes baldwiniana y lamarckiana de los algoritmos genéticos.
+
+PD: Se incluyen fragmentos de código en Python (usando NumPy) y en C++ provenientes de implementaciones realizadas por Gustavo Rivas y Santiago López, a los que tal vez conozcáis.
