@@ -16,4 +16,4 @@ Básicamente el objetivo de este repositorio es almacenar los ejercicios de auto
 
 4. Repositorio del proyecto - https://github.com/alvarodelaflor/CoronaAlert
 
-Este último repositorio constituye el principal de la asignatura y es donde hemos desarrollado nuestro proyecto principal.
+Este último repositorio constituye el principal de la asignatura y es donde hemos desarrollado nuestro proyecto principal. En concreto, el código base del proyecto también esta disponible en este repositorio a través de este [enlace](https://github.com/alvarodelaflor/mii_ugr/tree/main/01_CC/coronaalert).
