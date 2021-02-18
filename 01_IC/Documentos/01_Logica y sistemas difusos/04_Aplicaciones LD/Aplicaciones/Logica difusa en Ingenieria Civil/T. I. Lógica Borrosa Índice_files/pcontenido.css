@@ -1,0 +1,336 @@
+/* Aqui la especificacion CSS para la pagina de contenido*/
+/* Autor: Mª Angeles Olmo Castillo - G990111 
+   Fecha: 29/10/2007*/
+
+/* Identificadores basicos para la pagina */
+
+body {
+	font-size:1em;/* 14px se ve bien*/
+	color: #333333;
+	text-align:justify;
+	background-image:url("imagenes/pompas.jpg");/* para la imagen del fondo de la hoja*/
+	/* background-image: white;*/
+	font-family:'Times New Roman', Arial, Verdana, Georgia, sans-serif; 
+}
+
+h1 {
+	font-size: 2.0em; /* 30*/
+	/*font-style:italic;*/
+	font-weight: bold;
+	word-spacing:10px;
+	margin-top: 25px;
+	color:#0000CC;
+}
+
+h2, h3, h4{
+	color: #0000CC;
+}
+
+p{
+	line-height:150%;
+	text-indent:30px;
+}
+
+/* Identificadores diferentes para cada parte*/
+
+.penumeracion{ /*para parrafos con enumeracion*/
+	line-height:200%;
+	/*text-indent:30px; */
+}
+
+#hoja{
+     position: relative; 
+     height:100%;	 
+	 background-color:#F4F4FF;  /*esto es azul super super claro #F4F4FF Esto se pondra a white AQUI SE MODIFICA EL COLOR */
+     /*border-right: 3px solid #0000CC;*/
+     border-left: 3px solid #0000CC;
+	 border-bottom: 3px solid #0000CC;
+     /*margin-right: auto; /* asi se ajusta el margen al ancho que se necesita  */
+     /*margin-left: auto;*/  	
+}
+
+#superior {
+	text-align:center;
+    border-top: 5px solid #0000CC; 
+    border-bottom: 3px double  #6699FF; 
+}
+
+#contenido {
+    margin-left: 14em; /* 18 si se escribe en px en body*/
+	margin-right: 2em;
+}
+#contenido_ej{ /* para las hojas de los ejercicios y ejemplos que no llevan el indice*/
+	 text-align:center;
+	 margin-left: 1em;/* auto*/
+     margin-right: 2em;
+}
+
+#enunciado_ej{
+	margin-left: 2em;
+    margin-right: 2em;
+}
+
+#indice { /* para marcar la posicion del indice dentro de la hoja*/
+    position: absolute;
+    top: 6em;
+    left: 0.75em;
+    width: 12em; /* 10*/
+	font-size:1em;/* 16px */
+}
+
+.contenidoindice{/* para darle el formato al indice*/
+	border-bottom: 2px solid #0000CC;
+	list-style: none;
+	text-align:center;
+	line-height:4.0em; /* 200% antes 2em*/	
+}
+.indiceparticular{ /* creado para el indice dentro del indice en cada caso*/
+	border-bottom: 1px dashed #0000CC;
+	font-size:0.75em; /* 12px*/
+	text-align:left;
+	line-height:3.5em;
+	color:#FF9933;
+	font-weight: bold;
+	
+}
+
+.indiceparticularfin{ /* creado para el indice dentro del indice en cada caso*/
+	font-size:0.75em; /* 12px*/
+	text-align:left;
+	line-height:4.0em;
+	color:#FF9933;
+	font-weight: bold;
+}
+
+.subindiceparticular{ /* creado para el subindice dentro del indice en cada caso*/
+	border-bottom: 2px dotted #0000CC;
+	font-size:0.90em; 
+	text-align:right;
+	line-height:1.50em;
+}
+
+.subindiceparticularfin{ /* creado para el subindice dentro del indice en cada caso*/
+	font-size:0.90em; 
+	text-align:right;
+	line-height:3.0em;
+}
+
+.marcarindice{
+	color:#FF9933;
+	font-weight: bold;
+	text-decoration:underline;
+	/*text-decoration:none;*/
+}
+
+a:link { /* enlace normal */
+	font-weight: bold;
+	text-decoration:none; 
+	color: #6666FF;
+}
+
+a:visited { /* enlace visitado */ 
+	font-weight: bold;
+	text-decoration: none; 
+	color: #6666FF; 
+}
+
+a:hover, a:active { /* encima del objeto y mientras esta activo */ 
+	text-decoration: none;
+	color: orange; /* #0000CC*/
+}
+
+
+#emblema{ /* para enmarcar los escudos de la portada y que se ajusten a la pantalla */
+	text-align:center;
+	margin-top:5%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:4%;
+	/* word-spacing:60px; */
+}
+
+#emblemaarriba{ /* para enmarcar los escudos de la portada y que se ajusten a la pantalla */
+	text-align:center; /* center*/
+	margin-top:3%;
+	word-spacing:90px;
+	/*
+	margin-left:2em;;
+	margin-right:auto;
+	margin-bottom:auto; *//*4% */
+}
+
+#emblemaabajo{ /* para enmarcar los escudos de la portada y que se ajusten a la pantalla */
+	color: #0000CC;
+	text-align:right; /* center*/
+	margin-top:auto;/* 5%*/
+	margin-left:auto;
+	margin-right:2em;
+	margin-bottom:auto;
+}
+
+.enumeracion {/* para la enumeracion en la bibliografia */
+	list-style:square;
+	line-height:180%; /* 150*/
+}
+.enumeraciondec{
+	list-style:decimal;
+}
+
+.enumeracionind {/* para la enumeracion en la bibliografia */
+	list-style:square;
+	line-height:160%; /* 150*/
+}
+
+.ejemplo{/* para la definicion del ejemplo */
+	padding-left:20px;
+	padding-right:30px;
+	line-height:150%;
+	background-image:url("imagenes/azul90.jpg"); /* para la imagen del fondo de la hoja*/
+	/*color: #0033CC;*/
+	/* font-size:13px;
+    font-family: Verdana, Georgia, Arial, sans-serif;*/	
+}
+
+.grafica{
+	text-align:center;
+	margin-top: 20px;
+	margin-bottom:20px;
+}
+
+.graficapq{
+	text-align:center;
+	margin-top: 5px;
+	margin-bottom:5px;
+}
+
+.fotoder{
+	text-align:right;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#fotoizq{
+	text-align:left;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#fotocentro{
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#separacionfoto {
+	word-spacing:190px;
+	text-align:center;
+}
+
+.piefoto{
+	font-size:11px;/*13 */
+	text-align:center;
+}
+
+.piefoto2{
+	font-size:11px;/*13 */
+	text-align:center;
+	word-spacing:5px;
+}
+
+.letraIt{ /* letra en cursiva para los terminos del glosario */
+	font-style:italic;
+	line-height:200%;
+/* color: green;*/
+
+}
+
+.letraNg{/* letra en negrita */
+	font-weight:bold;
+}
+
+.letrasubrayasuperior{
+	text-decoration:overline;
+}
+
+.masejemplos{
+	font-weight:bold;
+    /*font-style:italic;*/ 
+	/*color:#FF6600;*/ 
+	color:#FF9933;
+}
+
+.centtexto { /* para centrar texto y no todo*/
+	text-align:center;
+}
+
+.centtabla { /* para centrar las tablas */  
+	text-align: center;
+	margin: 0 auto;
+	font-style:italic;
+}
+
+.centtablatexto { /* para centrar las tablas y el texto normal */  
+	margin: 0 auto;
+}
+
+.centtabla table{
+	margin: 0 auto;
+}
+
+#letratitulo{
+	font-size: 45px; /* 40*/
+	font-style:italic;
+	font-weight: bold;
+	word-spacing:10px;
+	margin-top: 25px;
+	color:#0000CC;
+}
+
+.centjusti{
+	text-align:justify;
+}
+
+.piepagina{
+	/*background-image:url("imagenes/pompas.jpg");*/
+	/*font-style:italic;*/
+	font-weight: bold;
+    text-align: center;
+	color:#0000CC;
+	background-color: #ffe4c4; /*#fffafa; color blanco snow*/ 
+	line-height:0.5em; /* 0.9em*/
+	
+}
+
+.piepagina2{
+	font-size:0.80em;
+	font-weight: bold;
+    text-align: center;
+	color:#0000CC;
+	/*word-spacing:10px;*/
+	/*background-color: #ffe4c4; *//*#fffafa; color blanco snow*/ 
+	line-height:0.7em; /* 0.9em*/
+	
+}
+
+.centformula { /* para centrar las tablas con formulas */  
+	text-align: center;
+	margin: 0 auto;
+
+}
+
+.centformula table{
+	margin: 0 auto;
+}
+
+.llave3 {
+
+font-size:3em;/* 14px se ve bien*/
+}
+
+.llave4 {
+
+font-size:4.8em;/* 14px se ve bien*/
+}
+
+.izquierda{ /* para centrar las tablas con formulas */  
+	text-align: left;
+}

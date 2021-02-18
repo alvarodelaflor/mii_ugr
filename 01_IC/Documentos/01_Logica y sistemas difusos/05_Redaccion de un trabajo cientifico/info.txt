@@ -1,0 +1,187 @@
+Cómo elaborar un artículo científico
+
+ 
+¿Qué es un artículo científico?
+    
+En general el artículo científico se define como un informe escrito y publicado que describe resultados originales de una investigación: se escribe para otros no para mí.
+
+El articulo científico, no es un escrito que el autor guarda para sí, sino que debe ser lo suficientemente claro como para que terceras personas capten el mensaje concreto que realmente se quiere trasmitir. En otras palabras podemos resumir que, el artículo científico: 
+
+- Es un informe sobre resultados de una investigación científica, 
+
+- Se refieren a un problema científico. 
+
+- Los resultados de la investigación deben ser validos y fidedignos. 
+
+- Comunica por primera vez los resultados de una investigación 
+
+En la Guía para la redacción de artículos científicos publicados por la UNESCO, se señala, que la finalidad esencial de un artículo científico es comunicar los resultados de investigaciones, ideas y debates de una manera clara, concisa y fidedigna. Es por ello que para escribir un buen artículo científico hay que aprender y aplicar los tres principios fundamentales de la redacción científica: 
+
+- Precisión
+- Claridad
+- Brevedad.
+ 
+Escribir un artículo científico no significa tener dones especiales, sino requiere de destrezas y habilidades creativas que puede aprender cualquier investigador.
+
+ 
+
+¿Cómo se organiza un artículo científico?
+
+Existen diferentes criterios sobre la organización del artículo científico y que el investigador puede tener en cuenta en el momento de redactarlo:
+ 
+Sistema IMRYD
+	
+Esquema 1
+	
+Esquema 2
+- Introducción 
+- Metodología 
+- Resultados 
+- Discusión
+	
+- Introducción 
+- Material y métodos
+- Resultados 
+- Discusión
+	
+- Resumen (Abstract): resume el contenido del artículo. 
+- Introducción: informa el propósito y la importancia del trabajo. 
+- Materiales y métodos: explica cómo se hizo la investigación. 
+- Resultados: presenta los datos experimentales. 
+- Discusión: explica los resultados y los compara con el conocimiento previo del tema. 
+- Literatura citada: enumera las referencias citadas en el texto.
+
+Algunos autores desagregan el apartado Conclusiones, mientras que otros lo consideran dentro de la Discusión.
+
+ 
+
+¿Cuáles son las reglas a tener en cuenta para elaborar un artículo científico?
+
+- Título: debe quedar expresado en 15 palabras que describan el contenido del artículo en forma clara, exacta y concisa. 
+
+- Anotar hasta un máximo de seis autores según el orden de importancia de su contribución material y significativa a la investigación. 
+
+- Identificar la institución o instituciones donde se realizó la investigación 
+
+- Incluir un resumen estructurado, que entre 150 y 300 palabras identifique de forma rápida y exacta el contenido básico del artículo. 
+
+- Introducción: debe explicar el problema general, el de investigación, lo que otros escribieron sobre el mismo y los objetivos e hipótesis del estudio. 
+
+- Métodos: describir el diseño de la investigación y explicar cómo se llevó a la práctica, justificando la elección de métodos y técnicas de forma tal que un lector competente pueda repetir el estudio. 
+
+- Presentar la descripción según la secuencia que siguió la investigación: diseño, población y muestra, variables, recogida de datos, análisis, etc. 
+
+- Presentar los resultados del estudio mencionando los hallazgos relevantes (incluso los contrarios a la hipótesis), incluyendo detalles suficientes para justificar las conclusiones. 
+
+- Utilizar el medio de presentación más adecuado, claro y económico: preferiblemente el texto (en tiempo pasado), tablas y gráficos (auto explicativos) e ilustraciones (sólo las esenciales). 
+
+- En la discusión mostrar las relaciones entre los hechos observados. 
+
+- Establecer conclusiones infiriendo o deduciendo una verdad, respondiendo a la pregunta de investigación planteada en la introducción. 
+
+- En la sección de agradecimientos, reconocer la colaboración de personas o instituciones que ayudaron realmente en la investigación, que colaboraron en la redacción del artículo o revisaron el manuscrito. 
+
+- Enumerar las referencias bibliográficas según orden de mención en el texto y sólo obras importantes y publicaciones recientes (salvo clásicos). 
+
+- Excluir referencias no consultadas por el autor. Adoptar el estilo de Vancouver. 
+
+- Incluir en forma de Apéndices la información relevante que por su extensión o configuración no encuadra dentro del texto.
+
+ 
+
+En el artículo científico podemos encontrar varias secciones principales:
+ 
+
+1. El titulo
+
+El título debe ser corto, conciso y claro. Es aconsejable que el título sea escrito después de redactar el núcleo del manuscrito (introducción, material-métodos, resultados y discusión). 
+
+Los títulos pueden ser informativos ("Alta incidencia de infartos de miocardio en fumadores") o indicativos ("Incidencia del infarto de miocardio en fumadores").
+ 
+
+2. ¿Cómo elaborar un resumen?
+
+Un buen resumen debe permitir al lector identificar, en forma rápida y precisa, el contenido básico del trabajo;  no debe tener más de 250 palabras y debe redactarse en pasado,  exceptuando el último párrafo o frase concluyente. No debe aportar información o conclusión que no está presente en el texto, así como tampoco debe  citar referencias bibliográficas. Debe quedar claro el problema que se investiga y el objetivo del mismo. 
+
+En general, el Resumen debe: 
+
+- Plantear los principales objetivos y el alcance de la investigación. 
+- Describir la metodología empleada. 
+- Resumir los resultados 
+- Generalizar con las principales conclusiones.
+Los errores más frecuentes en la redacción del resumen son: 
+
+- No plantear claramente la pregunta
+- Ser demasiado largo
+- Ser demasiado detallado
+
+ 
+
+3. Introducción
+
+- La Introducción es pues la presentación de una pregunta 
+
+- Porqué se ha hecho este trabajo 
+
+- El interés que tiene en el contexto científico 
+
+- Trabajos previos sobre el tema y qué aspectos no dejan claros, que constituyen el objeto de nuestra investigación. 
+
+- El último párrafo de la introducción se utilice para resumir el objetivo del estudio.
+ 
+
+4. Material y métodos
+
+Responde a la pregunta de "cómo se ha hecho el estudio". 
+
+La sección de material y métodos se organiza en cinco áreas: 
+
+1) Diseño: se describe el diseño del experimento (aleatorio, controlado, casos y controles, ensayo clínico, prospectivo, etc.) 
+
+2) Población sobre la que se ha hecho el estudio. Describe el marco de la muestra y cómo se ha hecho su selección 
+
+3) Entorno: indica dónde se ha hecho el estudio (hospital, asistencia primaria, escuela, etc.). 
+
+4) Intervenciones: se describen las técnicas, tratamientos (utilizar nombres genéricos siempre), mediciones y unidades, pruebas piloto, aparatos y tecnología, etc. 
+
+5) Análisis estadístico: señala los métodos estadísticos utilizados y cómo se han analizado los datos.
+
+ 
+
+5. Resultados
+
+Incluye las tablas y figuras que expresen de forma clara los resultados del estudio realizado por el investigador. 
+
+Los resultados deben cumplir dos funciones: 
+
+1) Expresar los resultados de los experimentos descritos en el Material y Métodos. 
+
+2) Presentar las pruebas que apoyan tales resultados, sea en forma de figuras, tablas o en el mismo texto. 
+
+El primer párrafo de este texto debe ser utilizado para resumir en una frase concisa, clara y directa, el hallazgo principal del estudio. Esta sección debe ser escrita utilizando los verbos en pasado.
+ 
+
+6. Discusión
+
+La mayoría de los lectores irán después de leer el resumen (a pesar de que los expertos recomiendan que, tras leer el título, lo primero que hay que leer es el material y métodos) y la sección más compleja de elaborar y organizar. 
+
+Algunas sugerencias pueden ayudar 
+
+- Comience la Discusión con la respuesta a la pregunta de la Introducción, seguida inmediatamente con las pruebas expuestas en los resultados que la corroboran. 
+
+- Escriba esta sección en presente ("estos datos indican que"), porque los hallazgos del trabajo se consideran ya evidencia científica. 
+
+- Saque a la luz y comente claramente, en lugar de ocultarlos, los resultados anómalos, dándoles una explicación lo más coherente posible o simplemente diciendo que esto es lo que ha encontrado, aunque por el momento no se vea explicación. Si no lo hace el autor, a buen seguro lo hará el editor. 
+
+- Especule y teorice con imaginación y lógica. Esto puede avivar el interés de los lectores. 
+
+- Incluya las recomendaciones que crea oportunas, si es apropiado. 
+
+- Y, por encima de todo, evite sacar más conclusiones de las que sus resultados permitan, por mucho que esas conclusiones sean menos espectaculares que las esperadas o deseadas.
+ 
+
+7. Bibliografía
+
+La bibliografía se citará según la normativa exigida por la revista elegida o la Editorial científica, por ello existen diferentes normas reconocidas internacionalmente y que deben ser tenidas en cuenta por el investigador. 
+
+El nivel de actualización del artículo científico, se determinará atendiendo a las bibliografías consultadas y que se encuentren en los últimos 5 años de publicación.
