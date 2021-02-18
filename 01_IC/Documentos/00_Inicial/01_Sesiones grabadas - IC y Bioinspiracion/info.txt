@@ -1,0 +1,8 @@
+INTELIGENCIA COMPUTACIONAL
+- 11/10 [32:03] Introducción a la Inteligencia Computacional
+
+BIOINSPIRACIÓN
+- 12/10 [25:28] Algoritmos genéticos
+- 13/10 [21:39] Inteligencia de enjambres
+- 15/10 [27:51] Redes neuronales
+- 16/10 [22:24] Otros modelos (autómatas celulares, sistema inmune artificial y computadoras de ADN)
