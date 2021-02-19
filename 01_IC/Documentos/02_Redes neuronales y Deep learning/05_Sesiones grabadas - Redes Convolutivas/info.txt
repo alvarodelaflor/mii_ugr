@@ -1,0 +1,12 @@
+Sesiones grabadas - Redes convolutivas
+FERNANDO BERZAL GALIANO
+•
+30 nov 2020
+REDES NEURONALES & DEEP LEARNING: REDES CONVOLUTIVAS
+NN7.0 [02:22] Redes convolutivas
+NN7.1 [07:31] Motivación
+NN7.2 [10:03] Convolución
+NN7.3 [03:48] Pooling
+NN7.4 [11:52] Clasificación de imágenes
+NN7.5 [06:56] Invarianza
+NN7.6 [08:24] Detección de objetos

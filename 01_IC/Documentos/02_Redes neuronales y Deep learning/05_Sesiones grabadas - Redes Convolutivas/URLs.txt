@@ -1,0 +1,13 @@
+Lista de reproduccion
+-----------------------------------------------------------------------------
+https://www.youtube.com/playlist?list=PLcqG89fUH9dT3TyFgvFHmHufaTJqAPG7T
+
+Videos
+-----------------------------------------------------------------------------
+NN7 1 Redes convolutivas   Motivación -> https://youtu.be/7--5jrWCbp8
+NN7 0 Redes convolutivas -> https://youtu.be/g6s3Lj8T4a8
+NN7 6 Redes convolutivas   Detección de objetos -> https://youtu.be/NGsqdvHexE0
+NN7 5 Redes convolutivas   Invarianza -> https://youtu.be/hx6aNcq1CVw
+NN7 4 Redes convolutivas   Clasificación de imágenes -> https://youtu.be/J4kiC5-Amdg
+NN7 3 Redes convolutivas   Pooling -> https://youtu.be/8shFNUw68vY
+NN7 2 Redes convolutivas   Convolución -> https://youtu.be/7t-a_B8ETvY
