@@ -1,0 +1,24 @@
+FUNDAMENTOS DE LA TEORÍA DE SUBCONJUNTOS DIFUSOS:
+17/10 [23:24] Lógicas multivaluadas 
+19/10 [25:01] Conceptos básicos de subconjuntos difusos
+MEDICIÓN DE FUNCIONES DE PERTENENCIA
+21/10 [25:44] Funciones de pertenencia
+OPERACIONES CON CONJUNTOS DIFUSOS
+23/10 [17:10] Operaciones con subconjuntos difusos
+RELACIONES DIFUSAS
+26/10 [17:56] Relaciones difusas
+NÚMEROS DIFUSOS
+27/10 [14:55] Números difusos
+VARIABLES LINGÜÍSTICAS
+30/10 [18:22] Variables lingüísticas
+RAZONAMIENTO APROXIMADO
+02/11 [10:53] Proposiciones condicionales y modus ponens generalizado
+03/11 [15:27] Sistemas basados en reglas difusas
+CONTROL
+08/11 [14:44] Introducción al control clásico
+09/11 [10:27] Controladores PID
+10/11 [11:55] Control mediante sistemas de reglas difusas
+11/11 [14:55] El péndulo invertido
+12/11 [06:42] Aplicación: Terremotos
+APLICACIONES
+16/11 [10:33] Aplicaciones de la lógica difusa

@@ -1,0 +1,21 @@
+Lista de reproduccion
+--------------------------------------------------------------------------
+https://www.youtube.com/playlist?list=PLcqG89fUH9dTLltx4KYOFo6NmQoHwyCgB
+
+Videos
+--------------------------------------------------------------------------
+00 Las Lógicas Polivaloradas -> https://youtu.be/b4hUwNBW71s
+01 fundamentos de conjuntos Difusos 2 -> https://youtu.be/gl-mugDGrYg
+02 medición de las funciones de pertenencia -> https://youtu.be/WNO3S5t3Y4Y
+03 Operaciones y Relaciones entre Conjuntos Difusos -> https://youtu.be/yLh09ys5fKU
+04 Relaciones Difusas -> https://youtu.be/6dmar5QZXD0
+05 Numeros Difusos -> https://youtu.be/U5iKLb6qyeQ
+06 Variables lingüsticas -> https://youtu.be/QZTkFpl5uac
+07 Razonamiento Aproximado Modus Ponens Generalizado -> https://youtu.be/bc01GU7YnrE
+08 Sistemas basados en Reglas Difusas -> https://youtu.be/G5h15Li8pKg
+09 El concepto de Control -> https://youtu.be/607UC1de7hA
+10 Controladores PID -> https://youtu.be/tNK6TtwqCvo
+11 Control Difuso El péndulo invertido -> https://youtu.be/6k5s8_HrokM
+12 Control difuso Fundamentos -> https://youtu.be/OYboh_jGJDA
+13 Técnicas par paliar el efecto de terremotos -> https://youtu.be/CIOHCPo0F1A
+14 Algunas aplicaciones de la Lógica Dífusa -> https://youtu.be/AXrKHmhMrZ8
