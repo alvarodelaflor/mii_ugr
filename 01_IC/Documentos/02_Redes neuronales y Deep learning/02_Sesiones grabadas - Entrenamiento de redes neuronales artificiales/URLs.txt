@@ -1,0 +1,18 @@
+Lista de reproduccion
+----------------------------------------------------------------------------
+https://www.youtube.com/playlist?list=PLcqG89fUH9dQk1xP7vA0GzaWHpBS6FCHS
+
+Videos
+----------------------------------------------------------------------------
+NN3 4 Backpropagation   Algoritmo -> https://youtu.be/rjWd4kO4aug
+NN3 3 Backpropagation   Neuronas ocultas -> https://youtu.be/eyzrH6ei-Ck
+NN3 2 Backpropagation   Neurona sigmoidal -> https://youtu.be/3plpxWaP5ZY
+NN3 1 Backpropagation   Neurona lineal -> https://youtu.be/nHz6yXkb7SQ
+NN3 0 Backpropagation -> https://youtu.be/XTQVahGxi9s
+NN4 6 Entrenamiento   Tasas de aprendizaje -> https://youtu.be/ARUBuI5WWAg
+NN4 5 Entrenamiento   Batch Normalization -> https://youtu.be/WvVmGUlcb-k
+NN4 4 Entrenamiento   Inicialización -> https://youtu.be/CGP2NTS-3YY
+NN4 3 Entrenamiento   Funciones de activación -> https://youtu.be/xz5G03gcCcQ
+NN4 2 Entrenamiento   Preprocesamiento -> https://youtu.be/E4angwnrtEQ
+NN4 1 Entrenamiento   Modos -> https://youtu.be/UEdh3z0KH_A
+NN4 0 Entrenamiento -> https://youtu.be/Kus99OdEL08

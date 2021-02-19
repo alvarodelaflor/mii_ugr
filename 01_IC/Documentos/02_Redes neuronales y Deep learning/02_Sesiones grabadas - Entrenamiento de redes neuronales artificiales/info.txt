@@ -1,0 +1,18 @@
+Sesiones grabadas - Entrenamiento de redes neuronales artificiales
+FERNANDO BERZAL GALIANO
+•
+4 nov 2020 (Última modificación: 11 nov 2020)
+BACKPROPAGATION
+NN3.0 [08:40] Entrenamiento de redes multicapa
+NN3.1 [20:01] Entrenamiento de una neurona lineal
+NN3.2 [07:33] Entrenamiento de una neurona no lineal
+NN3.3 [10:42] Entrenamiento de neuronas ocultas
+NN3.4 [07:05] El algoritmo de propagación de errores
+ENTRENAMIENTO DE REDES NEURONALES
+NN4.0 [04:04] Aspectos relevantes en el entrenamiento de una red neuronal
+NN4.1 [14:40] Modos de entrenamiento
+NN4.2 [15:34] Preprocesamiento de los datos de entrenamiento
+NN4.3 [15:29] Funciones de activación (y salida de la red)
+NN4.4 [09:01] Inicialización de los pesos
+NN4.5 [04:30] Normalización por lotes
+NN4.6 [15:47] Tasas de aprendizaje
