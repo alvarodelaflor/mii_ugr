@@ -1,0 +1,12 @@
+Sesiones grabadas - Optimización
+FERNANDO BERZAL GALIANO
+•
+25 nov 2020
+OPTIMIZACIÓN (o cómo conseguir que una red aprenda más rápido)
+NN6.0 [02:43] Optimización
+NN6.1 [09:08] Gradiente descendente
+NN6.2 [08:26] Momentos
+NN6.3 [14:05] Tasas adaptativas
+NN6.4 [08:16] rprop & rmsprop
+NN6.5 [05:05] En la práctica... (p.ej. Adam)
+NN6.6 [14:06] Técnicas de optimización de segundo orden

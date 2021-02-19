@@ -1,0 +1,13 @@
+Lista de reproduccion
+--------------------------------------------------------------------------
+https://www.youtube.com/playlist?list=PLcqG89fUH9dRXnr2kJOnYanZarszAV6B4
+
+Videos
+--------------------------------------------------------------------------
+NN6 3 Optimización   Tasas adaptativas -> https://youtu.be/slW5K5ntEHU
+NN6 2 Optimización   Momentos -> NN6 2 Optimización   Momentos
+NN6 1 Optimización   Gradiente descendente -> https://youtu.be/6zGG9ypCcak
+NN6 0 Optimización -> https://youtu.be/siOek0plCzA
+NN6 6 Optimización   Segundo orden -> https://youtu.be/tm8dgwBfv-s
+NN6 5 Optimización   En la práctica -> https://youtu.be/fKE5i98Kr3Y
+NN6 4 Optimización   rprop & rmsprop -> https://youtu.be/YLYiJNdeMi0
