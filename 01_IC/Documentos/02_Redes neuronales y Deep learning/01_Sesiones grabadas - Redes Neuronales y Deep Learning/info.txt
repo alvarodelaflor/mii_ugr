@@ -1,0 +1,20 @@
+REDES NEURONALES ARTIFICIALES
+NN0.0 [06:53] Presentación
+NN0.1 [32:59] Computación neuromórfica
+NN0.2 [36:36] Modelos de neuronas
+NN0.3 [54:27] Evolución de las redes neuronales artificiales
+NN0.4 [19:06] Información adicional
+EL PERCEPTRÓN
+NN2.0 [08:46] Introducción
+NN2.1 [08.44] Modelo de neurona artificial
+NN2.2 [14:28] El algoritmo de aprendizaje del perceptrón
+NN2.3 [10:18] Interpretación geométrica
+NN2.4 [10:11] Limitaciones del perceptrón
+APLICACIONES DE LAS REDES NEURONALES ARTIFICIALES
+NN1.0 [11:09] Motivación
+NN1.1 [26:19] Vehículos autónomos
+NN1.2 [11:04] MNIST
+NN1.3 [17:07] ImageNet
+NN1.4 [19:03] Aplicaciones con imágenes
+NN1.5 [09:32] Procesamiento de voz
+NN1.6 [14:37] Más aplicaciones...

@@ -1,0 +1,23 @@
+Lista de reproduccion
+------------------------------------------------------------------------------
+https://www.youtube.com/playlist?list=PLcqG89fUH9dR4QcyOgJx1x9qI6skaw--D
+
+Videos
+------------------------------------------------------------------------------
+NN2 2 Perceptrones   Algoritmo de entrenamiento -> https://youtu.be/sk3wkurf9RQ
+NN2 1 Perceptrones   Modelo de neurona -> https://youtu.be/9Q7wGTMRCL4
+NN2 0 Perceptrones   Introducción -> https://youtu.be/IDVRPzKhqm4
+NN0 4 Información adicional -> https://youtu.be/y_18XO29A9g
+NN0 3 Historia -> https://youtu.be/LM3KKcAiu1c
+NN1 6 Aplicaciones ++ -> https://youtu.be/zLmWu46DC7Q
+NN1 5 Aplicaciones   Voz -> https://youtu.be/ExXkIcCtBX4
+NN1 4 Aplicaciones   Imágenes++ -> https://youtu.be/GBsJV2ETryE
+NN1 3 Aplicaciones   ImageNet -> https://youtu.be/hmyj8cwzLt0
+NN1 1 Aplicaciones   Vehículos autónomos v2 -> https://youtu.be/cZphuLRchQE
+NN1 2 Aplicaciones   MNIST -> https://youtu.be/TXMJBqb5Oe0
+NN1 0 Aplicaciones   Motivación -> https://youtu.be/u00ficN4QSM
+NN2 4 Perceptrones   Limitaciones -> https://youtu.be/7-RoE5hvUKQ
+NN2 3 Perceptrones   Interpretación geométrica -> https://youtu.be/Lgga_BB4H40
+NN0 0 Redes neuronales -> https://youtu.be/Bqr6YMrpR7Y
+NN0 2 Modelos de neuronas -> https://youtu.be/JYXvokxVaRc
+NN0 1 Computación neuromórfica -> https://youtu.be/lDczf-NB3Hs
