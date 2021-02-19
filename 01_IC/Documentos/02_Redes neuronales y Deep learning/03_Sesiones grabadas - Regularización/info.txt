@@ -1,0 +1,14 @@
+Sesiones grabadas - Regularización
+FERNANDO BERZAL GALIANO
+•
+18 nov 2020
+REGULARIZACIÓN (o cómo conseguir que una red aprenda mejor)
+NN5.0 [03:53] Regularización
+NN5.1 [08:37] El problema del sobreaprendizaje
+NN5.2 [13:26] Técnicas de regularización
+NN5.3 [11:48] Weight decay (regularización L1/L2)
+NN5.4 [03:17] Restricciones sobre los pesos
+NN5.5 [07:11] Introducción de ruido
+NN5.6 [05:13] Early stopping (parada temprana)
+NN5.7 [12:08] Dropout
+NN5.8 [12:21] Ajuste de hiperparámetros

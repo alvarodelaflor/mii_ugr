@@ -1,0 +1,15 @@
+Lista de reproducción
+---------------------------------------------------------------------------
+https://www.youtube.com/playlist?list=PLcqG89fUH9dRqWn1dMXDK4_bCDT7D9kt-
+
+Videos
+---------------------------------------------------------------------------
+NN5 1 Regularización   Sobreaprendizaje -> https://youtu.be/nB8JHOQEcyI
+NN5 0 Regularización -> https://youtu.be/qh7-yp4l5og
+NN5 8 Hiperparámetros -> https://youtu.be/_kO0LMz65AY
+NN5 7 Regularización   Dropout -> https://youtu.be/RXEcdRTTlfE
+NN5 6 Regularización   Early Stopping -> https://youtu.be/bZnv4Z0MsJE
+NN5 5 Regularización   Ruido -> https://youtu.be/cOahut6iqlM
+NN5 4 Regularización   Restricciones -> https://youtu.be/x8nvCxvR7rU
+NN5 3 Regularización   Weight Decay -> https://youtu.be/DaAGQ9HbqWo
+NN5 2 Regularización   Técnicas -> https://youtu.be/fYGrlUuj1Ug
