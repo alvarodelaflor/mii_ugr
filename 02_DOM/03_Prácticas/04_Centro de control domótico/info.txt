@@ -1,0 +1,6 @@
+Centro de control domótico
+Instale un centro de control domótico Home Assistant en la Raspberry Pi del kit de prácticas que una vez comenzadas las clases se le entregará para poder realizar la práctica desde casa.. Instale algunos add-ons básicos como File editor, que permite editar archivos directamente desde Home Assistant, Samba share, que permite acceder a las carpetas de Home Assistant desde Windows, Terminal & SSH para acceder al sistema, Mosquito broker, que instala un broker MQTT, Node-RED, instala la herramienta de programación Node-RED, y Duck DNS, que permite acceder desde el exterior al HomeAssistant con ssl.
+
+Broker MQTT: realice algunas pruebas de comunicación a través de su broker: con su centro de control (cree entidades MQTT en Home Assistant), con Node-Red, con  con el dispositivo IoT, con alguna APP de su móvil y/o PC, etc.
+
+Node-RED: conecte a su Centro de Control con dispositivos MQTT mediante Node-RED. Pruebe la utilización práctica de distintos nodos, incluyendo los de la librería "dashboard".

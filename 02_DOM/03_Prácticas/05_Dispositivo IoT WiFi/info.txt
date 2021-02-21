@@ -1,0 +1,3 @@
+Dispositivo IoT WiFi
+
+Siga el desarrollo descrito en el documento "Practica IoT telemetro.pdf", que puede descargar desde la plataforma. Una vez comenzadas las clases se entregara el material de laboratorio necesario para poder realizar la práctica desde casa.
