@@ -1,0 +1,63 @@
+---
+title: "Pruebas con conjunto de datos Iris"
+author: "Juan Gómez Romero"
+date: "10 de febrero de 2021"
+output:
+    html_document:
+      code_folding: "show"
+      toc: true
+      toc_depth: 2
+      toc_float: true
+      df_print: paged
+
+    # prettydoc::html_pretty:
+    #  theme: leonids
+    #  highlight: github
+params:
+  datos:
+    value: "iris.csv"
+  n_bins:
+    input: slider
+    min: 5
+    max: 15
+    step: 1
+    round: 1
+    sep: ''
+    value: 10
+  comparar_x:
+    input: select
+    value: "petal.length"
+    choices: ["petal.length", "petal.width", "sepal.length", "sepal.width"]
+  comparar_y:
+    input: select
+    value: "petal.width"
+    choices: ["petal.length", "petal.width", "sepal.length", "sepal.width"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+library(knitr)
+library(tidyverse)
+```
+
+## Lectura de datos
+
+```{r lectura}
+iris_data <- read_delim(params$datos, delim = " ")
+names(iris_data) <- make.names(names(iris_data), unique=TRUE)
+head(iris)
+```
+## Histograma
+```{r histograma}
+ggplot(data = iris_data) + 
+  geom_histogram(aes(x = sepal.length), bins = params$n_bins)
+```
+
+## Gráfico de dispersión
+```{r dispersion, echo=FALSE}
+ggplot(data = iris_data) + 
+  geom_point(aes_string(x = params$comparar_x, y = params$comparar_y, color = "class", shape = "class"))  +
+  labs(x = params$comparar_x, y = params$comparar_y) +  
+  scale_color_discrete(name ="Clase", labels=c("Iris Setosa", "Iris Versicolor", "Iris Virginica")) +
+  scale_shape_discrete(name ="Clase", labels=c("Iris Setosa", "Iris Versicolor", "Iris Virginica"))
+```

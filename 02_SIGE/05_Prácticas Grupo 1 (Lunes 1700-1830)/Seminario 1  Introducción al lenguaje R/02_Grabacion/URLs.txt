@@ -1,0 +1,13 @@
+Lista de reproduccion
+-------------------------------------------------------------------------------
+https://www.youtube.com/playlist?list=PLcqG89fUH9dQQ8Uk-1dCZbfWKhLEsX5Ur
+
+Videos
+-------------------------------------------------------------------------------
+Seminario 01 01 PRESENTACION -> https://youtu.be/HynTzgY8oMU
+Seminario 01 02 INTRODUCCION A R -> https://youtu.be/_5puyhTY88Y
+Seminario 01 03 TIPOS BASICOS -> https://youtu.be/1J_0N75F2OI
+Seminario 01 04 FUNCIONES Y BUCLES -> https://youtu.be/93K7kjjLbO4
+Seminario 01 05 GRAFICOS -> https://youtu.be/Ce3EDKIWO_s
+Seminario 01 06 RMARKDOWN Y SHINY -> https://youtu.be/Jw1SlgB6B6Y
+Seminario 01 07 DESPEDIDA -> https://youtu.be/Ds6jxDdRZtw

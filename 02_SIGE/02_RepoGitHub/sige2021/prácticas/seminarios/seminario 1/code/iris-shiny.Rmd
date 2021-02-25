@@ -1,0 +1,41 @@
+---
+title: "Iris : Shiny + RMarkdown"
+author: "Juan Gómez Romero"
+date: "2/10/2021"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+library(knitr)
+library(tidyverse)
+```
+
+## Lectura de datos
+```{r lectura}
+iris_data <- read_delim("iris.csv", delim = " ")
+names(iris_data) <- make.names(names(iris_data), unique=TRUE)
+head(iris)
+```
+
+## Gráfico de dispersión
+```{r dispersion, echo=FALSE}
+inputPanel(
+  selectInput("x_variable", label = "Variable x:",
+              choices = c("petal.length", "petal.width", "sepal.length", "sepal.width"), 
+              selected = "petal.length"),
+  
+  selectInput("y_variable", label = "Variable y:",
+              choices = c("petal.length", "petal.width", "sepal.length", "sepal.width"), 
+              selected = "petal.width")
+)
+
+renderPlot({
+  ggplot(data = iris_data) + 
+    geom_point(aes_string(x = input$x_variable, y = input$y_variable, color = "class", shape = "class"))  +
+    labs(x = input$x_variable, y = input$y_variable) +  
+    scale_color_discrete(name ="Clase", labels=c("Iris Setosa", "Iris Versicolor", "Iris Virginica")) +
+    scale_shape_discrete(name ="Clase", labels=c("Iris Setosa", "Iris Versicolor", "Iris Virginica"))
+})
+```

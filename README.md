@@ -23,12 +23,12 @@ Asignaturas del primer cuatrimestre impartidas:
 
 Asignaturas del segundo cuatrimestre impartidas:
 
-1. **SIGE**:Sistemas Inteligentes para la Gestión en la Empresa (4 cr.)
+1. [**SIGE**:Sistemas Inteligentes para la Gestión en la Empresa (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_SIGE)
 2. **EV**:Entornos Virtuales (4 cr.)
-3. **CC**:Cloud Computing: Servicios y Aplicaciones (4 cr.)
+3. [**CC**:Cloud Computing: Servicios y Aplicaciones (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_CC2)
 4. [**DOM**:Domótica (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_DOM)
-5. **GIW**:Gestión de Información en la Web (4 cr.)
-6. **SSBW**:Sistemas Software Basados en Web (4 cr.)
+5. [**GIW**:Gestión de Información en la Web (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_GIW)
+6. [**SSBW**:Sistemas Software Basados en Web (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_SSBW)
 
 ![Horario segundo cuatrimestre](00_img/01_horario.png)
 
