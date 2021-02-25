@@ -1,0 +1,10 @@
+Siguiendo el documento "guion KNX.pdf" que puede descargar desde la pestaña "archivos", realice con ETS5 una aplicación de "control de regulación de luz" para el equipo de prácticas del laboratorio.
+Posteriormente realice controles de:
+• Control de presencia (control de luz durante la noche por detección de movimiento)
+• Control de temperatura (termostato con Touch-MyDesign o con Z41)
+• Control de persianas (con mininbox 45)
+• Uso de un panel táctil Z41 (establecimiento de temperatura de consigna para el termostato, control mediante app android o iOS "Z41 Remote", etc.)
+
+Se deben realizar todos los ejercicios aunque no sea posible probarlos en el laboratorio.
+
+Suba la documentación de las prácticas a la carpeta KNX.

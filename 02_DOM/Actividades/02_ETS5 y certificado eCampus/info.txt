@@ -1,0 +1,2 @@
+Instale el programa ETS5 en su ordenador para poder realizar las prácticas de KNX. Puede descargar el programa desde "knx.org".
+Además puede obtener el certificado del eCampus ETS5 desde "knx.org". En ese caso debe subir para su evaluación el certificado obtenido a la carpeta "Certificado KNX" de esta actividad.
