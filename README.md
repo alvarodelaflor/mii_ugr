@@ -1,4 +1,6 @@
-# ![Alhambra](00_img/alhambra.jpg) Máster Oficial de Ingeniería Informática - Universidad de Granada 
+<h1 align="center">Máster Oficial de Ingeniería Informática - Universidad de Granada</h1>
+
+# ![Alhambra](00_img/alhambra.jpg)  
 
 Repositorio personal para el Máster Oficial de Ingeniería Informática de la [Univerdad de Granada](https://www.ugr.es/), curso académico 2020 - 2021.
 
