@@ -29,6 +29,7 @@ Asignaturas del segundo cuatrimestre impartidas:
 4. [**DOM**:Domótica (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_DOM)
 5. [**GIW**:Gestión de Información en la Web (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_GIW)
 6. [**SSBW**:Sistemas Software Basados en Web (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_SSBW)
+7. [**ASS**:Administración de Sistemas y Seguridad (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_ASS)
 
 ![Horario segundo cuatrimestre](00_img/01_horario.png)
 
