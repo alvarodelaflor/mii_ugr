@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ES" lang="ES"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Germán Arroyo">
+  <title>Introducción a la guía de prácticas</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">html{
+background-color: black;
+}
+body{
+max-width: 650px;
+margin: auto;
+padding: 50px;
+text-align:justify;
+background: white;
+}
+h1 {
+font-size:30px;
+color:#000000;
+background-color: #fcbb06;
+font-weight:bold;
+}
+h2 {
+font-size:30px;
+font-weight:bold;
+}
+h3 {
+font-size:22px;
+font-weight:bold;
+font-style:italic;
+}
+h4 {
+font-size:16px;
+font-weight:bold;
+font-style:italic;
+color:#ffefff;
+background-color: #000060;
+}
+blockquote {
+color:#700000;
+background-color: #ffffe5;
+}
+.author {
+font-size:12px;
+text-align:center;
+font-style:italic;
+}
+.title {
+font-size:30px;
+color:#700000;
+background-color: #ffffff;
+font-weight:bold;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Introducción a la guía de prácticas</h1>
+<p class="author">Germán Arroyo</p>
+</header>
+<h1 id="introducción-a-godot-y-blender">Introducción a Godot y Blender</h1>
+<p>El objetivo de esta guía de prácticas es la de orientar a los 
+estudiantes en el proceso de aprendizaje de una herramienta de creación 
+de entornos virtuales jerárquica y orientada a nodos, y el asentamiento 
+de los conocimientos teóricos en una plataforma práctica de desarrollo.</p>
+<p>Esta guía tiene varias secciones principales, donde cada una de ellas
+ explica cada una de las prácticas a entregar y el proceso a seguir.</p>
+<p>Cada una de las prácticas plantea al menos un problema a resolver. <strong>LA SOLUCIÓN AL PROBLEMA NO SE ENCUENTRA EN LA GUÍA</strong> ni en las páginas webs de referencia, sino que hay que obtenerla a partir de un proceso <strong>razonado</strong> de lo aprendido en teoría, por lo que es <strong>FUNDAMENTAL</strong> entender bien la parte teórica antes de realizar la práctica.</p>
+<p>En estas prácticas utilizaremos dos herramientas, por un lado usaremos Godot, y por otro Blender.</p>
+<p>Godot es una herramienta para el desarrollo de videojuegos y entornos
+ virtuales. Esta herramienta es software libre, lo que significa que 
+está en constante desarrollo y que todo el código está disponible de 
+forma abierta y pública. Todas las prácticas de esta guía se 
+complementan con páginas concretas de la documentación oficial de la 
+herramienta.</p>
+<p>Blender es una herramienta de producción 3D, y por tanto, una 
+herramienta demasiado amplia como para examinarla en profundidad en una 
+asignatura como esta. En esta guía (y tanto en teoría como en prácticas)
+ se tocarán únicamente los conceptos relativos al modelado y 
+desenrollado de mallas, así como animación. Este software se usará en 
+esta guía como herramienta complementaria a Godot, por lo que será la 
+herramienta base que usaremos para crear los elementos 3D que 
+importaremos en Godot.</p>
+<blockquote>
+<p><strong>Es FUNDAMENTAL y OBLIGATORIO que el estudiante LEA y ESTUDIE la guía antes de entrar al aula de prácticas.</strong></p>
+</blockquote>
+<p>Verás que en esta guía hay <strong>ejercicios de entrenamiento</strong> y <strong>ejercicios calificables</strong>. NO se RECOMIENDA en ABSOLUTO <strong>NO realizar los ejercicios de entrenamiento</strong>,
+ ya que, aunque no supongan una merma o bonificación en la evaluación, 
+se suponen realizados y se asume que el estudiante los domina. Estos 
+ejercicios son parte del proceso de aprendizaje de la herramienta y el 
+no dominar estos ejercicios <strong>afectará al rendimiento de los que sí son evaluables</strong>. Los <strong>ejercicios calificables</strong>
+ sí serán evaluables y afectarán directamente a la calificación de 
+prácticas. Estos ejercicios irán, normalmente, acompañados de una <strong>defensa</strong> ante el profesor de prácticas.</p>
+<ul>
+<li>En el aula tendrás que entrar con el código: <strong>iig</strong>
+<ul>
+<li>La clave será: <strong>iig2010</strong></li>
+<li>Los programas no vienen instalados, pero puedes descargarlos de forma sencilla en tu cuenta y ejecutarlos desde ahí.</li>
+</ul></li>
+</ul>
+<p>Aunque dado los pocos requisitos necesarios podrás usar tu computador y tu sistema operativo favorito sin problema.</p>
+<p>Antes de comenzar, cada alumno debe elegir una temática para las prácticas, <strong>dicha temática debe ser única para cada alumno</strong>, así pues, debes <strong>comunicar la decisión</strong> de tu temática al profesor <strong>ANTES DE LA ENTREGA DEL PRIMER EJERCICIO EVALUABLE</strong> de la guía de prácticas. La temática es libre, aquí tienes algunos ejemplos por temas:</p>
+<ul>
+<li>Militar:
+<ul>
+<li>Manejo de un submarino.</li>
+<li>Uso de un tanque.</li>
+</ul></li>
+<li>Tecnológico:
+<ul>
+<li>Simulación en una estación espacial.</li>
+<li>Manejo de una central nuclear.</li>
+</ul></li>
+<li>Sanitario:
+<ul>
+<li>Simulación de consultas en un hospital.</li>
+<li>Simulación de dispositivos médicos (aparato de resonancias magnéticas…).</li>
+</ul></li>
+<li>Vida diaria:
+<ul>
+<li>Simulación de gestor de tráfico.</li>
+<li>Simulación de colocación de productos de supermercado.</li>
+</ul></li>
+<li>Fantasía:
+<ul>
+<li>Simulación del laboratorio de un mago.</li>
+<li>Exploración de ruinas antiguas misteriosas.</li>
+</ul></li>
+<li>Ciencia ficción:
+<ul>
+<li>Simulación de reparaciones del sistema FTL de una nave espacial.</li>
+<li>Exploración de una nave industrial de carga entre sistemas.</li>
+</ul></li>
+</ul>
+<p>Y seguro que se te ocurren mejores ideas. Una vez seleccionado el 
+tema no podrás cambiar más adelante, así que asegúrate de que te gusta y
+ estás cómodo con él. En cualquier caso, el tema no afectará a la 
+dificultad de la práctica de ninguna forma.</p>
+<p><strong>Todas las prácticas deben estar integradas de alguna forma en la temática elegida para poder ser evaluadas.</strong> Si tienes dudas, consulta a tu profesor.</p>
+
+
+</body></html>
