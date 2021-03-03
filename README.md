@@ -26,10 +26,10 @@ Asignaturas del segundo cuatrimestre impartidas:
 1. [**SIGE**:Sistemas Inteligentes para la Gestión en la Empresa (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_SIGE)
 2. [**EV**:Entornos Virtuales (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_EV)
 3. [**CC**:Cloud Computing: Servicios y Aplicaciones (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_CC2)
-4. [**DOM**:Domótica (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_DOM)
-5. [**GIW**:Gestión de Información en la Web (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_GIW)
-6. [**SSBW**:Sistemas Software Basados en Web (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_SSBW)
-7. [**ASS**:Administración de Sistemas y Seguridad (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_ASS)
+4. [**GIW**:Gestión de Información en la Web (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_GIW)
+5. [**SSBW**:Sistemas Software Basados en Web (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_SSBW)
+6. [**ASS**:Administración de Sistemas y Seguridad (4 cr.)](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_ASS)
+7. [**DOM**:Domótica (4 cr.) *<span style="color:RED">**NO CURSADA**</span>*](https://github.com/alvarodelaflor/mii_ugr/tree/main/02_DOM)
 
 ![Horario segundo cuatrimestre](00_img/01_horario.png)
 
