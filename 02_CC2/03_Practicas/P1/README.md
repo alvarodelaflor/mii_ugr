@@ -73,39 +73,39 @@ Además debe incluir las directivas para realizar un balanceado de carga entre a
     mkdir NextCloud-docker-server
 
     cd NextCloud-docker-server
-    
+
     #Copiamos este codigo en un fichero llamado docker-compose.yml
 
     version: '3'
     services:
-    nextcloud:
-        image: "nextcloud:21.0.0-apache"
-        ports:
-        - 8080:80
-        restart: always
-        volumes:
-        - nextcloud:/var/www/html
-        environment:
-        - MYSQL_DATABASE=nextcloud
-        - MYSQL_USER=nextcloud
-        - MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
-        - MYSQL_HOST=mariadb
-        - NEXTCLOUD_ADMIN_USER=&lt;NEXTCLOUD_ADMIN_USER&gt;
-        - NEXTCLOUD_ADMIN_PASSWORD=&lt;NEXTCLOUD_ADMIN_PASSWORD&gt;
-    mariadb:
-        image: "mariadb:10.4.8-bionic"
-        command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
-        restart: always
-        volumes:
-        - db:/var/lib/mysql
-        environment:
-        - MYSQL_ROOT_PASSWORD=&lt;MYSQL_ROOT_PASSWORD&gt;
-        - MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
-        - MYSQL_DATABASE=nextcloud
-        - MYSQL_USER=nextcloud
+        nextcloud:
+            image: "nextcloud:21.0.0-apache"
+            ports:
+            - 8080:80
+            restart: always
+            volumes:
+            - nextcloud:/var/www/html
+            environment:
+            - MYSQL_DATABASE=nextcloud
+            - MYSQL_USER=nextcloud
+            - MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
+            - MYSQL_HOST=mariadb
+            - NEXTCLOUD_ADMIN_USER=&lt;NEXTCLOUD_ADMIN_USER&gt;
+            - NEXTCLOUD_ADMIN_PASSWORD=&lt;NEXTCLOUD_ADMIN_PASSWORD&gt;
+        mariadb:
+            image: "mariadb:10.4.8-bionic"
+            command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
+            restart: always
+            volumes:
+            - db:/var/lib/mysql
+            environment:
+            - MYSQL_ROOT_PASSWORD=&lt;MYSQL_ROOT_PASSWORD&gt;
+            - MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
+            - MYSQL_DATABASE=nextcloud
+            - MYSQL_USER=nextcloud
     volumes:
-    nextcloud:
-    db:
+        nextcloud:
+        db:
 
     # (Opcional) Creamos en entorno necesario para la inicialización del sistema, para ello dentro de este mismo directorio añadimos un fichero oculto llamado .env: Añadimos las variables que queramos, por ejemplo las de las claves que son más sensibles:
 
