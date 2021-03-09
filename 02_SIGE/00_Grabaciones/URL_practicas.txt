@@ -11,3 +11,6 @@ Seminario 1 -> https://youtu.be/HynTzgY8oMU
                https://youtu.be/Ce3EDKIWO_s
                https://youtu.be/Jw1SlgB6B6Y
                https://youtu.be/Ds6jxDdRZtw
+
+Práctica 1 ->  https://youtu.be/Xc1l2ISqBFk (Descripción de la práctica)
+               https://youtu.be/r7dcfOROL5I (Walkthrough del código inicial)
