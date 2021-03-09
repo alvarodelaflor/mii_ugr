@@ -68,57 +68,58 @@ Además debe incluir las directivas para realizar un balanceado de carga entre a
 <h3 id="creación-de-contenedor-con-nextcloud">Creación de contenedor con NextCloud</h3>
 <p>Existen varias formas de crear el contenedor de forma más o menos automatizada, en nuestro caso la configuración inicial debe permitir conectar NextCloud con <strong>MySQL/MariaDB</strong>, para poder utilizado de forma distribuida, ya que si se usa <strong>SQLite</strong> no tenemos la opción de hacer un sistema más robusto. De este modo la opción por defecto que debeis usar es la de Base de Datos con <strong>MySQL/MariaDB</strong>.</p>
 <p>Para ello, utilizaremos la siguiente descripción de servicios (en este caso de ejemplo, sólo se monta un servicio de NextCloud y una BBDD MaríaSQL), pero debes tener en cuenta que debe admitir al menos 2 servicios idénticos (opcionales) de NextCloud que comparten el espacio de almacenamiento (no de BBDD, que es sólo una instancia).</p>
-<pre><code># Creamos un nuevo directorio
-mkdir NextCloud-docker-server
 
-cd NextCloud-docker-server
+    # Creamos un nuevo directorio
+    mkdir NextCloud-docker-server
 
-# Copiamos este codigo en un fichero llamado docker-compose.yml
+    cd NextCloud-docker-server
+    
+    #Copiamos este codigo en un fichero llamado docker-compose.yml
 
-version: '3'
-services:
-  nextcloud:
-    image: "nextcloud:21.0.0-apache"
-    ports:
-      - 8080:80
-    restart: always
+    version: '3'
+    services:
+    nextcloud:
+        image: "nextcloud:21.0.0-apache"
+        ports:
+        - 8080:80
+        restart: always
+        volumes:
+        - nextcloud:/var/www/html
+        environment:
+        - MYSQL_DATABASE=nextcloud
+        - MYSQL_USER=nextcloud
+        - MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
+        - MYSQL_HOST=mariadb
+        - NEXTCLOUD_ADMIN_USER=&lt;NEXTCLOUD_ADMIN_USER&gt;
+        - NEXTCLOUD_ADMIN_PASSWORD=&lt;NEXTCLOUD_ADMIN_PASSWORD&gt;
+    mariadb:
+        image: "mariadb:10.4.8-bionic"
+        command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
+        restart: always
+        volumes:
+        - db:/var/lib/mysql
+        environment:
+        - MYSQL_ROOT_PASSWORD=&lt;MYSQL_ROOT_PASSWORD&gt;
+        - MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
+        - MYSQL_DATABASE=nextcloud
+        - MYSQL_USER=nextcloud
     volumes:
-      - nextcloud:/var/www/html
-    environment:
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
-      - MYSQL_HOST=mariadb
-      - NEXTCLOUD_ADMIN_USER=&lt;NEXTCLOUD_ADMIN_USER&gt;
-      - NEXTCLOUD_ADMIN_PASSWORD=&lt;NEXTCLOUD_ADMIN_PASSWORD&gt;
-  mariadb:
-    image: "mariadb:10.4.8-bionic"
-    command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
-    restart: always
-    volumes:
-      - db:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=&lt;MYSQL_ROOT_PASSWORD&gt;
-      - MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-volumes:
-  nextcloud:
-  db:
+    nextcloud:
+    db:
 
-# (Opcional) Creamos en entorno necesario para la inicialización del sistema, para ello dentro de este mismo directorio añadimos un fichero oculto llamado .env: Añadimos las variables que queramos, por ejemplo las de las claves que son más sensibles:
+    # (Opcional) Creamos en entorno necesario para la inicialización del sistema, para ello dentro de este mismo directorio añadimos un fichero oculto llamado .env: Añadimos las variables que queramos, por ejemplo las de las claves que son más sensibles:
 
-MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
-MYSQL_ROOT_PASSWORD=&lt;MYSQL_ROOT_PASSWORD&gt;
-MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
-NEXTCLOUD_ADMIN_PASSWORD=&lt;NEXTCLOUD_ADMIN_PASSWORD&gt;
+    MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
+    MYSQL_ROOT_PASSWORD=&lt;MYSQL_ROOT_PASSWORD&gt;
+    MYSQL_PASSWORD=&lt;MYSQL_PASSWORD&gt;
+    NEXTCLOUD_ADMIN_PASSWORD=&lt;NEXTCLOUD_ADMIN_PASSWORD&gt;
 
 
-# Construimos el contenedor 
-docker-compose up -d
-# o bien, si queremos ver el proceso de carga y los logs en tiempo real, usaremos:
-docker-compose up
-</code></pre>
+    # Construimos el contenedor 
+    docker-compose up -d
+    # o bien, si queremos ver el proceso de carga y los logs en tiempo real, usaremos:
+    docker-compose up
+
 <h3 id="creación-de-contenedor-con-mariadbmysql">Creación de contenedor con MariaDB/MySQL</h3>
 <p>Hay muchas formas de componer MySQL/MariaDB, una de ellas puede ser la siguiente:<br>
 wget <a href="https://raw.githubusercontent.com/owncloud/docs/master/modules/admin_manual/examples/installation/docker/docker-compose.yml">https://raw.githubusercontent.com/owncloud/docs/master/modules/admin_manual/examples/installation/docker/docker-compose.yml</a></p>
