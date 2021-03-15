@@ -1,3 +1,3 @@
-FROM bitnami/nginx:1.19-debian-10
+FROM nginx:1.19
 
-COPY my_server_block.conf /opt/bitnami/nginx/conf/server_blocks/
+COPY my_server_block.conf /etc/nginx/nginx.conf
