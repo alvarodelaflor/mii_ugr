@@ -1,0 +1,14 @@
+Actividad 1: Redes neuronales con caret
+
+Crea un cuaderno .Rmd a partir de titanic.Rmd que realice las siguientes tareas de clasificación automática empleando caret:
+
+    Aprendizaje de un modelo de clasificación utilizando 'Random Forest' (lo llamaremos modelo_rf1) [ver línea 437 y siguientes]
+    Variación sobre modelo1 utilizando una partición de datos 80-20 y validación cruzada (modelo_rf2)
+    Comparación y selección del mejor modelo en modelo_rf1, modelo_rf2 términos de precisión y AUC (modelo_rf)
+    Aprendizaje de modelo de clasificación utilizando redes neuronales - perceptrón multicapa y parámetros por defecto (modelo_rna)
+    Envío de solución a Kaggle con modelo_rna
+    Mejora de modelo_rna mediante entrenamiento con rejilla de parámetros para los parámetros .size, .decay (modelo_rna_mejorado)
+    Envío de solución a Kaggle con modelo_rna_mejorado
+    Comparación de modelo_rna_mejorado con modelo_rf
+
+Sube el fichero .Rmd con las ampliaciones, indicando al final del mismo en una tabla las métricas obtenidas para modelo_rf y modelo_rna_mejorado en entrenamiento, validación y test.
