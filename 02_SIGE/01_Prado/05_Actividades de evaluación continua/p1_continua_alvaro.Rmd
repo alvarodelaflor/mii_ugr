@@ -1,0 +1,46 @@
+---
+title: "p1_continua_alvaro"
+author: "Alvaro de la Flor Bonilla"
+date: "16/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Random Forest
+
+En primer lugar, cargamos los datos con los que trabajaremos durante todo el proyecto.
+
+```{r}
+library(tidyverse)
+data_raw <- read_csv('train.csv')
+data_raw # str(data_raw) , glimpse(data_raw)
+```
+
+El siguiente paso, antes de comenzar consistirá en realizar un preprocesamiento de los datos. Para ver estos podemos utilizar:
+
+```{r}
+library(funModeling)
+df_status(data_raw)
+```
+```{r}
+status <- df_status(data_raw)
+
+## columnas con NAs
+na_cols <- status %>%
+  filter(p_na > 70) %>%
+  select(variable)
+## columnas con valores diferentes
+dif_cols <- status %>%
+  filter(unique > 0.8 * nrow(data_raw)) %>%
+  select(variable)
+
+## eliminar columnas
+remove_cols <- bind_rows(
+  list(na_cols, dif_cols)
+)
+data_reduced <- data_raw %>%
+  select(-one_of(remove_cols$variable))
+```
