@@ -43,4 +43,96 @@ remove_cols <- bind_rows(
 )
 data_reduced <- data_raw %>%
   select(-one_of(remove_cols$variable))
+
+status2 <- df_status(data_reduced)
+```
+
+Tal y como vimos en la práctica, también tendremos que realizar los siguientes pasos:
+
+-   Codificación de variables: *Survived* = {'Yes', 'No'}, *Pclass* = <tt>factor</tt>
+-   Discretización de variables numéricas: *Fare_Interval* = {'More.than.30', 'Between.20.30', 'Between.10.20', 'Less.than.10'}
+-   Selección de variables: solo se consideran para la predicción: *Survived* (variable objetivo), *Pclass*, *Sex*, *Fare_Interval*
+
+```{r}
+library(caret)
+data <-
+  data_raw %>%
+  mutate(Survived = as.factor(ifelse(Survived == 1, 'Yes', 'No'))) %>%
+  mutate(Pclass = as.factor(Pclass)) %>%
+  mutate(Fare_Interval = as.factor(
+    case_when(
+      Fare >= 30 ~ 'More.than.30',
+      Fare >= 20 & Fare < 30 ~ 'Between.20.30',
+      Fare < 20 & Fare >= 10 ~ 'Between.10.20',
+      Fare < 10 ~ 'Less.than.10'))) %>%
+  select(Survived, Pclass, Sex, Fare_Interval)
+
+data
+```
+
+# 1. Aprendizaje de un modelo de clasificación utilizando 'Random Forest' (lo llamaremos modelo_rf1)
+
+## Parámetros del algoritmo de aprendizaje
+
+En esta primera versión no vamos a utilizar validación cruzada.
+
+```{r}
+rpartCtrl1 <- trainControl(classProbs = TRUE)
+```
+
+## Conjuntos de entrenamiento y validación
+
+Particionamos los datos en un 70% para el test y 30% para la validación.
+
+```{r}
+set.seed(0)
+trainIndex1 <- createDataPartition(data$Survived, p = .7, list = FALSE)
+train1 <- data[trainIndex, ] 
+val1   <- data[-trainIndex, ]
+```
+
+```{r}
+library(pROC)
+modelo_rf1 <- train(Survived ~ ., data = train1, method = "rf", metric = "ROC", trControl = rpartCtrl1)
+predictionValidationProb1 <- predict(modelo_rf1, val1, type = "prob")
+auc1 <- roc(val$Survived, predictionValidationProb[["Yes"]], levels = unique(val[["Survived"]]))
+roc_validation1 <- plot.roc(auc1, ylim=c(0,1), type = "S" , print.thres = T, main=paste('Validation AUC 1:', round(auc1$auc[[1]], 2)))
+```
+
+# 2. Variación sobre modelo1 utilizando una partición de datos 80-20 y validación cruzada (modelo_rf2)
+
+```{r}
+set.seed(0)
+trainIndex2 <- createDataPartition(data$Survived, p = .8, list = FALSE)
+train2 <- data[trainIndex, ] 
+val2   <- data[-trainIndex, ]
+```
+
+```{r}
+rpartCtrl2 <- trainControl(verboseIter = TRUE, classProbs = TRUE, summaryFunction = twoClassSummary, method = "cv", number = 20)
+rpartParametersGrid <- expand.grid(.cp = c(0.01, 0.05)) # se pide que se prueben con la lista de valores .cp = {0.01, 0.05}
+```
+
+```{r}
+library(pROC)
+modelo_rf2 <- train(Survived ~ ., data = train2, method = "rf", metric = "ROC", trControl = rpartCtrl2)
+predictionValidationProb2 <- predict(modelo_rf2, val2, type = "prob")
+auc2 <- roc(val$Survived, predictionValidationProb2[["Yes"]], levels = unique(val[["Survived"]]))
+roc_validation2 <- plot.roc(auc2, ylim=c(0,1), type = "S" , print.thres = T, main=paste('Validation AUC 2:', round(auc2$auc[[1]], 2)))
+```
+
+# Comparación y selección del mejor modelo en modelo_rf1, modelo_rf2 términos de precisión y AUC (modelo_rf)
+
+```{r}
+roc.test(roc_validation1, roc_validation2)
+plot.roc(auc1, type = "S", col="#1c61b6")
+lines.roc(auc2, type = "S", col="#008600")
+```
+```{r}
+predict1 <- predict(modelo_rf1, val1, type = "raw")
+predict2 <- predict(modelo_rf2, val2, type = "raw")
+cm_train1 <- confusionMatrix(predict1, val[["Survived"]])
+cm_train2 <- confusionMatrix(predict2, val[["Survived"]])
+cm_train1
+cm_train2
 ```
