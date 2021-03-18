@@ -25,6 +25,9 @@ El siguiente paso, antes de comenzar consistirá en realizar un preprocesamiento
 library(funModeling)
 df_status(data_raw)
 ```
+
+Filtramos los valores
+
 ```{r}
 status <- df_status(data_raw)
 
@@ -95,7 +98,7 @@ val1   <- data[-trainIndex, ]
 library(pROC)
 modelo_rf1 <- train(Survived ~ ., data = train1, method = "rf", metric = "ROC", trControl = rpartCtrl1)
 predictionValidationProb1 <- predict(modelo_rf1, val1, type = "prob")
-auc1 <- roc(val$Survived, predictionValidationProb[["Yes"]], levels = unique(val[["Survived"]]))
+auc1 <- roc(val1$Survived, predictionValidationProb1[["Yes"]], levels = unique(val1[["Survived"]]))
 roc_validation1 <- plot.roc(auc1, ylim=c(0,1), type = "S" , print.thres = T, main=paste('Validation AUC 1:', round(auc1$auc[[1]], 2)))
 ```
 
@@ -109,7 +112,7 @@ val2   <- data[-trainIndex, ]
 ```
 
 ```{r}
-rpartCtrl2 <- trainControl(verboseIter = TRUE, classProbs = TRUE, summaryFunction = twoClassSummary, method = "cv", number = 20)
+rpartCtrl2 <- trainControl(verboseIter = TRUE, classProbs = TRUE, summaryFunction = twoClassSummary, method = "cv", number = 10)
 rpartParametersGrid <- expand.grid(.cp = c(0.01, 0.05)) # se pide que se prueben con la lista de valores .cp = {0.01, 0.05}
 ```
 
@@ -117,7 +120,7 @@ rpartParametersGrid <- expand.grid(.cp = c(0.01, 0.05)) # se pide que se prueben
 library(pROC)
 modelo_rf2 <- train(Survived ~ ., data = train2, method = "rf", metric = "ROC", trControl = rpartCtrl2)
 predictionValidationProb2 <- predict(modelo_rf2, val2, type = "prob")
-auc2 <- roc(val$Survived, predictionValidationProb2[["Yes"]], levels = unique(val[["Survived"]]))
+auc2 <- roc(val2$Survived, predictionValidationProb2[["Yes"]], levels = unique(val2[["Survived"]]))
 roc_validation2 <- plot.roc(auc2, ylim=c(0,1), type = "S" , print.thres = T, main=paste('Validation AUC 2:', round(auc2$auc[[1]], 2)))
 ```
 
@@ -131,8 +134,8 @@ lines.roc(auc2, type = "S", col="#008600")
 ```{r}
 predict1 <- predict(modelo_rf1, val1, type = "raw")
 predict2 <- predict(modelo_rf2, val2, type = "raw")
-cm_train1 <- confusionMatrix(predict1, val[["Survived"]])
-cm_train2 <- confusionMatrix(predict2, val[["Survived"]])
+cm_train1 <- confusionMatrix(predict1, val1[["Survived"]])
+cm_train2 <- confusionMatrix(predict2, val2[["Survived"]])
 cm_train1
 cm_train2
 ```

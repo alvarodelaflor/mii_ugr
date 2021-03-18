@@ -1,5 +1,6 @@
 package index;
 
+import auxiliar.Constants;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.TextField;
@@ -15,10 +16,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-public class index {
-
+/**
+ * @author Alvaro de la Flor Bonilla
+ * @version 1.0.0
+ */
+public class Index {
     private IndexWriter writer;
-    public void Indexer(String indexDirectoryPath) throws IOException {
+    public Index(String indexDirectoryPath) throws IOException {
         Directory indexDirectory =
                 FSDirectory.open(Paths.get(indexDirectoryPath));
         StandardAnalyzer analyzer = new StandardAnalyzer();
@@ -30,10 +34,10 @@ public class index {
     }
     private Document getDocument(File file) throws IOException {
         Document document = new Document();
-        TextField contentField = new TextField("contents", new FileReader(file));
-        TextField fileNameField = new TextField("filename",
+        TextField contentField = new TextField(Constants.CONTENTS, new FileReader(file));
+        TextField fileNameField = new TextField(Constants.FILE_NAME,
                 file.getName(),TextField.Store.YES);
-        TextField filePathField = new TextField("filepath",
+        TextField filePathField = new TextField(Constants.FILE_PATH,
                 file.getCanonicalPath(),TextField.Store.YES);
         document.add(contentField);
         document.add(fileNameField);
