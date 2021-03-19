@@ -22,28 +22,25 @@ import java.nio.file.Paths;
  * @author Alvaro de la Flor Bonilla
  * @version 1.0.0
  */
-public class Search {
+public class Searcher {
+
     IndexSearcher indexSearcher;
     QueryParser queryParser;
     Query query;
 
-    public Search(String indexDirectoryPath)
-            throws IOException {
-        Directory indexDirectory =
-                FSDirectory.open(Paths.get(indexDirectoryPath));
+    public Searcher(String indexDirectoryPath) throws IOException {
+        Directory indexDirectory = FSDirectory.open(Paths.get(indexDirectoryPath));
         IndexReader reader = DirectoryReader.open(indexDirectory);
         indexSearcher = new IndexSearcher(reader);
-        queryParser = new QueryParser(Constants.CONTENTS,
-                new StandardAnalyzer());
+        queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
     }
 
-    public TopDocs search(String searchQuery)
-            throws IOException, ParseException {
+    public TopDocs search(String searchQuery) throws IOException, ParseException {
         query = queryParser.parse(searchQuery);
         return indexSearcher.search(query, Constants.MAX_SEARCH);
     }
-    public Document getDocument(ScoreDoc scoreDoc)
-            throws CorruptIndexException, IOException {
+
+    public Document getDocument(ScoreDoc scoreDoc) throws CorruptIndexException, IOException {
         return indexSearcher.doc(scoreDoc.doc);
     }
 }

@@ -26,13 +26,13 @@ Program Ref :
 Abstract    :
                                                                                              
               By what process do individuals acquire a second language?  During              
-              early stages of learning second language words, people often report            
+              early stages of learning second language index.words, people often report
               being aware of their first language.  However, as they become more             
               proficient in the second language, they begin to report that they              
               can think directly in the second language without reference to the             
               first language.   Although there is empirical evidence to support              
               these common observations, we do not fully understand how memory               
-              changes to accommodate the acquisition of words in a new language,             
+              changes to accommodate the acquisition of index.words in a new language,
               or how skilled bilinguals develop cognitive mechanisms that allow              
               them rapid access to each language and also to the interconnections            
               between their languages.                                                       
@@ -55,7 +55,7 @@ Abstract    :
               translation from the first language to the second language requires            
               understanding the meaning of the second language word, whereas                 
               translation from the second language to the first can be                       
-              accomplished on the basis of associations between words in the two             
+              accomplished on the basis of associations between index.words in the two
               languages.  One set of experiments will evaluate the evidence for              
               this claim and also test implications for later memory performance.            
               A second line of research will explore the development of the                  
@@ -68,7 +68,7 @@ Abstract    :
               implications for theories of memory and for understanding levels of            
               language processing and their interaction.  In addition, by                    
               identifying the way in which a new memory system is established for            
-              second language words during second language acquisition, the                  
+              second language index.words during second language acquisition, the
               research will suggest ways in which basic cognitive research can be            
               applied to second language instruction and bilingual education.                
               Given the changing demographic characteristics of our society, this            

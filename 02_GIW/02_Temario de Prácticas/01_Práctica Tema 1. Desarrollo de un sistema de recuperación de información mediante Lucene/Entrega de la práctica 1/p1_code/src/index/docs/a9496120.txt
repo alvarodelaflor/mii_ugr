@@ -31,7 +31,7 @@ Abstract    :
               The system to be built is an array of custom processors that are               
               specialized for marker passing in semantic networks.  A specific               
               goal of this project is to implement a real-time speech-to-speech              
-              dialogue translation system with about 500 words in its vocabulary.            
+              dialogue translation system with about 500 index.words in its vocabulary.
               This system will necessarily include natural language understanding            
               and generation components.  The culmination of this project will               
               be an array of 16,384 semantic network nodes with software                     
