@@ -64,7 +64,7 @@ public class Execute {
                         "\n   (1)  Realizar búsqueda" +
                         "\n   (2)  Volver a indexar" +
                         "\n   (3)  Configurar el sistema" +
-                        "\n   (0) Salir" +
+                        "\n   (0)  Salir" +
                         "\nElija entre";
 
                 Map<Boolean, String> aux = this.ask(question, Arrays.asList("1", "2", "3", "0").stream().collect(Collectors.toSet()), 5);
