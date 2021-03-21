@@ -30,6 +30,28 @@ public class Execute {
         return res;
     }
 
+    public void editPath() {
+        Map<Boolean, String> res = ask("¿Desea modificar el directorio del índice?", Arrays.asList("s", "n").stream().collect(Collectors.toSet()), 3);
+        if (res.get(true).equals("s")) {
+            String lastIndex = Constants.indexDir;
+            System.out.println("Introduzca el nuevo directorio para el índice");
+            Scanner scanner = new Scanner (System.in);
+            String input = scanner.nextLine ();
+            Constants.indexDir = input;
+            System.out.println("Índice anterior: " + lastIndex+ "\nNuevo índice: " + Constants.indexDir);
+        } else {
+            res = ask("¿Desea modificar el directorio de los documentos?", Arrays.asList("s", "n").stream().collect(Collectors.toSet()), 3);
+            if (res.get(true).equals("s")) {
+                String lastIndex = Constants.dataDir;
+                System.out.println("Introduzca el nuevo directorio para los documentos");
+                Scanner scanner = new Scanner (System.in);
+                String input = scanner.nextLine ();
+                Constants.dataDir = input;
+                System.out.println("Directorio anterior: " + lastIndex+ "\nNuevo directorio: " + Constants.dataDir);
+            }
+        }
+    }
+
     public void console() {
         Boolean res = true;
         while (res) {
@@ -52,7 +74,7 @@ public class Execute {
                 } else if (aux.get(true).equals("2")) {
                     ExecuteIndex.createIndex();
                 } else if (aux.get(true).equals("3")) {
-
+                    editPath();
                 } else {
                     System.out.println("¡Adiós!");
                     System.exit(1);
@@ -61,6 +83,8 @@ public class Execute {
                 aux = this.ask("¿Desea realizar otra operación?", Arrays.asList("s", "n").stream().collect(Collectors.toSet()), 5);
                 if (aux.get(true).equals("s")) {
                     res = true;
+                } else {
+                    System.out.println("¡Adiós!");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

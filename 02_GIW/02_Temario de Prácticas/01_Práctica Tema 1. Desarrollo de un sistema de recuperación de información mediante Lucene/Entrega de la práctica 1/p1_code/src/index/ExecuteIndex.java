@@ -16,7 +16,7 @@ public class ExecuteIndex {
         numIndexed = indexer.createIndex(dataDir, new TextFileFilter());
         long endTime = System.currentTimeMillis();
         indexer.close();
-        System.out.println(numIndexed+" File indexed, time taken: "
-                +(endTime-startTime)+" ms");
+
+        System.out.println("\nSe han indexado un total de " + numIndexed+" archivos en " +(endTime-startTime)+" ms");
     }
 }

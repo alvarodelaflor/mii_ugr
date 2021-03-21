@@ -1,6 +1,7 @@
 package search;
 
 import auxiliar.Constants;
+import index.ExecuteIndex;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
@@ -30,9 +31,24 @@ public class Searcher {
 
     public Searcher(String indexDirectoryPath) throws IOException {
         Directory indexDirectory = FSDirectory.open(Paths.get(indexDirectoryPath));
-        IndexReader reader = DirectoryReader.open(indexDirectory);
-        indexSearcher = new IndexSearcher(reader);
-        queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
+        Boolean res = false;
+        try {
+            IndexReader reader = DirectoryReader.open(indexDirectory);
+            indexSearcher = new IndexSearcher(reader);
+            queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
+        } catch (Exception e) {
+            System.out.println("Se ha producido un error, posiblemente no hay ningún índice creado.\nSe creará automáticamente y volveremos a intentarlo...");
+            res = true;
+        }
+        try {
+            ExecuteIndex.createIndex();
+            System.out.println("Repitiendo búsqueda");
+            IndexReader reader = DirectoryReader.open(indexDirectory);
+            indexSearcher = new IndexSearcher(reader);
+            queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
+        } catch (Exception e) {
+            System.out.println("Se ha vuelto a producir un error.\nError: " + e.getMessage());
+        }
     }
 
     public TopDocs search(String searchQuery) throws IOException, ParseException {
