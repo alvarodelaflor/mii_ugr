@@ -96,7 +96,7 @@ public class Indexer {
      * @return
      * @throws IOException
      */
-    public int createIndex(String dataDirPath, FileFilter filter) throws IOException {
+    public Long createIndex(String dataDirPath, FileFilter filter) throws IOException {
 
         File[] files = new File(dataDirPath).listFiles();
         ProgressBar progressBar = new ProgressBar();
@@ -133,7 +133,7 @@ public class Indexer {
             System.out.println("Se ha producido un error, posiblemente el directorio de archivos es incorrecto.\nError: " + e.getMessage());
         }
 
-        return writer.numRamDocs();
+        return writer.getMaxCompletedSequenceNumber();
     }
 
     public List<String> readWords() {

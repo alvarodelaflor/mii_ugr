@@ -11,7 +11,7 @@ public class ExecuteIndex {
         String dataDir = Constants.dataDir;
 
         Indexer indexer = new Indexer(indexDir);
-        int numIndexed;
+        Long numIndexed;
         long startTime = System.currentTimeMillis();
         numIndexed = indexer.createIndex(dataDir, new TextFileFilter());
         long endTime = System.currentTimeMillis();

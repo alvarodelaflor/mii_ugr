@@ -34,31 +34,31 @@ public class Execute {
     }
 
     public void editPath() {
-        Map<Boolean, String> res = ask("¿Desea modificar el directorio del índice? Actual: " + Constants.indexDir, Arrays.asList("s", "n").stream().collect(Collectors.toSet()), 3);
-        if (res.get(true).equals("s")) {
+        String question = "¿Qué desea hacer?\n" +
+                "   (1) Modificar el directorio del índice. Actual: " + Constants.indexDir + "\n" +
+                "   (2) Modificar el directorio de los documentos. Actual: " + Constants.dataDir + "\n" +
+                "   (3) Editar el idioma de palabras vacías. Actual: " + Constants.language + "\n" +
+                "   (0) Salir" +
+                "\nElija entre";
+        Map<Boolean, String> res = ask(question, Arrays.asList("0", "1", "2", "3").stream().collect(Collectors.toSet()), 3);
+        if (res.get(true).equals("1")) {
             String lastIndex = Constants.indexDir;
             System.out.println("Introduzca el nuevo directorio para el índice");
             Scanner scanner = new Scanner (System.in);
             String input = scanner.nextLine ();
             Constants.indexDir = input;
             System.out.println("Índice anterior: " + lastIndex+ "\nNuevo índice: " + Constants.indexDir);
-        } else {
-            res = ask("¿Desea modificar el directorio de los documentos? Actual: " + Constants.dataDir, Arrays.asList("s", "n").stream().collect(Collectors.toSet()), 3);
-            if (res.get(true).equals("s")) {
-                String lastIndex = Constants.dataDir;
-                System.out.println("Introduzca el nuevo directorio para los documentos");
-                Scanner scanner = new Scanner (System.in);
-                String input = scanner.nextLine ();
-                Constants.dataDir = input;
-                System.out.println("Directorio anterior: " + lastIndex+ "\nNuevo directorio: " + Constants.dataDir);
-            } else {
-                res = ask("¿Desea editar el idioma de las palabras vacías? Actual: " + Constants.language, Arrays.asList("s", "n").stream().collect(Collectors.toSet()), 3);
-                if (res.get(true).equals("s")) {
-                    res = ask("Introduzca el idioma que desea", Arrays.asList("EN", "ES").stream().collect(Collectors.toSet()), 3);
-                    if (!res.get(true).equals("-1")) {
-                        Constants.language = res.get(true);
-                    }
-                }
+        } else if (res.get(true).equals("2")){
+            String lastIndex = Constants.dataDir;
+            System.out.println("Introduzca el nuevo directorio para los documentos");
+            Scanner scanner = new Scanner (System.in);
+            String input = scanner.nextLine ();
+            Constants.dataDir = input;
+            System.out.println("Directorio anterior: " + lastIndex+ "\nNuevo directorio: " + Constants.dataDir);
+        } else if (res.get(true).equals("3")){
+            res = ask("Introduzca el idioma que desea.\nOpciones (inglés, español):", Arrays.asList("EN", "ES").stream().collect(Collectors.toSet()), 3);
+            if (!res.get(true).equals("-1")) {
+                Constants.language = res.get(true);
             }
         }
     }
