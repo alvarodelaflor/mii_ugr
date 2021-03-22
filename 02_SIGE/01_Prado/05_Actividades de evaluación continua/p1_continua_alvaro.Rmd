@@ -139,3 +139,30 @@ cm_train1
 cm_train2
 ```
 
+Aprendizaje de modelo de clasificación utilizando redes neuronales - perceptrón multicapa y parámetros por defecto (modelo_rna)
+
+```{r}
+set.seed(0)
+trainIndex3 <- createDataPartition(data$Survived, p = .8, list = FALSE)
+train3 <- data[trainIndex, ] 
+val3   <- data[-trainIndex, ]
+
+rpartCtrl3 <- trainControl(classProbs = TRUE)
+
+library(pROC)
+modelo_rna <- train(Survived ~ ., data = train3, method = "nnet", metric = "ROC", trControl = rpartCtrl3, trace = FALSE)
+predictionValidationProb3 <- predict(modelo_rna, val3, type = "prob")
+auc3 <- roc(val3$Survived, predictionValidationProb3[["Yes"]], levels = unique(val3[["Survived"]]))
+roc_validation3 <- plot.roc(auc3, ylim=c(0,1), type = "S" , print.thres = T, main=paste('Validation AUC 3:', round(auc3$auc[[1]], 2)))
+```
+
+Mejora de modelo_rna mediante entrenamiento con rejilla de parámetros para los parámetros .size, .decay (modelo_rna_mejorado)
+
+```{r}
+modelo_rna_mejorado <- train(Survived ~ ., data = train3, method='nnet', metric = "ROC", trControl = rpartCtrl3, trace = FALSE,
+               #Grid of tuning parameters to try:
+               tuneGrid=expand.grid(.size=c(1,40,20),.decay=c(0,0.001,0.1)))
+predictionValidationProb4 <- predict(modelo_rna_mejorado, val3, type = "prob")
+auc4 <- roc(val3$Survived, predictionValidationProb4[["Yes"]], levels = unique(val3[["Survived"]]))
+roc_validation4 <- plot.roc(auc4, ylim=c(0,1), type = "S" , print.thres = T, main=paste('Validation AUC 4:', round(auc4$auc[[1]], 2)))
+```
