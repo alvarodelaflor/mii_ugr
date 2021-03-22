@@ -113,7 +113,6 @@ val2   <- data[-trainIndex, ]
 
 ```{r}
 rpartCtrl2 <- trainControl(verboseIter = TRUE, classProbs = TRUE, summaryFunction = twoClassSummary, method = "cv", number = 10)
-rpartParametersGrid <- expand.grid(.cp = c(0.01, 0.05)) # se pide que se prueben con la lista de valores .cp = {0.01, 0.05}
 ```
 
 ```{r}
@@ -128,8 +127,8 @@ roc_validation2 <- plot.roc(auc2, ylim=c(0,1), type = "S" , print.thres = T, mai
 
 ```{r}
 roc.test(roc_validation1, roc_validation2)
-plot.roc(auc1, type = "S", col="#1c61b6")
-lines.roc(auc2, type = "S", col="#008600")
+plot.roc(auc1, type = "S", col="#1c61b6") #Azul
+lines.roc(auc2, type = "S", col="#008600") #Verde
 ```
 ```{r}
 predict1 <- predict(modelo_rf1, val1, type = "raw")
@@ -139,3 +138,4 @@ cm_train2 <- confusionMatrix(predict2, val2[["Survived"]])
 cm_train1
 cm_train2
 ```
+
