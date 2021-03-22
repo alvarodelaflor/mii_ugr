@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Service Oriented Programming - Wikipedia, the free encyclopedia</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+    <script type="text/javascript" src="../../../../raw/gen.js"></script>        <style type="text/css">/*<![CDATA[*/
+@import "../../../../raw/MediaWiki%7ECommon.css";
+@import "../../../../raw/MediaWiki%7EMonobook.css";
+@import "../../../../raw/gen.css";
+/*]]>*/</style>          </head>
+  <body
+    class="ns-0">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Service Oriented Programming</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <table class="metadata plainlinks ambox ambox-content" style="">
+<tr>
+<td class="ambox-image">
+<div style="width: 52px;"><a href="../../../../articles/q/u/e/Image%7EQuestion_book-new.svg_2cb1.html" class="image" title="Question book-new.svg"><img alt="" src="../../../../images/local/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" border="0" /></a></div>
+</td>
+<td class="ambox-text" style=""><span class="plainlinks"><b>This article does not <a href="../../../../articles/c/i/t/Wikipedia%7ECiting_sources_8ba4.html" title="Wikipedia:Citing sources">cite</a> any <a href="../../../../articles/v/e/r/Wikipedia%7EVerifiability_f922.html" title="Wikipedia:Verifiability">references or sources</a>.</b> <small><i>(February 2008)</i></small><br />
+<small>Please help <a href="http://en.wikipedia.org../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" class="external text" title="http://en.wikipedia.org../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" rel="nofollow">improve this article</a> by adding citations to <a href="../../../../articles/r/e/l/Wikipedia%7EReliable_sources_7c0b.html" title="Wikipedia:Reliable sources">reliable sources</a>. <a href="../../../../articles/v/e/r/Wikipedia%7EVerifiability_f922.html" title="Wikipedia:Verifiability">Unverifiable</a> material may be challenged and removed.</small></span></td>
+</tr>
+</table>
+<p><b>Service-oriented programming</b> (SOP) is a <a href="../../../../articles/p/r/o/Programming_paradigm.html" title="Programming paradigm">programming paradigm</a> that uses "services" as the unit of computer work, to design and implement integrated business applications and <a href="../../../../articles/m/i/s/Mission-critical.html" class="mw-redirect" title="Mission-critical">mission-critical</a> software programs. Services can represent steps of <a href="../../../../articles/b/u/s/Business_processes.html" class="mw-redirect" title="Business processes">business processes</a> and thus one of the main applications of this paradigm is the cost-effective delivery of standalone or composite business applications that can “integrate from the inside-out”</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1"><a href="#Fundamental_Concepts"><span class="tocnumber">2</span> <span class="toctext">Fundamental Concepts</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Encapsulation"><span class="tocnumber">2.1</span> <span class="toctext">Encapsulation</span></a></li>
+<li class="toclevel-2"><a href="#Service_Interface"><span class="tocnumber">2.2</span> <span class="toctext">Service Interface</span></a></li>
+<li class="toclevel-2"><a href="#Service_Invoker"><span class="tocnumber">2.3</span> <span class="toctext">Service Invoker</span></a></li>
+<li class="toclevel-2"><a href="#Service_Listener"><span class="tocnumber">2.4</span> <span class="toctext">Service Listener</span></a></li>
+<li class="toclevel-2"><a href="#Service_Implementation"><span class="tocnumber">2.5</span> <span class="toctext">Service Implementation</span></a></li>
+<li class="toclevel-2"><a href="#Semantic-based_Approach"><span class="tocnumber">2.6</span> <span class="toctext">Semantic-based Approach</span></a></li>
+<li class="toclevel-2"><a href="#Service_Implementation:_Composite_Service"><span class="tocnumber">2.7</span> <span class="toctext">Service Implementation: Composite Service</span></a></li>
+<li class="toclevel-2"><a href="#Programming_Constructs"><span class="tocnumber">2.8</span> <span class="toctext">Programming Constructs</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Sequencing"><span class="tocnumber">2.8.1</span> <span class="toctext">Sequencing</span></a></li>
+<li class="toclevel-3"><a href="#Selection"><span class="tocnumber">2.8.2</span> <span class="toctext">Selection</span></a></li>
+<li class="toclevel-3"><a href="#Iteration"><span class="tocnumber">2.8.3</span> <span class="toctext">Iteration</span></a></li>
+<li class="toclevel-3"><a href="#Data_Transformation.2C_Mapping.2C_and_Translation"><span class="tocnumber">2.8.4</span> <span class="toctext">Data Transformation, Mapping, and Translation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Exception_Handling"><span class="tocnumber">2.9</span> <span class="toctext">Exception Handling</span></a></li>
+<li class="toclevel-2"><a href="#Transactional_Boundary"><span class="tocnumber">2.10</span> <span class="toctext">Transactional Boundary</span></a></li>
+<li class="toclevel-2"><a href="#Service_Compensation"><span class="tocnumber">2.11</span> <span class="toctext">Service Compensation</span></a></li>
+<li class="toclevel-2"><a href="#Service_Implementation:_Atomic_Service"><span class="tocnumber">2.12</span> <span class="toctext">Service Implementation: Atomic Service</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Cross-cutting_Concepts"><span class="tocnumber">3</span> <span class="toctext">Cross-cutting Concepts</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Service_Instrumentation"><span class="tocnumber">3.1</span> <span class="toctext">Service Instrumentation</span></a></li>
+<li class="toclevel-2"><a href="#Declarative_.26_Context-sensitive_Service_Caching"><span class="tocnumber">3.2</span> <span class="toctext">Declarative &amp; Context-sensitive Service Caching</span></a></li>
+<li class="toclevel-2"><a href="#Service_Triggers"><span class="tocnumber">3.3</span> <span class="toctext">Service Triggers</span></a></li>
+<li class="toclevel-2"><a href="#Inter-Service_Communication"><span class="tocnumber">3.4</span> <span class="toctext">Inter-Service Communication</span></a></li>
+<li class="toclevel-2"><a href="#Service_Overrides"><span class="tocnumber">3.5</span> <span class="toctext">Service Overrides</span></a></li>
+<li class="toclevel-2"><a href="#Consumer_Account_Provisioning"><span class="tocnumber">3.6</span> <span class="toctext">Consumer Account Provisioning</span></a></li>
+<li class="toclevel-2"><a href="#Security"><span class="tocnumber">3.7</span> <span class="toctext">Security</span></a></li>
+<li class="toclevel-2"><a href="#Virtualization_and_Automatic_Multi-threading"><span class="tocnumber">3.8</span> <span class="toctext">Virtualization and Automatic Multi-threading</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#History"><span class="tocnumber">4</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<p><a name="Introduction" id="Introduction"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Introduction">edit</a>]</span> <span class="mw-headline">Introduction</span></h2>
+<p>SOP inherently promotes <a href="../../../../articles/s/e/r/Service-oriented_architecture.html" title="Service-oriented architecture">service-oriented architecture</a> <a href="../../../../articles/s/o/a/SOA_be5a.html" title="SOA">SOA</a> ,however, it is not the same as SOA. While SOA focuses on communication between systems using “services”, SOP provides a new technique to build agile application <a href="../../../../articles/m/o/d/Modules.html" class="mw-redirect" title="Modules">modules</a> using in-memory services as the unit of work.</p>
+<p>An in-memory service in SOP can be transparently externalized as a <a href="../../../../articles/w/e/b/Web_Service_f380.html" class="mw-redirect" title="Web Service">Web Service</a> operation. Due to language and platform independent Web Service standards, SOP embraces all existing programming paradigms, languages and platforms. In SOP, the design of the programs pivot around the <a href="../../../../articles/s/e/m/Semantics.html" title="Semantics">semantics</a> of service calls, logical routing and data flow description across well-defined service interfaces. All SOP program modules are encapsulated as services and a service can be composed of other nested services in a hierarchical manner with virtually limitless depth to this service stack hierarchy. A composite service can also contain programming constructs some of which are specific and unique to SOP. A service can be an externalized component from another system accessed either through using <a href="../../../../articles/w/e/b/Web_Service_f380.html" class="mw-redirect" title="Web Service">Web Service</a> standards or any proprietary API through an in-memory plug-in mechanism.</p>
+<p>While SOP supports the basic <a href="../../../../articles/p/r/o/Programming.html" class="mw-redirect" title="Programming">programming</a> constructs for sequencing, selection and iteration, it is differentiated with a slew of new programming constructs that provide built-in native ability geared towards data list manipulation, <a href="../../../../articles/d/a/t/Data_integration.html" title="Data integration">data integration</a>, automated <a href="../../../../articles/m/u/l/Multi-threading.html" class="mw-redirect" title="Multi-threading">multi-threading</a> of service modules, declarative context management and <a href="../../../../articles/s/y/n/Synchronization.html" title="Synchronization">synchronization</a> of services. SOP design enables programmers to semantically synchronize the execution of services in order to guarantee that it is correct, or to declare a service module as a transaction boundary with automated commit/rollback behavior.</p>
+<p>Semantic design tools and runtime automation platforms can be built to support the fundamental concepts of SOP. For example, a Service Virtual Machine (SVM) that automatically creates service objects as units of work and manages their context can be designed to run based on the SOP program <a href="../../../../articles/m/e/t/Metadata.html" title="Metadata">metadata</a> stored in <a href="../../../../articles/x/m/l/XML_3501.html" title="XML">XML</a> and created by a design-time automation tool. In SOA terms, the SVM is both a service producer and a service consumer.</p>
+<p><a name="Fundamental_Concepts" id="Fundamental_Concepts"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Fundamental Concepts">edit</a>]</span> <span class="mw-headline">Fundamental Concepts</span></h2>
+<p>SOP concepts provide a robust base for a semantic approach to programming integration and application logic. There are three significant benefits to this approach:</p>
+<ul>
+<li>Semantically, it can raise the level of abstraction for creating composite business applications and thus significantly increase responsiveness to change (i.e. <a href="../../../../articles/b/u/s/Business_Agility_9f31.html" class="mw-redirect" title="Business Agility">Business Agility</a>)</li>
+<li>Gives rise to the unification of integration and software component development techniques under a single concept and thus significantly reduces the complexity of integration. This unified approach enables “inside-out integration” without the need to replicate data, therefore, significantly reducing the cost and complexity of the overall solution</li>
+<li>Automate multi-threading and <a href="../../../../articles/v/i/r/Virtualization.html" title="Virtualization">virtualization</a> of applications at the granular (unit-of-work) level.</li>
+</ul>
+<p>The following are some of the key concepts of SOP:</p>
+<p><a name="Encapsulation" id="Encapsulation"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Encapsulation">edit</a>]</span> <span class="mw-headline"><a href="../../../../articles/e/n/c/Encapsulation.html" title="Encapsulation">Encapsulation</a></span></h3>
+<p>In SOP, in-memory software modules are strictly encapsulated through well-defined service interfaces that can be externalized on-demand as <a href="../../../../articles/w/e/b/Web_Service_f380.html" class="mw-redirect" title="Web Service">Web Service</a> operations. This minimal unit of encapsulation maximizes the opportunities for <a href="../../../../articles/r/e/u/Reusability.html" title="Reusability">reusability</a> within other in-memory service modules as well as across existing and <a href="../../../../articles/l/e/g/Legacy_software.html" class="mw-redirect" title="Legacy software">legacy software</a> assets. By using service interfaces for <a href="../../../../articles/i/n/f/Information_hiding.html" title="Information hiding">information hiding</a>, SOP extends the <a href="../../../../articles/s/e/r/Service-oriented.html" title="Service-oriented">service-oriented</a> design principles used in SOA to achieve <a href="../../../../articles/s/e/p/Separation_of_concerns.html" title="Separation of concerns">separation of concerns</a> across in-memory service modules.</p>
+<p><a name="Service_Interface" id="Service_Interface"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Interface">edit</a>]</span> <span class="mw-headline">Service Interface</span></h3>
+<p>A service <a href="../../../../articles/i/n/t/Interface.html" title="Interface">interface</a> in SOP is an in-memory object that describes a well-defined software task with well-defined input and output <a href="../../../../articles/d/a/t/Data_structures.html" class="mw-redirect" title="Data structures">data structures</a>. Service interfaces can be grouped into packages. An SOP service interface can be externalized as a <a href="../../../../articles/w/s/d/WSDL_e7f6.html" title="WSDL">WSDL</a> operation and a single service or a package of services can be described using WSDL. Furthermore, service interfaces can be assigned to one or many service groups based on shared properties.</p>
+<p>In SOP, runtime properties stored on the service interface metadata serve as a contract with the Service Virtual Machine (SVM). One example for the use of runtime properties is that in declarative service <a href="../../../../articles/s/y/n/Synchronization.html" title="Synchronization">synchronization</a>. A service interface can be declared as a fully synchronized interface, meaning that only a single instance of that service can run at any given time. Or, it can be synchronized based on the actual value of key inputs at runtime, meaning that no two service instances of that service with the same value for their key input data can run at the same time. Furthermore, synchronization can be declared across services interfaces that belong to the same service group. For example, if two services, ‘CreditAccount’ and ‘DebitAccount’, belong to the same synchronization service group and are synchronized on the accountName input field, then no two instances of ‘CreditAccount’ and ‘DebitAccount’ with the same account name can execute at the same time.</p>
+<p><a name="Service_Invoker" id="Service_Invoker"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Invoker">edit</a>]</span> <span class="mw-headline">Service Invoker</span></h3>
+<p>A service invoker makes service requests. It is a pluggable in-memory interface that abstracts the location of a service producer as well as the communication protocol, used between the consumer and producer when going across computer memory, from the SOP runtime environment such as an SVM. The producer can be in-process (i.e. in-memory), outside the process on the same server machine, or virtualized across a set of networked server machines. The use of a service invoker in SOP is the key to <a href="../../../../articles/l/o/c/Location_transparency.html" title="Location transparency">location transparency</a> and <a href="../../../../articles/v/i/r/Virtualization.html" title="Virtualization">virtualization</a>. Another significant feature of the service invoker layer is the ability to optimize bandwidth and <a href="../../../../articles/t/h/r/Throughput.html" title="Throughput">throughput</a> when communicating across machines. For example, a “SOAP Invoker” is the default service invoker for remote communication across machines using the <a href="../../../../articles/w/e/b/Web_Service_f380.html" class="mw-redirect" title="Web Service">Web Service</a> standards. This invoker can be dynamically swapped out if, for example, the producer and consumer wish to communicate through a packed proprietary API for better security and more efficient use of bandwidth.</p>
+<p><a name="Service_Listener" id="Service_Listener"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Listener">edit</a>]</span> <span class="mw-headline">Service Listener</span></h3>
+<p>A service listener receives service requests. It is a pluggable in-memory interface that abstracts the communication protocol for incoming service requests made to the SOP runtime environment such as the SVM. Through this abstract layer, the SOP runtime environment can be virtually embedded within the memory address of any traditional programming environment or application service.</p>
+<p><a name="Service_Implementation" id="Service_Implementation"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Implementation">edit</a>]</span> <span class="mw-headline">Service Implementation</span></h3>
+<p>In SOP, a service module can be either implemented as a Composite or Atomic service. It is important to note that Service modules built through the SOP paradigm have an extroverted nature and can be transparently externalized through standards such as <a href="../../../../articles/s/o/a/SOAP_4de9.html" title="SOAP">SOAP</a> or any proprietary protocol.</p>
+<p><a name="Semantic-based_Approach" id="Semantic-based_Approach"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Semantic-based Approach">edit</a>]</span> <span class="mw-headline">Semantic-based Approach</span></h3>
+<p>One of the most important characteristic of SOP is that it can support a fully semantic-based approach to programming. Furthermore, this semantic-based approach can be layered into a visual environment built on top of a fully <a href="../../../../articles/m/e/t/Metadata.html" title="Metadata">metadata</a>-driven layer for storing the service interface and service module definitions. Furthermore, if the SOP runtime is supported by a SVM capable of interpreting the metadata layer, the need for automatic code generation can be eliminated. The result is tremendous productivity gain during development, ease of testing and significant agility in deployment.</p>
+<p><a name="Service_Implementation:_Composite_Service" id="Service_Implementation:_Composite_Service"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Implementation: Composite Service">edit</a>]</span> <span class="mw-headline">Service Implementation: Composite Service</span></h3>
+<p>A composite service implementation is the <a href="../../../../articles/s/e/m/Semantic.html" class="mw-redirect" title="Semantic">semantic</a> definition of a service module based on SOP techniques and concepts. If you look inside of a black-boxed interface definition of a composite service, you may see other service interfaces connected to each other and connected to SOP programming constructs. A Composite service has a recursive definition meaning that any service inside (“inner service”) may be another atomic or composite service. An inner service may be a <a href="../../../../articles/r/e/c/Recursion.html" title="Recursion">recursive</a> reference to the same containing composite service.</p>
+<p><a name="Programming_Constructs" id="Programming_Constructs"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Programming Constructs">edit</a>]</span> <span class="mw-headline">Programming Constructs</span></h3>
+<p>SOP supports the basic programming constructs for sequencing, selection and iteration as well as built-in, advance behavior. Furthermore, SOP supports semantic constructs for automatic <a href="../../../../articles/d/a/t/Data_mapping.html" title="Data mapping">data mapping</a>, translation, manipulation and flow across inner services of a composite service.</p>
+<p><a name="Sequencing" id="Sequencing"></a></p>
+<h4><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Sequencing">edit</a>]</span> <span class="mw-headline">Sequencing</span></h4>
+<p>A service inside of the definition of a composite service (an “inner service”) is implicitly sequenced through the semantic connectivity of built-in success or failure ports of other inner services with its built-in activation port. When an inner service runs successfully, all the inner services connected to its success port will run next. If an inner service fails, all the services connected to its failure port will run next.</p>
+<p><a name="Selection" id="Selection"></a></p>
+<h4><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Selection">edit</a>]</span> <span class="mw-headline">Selection</span></h4>
+<p>Logical selection is accomplished through data-driven branching constructs and other configurable constructs. In general, configurable constructs are services built into the SOP platform with inputs and outputs that can assume the input/output shape of other connected services. For example, a configurable construct used for filtering output data of services can take a list of Sales orders, Purchase orders or any other data structure, and filter its data based on user declared filter properties stored on the interface of that instance of the filter construct. In this example, the structure to be filtered becomes the input of the particular instance of the filter construct and the same structure representing the filtered data becomes the output of the configurable construct.</p>
+<p><a name="Iteration" id="Iteration"></a></p>
+<h4><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Iteration">edit</a>]</span> <span class="mw-headline">Iteration</span></h4>
+<p>A composite service can be declared to loop. The loop can be bound by a fixed number of iterations with an optional built-in delay between iterations and it can dynamically terminate using a “service exit with success” or “service exit with failure” construct inside of the looping composite service. Furthermore, any service interface can automatically run in a loop or “foreach” mode, if it is supplied with two or more input components upon automatic preparation. This behavior is supported at design-time when a data list structure from one service is connected to a service that takes a single data structure (i.e. non-plural) as its input. If a runtime property of the composite service interface is declared to support “foreach” in parallel, then the runtime automation environment can automatically multi-thread the loop and run it in parallel. This is an example of how SOP programming constructs provide built-in advanced functionality.</p>
+<p><a name="Data_Transformation.2C_Mapping.2C_and_Translation" id="Data_Transformation.2C_Mapping.2C_and_Translation"></a></p>
+<h4><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Data Transformation, Mapping, and Translation">edit</a>]</span> <span class="mw-headline">Data Transformation, Mapping, and Translation</span></h4>
+<p><a href="../../../../articles/d/a/t/Data_mapping.html" title="Data mapping">Data mapping</a>, translation, and transformation constructs enable automatic transfer of data across inner services. An inner-service is prepared to run, when it is activated and all of its input dependencies are resolved. All the prepared inner-services within a composite service run in a parallel burst called a “Hypercycle”. This is one of the means by which automatic parallel-processing is supported in SOP. The definition of a composite service contains an implicit directed graph of inner service dependencies. The runtime environment for SOP can create an execution graph based on this directed graph by automatically instantiating and running inner services in parallel whenever possible.</p>
+<p><a name="Exception_Handling" id="Exception_Handling"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Exception Handling">edit</a>]</span> <span class="mw-headline">Exception Handling</span></h3>
+<p>Exception handling in SOP is simply accomplished by connecting the failure port of inner services to another inner service, or to a programming construct. ‘Exit with Failure’ and “Exit with Success’ constructs are examples of constructs used for exception handling. If no action is taken on the failure port of a service, then the outer (parent) service will automatically fail and the standard output messages from the failed inner service will automatically bubble up to the standard output of the parent.</p>
+<p><a name="Transactional_Boundary" id="Transactional_Boundary"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Transactional Boundary">edit</a>]</span> <span class="mw-headline">Transactional Boundary</span></h3>
+<p>A composite service can be declared as a <a href="../../../../articles/t/r/a/Transaction_processing.html" title="Transaction processing">transaction</a> boundary. The runtime environment for SOP automatically creates and manages a hierarchical context for composite service objects which are used as a transaction boundary. This context automatically commits or rollbacks upon the successful execution of the composite service.</p>
+<p><a name="Service_Compensation" id="Service_Compensation"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Compensation">edit</a>]</span> <span class="mw-headline">Service Compensation</span></h3>
+<p>Special composite services, called compensation services, can be associated with any service within SOP. When a composite service that is declared as a transaction boundary fails without an exception handling routing, the SOP runtime environment automatically dispatches the compensation services associated with all the inner services which have already executed successfully.</p>
+<p><a name="Service_Implementation:_Atomic_Service" id="Service_Implementation:_Atomic_Service"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Implementation: Atomic Service">edit</a>]</span> <span class="mw-headline">Service Implementation: Atomic Service</span></h3>
+<p>An Atomic service is an in-memory extension of the SOP runtime environment through a Service Native Interface (SNI) it is essentially a plug-in mechanism. For example, if SOP is automated through an SVM, a service plug-in is dynamically loaded into the SVM when any associated service is consumed. An example of a service plug-in would be a <a href="../../../../articles/s/o/a/SOAP_4de9.html" title="SOAP">SOAP</a> communicator plug-in that can on-the-fly translate any in-memory service input data to a Web Service SOAP request, post it to a service producer, and then translate the corresponding SOAP response to in-memory output data on the service. Another example of a service plug-in is a standard database SQL plug-in that supports data access, modification and query operations. A further example that can help establish the fundamental importance of atomic services and service plug-ins is using a service invoker as a service plug-in to transparently virtualize services across different instances of an SOP platform. This unique, component-level virtualization is termed “Service Grid Virtualization” in order to distinguish it from traditional application, or process-level <a href="../../../../articles/v/i/r/Virtualization.html" title="Virtualization">virtualization</a>.</p>
+<p><a name="Cross-cutting_Concepts" id="Cross-cutting_Concepts"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Cross-cutting Concepts">edit</a>]</span> <span class="mw-headline">Cross-cutting Concepts</span></h2>
+<p>SOP presents significant opportunities to support <a href="../../../../articles/c/r/o/Cross-cutting_concern.html" title="Cross-cutting concern">cross-cutting concerns</a> for all applications built using the SOP technique. The following sections define some of these opportunities:</p>
+<p><a name="Service_Instrumentation" id="Service_Instrumentation"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Instrumentation">edit</a>]</span> <span class="mw-headline">Service Instrumentation</span></h3>
+<p>The SOP runtime environment can systematically provide built-in and optimized profiling, logging and metering for all services in real-time.</p>
+<p><a name="Declarative_.26_Context-sensitive_Service_Caching" id="Declarative_.26_Context-sensitive_Service_Caching"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Declarative &amp; Context-sensitive Service Caching">edit</a>]</span> <span class="mw-headline">Declarative &amp; Context-sensitive Service <a href="../../../../articles/c/a/c/Caching.html" class="mw-redirect" title="Caching">Caching</a></span></h3>
+<p>Based on declared key input values of a service instance, the outputs of a non time-sensitive inner service can be cached by the SOP runtime environment when running in the context of a particular composite service. When a service is <a href="../../../../articles/c/a/c/Cache.html" title="Cache">cached</a> for particular key input values, the SOP runtime environment fetches the cached outputs corresponding to the keyed inputs from its service cache instead of consuming the service. Availability of this built-in mechanism to the SOP application developer can significantly reduce the load on back-end systems.</p>
+<p><a name="Service_Triggers" id="Service_Triggers"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Triggers">edit</a>]</span> <span class="mw-headline">Service Triggers</span></h3>
+<p>SOP provides a mechanism for associating a special kind of composite service, trigger service, to any other service. When that service is consumed, the SOP platform automatically creates and consumes an instance of the associated trigger service with an in-memory copy of the inputs of the triggering service. This consumption is non-intrusive to the execution of the triggering service. A service trigger can be declared to run upon activation, failure or success completion of the triggering service.</p>
+<p><a name="Inter-Service_Communication" id="Inter-Service_Communication"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Inter-Service Communication">edit</a>]</span> <span class="mw-headline">Inter-Service Communication</span></h3>
+<p>In addition to the ability to call any service, Service Request Events and Shared Memory are two of the SOP built-in mechanisms provided for inter-service communication. The consumption of a service is treated as an Event in SOP. SOP provides a correlation-based event mechanism that results in the pre-emption of a running composite that has declared, through a “wait” construct, the need to wait for one or more other service consumption events to happen with specified input data values. The execution of the composite service continues when services are consumed with specific correlation key inputs associated with the wait construct. SOP also provides a <a href="../../../../articles/s/h/a/Shared_memory.html" title="Shared memory">shared memory</a> space with access control where services can access and update a well-defined [[data structure that is similar to the input/output structure of services. The <a href="../../../../articles/s/h/a/Shared_memory.html" title="Shared memory">shared memory</a> mechanism within SOP can be programmatically accessed through service interfaces.</p>
+<p><a name="Service_Overrides" id="Service_Overrides"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Service Overrides">edit</a>]</span> <span class="mw-headline">Service Overrides</span></h3>
+<p>In SOP, customizations are managed through an inventive feature called Service Overrides. Through this feature, a service implementation can be statically or dynamically overridden by one of many possible implementations at runtime. This feature is analogous to <a href="../../../../articles/p/o/l/Polymorphism.html" title="Polymorphism">polymorphism</a> in <a href="../../../../articles/o/b/j/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a>. Each possible override implementation can be associated to one or more override configuration portfolios in order to manage activation of groups of related overrides throughout different SOP application installations at the time of <a href="../../../../articles/s/o/f/Software_deployment.html" title="Software deployment">deployment</a>.</p>
+<p><a name="Consumer_Account_Provisioning" id="Consumer_Account_Provisioning"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Consumer Account Provisioning">edit</a>]</span> <span class="mw-headline">Consumer Account Provisioning</span></h3>
+<p>Select services can be deployed securely for external programmatic consumption by a presentation (<a href="../../../../articles/g/u/i/GUI_1e30.html" class="mw-redirect" title="GUI">GUI</a>) layer, or other applications. Once service accounts are defined, the SOP runtime environment automatically manages access through consumer account <a href="../../../../articles/p/r/o/Provisioning.html" title="Provisioning">provisioning</a> mechanisms.</p>
+<p><a name="Security" id="Security"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Security">edit</a>]</span> <span class="mw-headline">Security</span></h3>
+<p>The SOP runtime environment can systematically provide built-in <a href="../../../../articles/a/u/t/Authentication.html" title="Authentication">authentication</a> and service <a href="../../../../articles/a/u/t/Authorization.html" title="Authorization">authorization</a>. For the purpose of authorization, SOP development projects, consumer accounts, packages and services are treated as resources with access control. In this way, the SOP runtime environment can provide built-in authorization. Standards or proprietary authorization and communication security is customized through service overrides, plug-in invoker and service listener modules.</p>
+<p><a name="Virtualization_and_Automatic_Multi-threading" id="Virtualization_and_Automatic_Multi-threading"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: Virtualization and Automatic Multi-threading">edit</a>]</span> <span class="mw-headline"><a href="../../../../articles/v/i/r/Virtualization.html" title="Virtualization">Virtualization</a> and Automatic <a href="../../../../articles/m/u/l/Multi-threading.html" class="mw-redirect" title="Multi-threading">Multi-threading</a></span></h3>
+<p>Since all artifacts of SOP are well encapsulated services and all SOP mechanisms, such as shared memory, can be provided as distributable services, large scale virtualization can be automated by the SOP runtime environment. Also, the hierarchical service stack of a composite service with the multiple execution graphs associated to its inner services, at each level, provides tremendous opportunities for automated multi-threading to the SOP runtime environment.</p>
+<p><a name="History" id="History"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: History">edit</a>]</span> <span class="mw-headline">History</span></h2>
+<p>The first publication regarding SOP was by Alberto Sillitti, Tullio Vernazza and Giancarlo Succi in the 2002 book "Software Reuse: Methods, Techniques, and Tools" within the "Service Oriented Programming: A New Paradigm of Software Reuse" chapter.</p>
+<p>Alternatively, SOP was first conceived in 1994 by two siblings, Ash Massoudi and Sandra Zylka, while studying computer science at <a href="../../../../articles/u/c/_/UC_Berkeley_d44e.html" class="mw-redirect" title="UC Berkeley">UC Berkeley</a> and computer simulations in neurobiology at <a href="../../../../articles/c/a/l/California_Polytechnic_State_University_cfb3.html" title="California Polytechnic State University">California Polytechnic State University</a>. The construction of the first SOP platform, the Hyperservice Business Platform, started in the year 2000 by NextAxiom Technology Inc. (NXA) dedicated to manifesting SOP as a mainstream practice in <a href="../../../../articles/p/r/o/Process_automation.html" class="mw-redirect" title="Process automation">process automation</a> and business application development.</p>
+<p>In 2002, Carroll Pleasant at <a href="../../../../articles/e/a/s/Eastman_Chemical_Company_1d9a.html" title="Eastman Chemical Company">Eastman Chemical Company</a> successfully deployed the first version of the Hyperservice Business Platform to address the performance challenges of a SOA implementation. In 2004, <a href="../../../../articles/j/o/h/John_Seely_Brown_3457.html" title="John Seely Brown">John Seely Brown</a>, was the first technology luminary to recognize the potential of SOP as a “paradigm in agility” that can bring “reusability to a level never seen before”. Between 2003 and 2004, NXA described its patent-pending innovations in SOP to top executives and technologists from <a href="../../../../articles/p/e/o/PeopleSoft_dead.html" title="PeopleSoft">PeopleSoft</a> (now <a href="../../../../articles/o/r/a/Oracle_Corporation_7180.html" title="Oracle Corporation">Oracle</a>) and <a href="../../../../articles/s/a/p/SAP_AG_9f43.html" title="SAP AG">SAP AG</a> and encouraged them to embed NXA’s SOP platform. In early 2005, Indus International (now Ventyx), a worldwide leader of asset management and service delivery software, was the first software company to embed the Hyperservice Business Platform. In December 2007, after 7 years of stealth operation, NXA started the process of public exposure of its innovations.</p>
+<p>Today, the SOP paradigm is in the early stages of mainstream adoption. There are four market drivers fueling this adoption:</p>
+<ul>
+<li><a href="../../../../articles/m/u/l/Multi-core.html" title="Multi-core">Multi-core</a> Processor Architecture: due to heat dissipation issues with increasing processor clock speeds beyond 4 GHZ, the leading processor vendors such as <a href="../../../../articles/i/n/t/Intel.html" class="mw-redirect" title="Intel">Intel</a> have turned to multi-core architecture to deliver ever increasing performance. <a href="http://www.gotw.ca/publications/concurrency-ddj.htm" class="external text" title="http://www.gotw.ca/publications/concurrency-ddj.htm" rel="nofollow">Refer to the article “The Free Lunch Is Over</a>" This change in <a href="../../../../articles/p/r/o/Processor_architecture.html" class="mw-redirect" title="Processor architecture">processor architecture</a> forces a change in the way we develop our software modules and applications: applications must be written for <a href="../../../../articles/c/o/n/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrency</a> in order to utilize <a href="../../../../articles/m/u/l/Multi-core.html" title="Multi-core">multi-core</a> processors and writing concurrent programs is a challenging task. SOP provides a built-in opportunity for automated <a href="../../../../articles/m/u/l/Multi-threading.html" class="mw-redirect" title="Multi-threading">multi-threading</a>.</li>
+<li>Application <a href="../../../../articles/v/i/r/Virtualization.html" title="Virtualization">Virtualization</a>: SOP promotes built-in micro control over location transparency of the service constituents of any service module. This results in automatic and granular <a href="../../../../articles/v/i/r/Virtualization.html" title="Virtualization">virtualization</a> of application components (versus an entire application process) across a <a href="../../../../articles/c/l/u/Cluster.html" title="Cluster">cluster</a> or <a href="../../../../articles/g/r/i/Grid.html" title="Grid">grid</a> of SOP runtime platforms.</li>
+<li><a href="../../../../articles/s/e/r/Service-oriented_architecture.html" title="Service-oriented architecture">Service-oriented architecture</a> (SOA) and demand for integrated and composite applications: in the beginning, the adoption of SOP will follow the adoption curve of SOA with a small lag. This is because services generated through SOA can be easily assembled and consumed through SOP. The more Web services proliferate, the more it makes sense to take advantage of the semantic nature of SOP. On the other hand, since SOA is inherent in SOP, SOP provides a cost-effective way to deliver SOA to mainstream markets.</li>
+<li><a href="../../../../articles/s/o/f/Software_as_a_Service_f407.html" class="mw-redirect" title="Software as a Service">Software as a Service</a> (<a href="../../../../articles/s/a/a/SaaS_b0ca.html" class="mw-redirect" title="SaaS">SaaS</a>): capabilities of the current SaaS platforms cannot address the customization and integration complexities required by large enterprises. SOP can significantly reduce the complexity of integration and customization. This will drive SOP into the next generation SaaS platforms.</li>
+</ul>
+<p><a name="External_links" id="External_links"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html" title="Edit section: External links">edit</a>]</span> <span class="mw-headline">External links</span></h2>
+<ul>
+<li><a href="http://nextaxiom.com" class="external free" title="http://nextaxiom.com" rel="nofollow">http://nextaxiom.com</a></li>
+<li><a href="http://www.springerlink.com/content/hmeem7xl1648c47n/" class="external free" title="http://www.springerlink.com/content/hmeem7xl1648c47n/" rel="nofollow">http://www.springerlink.com/content/hmeem7xl1648c47n/</a> "Service Oriented Programming: A New Paradigm of Software Reuse"</li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 111/1000000
+Post-expand include size: 1946/2048000 bytes
+Template argument size: 709/2048000 bytes
+Expensive parser function count: 1/500
+-->
+<div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="../../../../articles/c/a/t/Special%7ECategories_101d.html" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="../../../../articles/s/e/r/Category%7EService-oriented_%28business_computing%29_8375.html" title="Category:Service-oriented (business computing)">Service-oriented (business computing)</a></span> | <span dir='ltr'><a href="../../../../articles/p/r/o/Category%7EProgramming_paradigms_0e46.html" title="Category:Programming paradigms">Programming paradigms</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories:&#32;<span dir='ltr'><a href="../../../../articles/a/r/t/Category%7EArticles_lacking_sources_from_February_2008_a4f0.html" title="Category:Articles lacking sources from February 2008">Articles lacking sources from February 2008</a></span> | <span dir='ltr'><a href="../../../../articles/a/l/l/Category%7EAll_articles_lacking_sources_2aee.html" title="Category:All articles lacking sources">All articles lacking sources</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/e/r/Service_Oriented_Programming_6ecf.html">Article</a></li><li id="ca-talk"
+	       	       ><a href="../../../../articles/s/e/r/Talk%7EService_Oriented_Programming_0c87.html">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://en.wikipedia.org/wiki/Service_Oriented_Programming">Current revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/Wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="../../../../index.html">Main Page</a></li>
+	     	      <li id="n-Contents"><a href="../../../../articles/c/o/n/Portal%7EContents_b878.html">Contents</a></li>
+	     	      <li id="n-featuredcontent"><a href="../../../../articles/f/e/a/Portal%7EFeatured_content_5442.html">Featured content</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/Portal%7ECurrent_events_bb60.html">Current events</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-interaction'>
+	  <h5>Interaction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-aboutsite"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html">About Wikipedia</a></li>
+	     	      <li id="n-portal"><a href="../../../../articles/c/o/m/Wikipedia%7ECommunity_Portal_6a3c.html">Community portal</a></li>
+	     	      <li id="n-recentchanges"><a href="../../../../articles/r/e/c/Special%7ERecentChanges_e0d0.html">Recent changes</a></li>
+	     	      <li id="n-contact"><a href="../../../../articles/c/o/n/Wikipedia%7EContact_us_afd6.html">Contact Wikipedia</a></li>
+	     	      <li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate">Donate to Wikipedia</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help%7EContents_22de.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>	<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="../../../../misc/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>	<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 17:32, 16 May 2008 by Anonymous user(s) of Wikipedia. Based on work by Wikipedia user(s) <a href="../../../../articles/c/h/o/User%7EChowbok_9a99.html" title="User:Chowbok">Chowbok</a>, <a href="../../../../articles/s/m/a/User%7ESmackBot_cc7a.html" title="User:SmackBot">SmackBot</a>, <a href="../../../../articles/p/i/c/User%7EPichpich_4525.html" title="User:Pichpich">Pichpich</a>, <a href="../../../../articles/b/e/t/User%7EBetacommandBot_3654.html" title="User:BetacommandBot">BetacommandBot</a>, MAB21 and Mohsinmh.</li>	  <li id="f-copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>	  <li id="f-about"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html" title="Wikipedia:About">About Wikipedia</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/Wikipedia%7EGeneral_disclaimer_3e44.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

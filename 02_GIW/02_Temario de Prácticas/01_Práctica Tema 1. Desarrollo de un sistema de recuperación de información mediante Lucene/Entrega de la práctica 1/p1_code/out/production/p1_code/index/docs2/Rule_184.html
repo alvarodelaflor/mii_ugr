@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Rule 184 - Wikipedia, the free encyclopedia</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+    <script type="text/javascript" src="../../../../raw/gen.js"></script>        <style type="text/css">/*<![CDATA[*/
+@import "../../../../raw/MediaWiki%7ECommon.css";
+@import "../../../../raw/MediaWiki%7EMonobook.css";
+@import "../../../../raw/gen.css";
+/*]]>*/</style>          </head>
+  <body
+    class="ns-0">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Rule 184</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div class="thumb tright">
+<div class="thumbinner" style="width:302px;"><a href="../../../../articles/r/u/l/Image%7ERule_184.png_70f9.html" class="image" title="Rule 184, run for 128 steps from random configurations with each of three different starting densities: top 25%, middle 50%, bottom 75%. The view shown is a 300-pixel crop from a wider simulation."><img alt="Rule 184, run for 128 steps from random configurations with each of three different starting densities: top 25%, middle 50%, bottom 75%. The view shown is a 300-pixel crop from a wider simulation." src="../../../../images/shared/c/cb/Rule_184.png" width="300" height="429" border="0" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="../../../../articles/r/u/l/Image%7ERule_184.png_70f9.html" class="internal" title="Enlarge"><img src="../../../../skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Rule 184, run for 128 steps from random configurations with each of three different starting densities: top 25%, middle 50%, bottom 75%. The view shown is a 300-pixel crop from a wider simulation.</div>
+</div>
+</div>
+<p><b>Rule 184</b> is a one-dimensional binary <a href="../../../../articles/c/e/l/Cellular_automaton.html" title="Cellular automaton">cellular automaton</a> rule, notable for solving the <a href="../../../../articles/m/a/j/Majority_problem_%28cellular_automaton%29.html" title="Majority problem (cellular automaton)">majority problem</a> as well as for its ability to simultaneously describe several, seemingly quite different, <a href="../../../../articles/p/a/r/Particle_system.html" title="Particle system">particle systems</a>:</p>
+<ul>
+<li>Rule 184 can be used as a simple model for <a href="../../../../articles/t/r/a/Traffic_flow.html" title="Traffic flow">traffic flow</a> in a single lane of a highway, and forms the basis for many <a href="../../../../articles/m/i/c/Microscopic_traffic_flow_model.html" title="Microscopic traffic flow model">cellular automaton models of traffic flow</a> with greater sophistication. In this model, particles (representing vehicles) move in a single direction, stopping and starting depending on the cars in front of them. The number of particles remains unchanged throughout the simulation. Because of this application, Rule 184 is sometimes called the "traffic rule."<sup id="cite_ref-0" class="reference"><a href="#cite_note-0" title="">[1]</a></sup></li>
+<li>Rule 184 also models a form of <a href="../../../../articles/d/e/p/Deposition_%28Aerosol_physics%29_5cb5.html" title="Deposition (Aerosol physics)">deposition</a> of particles onto an irregular surface, in which each local minimum of the surface is filled with a particle in each step. At each step of the simulation, the number of particles increases. Once placed, a particle never moves.</li>
+<li>Rule 184 can be understood in terms of ballistic annihilation, a system of particles moving both leftwards and rightwards through a one-dimensional medium. When two such particles collide, they <a href="../../../../articles/a/n/n/Annihilate.html" class="mw-redirect" title="Annihilate">annihilate</a> each other, so that at each step the number of particles remains unchanged or decreases.</li>
+</ul>
+<p>The apparent contradiction between these descriptions is resolved by different ways of corresponding features of the automaton's state with particles.</p>
+<p>In each step of its evolution, the Rule 184 automaton applies the following rule to determine the new state of each cell, in a one-dimensional array of cells:</p>
+<center>
+<table border="1">
+<tr>
+<td>current pattern</td>
+<td>111</td>
+<td>110</td>
+<td>101</td>
+<td>100</td>
+<td>011</td>
+<td>010</td>
+<td>001</td>
+<td>000</td>
+</tr>
+<tr>
+<td>new state for center cell</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+</table>
+</center>
+<p>The name for this rule, Rule 184, is the <a href="../../../../articles/w/o/l/Wolfram_code.html" title="Wolfram code">Wolfram code</a> describing the state table above: the bottom row of the table, 10111000, when viewed as a <a href="../../../../articles/b/i/n/Binary_number.html" class="mw-redirect" title="Binary number">binary number</a>, is equal to the decimal number <a href="../../../../articles/1/8/4/184_%28number%29.html" title="184 (number)">184</a>. The earliest research on Rule 184 seems to be the papers by Li (1987) and Krug and Spohn (1988). In particular, Krug and Spohn already describe all three types of particle system modeled by Rule 184.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1" title="">[2]</a></sup></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a href="#Equivalent_description_of_rules"><span class="tocnumber">1</span> <span class="toctext">Equivalent description of rules</span></a></li>
+<li class="toclevel-1"><a href="#Dynamics_and_majority_classification"><span class="tocnumber">2</span> <span class="toctext">Dynamics and majority classification</span></a></li>
+<li class="toclevel-1"><a href="#Traffic_flow"><span class="tocnumber">3</span> <span class="toctext">Traffic flow</span></a></li>
+<li class="toclevel-1"><a href="#Surface_deposition"><span class="tocnumber">4</span> <span class="toctext">Surface deposition</span></a></li>
+<li class="toclevel-1"><a href="#Ballistic_annihilation"><span class="tocnumber">5</span> <span class="toctext">Ballistic annihilation</span></a></li>
+<li class="toclevel-1"><a href="#Context_free_parsing"><span class="tocnumber">6</span> <span class="toctext">Context free parsing</span></a></li>
+<li class="toclevel-1"><a href="#Notes"><span class="tocnumber">7</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<p><a name="Equivalent_description_of_rules" id="Equivalent_description_of_rules"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/r/u/l/Rule_184.html" title="Edit section: Equivalent description of rules">edit</a>]</span> <span class="mw-headline">Equivalent description of rules</span></h2>
+<p>The rule set for Rule 184 may be described using a table, as above, but it may also be described intuitively, in several different ways:</p>
+<ul>
+<li>At each step, whenever there exists in the current state a 1 immediately followed by a 0, these two symbols swap places. Based on this description, Krug and Spohn (1984) call Rule 184 a deterministic version of a "kinetic <a href="../../../../articles/i/s/i/Ising_model.html" title="Ising model">Ising model</a> with asymmetric spin-exchange dynamics".</li>
+<li>At each step, if a cell with value 1 has a cell with value 0 immediately to its right, the 1 moves rightwards leaving a 0 behind. A 1 with another 1 to its right remains in place, while a 0 that does not have a 1 to its left stays a 0. This description is most apt for the application to traffic flow modeling.</li>
+<li>If a cell has state 0, its new state is taken from the cell to its left. Otherwise, its new state is taken from the cell to its right. That is, each cell can be implemented by a <a href="../../../../articles/m/u/l/Multiplexer.html" title="Multiplexer">multiplexer</a>, and is closely related in its operation to a <a href="../../../../articles/f/r/e/Fredkin_gate.html" title="Fredkin gate">Fredkin gate</a>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2" title="">[3]</a></sup></li>
+</ul>
+<p><a name="Dynamics_and_majority_classification" id="Dynamics_and_majority_classification"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/r/u/l/Rule_184.html" title="Edit section: Dynamics and majority classification">edit</a>]</span> <span class="mw-headline">Dynamics and majority classification</span></h2>
+<p>From the descriptions of the rules above, two important properties of its dynamics may immediately be seen. First, in Rule 184, for any finite set of cells with <a href="../../../../articles/p/e/r/Periodic_boundary_conditions.html" title="Periodic boundary conditions">periodic boundary conditions</a>, the number of 1s and the number of 0s in a pattern remains invariant throughout the pattern's evolution. Similarly, if the density of 1s is well-defined for an infinite array of cells, it remains invariant as the automaton carries out its steps.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3" title="">[4]</a></sup> And second, although Rule 184 is not symmetric under left-right reversal, it does have a different symmetry: reversing left and right and at the same time swapping the roles of the 0 and 1 symbols produces a cellular automaton with the same update rule.</p>
+<p>Patterns in Rule 184 typically quickly stabilize, either to a pattern in which the cell states move in lockstep one position leftwards at each step, or to a pattern that moves one position rightwards at each step.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4" title="">[5]</a></sup> Specifically, if the initial density of cells with state 1 is less than 50%, the pattern stabilizes into clusters of cells in state 1, spaced two units apart, with the clusters separated by blocks of cells in state 0. Patterns of this type move rightwards. If, on the other hand, the initial density is greater than 50%, the pattern stabilizes into clusters of cells in state 1, spaced two units apart, with the clusters separated by blocks of cells in state 0, and patterns of this type move leftwards. If the density is exactly 50%, the initial pattern stabilizes (more slowly) to a pattern that can equivalently be viewed as moving either leftwards or rightwards at each step: an alternating sequence of 0s and 1s.</p>
+<p>One can view Rule 184 as solving the <a href="../../../../articles/m/a/j/Majority_problem_%28cellular_automaton%29.html" title="Majority problem (cellular automaton)">majority problem</a>, of constructing a cellular automaton that can determine whether an initial configuration has a majority of its cells active: if Rule 184 is run on a finite set of cells with periodic boundary conditions, and the number of active cells is less than half of all cells, then each cell will eventually see two consecutive zero states infinitely often, and two consecutive one states only finitely often, while if the number of active cells forms a majority of the cells then each cell will eventually see two consecutive ones infinitely often and two consecutive zeros only finitely often.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5" title="">[6]</a></sup> The majority problem cannot be solved perfectly if it is required that all cells eventually stabilize to the majority state<sup id="cite_ref-6" class="reference"><a href="#cite_note-6" title="">[7]</a></sup> but the Rule 184 solution avoids this impossibility result by relaxing the criterion by which the automaton recognizes a majority.</p>
+<p><a name="Traffic_flow" id="Traffic_flow"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/r/u/l/Rule_184.html" title="Edit section: Traffic flow">edit</a>]</span> <span class="mw-headline">Traffic flow</span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:362px;"><a href="../../../../articles/r/u/l/Image%7ERule_184_cars.svg_7479.html" class="image" title="Rule 184 interpreted as a simulation of traffic flow. Each 1 cell corresponds to a vehicle, and each vehicle moves forwards only if it has open space in front of it."><img alt="Rule 184 interpreted as a simulation of traffic flow. Each 1 cell corresponds to a vehicle, and each vehicle moves forwards only if it has open space in front of it." src="../../../../images/shared/thumb/4/45/Rule_184_cars.svg/360px-Rule_184_cars.svg.png" width="360" height="68" border="0" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="../../../../articles/r/u/l/Image%7ERule_184_cars.svg_7479.html" class="internal" title="Enlarge"><img src="../../../../skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Rule 184 interpreted as a simulation of traffic flow. Each 1 cell corresponds to a vehicle, and each vehicle moves forwards only if it has open space in front of it.</div>
+</div>
+</div>
+<p>If we interpret each 1 cell in Rule 184 as containing a particle, these particles behave in many ways similarly to automobiles in a single lane of traffic: they move forwards at a constant speed if there is open space in front of them, and otherwise they stop. Traffic models such as Rule 184 and its generalizations that discretize both space and time are commonly called <i>particle-hopping models</i>.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7" title="">[8]</a></sup> Although very primitive, the Rule 184 model of traffic flow already predicts some of the familiar emergent features of real traffic: clusters of freely moving cars separated by stretches of open road when traffic is light, and <a href="../../../../articles/t/r/a/Traffic_wave.html" title="Traffic wave">waves of stop-and-go traffic</a> when it is heavy.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8" title="">[9]</a></sup></p>
+<p>It is difficult to pinpoint the first use of Rule 184 for traffic flow simulation, in part because the focus of research in this area has been less on achieving the greatest level of mathematical abstraction and more on verisimilitude: even the earlier papers on cellular automaton based traffic flow simulation typically make the model more complex in order to more accurately simulate real traffic. Nevertheless, Rule 184 is fundamental to traffic simulation by cellular automata. Wang et al. (1997), for instance, state that "the basic cellular automaton model describing a one-dimensional traffic flow problem is rule 184." Nagel (1996) writes "Much work using CA models for traffic is based on this model." Several authors describe one-dimensional models with vehicles moving at multiple speeds; such models degenerate to Rule 184 in the single-speed case.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9" title="">[10]</a></sup> Gaylord and Nishidate (1996) extend the Rule 184 dynamics to two-lane highway traffic with lane changes; their model shares with Rule 184 the property that it is symmetric under simultaneous left-right and 0-1 reversal. Biham et al. (1992) describe a two-dimensional city grid model in which the dynamics of individual lanes of traffic is essentially that of Rule 184.<sup id="cite_ref-10" class="reference"><a href="#cite_note-10" title="">[11]</a></sup> For an in-depth survey of cellular automaton traffic modeling and associated statistical mechanics, see Chowdhury et al. (2000).</p>
+<p>When viewing Rule 184 as a traffic model, it is natural to consider the average speed of the vehicles. When the density of traffic is less than 50%, this average speed is simply one unit of distance per unit of time: after the system stabilizes, no car ever slows. However, when the density is a number ρ greater than 1/2, the average speed of traffic is <img class="tex" alt="\tfrac{1-\rho}{\rho}" src="../../../../math/3/f/b/3fb64519856b9ab7c99c18ad6c422ccd.png" />. Thus, the system exhibits a second-order kinetic <a href="../../../../articles/p/h/a/Phase_transition.html" title="Phase transition">phase transition</a> at ρ = 1/2. At that critical value the average speed approaches its stationary limit as the square root of the number of steps, while away from the critical value the approach is exponential.<sup id="cite_ref-11" class="reference"><a href="#cite_note-11" title="">[12]</a></sup></p>
+<p><a name="Surface_deposition" id="Surface_deposition"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/r/u/l/Rule_184.html" title="Edit section: Surface deposition">edit</a>]</span> <span class="mw-headline">Surface deposition</span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:362px;"><a href="../../../../articles/r/u/l/Image%7ERule_184_deposition.svg_c055.html" class="image" title="Rule 184 as a model of surface deposition. In a layer of particles forming a diagonally-oriented square lattice, new particles stick in each time step to the local minima of the surface. The cellular automaton states model the local slope of the surface."><img alt="Rule 184 as a model of surface deposition. In a layer of particles forming a diagonally-oriented square lattice, new particles stick in each time step to the local minima of the surface. The cellular automaton states model the local slope of the surface." src="../../../../images/shared/thumb/c/ca/Rule_184_deposition.svg/360px-Rule_184_deposition.svg.png" width="360" height="154" border="0" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="../../../../articles/r/u/l/Image%7ERule_184_deposition.svg_c055.html" class="internal" title="Enlarge"><img src="../../../../skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Rule 184 as a model of surface deposition. In a layer of particles forming a diagonally-oriented square lattice, new particles stick in each time step to the local minima of the surface. The cellular automaton states model the local slope of the surface.</div>
+</div>
+</div>
+<p>As shown in the figure, and as originally described by Krug and Spohn (1988),<sup id="cite_ref-12" class="reference"><a href="#cite_note-12" title="">[13]</a></sup> Rule 184 may be used to model deposition of particles onto a surface. In this model, one has a set of particles forming a surface, where the particles assume positions in a <a href="../../../../articles/s/q/u/Square_lattice.html" title="Square lattice">square lattice</a> oriented diagonally. If a particle is present at some position of the lattice, the lattice positions below and to the right, and below and to the left of the particle must also be filled. At each time step, the surface grows by the deposition of particles in each local minimum of the surface; that is, at each position where it is possible to add a new particle. To model this process by Rule 184, we observe that the boundary between filled and unfilled lattice positions can be marked by a polygonal line, the segments of which separate adjacent lattice positions and have slopes +1 and -1. We model a segment with slope +1 by an automaton cell with state 0, and a segment with slope -1 by an automaton cell with state 1. The local minima of the surface are the points where a segment of slope -1 lies to the left of a segment of slope +1; that is, in the automaton, a position where a cell with state 1 lies to the left of a cell with state 0. Adding a particle to that position corresponds to changing the states of these two adjacent cells from 1,0 to 0,1, which is exactly the behavior of Rule 184.</p>
+<p>Related work on this model concerns deposition in which the arrival times of additional particles are random, rather than having particles arrive at all local minima simultaneously.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13" title="">[14]</a></sup> These stochastic growth processes can be modeled as an <a href="../../../../articles/a/s/y/Asynchronous_cellular_automaton.html" title="Asynchronous cellular automaton">asynchronous cellular automaton</a>.</p>
+<p><br clear="all" /></p>
+<p><a name="Ballistic_annihilation" id="Ballistic_annihilation"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/r/u/l/Rule_184.html" title="Edit section: Ballistic annihilation">edit</a>]</span> <span class="mw-headline">Ballistic annihilation</span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:302px;"><a href="../../../../articles/r/u/l/Image%7ERule_184_annihilation.svg_8c90.html" class="image" title="Rule 184 as a model of ballistic annihilation. Particles and antiparticles (modeled by consecutive cells with the same state) move in opposite directions and annihilate each other when they collide."><img alt="Rule 184 as a model of ballistic annihilation. Particles and antiparticles (modeled by consecutive cells with the same state) move in opposite directions and annihilate each other when they collide." src="../../../../images/shared/thumb/0/06/Rule_184_annihilation.svg/300px-Rule_184_annihilation.svg.png" width="300" height="89" border="0" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="../../../../articles/r/u/l/Image%7ERule_184_annihilation.svg_8c90.html" class="internal" title="Enlarge"><img src="../../../../skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Rule 184 as a model of ballistic annihilation. Particles and antiparticles (modeled by consecutive cells with the same state) move in opposite directions and annihilate each other when they collide.</div>
+</div>
+</div>
+<p>Ballistic annihilation describes a process by which moving particles and <a href="../../../../articles/a/n/t/Antiparticle.html" title="Antiparticle">antiparticles</a> <a href="../../../../articles/a/n/n/Annihilate.html" class="mw-redirect" title="Annihilate">annihilate</a> each other when they collide. In the simplest version of this process, the system consists of a single type of particle and antiparticle, moving at equal speeds in opposite directions in a one-dimensional medium.</p>
+<p>This process can be modeled by Rule 184, as follows. We view the particles as aligned, not with the cells of the automaton, but rather with the interstices between cells. If two consecutive cells both have state 0, we view the transition between them as forming a particle that moves rightwards one cell at each time step. If, on the other hand, two consecutive cells both have state 1, we view the transition between them as forming an antiparticle that moves leftwards one cell at each time step. Two consecutive cells with differing states are considered to form part of a background material without any particles in it. It may be observed that these particles interact by ballistic annihilation: when a rightwards-moving particle and a leftwards-moving antiparticle meet, the result is a region of background from which both particles have vanished, without any affect on any other nearby particles.<sup id="cite_ref-14" class="reference"><a href="#cite_note-14" title="">[15]</a></sup></p>
+<p>The behavior of certain other systems, such as one-dimensional <a href="../../../../articles/c/y/c/Cyclic_cellular_automaton.html" title="Cyclic cellular automaton">cyclic cellular automata</a>, can also be described in terms of ballistic annihilation.<sup id="cite_ref-15" class="reference"><a href="#cite_note-15" title="">[16]</a></sup> There is a technical restriction on the particle positions for the ballistic annihilation view of Rule 184 that does not arise in these other systems, stemming from the alternating pattern of the background: in the particle system corresponding to a Rule 184 state, if two consecutive particles are both of the same type they must be an odd number of cells apart, while if they are of opposite types they must be an even number of cells apart. However this parity restriction does not play a role in the statistical behavior of this system.</p>
+<p>Pivato (2005) uses a similar but more complicated particle-system view of Rule 184: he not only views alternating 0-1 regions as background, but also considers regions consisting solely of a single state to be background as well. Based on this view he describes seven different particles formed by boundaries between regions, and classifies their possible interactions. See Chopard and Droz (1998, pp. 188–190) for a more general survey of the physics of annihilation processes.</p>
+<p><a name="Context_free_parsing" id="Context_free_parsing"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/r/u/l/Rule_184.html" title="Edit section: Context free parsing">edit</a>]</span> <span class="mw-headline">Context free parsing</span></h2>
+<p>In his book <a href="../../../../articles/a/_/n/A_New_Kind_of_Science_173f.html" title="A New Kind of Science">A New Kind of Science</a>, <a href="../../../../articles/s/t/e/Stephen_Wolfram_70b6.html" title="Stephen Wolfram">Stephen Wolfram</a> points out that rule 184, when run on patterns with density 50%, can be interpreted as parsing the <a href="../../../../articles/c/o/n/Context_free_language.html" class="mw-redirect" title="Context free language">context free language</a> describing strings formed from nested <a href="../../../../articles/b/r/a/Bracket.html" title="Bracket">parentheses</a>. This interpretation is closely related to the ballistic annihilation view of rule 184: in Wolfram's interpretation, an open parenthesis corresponds to a left-moving particle while a close parenthesis corresponds to a right-moving particle.</p>
+<p><a name="Notes" id="Notes"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/r/u/l/Rule_184.html" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline">Notes</span></h2>
+<div class="references-small">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0" title="">^</a></b> E.g. see Fukś (1997).</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1" title="">^</a></b> One can find many later papers that, when mentioning Rule 184, cite the early papers of <a href="../../../../articles/s/t/e/Stephen_Wolfram_70b6.html" title="Stephen Wolfram">Stephen Wolfram</a>. However, Wolfram's papers consider only automata that are symmetric under left-right reversal, and therefore do not describe Rule 184.</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2" title="">^</a></b> Li (1992). Li used this interpretation as part of a generalization of Rule 184 to nonlocal neighborhood structures.</li>
+<li id="cite_note-3"><b><a href="#cite_ref-3" title="">^</a></b> Boccara and Fukś (1998) have investigated more general automata with similar <a href="../../../../articles/c/o/n/Conservation_law.html" title="Conservation law">conservation properties</a>, as has Moreira (2003).</li>
+<li id="cite_note-4"><b><a href="#cite_ref-4" title="">^</a></b> Li (1987).</li>
+<li id="cite_note-5"><b><a href="#cite_ref-5" title="">^</a></b> Capcarrere et al. (1996); Fukś (1997); Sukumar (1998).</li>
+<li id="cite_note-6"><b><a href="#cite_ref-6" title="">^</a></b> Land and Belew (1995).</li>
+<li id="cite_note-7"><b><a href="#cite_ref-7" title="">^</a></b> Nagel (1996); Chowdhury et al. (2000).</li>
+<li id="cite_note-8"><b><a href="#cite_ref-8" title="">^</a></b> Tadaki and Kikuchi (1994).</li>
+<li id="cite_note-9"><b><a href="#cite_ref-9" title="">^</a></b> For several models of this type see Nagel and Schreckenberg (1992), Fukui and Ishibashi (1996), and Fukś and Boccara (1998). Nagel (1996) observes the equivalence of these models to rule 184 in the single-speed case and lists several additional papers on this type of model.</li>
+<li id="cite_note-10"><b><a href="#cite_ref-10" title="">^</a></b> See also Tadaki and Kikuchi (1994) for additional analysis of this model.</li>
+<li id="cite_note-11"><b><a href="#cite_ref-11" title="">^</a></b> Fukś and Boccara (1998).</li>
+<li id="cite_note-12"><b><a href="#cite_ref-12" title="">^</a></b> See also Belitzky and Ferrari (1995) and Chopard and Droz (1998, p. 29).</li>
+<li id="cite_note-13"><b><a href="#cite_ref-13" title="">^</a></b> Also discussed by Krug and Spohn (1988).</li>
+<li id="cite_note-14"><b><a href="#cite_ref-14" title="">^</a></b> Krug and Spohn (1988); Belitzky and Ferrari (1995).</li>
+<li id="cite_note-15"><b><a href="#cite_ref-15" title="">^</a></b> Belitzky and Ferrari (1995).</li>
+</ol>
+</div>
+<p><a name="References" id="References"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/r/u/l/Rule_184.html" title="Edit section: References">edit</a>]</span> <span class="mw-headline">References</span></h2>
+<div class="references-small" style="-moz-column-count:2; column-count:2;">
+<ul>
+<li><cite style="font-style:normal">Belitsky, Vladimir; Ferrari, Pablo A. (1995). "Ballistic annihilation and deterministic surface growth". <i>Journal of Statistical Physics</i> <b>80</b> (3–4): 517–543. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1007%2FBF02178546" class="external text" title="http://dx.doi.org/10.1007%2FBF02178546" rel="nofollow">10.1007/BF02178546</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Ballistic+annihilation+and+deterministic+surface+growth&amp;rft.jtitle=Journal+of+Statistical+Physics&amp;rft.date=1995&amp;rft.volume=80&amp;rft.issue=3%E2%80%934&amp;rft.au=Belitsky%2C+Vladimir%3B+Ferrari%2C+Pablo+A.&amp;rft.pages=517%E2%80%93543&amp;rft_id=info:doi/10.1007%2FBF02178546"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Biham, Ofer; Middleton, A. Alan; Levine, Dov (1992). "Self-organization and a dynamic transition in traffic-flow models". <i>Physical Review A</i> <b>46</b> (10): R6124–R6127. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1103%2FPhysRevA.46.R6124" class="external text" title="http://dx.doi.org/10.1103%2FPhysRevA.46.R6124" rel="nofollow">10.1103/PhysRevA.46.R6124</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Self-organization+and+a+dynamic+transition+in+traffic-flow+models&amp;rft.jtitle=Physical+Review+A&amp;rft.date=1992&amp;rft.volume=46&amp;rft.issue=10&amp;rft.au=Biham%2C+Ofer%3B+Middleton%2C+A.+Alan%3B+Levine%2C+Dov&amp;rft.pages=R6124%E2%80%93R6127&amp;rft_id=info:doi/10.1103%2FPhysRevA.46.R6124"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Boccara, Nino; Fukś, Henryk (1998). "Cellular automaton rules conserving the number of active sites". <i>J. Phys. A: Math. Gen.</i> <b>31</b> (28): 6007–6018. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1088%2F0305-4470%2F31%2F28%2F014" class="external text" title="http://dx.doi.org/10.1088%2F0305-4470%2F31%2F28%2F014" rel="nofollow">10.1088/0305-4470/31/28/014</a></span>. <a href="../../../../articles/a/r/x/ArXiv_671d.html" title="ArXiv">arXiv</a>:<a href="http://arxiv.org/abs/adap-org/9712003" class="extiw" title="arxiv:adap-org/9712003">adap-org/9712003</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Cellular+automaton+rules+conserving+the+number+of+active+sites&amp;rft.jtitle=J.+Phys.+A%3A+Math.+Gen.&amp;rft.date=1998&amp;rft.volume=31&amp;rft.issue=28&amp;rft.au=Boccara%2C+Nino%3B+Fuk%C5%9B%2C+Henryk&amp;rft.pages=6007%E2%80%936018&amp;rft_id=info:doi/10.1088%2F0305-4470%2F31%2F28%2F014"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Capcarrere, Mathieu S.; Sipper, Moshe; Tomassini, Marco (1996). "<a href="http://www.leitl.org/docs/density.ps.gz" class="external text" title="http://www.leitl.org/docs/density.ps.gz" rel="nofollow">Two-state, <i>r</i> = 1 cellular automaton that classifies density</a>". <i>Phys. Rev. Lett.</i> <b>77</b>: 4969. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1103%2FPhysRevLett.77.4969" class="external text" title="http://dx.doi.org/10.1103%2FPhysRevLett.77.4969" rel="nofollow">10.1103/PhysRevLett.77.4969</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Two-state%2C+%27%27r%27%27+%3D+1+cellular+automaton+that+classifies+density&amp;rft.jtitle=Phys.+Rev.+Lett.&amp;rft.date=1996&amp;rft.volume=77&amp;rft.au=Capcarrere%2C+Mathieu+S.%3B+Sipper%2C+Moshe%3B+Tomassini%2C+Marco&amp;rft.pages=4969&amp;rft_id=info:doi/10.1103%2FPhysRevLett.77.4969&amp;rft_id=http%3A%2F%2Fwww.leitl.org%2Fdocs%2Fdensity.ps.gz"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite class="book" style="font-style:normal">Chopard, Bastien; Droz, Michel (1998). <i>Cellular Automata Modeling of Physical Systems</i>. Cambridge University Press. <a href="../../../../articles/b/o/o/Special%7EBookSources_0521673453_4168.html" class="internal">ISBN 0-521-67345-3</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Cellular+Automata+Modeling+of+Physical+Systems&amp;rft.au=Chopard%2C+Bastien%3B+Droz%2C+Michel&amp;rft.date=1998&amp;rft.pub=Cambridge+University+Press"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Chowdhury, Debashish; Santen, Ludger; Schadschneider, Andreas (2000). "Statistical physics of vehicular traffic and some related systems". <i>Physics Reports</i> <b>329</b> (4): 199–329. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1016%2FS0370-1573%2899%2900117-9" class="external text" title="http://dx.doi.org/10.1016%2FS0370-1573%2899%2900117-9" rel="nofollow">10.1016/S0370-1573(99)00117-9</a></span>. <a href="../../../../articles/a/r/x/ArXiv_671d.html" title="ArXiv">arXiv</a>:<a href="http://arxiv.org/abs/cond-mat/0007053" class="extiw" title="arxiv:cond-mat/0007053">cond-mat/0007053</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Statistical+physics+of+vehicular+traffic+and+some+related+systems&amp;rft.jtitle=Physics+Reports&amp;rft.date=2000&amp;rft.volume=329&amp;rft.issue=4&amp;rft.au=Chowdhury%2C+Debashish%3B+Santen%2C+Ludger%3B+Schadschneider%2C+Andreas&amp;rft.pages=199%E2%80%93329&amp;rft_id=info:doi/10.1016%2FS0370-1573%2899%2900117-9"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Fukś, Henryk (1997). "Solution of the density classification problem with two similar cellular automata rules". <i>Physical Review E</i> <b>55</b> (3): R2081–R2084. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1103%2FPhysRevE.55.R2081" class="external text" title="http://dx.doi.org/10.1103%2FPhysRevE.55.R2081" rel="nofollow">10.1103/PhysRevE.55.R2081</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Solution+of+the+density+classification+problem+with+two+similar+cellular+automata+rules&amp;rft.jtitle=Physical+Review+E&amp;rft.date=1997&amp;rft.volume=55&amp;rft.issue=3&amp;rft.au=Fuk%C5%9B%2C+Henryk&amp;rft.pages=R2081%E2%80%93R2084&amp;rft_id=info:doi/10.1103%2FPhysRevE.55.R2081"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Fukś, Henryk; Boccara, Nino (1998). "<a href="http://www.tjhsst.edu/~ekoniecz/fuks.pdf" class="external text" title="http://www.tjhsst.edu/~ekoniecz/fuks.pdf" rel="nofollow">Generalized deterministic traffic rules</a>". <i>Journal of Modern Physics C</i> <b>9</b> (1): 1–12. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1142%2FS0129183198000029" class="external text" title="http://dx.doi.org/10.1142%2FS0129183198000029" rel="nofollow">10.1142/S0129183198000029</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Generalized+deterministic+traffic+rules&amp;rft.jtitle=Journal+of+Modern+Physics+C&amp;rft.date=1998&amp;rft.volume=9&amp;rft.issue=1&amp;rft.au=Fuk%C5%9B%2C+Henryk%3B+Boccara%2C+Nino&amp;rft.pages=1%E2%80%9312&amp;rft_id=info:doi/10.1142%2FS0129183198000029&amp;rft_id=http%3A%2F%2Fwww.tjhsst.edu%2F%7Eekoniecz%2Ffuks.pdf"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Fukui, M.; Ishibashi, Y. (1996). "Traffic flow in 1D cellular automaton model including cars moving with high speed". <i>J. Phys. Soc. Japan</i> <b>65</b> (6): 1868–1870. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1143%2FJPSJ.65.1868" class="external text" title="http://dx.doi.org/10.1143%2FJPSJ.65.1868" rel="nofollow">10.1143/JPSJ.65.1868</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Traffic+flow+in+1D+cellular+automaton+model+including+cars+moving+with+high+speed&amp;rft.jtitle=J.+Phys.+Soc.+Japan&amp;rft.date=1996&amp;rft.volume=65&amp;rft.issue=6&amp;rft.au=Fukui%2C+M.%3B+Ishibashi%2C+Y.&amp;rft.pages=1868%E2%80%931870&amp;rft_id=info:doi/10.1143%2FJPSJ.65.1868"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite class="book" style="font-style:normal">Gaylord, Richard J.; Nishidate, Kazume (1996). <i>Modeling Nature: Cellular Automata Simulations with Mathematica</i>. Springer-Verlag, 29–35. <a href="../../../../articles/b/o/o/Special%7EBookSources_9780387946207_f828.html" class="internal">ISBN 978-0387946207</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Modeling+Nature%3A+Cellular+Automata+Simulations+with+%27%27Mathematica%27%27&amp;rft.au=Gaylord%2C+Richard+J.%3B+Nishidate%2C+Kazume&amp;rft.date=1996&amp;rft.pub=Springer-Verlag&amp;rft.pages=29%E2%80%9335"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Krug, J.; Spohn, H. (1988). "Universality classes for deterministic surface growth". <i>Physical Review A</i> <b>38</b> (8): 4271–4283. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1103%2FPhysRevA.38.4271" class="external text" title="http://dx.doi.org/10.1103%2FPhysRevA.38.4271" rel="nofollow">10.1103/PhysRevA.38.4271</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Universality+classes+for+deterministic+surface+growth&amp;rft.jtitle=Physical+Review+A&amp;rft.date=1988&amp;rft.volume=38&amp;rft.issue=8&amp;rft.au=Krug%2C+J.%3B+Spohn%2C+H.&amp;rft.pages=4271%E2%80%934283&amp;rft_id=info:doi/10.1103%2FPhysRevA.38.4271"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Land, Mark; Belew, Richard (1995). "No perfect two-state cellular automata for density classification exists". <i>Physical Review Letters</i> <b>74</b> (25): 1548–1550. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1103%2FPhysRevLett.74.5148" class="external text" title="http://dx.doi.org/10.1103%2FPhysRevLett.74.5148" rel="nofollow">10.1103/PhysRevLett.74.5148</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=No+perfect+two-state+cellular+automata+for+density+classification+exists&amp;rft.jtitle=Physical+Review+Letters&amp;rft.date=1995&amp;rft.volume=74&amp;rft.issue=25&amp;rft.au=Land%2C+Mark%3B+Belew%2C+Richard&amp;rft.pages=1548%E2%80%931550&amp;rft_id=info:doi/10.1103%2FPhysRevLett.74.5148"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Li, Wentian (1987). "<a href="http://www.nslij-genetics.org/wli/pub/cs87-no-figure.pdf" class="external text" title="http://www.nslij-genetics.org/wli/pub/cs87-no-figure.pdf" rel="nofollow">Power spectra of regular languages and cellular automata</a>". <i>Complex Systems</i> <b>1</b>: 107–130.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Power+spectra+of+regular+languages+and+cellular+automata&amp;rft.jtitle=Complex+Systems&amp;rft.date=1987&amp;rft.volume=1&amp;rft.au=Li%2C+Wentian&amp;rft.pages=107%E2%80%93130&amp;rft_id=http%3A%2F%2Fwww.nslij-genetics.org%2Fwli%2Fpub%2Fcs87-no-figure.pdf"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Li, Wentian (1992). "Phenomenology of nonlocal cellular automata". <i>Journal of Statistical Physics</i> <b>68</b> (5–6): 829–882. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1007%2FBF01048877" class="external text" title="http://dx.doi.org/10.1007%2FBF01048877" rel="nofollow">10.1007/BF01048877</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Phenomenology+of+nonlocal+cellular+automata&amp;rft.jtitle=Journal+of+Statistical+Physics&amp;rft.date=1992&amp;rft.volume=68&amp;rft.issue=5%E2%80%936&amp;rft.au=Li%2C+Wentian&amp;rft.pages=829%E2%80%93882&amp;rft_id=info:doi/10.1007%2FBF01048877"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Moreira, Andres (2003). "Universality and decidability of number-conserving cellular automata". <i>Theoretical Computer Science</i> <b>292</b>: 711–721. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1016%2FS0304-3975%2802%2900065-8" class="external text" title="http://dx.doi.org/10.1016%2FS0304-3975%2802%2900065-8" rel="nofollow">10.1016/S0304-3975(02)00065-8</a></span>. <a href="../../../../articles/a/r/x/ArXiv_671d.html" title="ArXiv">arXiv</a>:<a href="http://arxiv.org/abs/nlin.CG/0306032" class="extiw" title="arxiv:nlin.CG/0306032">nlin.CG/0306032</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Universality+and+decidability+of+number-conserving+cellular+automata&amp;rft.jtitle=Theoretical+Computer+Science&amp;rft.date=2003&amp;rft.volume=292&amp;rft.au=Moreira%2C+Andres&amp;rft.pages=711%E2%80%93721&amp;rft_id=info:doi/10.1016%2FS0304-3975%2802%2900065-8"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Nagel, Kai (1996). "Particle hopping models and traffic flow theory". <i>Physical Review E</i> <b>53</b> (5): 4655–4672. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1103%2FPhysRevE.53.4655" class="external text" title="http://dx.doi.org/10.1103%2FPhysRevE.53.4655" rel="nofollow">10.1103/PhysRevE.53.4655</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Particle+hopping+models+and+traffic+flow+theory&amp;rft.jtitle=Physical+Review+E&amp;rft.date=1996&amp;rft.volume=53&amp;rft.issue=5&amp;rft.au=Nagel%2C+Kai&amp;rft.pages=4655%E2%80%934672&amp;rft_id=info:doi/10.1103%2FPhysRevE.53.4655"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Nagel, Kai; Schreckenberg, Michael (1992). "A cellular automaton model for freeway traffic". <i>Journal de Physique I</i> <b>2</b>: 2221–2229. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1051%2Fjp1%3A1992277" class="external text" title="http://dx.doi.org/10.1051%2Fjp1%3A1992277" rel="nofollow">10.1051/jp1:1992277</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=A+cellular+automaton+model+for+freeway+traffic&amp;rft.jtitle=Journal+de+Physique+I&amp;rft.date=1992&amp;rft.volume=2&amp;rft.au=Nagel%2C+Kai%3B+Schreckenberg%2C+Michael&amp;rft.pages=2221%E2%80%932229&amp;rft_id=info:doi/10.1051%2Fjp1%3A1992277"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Pivato, M. (2005). "Defect particle kinematics in one-dimensional cellular automata". <a href="../../../../articles/a/r/x/ArXiv_671d.html" title="ArXiv">arXiv</a>:<a href="http://arxiv.org/abs/math.DS/0506417" class="extiw" title="arxiv:math.DS/0506417">math.DS/0506417</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Defect+particle+kinematics+in+one-dimensional+cellular+automata&amp;rft.date=2005&amp;rft.au=Pivato%2C+M."><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Sukumar, N. (1998). "Effect of boundary conditions on cellular automata that classify density". <a href="../../../../articles/a/r/x/ArXiv_671d.html" title="ArXiv">arXiv</a>:<a href="http://arxiv.org/abs/comp-gas/9804001" class="extiw" title="arxiv:comp-gas/9804001">comp-gas/9804001</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Effect+of+boundary+conditions+on+cellular+automata+that+classify+density&amp;rft.date=1998&amp;rft.au=Sukumar%2C+N."><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Tadaki, Shin-ichi; Kikuchi, Macato (1994). "Jam phases in a two-dimensional cellular automaton model of traffic flow". <i>Physical Review E</i> <b>50</b>: 4564–4570. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1103%2FPhysRevE.50.4564" class="external text" title="http://dx.doi.org/10.1103%2FPhysRevE.50.4564" rel="nofollow">10.1103/PhysRevE.50.4564</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Jam+phases+in+a+two-dimensional+cellular+automaton+model+of+traffic+flow&amp;rft.jtitle=Physical+Review+E&amp;rft.date=1994&amp;rft.volume=50&amp;rft.au=Tadaki%2C+Shin-ichi%3B+Kikuchi%2C+Macato&amp;rft.pages=4564%E2%80%934570&amp;rft_id=info:doi/10.1103%2FPhysRevE.50.4564"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Wang, Bing-Hong; Kwong, Yvonne-Roamy; Hui, Pak-Ming (1998). "Statistical mechanical approach to Fukui-Ishibashi traffic flow models". <i>Physical Review E</i> <b>57</b> (3): 2568–2573. <a href="../../../../articles/d/i/g/Digital_object_identifier.html" title="Digital object identifier">doi</a>:<span class="plainlinks neverexpand"><a href="http://dx.doi.org/10.1103%2FPhysRevE.57.2568" class="external text" title="http://dx.doi.org/10.1103%2FPhysRevE.57.2568" rel="nofollow">10.1103/PhysRevE.57.2568</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Statistical+mechanical+approach+to+Fukui-Ishibashi+traffic+flow+models&amp;rft.jtitle=Physical+Review+E&amp;rft.date=1998&amp;rft.volume=57&amp;rft.issue=3&amp;rft.au=Wang%2C+Bing-Hong%3B+Kwong%2C+Yvonne-Roamy%3B+Hui%2C+Pak-Ming&amp;rft.pages=2568%E2%80%932573&amp;rft_id=info:doi/10.1103%2FPhysRevE.57.2568"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><a href="../../../../articles/s/t/e/Stephen_Wolfram_70b6.html" title="Stephen Wolfram">Stephen Wolfram</a>, <a href="http://www.wolframscience.com/nksonline/page-707" class="external text" title="http://www.wolframscience.com/nksonline/page-707" rel="nofollow"><i>A New Kind of Science</i></a>, Wolfram Media, 2002.</li>
+</ul>
+</div>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4286/1000000
+Post-expand include size: 35858/2048000 bytes
+Template argument size: 14823/2048000 bytes
+Expensive parser function count: 0/500
+-->
+<div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="../../../../articles/c/a/t/Special%7ECategories_101d.html" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="../../../../articles/c/e/l/Category%7ECellular_automaton_rules_b75a.html" title="Category:Cellular automaton rules">Cellular automaton rules</a></span> | <span dir='ltr'><a href="../../../../articles/l/a/t/Category%7ELattice_models_c445.html" title="Category:Lattice models">Lattice models</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/r/u/l/Rule_184.html">Article</a></li><li id="ca-talk"
+	       	       ><a href="../../../../articles/r/u/l/Talk%7ERule_184_fa8c.html">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://en.wikipedia.org/wiki/Rule_184">Current revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/Wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="../../../../index.html">Main Page</a></li>
+	     	      <li id="n-Contents"><a href="../../../../articles/c/o/n/Portal%7EContents_b878.html">Contents</a></li>
+	     	      <li id="n-featuredcontent"><a href="../../../../articles/f/e/a/Portal%7EFeatured_content_5442.html">Featured content</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/Portal%7ECurrent_events_bb60.html">Current events</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-interaction'>
+	  <h5>Interaction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-aboutsite"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html">About Wikipedia</a></li>
+	     	      <li id="n-portal"><a href="../../../../articles/c/o/m/Wikipedia%7ECommunity_Portal_6a3c.html">Community portal</a></li>
+	     	      <li id="n-recentchanges"><a href="../../../../articles/r/e/c/Special%7ERecentChanges_e0d0.html">Recent changes</a></li>
+	     	      <li id="n-contact"><a href="../../../../articles/c/o/n/Wikipedia%7EContact_us_afd6.html">Contact Wikipedia</a></li>
+	     	      <li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate">Donate to Wikipedia</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help%7EContents_22de.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	<div id="p-lang" class="portlet">
+	  <h5>Languages</h5>
+	  <div class="pBody">
+	    <ul>
+	      	      <li>
+	      <a href="../../../../../nl/articles/r/e/g/Regel_184.html">Nederlands</a>
+	      </li>
+	      	    </ul>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>	<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="../../../../misc/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>	<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 08:22, 8 June 2008 by Wikipedia user <a href="../../../../articles/d/o/i/User%7EDOI_bot_acc4.html" title="User:DOI bot">DOI bot</a>. Based on work by Wikipedia user(s) <a href="../../../../articles/d/a/v/User%7EDavid_Eppstein_0880.html" title="User:David Eppstein">David Eppstein</a>, <a href="../../../../articles/z/a/p/User%7EZaphraud_3cbb.html" title="User:Zaphraud">Zaphraud</a>, <a href="../../../../articles/d/z/h/User%7EDzhim_91dd.html" title="User:Dzhim">Dzhim</a>, <a href="../../../../articles/r/j/w/User%7ERjwilmsi_027f.html" title="User:Rjwilmsi">Rjwilmsi</a>, <a href="../../../../articles/b/o/t/User%7EBotMultichill_c5ae.html" title="User:BotMultichill">BotMultichill</a>, <a href="../../../../articles/k/a/r/User%7EKarada_595b.html" title="User:Karada">Karada</a>, <a href="../../../../articles/g/e/n/User%7EGen._von_Klinkerhoffen_9e79.html" title="User:Gen. von Klinkerhoffen">Gen. von Klinkerhoffen</a> and <a href="../../../../articles/h/z/e/User%7EHzenilc_db32.html" title="User:Hzenilc">Hzenilc</a> and Anonymous user(s) of Wikipedia.</li>	  <li id="f-copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>	  <li id="f-about"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html" title="Wikipedia:About">About Wikipedia</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/Wikipedia%7EGeneral_disclaimer_3e44.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

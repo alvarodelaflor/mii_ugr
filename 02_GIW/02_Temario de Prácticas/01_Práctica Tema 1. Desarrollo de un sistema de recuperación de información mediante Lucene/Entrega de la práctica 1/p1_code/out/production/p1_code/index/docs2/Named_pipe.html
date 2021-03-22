@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Named pipe - Wikipedia, the free encyclopedia</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+    <script type="text/javascript" src="../../../../raw/gen.js"></script>        <style type="text/css">/*<![CDATA[*/
+@import "../../../../raw/MediaWiki%7ECommon.css";
+@import "../../../../raw/MediaWiki%7EMonobook.css";
+@import "../../../../raw/gen.css";
+/*]]>*/</style>          </head>
+  <body
+    class="ns-0">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Named pipe</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>In <a href="../../../../articles/c/o/m/Computing.html" title="Computing">computing</a>, a <b>named pipe</b> (also <b><a href="../../../../articles/f/i/f/FIFO_c589.html" title="FIFO">FIFO</a></b> for its behaviour) is an extension to the traditional <a href="../../../../articles/p/i/p/Pipeline_%28Unix%29_7d8f.html" title="Pipeline (Unix)">pipe</a> concept on <a href="../../../../articles/u/n/i/Unix.html" title="Unix">Unix</a> and <a href="../../../../articles/u/n/i/Unix-like.html" title="Unix-like">Unix-like</a> systems, and is one of the methods of <a href="../../../../articles/i/n/t/Inter-process_communication.html" title="Inter-process communication">inter-process communication</a>. The concept is also found in <a href="../../../../articles/m/i/c/Microsoft_Windows_48e2.html" title="Microsoft Windows">Microsoft Windows</a>, although the semantics differ substantially. A traditional pipe is "unnamed" because it exists anonymously and persists only for as long as the process is running. A named pipe is system-persistent and exists beyond the life of the process and must be "unlinked" or deleted once it is no longer being used. Processes generally attach to the named pipe (usually appearing as a file) to perform <a href="../../../../articles/i/n/t/Inter-process_communication.html" title="Inter-process communication">IPC</a> (inter-process communication).</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a href="#Named_pipes_in_Unix"><span class="tocnumber">1</span> <span class="toctext">Named pipes in Unix</span></a></li>
+<li class="toclevel-1"><a href="#Named_pipes_in_Windows"><span class="tocnumber">2</span> <span class="toctext">Named pipes in Windows</span></a></li>
+<li class="toclevel-1"><a href="#Named_pipes_in_Windows_networking"><span class="tocnumber">3</span> <span class="toctext">Named pipes in Windows networking</span></a></li>
+<li class="toclevel-1"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<p><a name="Named_pipes_in_Unix" id="Named_pipes_in_Unix"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/n/a/m/Named_pipe.html" title="Edit section: Named pipes in Unix">edit</a>]</span> <span class="mw-headline">Named pipes in Unix</span></h2>
+<p>Instead of a conventional, unnamed, shell pipeline, a named pipeline is explicitly created using <a href="http://www.opengroup.org/onlinepubs/009695399/functions/mkfifo.html" class="external text" title="http://www.opengroup.org/onlinepubs/009695399/functions/mkfifo.html" rel="nofollow">mkfifo()</a> or <a href="http://www.opengroup.org/onlinepubs/009695399/functions/mknod.html" class="external text" title="http://www.opengroup.org/onlinepubs/009695399/functions/mknod.html" rel="nofollow">mknod()</a>, and two separate processes can access the pipe by name.</p>
+<p>For example, one can create a pipe and set up gzip to compress things piped to it:</p>
+<pre>
+mkfifo my_pipe
+gzip -9 -c &lt; my_pipe &gt; out.gz
+rm my_pipe
+</pre>
+<p>In a separate process shell, independently, one could send the data to be compressed:</p>
+<pre>
+cat file &gt; my_pipe
+</pre>
+<p><a name="Named_pipes_in_Windows" id="Named_pipes_in_Windows"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/n/a/m/Named_pipe.html" title="Edit section: Named pipes in Windows">edit</a>]</span> <span class="mw-headline">Named pipes in Windows</span></h2>
+<p>In Windows, the design of named pipes is biased towards <a href="../../../../articles/c/l/i/Client-server.html" title="Client-server">client-server</a> communication, and they work much like <a href="../../../../articles/i/n/t/Internet_socket.html" title="Internet socket">sockets</a>, other than the usual read and write operations. Windows named pipes also support an explicit "passive" mode for server applications (compare: <a href="../../../../articles/u/n/i/Unix_domain_socket.html" title="Unix domain socket">Unix domain sockets</a>). <a href="../../../../articles/w/i/n/Windows_95.html" title="Windows 95">Windows 95</a> supports named pipe clients, <a href="../../../../articles/w/i/n/Windows_NT_876c.html" title="Windows NT">Windows NT</a> based systems can also be servers.</p>
+<p>The named pipe can be accessed much like a file. Win32 SDK functions such as CreateFile, ReadFile, WriteFile and CloseHandle can be used to open, read from, write to, and close a pipe. C library functions such as <a href="../../../../articles/f/o/p/Fopen.html" class="mw-redirect" title="Fopen">fopen</a>, fread, fwrite, and fclose can also be used, unlike <a href="../../../../articles/w/i/n/Windows_Sockets_716b.html" class="mw-redirect" title="Windows Sockets">Windows Sockets</a>, which does not implement network use of standard file i/o operations. There is no command line interface like Unix.</p>
+<p>Named pipes aren't permanent and can't be created as special files on any writable filesystem, unlike in Unix, but are volatile names (freed after the last reference to them is closed) allocated in the root directory of the named pipe filesystem (NPFS), mounted under the special path \\.\pipe\ (that is, a pipe named "<a href="../../../../articles/f/o/o/Foo.html" title="Foo">foo</a>" would have a full path name of \\.\pipe\foo). Anonymous pipes used in pipelining are actually named pipes with a random name.</p>
+<p>They are very rarely seen by users, but there are notable exceptions. The <a href="../../../../articles/v/m/w/VMware_Workstation_713f.html" title="VMware Workstation">VMware Workstation</a> <a href="../../../../articles/p/e/r/Personal_Computer_cdd7.html" class="mw-redirect" title="Personal Computer">PC</a> hardware <a href="../../../../articles/v/i/r/Virtualization.html" title="Virtualization">virtualization</a> tool, for instance, can expose emulated <a href="../../../../articles/s/e/r/Serial_port.html" title="Serial port">serial ports</a> to the host system as named pipes, and the <a href="../../../../articles/w/i/n/WinDbg_a16e.html" title="WinDbg">WinDbg</a> kernel mode <a href="../../../../articles/d/e/b/Debugger.html" title="Debugger">debugger</a> from <a href="../../../../articles/m/i/c/Microsoft.html" title="Microsoft">Microsoft</a> supports named pipes as a transport for debugging sessions (in fact, VMware and WinDbg can be coupled together - since WinDbg normally requires a serial connection to the target computer - letting <a href="../../../../articles/d/e/v/Device_driver.html" title="Device driver">driver</a> <a href="../../../../articles/s/o/f/Software_developer.html" title="Software developer">developers</a> do their development and testing on a single computer). Both programs require the user to enter names in the \\.\pipe\<i>name</i> form.</p>
+<p>Windows NT Named Pipes can inherit a security context.</p>
+<p>Summary of named pipes on Microsoft Windows:</p>
+<ul>
+<li>Intermachine and Intramachine IPC</li>
+<li><a href="../../../../articles/f/u/l/Full_duplex.html#Full-Duplex" class="mw-redirect" title="Full duplex">Full-Duplex</a></li>
+<li><a href="../../../../articles/b/y/t/Byte-oriented.html" class="mw-redirect" title="Byte-oriented">Byte-oriented</a> or <a href="../../../../articles/p/a/c/Packet-oriented.html" class="mw-redirect" title="Packet-oriented">Message-oriented</a></li>
+<li>Reliable</li>
+<li>Blocking or Nonblocking read and write (choosable)</li>
+<li>Standard device IO handles (<code>FileRead</code>, <code>FileWrite</code>)</li>
+<li><a href="../../../../articles/n/a/m/Namespace.html" title="Namespace">Namespace</a> used to create handles</li>
+<li>Inefficient WAN traffic (explicit data transfer request, unlike e.g. TCP/IP sliding window etc.)</li>
+<li>Peekable reads (read without removing from pipe's input buffer)</li>
+</ul>
+<p><a name="Named_pipes_in_Windows_networking" id="Named_pipes_in_Windows_networking"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/n/a/m/Named_pipe.html" title="Edit section: Named pipes in Windows networking">edit</a>]</span> <span class="mw-headline">Named pipes in Windows networking</span></h2>
+<p>Named Pipes is also a networking protocol in the <a href="../../../../articles/s/e/r/Server_Message_Block_b980.html" title="Server Message Block">Server Message Block</a> (SMB) suite, based on the use of a special <a href="../../../../articles/i/n/t/Inter-process_communication.html" title="Inter-process communication">Inter-process communication</a> (IPC) share. SMB's IPC can seamlessly and transparently pass the authentication context of the user across to Named Pipes. Windows NT's entire NT Domain protocol suite of services are implemented as <a href="../../../../articles/d/c/e/DCE_RPC_67a8.html" title="DCE/RPC">DCE/RPC</a> services over Named Pipes, as are the Exchange 5.5 Administrative applications.</p>
+<p>Windows NT Named Pipe authentication inheritance is sufficiently opaque and seamless to the user and developer perspective as to be nearly invisible, and consequently it is frequently misunderstood.</p>
+<p><a name="See_also" id="See_also"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/n/a/m/Named_pipe.html" title="Edit section: See also">edit</a>]</span> <span class="mw-headline">See also</span></h2>
+<ul>
+<li><a href="../../../../articles/a/n/o/Anonymous_pipe.html" title="Anonymous pipe">Anonymous pipe</a></li>
+<li><a href="../../../../articles/u/n/i/Unix_file_types.html" title="Unix file types">Unix file types</a></li>
+</ul>
+<p><a name="External_links" id="External_links"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/n/a/m/Named_pipe.html" title="Edit section: External links">edit</a>]</span> <span class="mw-headline">External links</span></h2>
+<ul>
+<li><a href="http://www.tldp.org/LDP/lpg/node15.html" class="external text" title="http://www.tldp.org/LDP/lpg/node15.html" rel="nofollow">The Linux Programmer's Guide: Named Pipes</a></li>
+<li><a href="http://www2.linuxjournal.com/article/2156" class="external text" title="http://www2.linuxjournal.com/article/2156" rel="nofollow">Linux Journal: Introduction to Named Pipes</a></li>
+<li><a href="http://msdn2.microsoft.com/en-us/library/aa365590.aspx" class="external text" title="http://msdn2.microsoft.com/en-us/library/aa365590.aspx" rel="nofollow">MSDN Library: Named Pipes</a></li>
+<li><a href="http://developers.sun.com/solaris/articles/named_pipes.html" class="external text" title="http://developers.sun.com/solaris/articles/named_pipes.html" rel="nofollow">Programming with named pipes (from Sun and for Solaris, but a general enough intro for anyone)</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 10/1000000
+Post-expand include size: 0/2048000 bytes
+Template argument size: 0/2048000 bytes
+Expensive parser function count: 0/500
+-->
+<div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="../../../../articles/c/a/t/Special%7ECategories_101d.html" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="../../../../articles/i/n/t/Category%7EInter-process_communication_4f8f.html" title="Category:Inter-process communication">Inter-process communication</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/n/a/m/Named_pipe.html">Article</a></li><li id="ca-talk"
+	       	       ><a href="../../../../articles/n/a/m/Talk%7ENamed_pipe_17a3.html">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://en.wikipedia.org/wiki/Named_pipe">Current revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/Wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="../../../../index.html">Main Page</a></li>
+	     	      <li id="n-Contents"><a href="../../../../articles/c/o/n/Portal%7EContents_b878.html">Contents</a></li>
+	     	      <li id="n-featuredcontent"><a href="../../../../articles/f/e/a/Portal%7EFeatured_content_5442.html">Featured content</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/Portal%7ECurrent_events_bb60.html">Current events</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-interaction'>
+	  <h5>Interaction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-aboutsite"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html">About Wikipedia</a></li>
+	     	      <li id="n-portal"><a href="../../../../articles/c/o/m/Wikipedia%7ECommunity_Portal_6a3c.html">Community portal</a></li>
+	     	      <li id="n-recentchanges"><a href="../../../../articles/r/e/c/Special%7ERecentChanges_e0d0.html">Recent changes</a></li>
+	     	      <li id="n-contact"><a href="../../../../articles/c/o/n/Wikipedia%7EContact_us_afd6.html">Contact Wikipedia</a></li>
+	     	      <li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate">Donate to Wikipedia</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help%7EContents_22de.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	<div id="p-lang" class="portlet">
+	  <h5>Languages</h5>
+	  <div class="pBody">
+	    <ul>
+	      	      <li>
+	      <a href="../../../../../de/articles/n/a/m/Named_Pipe_a9ed.html">Deutsch</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../fr/articles/t/u/b/Tube_nomm%C3%A9.html">Français</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../pt/articles/p/i/p/Pipe_nomeado.html">Português</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../ru/articles/%D0%B8/%D0%BC/%D0%B5/%D0%98%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB.html">Русский</a>
+	      </li>
+	      	    </ul>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>	<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="../../../../misc/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>	<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 12:25, 3 June 2008 by Anonymous user(s) of Wikipedia. Based on work by Wikipedia user(s) <a href="../../../../articles/b/e/n/User%7EBenhoyt_d815.html" title="User:Benhoyt">Benhoyt</a>, Bhavinbd, <a href="../../../../articles/c/o/m/User%7ECometstyles_5139.html" title="User:Cometstyles">Cometstyles</a>, <a href="../../../../articles/a/h/o/User%7EAhoerstemeier_88c8.html" title="User:Ahoerstemeier">Ahoerstemeier</a>, <a href="../../../../articles/e/a/g/User%7EEagleOne_ac47.html" title="User:EagleOne">EagleOne</a>, <a href="../../../../articles/n/e/t/User%7ENethgirb_2a07.html" title="User:Nethgirb">Nethgirb</a>, <a href="../../../../articles/c/m/d/User%7ECmdrObot_0605.html" title="User:CmdrObot">CmdrObot</a>, Topcoderjax, <a href="../../../../articles/d/_/v/User%7ED_V_S_0a86.html" title="User:D V S">D V S</a>, Rob.desbois, Halloko, <a href="../../../../articles/m/c/l/User%7EMcld_3551.html" title="User:Mcld">Mcld</a>, Mikkalai, <a href="../../../../articles/1/6/40/User%7E16%40r.html" title="User:16@r">16@r</a>, <a href="../../../../articles/b/u/b/User%7EBubba_hotep_ee80.html" title="User:Bubba hotep">Bubba hotep</a>, <a href="../../../../articles/s/r/i/User%7ESrice13_e904.html" title="User:Srice13">Srice13</a>, Samuelrivas, <a href="../../../../articles/a/p/r/User%7EApril%27s_Fool_7445.html" title="User:April's Fool">April's Fool</a>, <a href="../../../../articles/l/u/%C3%AD/User%7ELu%C3%ADs_Felipe_Braga_ec43.html" title="User:Luís Felipe Braga">Luís Felipe Braga</a>, <a href="../../../../articles/j/s/m/User%7EJsmethers_855e.html" title="User:Jsmethers">Jsmethers</a>, <a href="../../../../articles/t/o/m/User%7ETom_Edwards_e91c.html" title="User:Tom Edwards">Tom Edwards</a>, <a href="../../../../articles/w/i/a/User%7EWiarthurhu_a86e.html" title="User:Wiarthurhu">Wiarthurhu</a>, AntonioDsouza, <a href="../../../../articles/m/a/t/User%7EMatt_Crypto_f5b3.html" title="User:Matt Crypto">Matt Crypto</a>, <a href="../../../../articles/d/a/n/User%7EDanudey_1a67.html" title="User:Danudey">Danudey</a>, <a href="../../../../articles/s/p/a/User%7ESpalding_eecd.html" title="User:Spalding">Spalding</a>, <a href="../../../../articles/z/w/o/User%7EZwobot_e2e3.html" title="User:Zwobot">Zwobot</a>, <a href="../../../../articles/i/n/k/User%7EInkling_df45.html" title="User:Inkling">Inkling</a>, <a href="../../../../articles/r/e/i/User%7EReisio_4712.html" title="User:Reisio">Reisio</a>, <a href="../../../../articles/l/k/c/User%7ELkcl_7289.html" title="User:Lkcl">Lkcl</a>, <a href="../../../../articles/g/r/e/User%7EGrendelkhan_c5fb.html" title="User:Grendelkhan">Grendelkhan</a>, <a href="../../../../articles/s/t/e/User%7EStewartadcock_c102.html" title="User:Stewartadcock">Stewartadcock</a>, <a href="../../../../articles/r/j/f/User%7ERJFJR_0643.html" title="User:RJFJR">RJFJR</a>, KJK::Hyperion, JebeddiahSpringfield, <a href="../../../../articles/f/r/e/User%7EFredrik_8a6d.html" title="User:Fredrik">Fredrik</a>, <a href="../../../../articles/d/y/s/User%7EDysprosia_bc6d.html" title="User:Dysprosia">Dysprosia</a> and <a href="../../../../articles/f/r/a/User%7EFrancs2000_6420.html" title="User:Francs2000">Francs2000</a>.</li>	  <li id="f-copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>	  <li id="f-about"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html" title="Wikipedia:About">About Wikipedia</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/Wikipedia%7EGeneral_disclaimer_3e44.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Boolean logic - Wikipedia, the free encyclopedia</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+    <script type="text/javascript" src="../../../../raw/gen.js"></script>        <style type="text/css">/*<![CDATA[*/
+@import "../../../../raw/MediaWiki%7ECommon.css";
+@import "../../../../raw/MediaWiki%7EMonobook.css";
+@import "../../../../raw/gen.css";
+/*]]>*/</style>          </head>
+  <body
+    class="ns-0">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Boolean logic</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p><b>Boolean logic</b> is a complete <a href="../../../../articles/f/o/r/Formal_system.html" title="Formal system">system</a> for <a href="../../../../articles/l/o/g/Logic.html" title="Logic">logical</a> <a href="../../../../articles/o/p/e/Operation_%28mathematics%29.html" title="Operation (mathematics)">operations</a>. It was named after <a href="../../../../articles/g/e/o/George_Boole_832a.html" title="George Boole">George Boole</a>, who first defined an <a href="../../../../articles/a/l/g/Algebraic_structure.html" title="Algebraic structure">algebraic system</a> of logic in the mid <a href="../../../../articles/1/9/t/19th_century.html" title="19th century">19th century</a>. Boolean logic has many applications in electronics, computer hardware and software, and is the base of <a href="../../../../articles/d/i/g/Digital_electronics.html" title="Digital electronics">digital electronics</a>. In <a href="../../../../articles/1/9/3/1938.html" title="1938">1938</a>, <a href="../../../../articles/c/l/a/Claude_Elwood_Shannon_c269.html" class="mw-redirect" title="Claude Elwood Shannon">Claude Shannon</a> showed how electric circuits with relays were a model for Boolean logic. This fact soon proved enormously consequential with the emergence of the electronic <a href="../../../../articles/c/o/m/Computer.html" title="Computer">computer</a>.</p>
+<p><i>Using the <a href="../../../../articles/a/l/g/Algebra_of_sets.html" title="Algebra of sets">algebra of sets</a>, this article contains a basic introduction to <a href="../../../../articles/s/e/t/Set.html" title="Set">sets</a>, Boolean operations, <a href="../../../../articles/v/e/n/Venn_diagram.html" title="Venn diagram">Venn diagrams</a>, <a href="../../../../articles/t/r/u/Truth_tables.html" class="mw-redirect" title="Truth tables">truth tables</a>, and Boolean applications. The <a href="../../../../articles/b/o/o/Boolean_algebra.html" title="Boolean algebra">Boolean algebra</a> article discusses a type of <a href="../../../../articles/a/l/g/Algebraic_structure.html" title="Algebraic structure">algebraic structure</a> that satisfies the axioms of Boolean logic. The <a href="../../../../articles/b/i/n/Binary_arithmetic.html" class="mw-redirect" title="Binary arithmetic">binary arithmetic</a> article discusses the use of <a href="../../../../articles/b/i/n/Binary_numeral_system.html" title="Binary numeral system">binary</a> numbers in <a href="../../../../articles/c/o/m/Computer.html" title="Computer">computer</a> systems.</i></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a href="#Set_logic_versus_Boolean_logic"><span class="tocnumber">1</span> <span class="toctext">Set logic versus Boolean logic</span></a></li>
+<li class="toclevel-1"><a href="#Terms"><span class="tocnumber">2</span> <span class="toctext">Terms</span></a></li>
+<li class="toclevel-1"><a href="#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Chaining_operations_together"><span class="tocnumber">3.1</span> <span class="toctext">Chaining operations together</span></a></li>
+<li class="toclevel-2"><a href="#Use_of_parentheses"><span class="tocnumber">3.2</span> <span class="toctext">Use of parentheses</span></a></li>
+<li class="toclevel-2"><a href="#Application_to_binary_values"><span class="tocnumber">3.3</span> <span class="toctext">Application to binary values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Properties"><span class="tocnumber">4</span> <span class="toctext">Properties</span></a></li>
+<li class="toclevel-1"><a href="#Truth_tables"><span class="tocnumber">5</span> <span class="toctext">Truth tables</span></a></li>
+<li class="toclevel-1"><a href="#Other_notations"><span class="tocnumber">6</span> <span class="toctext">Other notations</span></a></li>
+<li class="toclevel-1"><a href="#Basic_mathematics_use_of_Boolean_terms"><span class="tocnumber">7</span> <span class="toctext">Basic mathematics use of Boolean terms</span></a></li>
+<li class="toclevel-1"><a href="#English_language_use_of_Boolean_terms"><span class="tocnumber">8</span> <span class="toctext">English language use of Boolean terms</span></a></li>
+<li class="toclevel-1"><a href="#Applications"><span class="tocnumber">9</span> <span class="toctext">Applications</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Digital_electronic_circuit_design"><span class="tocnumber">9.1</span> <span class="toctext">Digital electronic circuit design</span></a></li>
+<li class="toclevel-2"><a href="#Database_applications"><span class="tocnumber">9.2</span> <span class="toctext">Database applications</span></a></li>
+<li class="toclevel-2"><a href="#Search_engine_queries"><span class="tocnumber">9.3</span> <span class="toctext">Search engine queries</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#See_also"><span class="tocnumber">10</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a href="#Notes_and_references"><span class="tocnumber">11</span> <span class="toctext">Notes and references</span></a></li>
+<li class="toclevel-1"><a href="#External_links"><span class="tocnumber">12</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<p><a name="Set_logic_versus_Boolean_logic" id="Set_logic_versus_Boolean_logic"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Set logic versus Boolean logic">edit</a>]</span> <span class="mw-headline">Set logic versus Boolean logic</span></h2>
+<p>Sets can contain any elements. We will first start out by discussing general set logic, then restrict ourselves to Boolean logic, where elements (or "bits") each contain only two possible values, called various names, such as "true" and "false", "yes" and "no", "on" and "off", or "1" and "0".</p>
+<p><a name="Terms" id="Terms"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Terms">edit</a>]</span> <span class="mw-headline">Terms</span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:292px;"><a href="../../../../articles/v/e/n/Image%7EVenn_A_intersect_B.svg_2d16.html" class="image" title="Venn diagram showing the intersection of sets &quot;A AND B&quot; (in violet/dark shading), the union of sets &quot;A OR B&quot; (all the colored/shaded regions), and the exclusive OR case &quot;set A XOR B&quot; (all the colored regions except the violet/only the lightly shaded regions).  The &quot;universe&quot; is represented by all the area within the rectangular frame."><img alt="Venn diagram showing the intersection of sets &quot;A AND B&quot; (in violet/dark shading), the union of sets &quot;A OR B&quot; (all the colored/shaded regions), and the exclusive OR case &quot;set A XOR B&quot; (all the colored regions except the violet/only the lightly shaded regions).  The &quot;universe&quot; is represented by all the area within the rectangular frame." src="../../../../images/shared/thumb/6/6d/Venn_A_intersect_B.svg/290px-Venn_A_intersect_B.svg.png" width="290" height="191" border="0" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="../../../../articles/v/e/n/Image%7EVenn_A_intersect_B.svg_2d16.html" class="internal" title="Enlarge"><img src="../../../../skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Venn diagram showing the intersection of sets "A AND B" (in violet/dark shading), the union of sets "A OR B" (all the colored/shaded regions), and the exclusive OR case "set A XOR B" (all the colored regions except the violet/only the lightly shaded regions). The "universe" is represented by all the area within the rectangular frame.</div>
+</div>
+</div>
+<p>Let <i>X</i> be a set:</p>
+<ul>
+<li>An <b>element</b> is one member of a set. This is denoted by <img class="tex" alt="\in" src="../../../../math/8/c/2/8c20c78b364ed5dbadd49e5b997aa1cc.png" />. If it's not an element of the set, this is denoted by <img class="tex" alt="\notin" src="../../../../math/6/9/2/692614f72e231db0d2313050ac29e113.png" />.</li>
+</ul>
+<ul>
+<li>The <b>universe</b> is the set <i>X</i>, sometimes denoted by 1. Note that this use of the word universe means <i>"all elements being considered"</i>, which are not necessarily the same as <i>"all elements there are"</i>.</li>
+</ul>
+<ul>
+<li>The <b>empty set</b> or <b>null set</b> is the set of no elements, denoted by <img class="tex" alt="\varnothing" src="../../../../math/d/0/9/d096fc15d57854ec89d746709b02e52e.png" /> and sometimes 0.</li>
+</ul>
+<ul>
+<li>A <b>unary operator</b> applies to a single set. There is one unary operator, called logical <b>NOT</b>. It works by taking the <a href="../../../../articles/c/o/m/Complement_%28set_theory%29.html" title="Complement (set theory)">complement</a>.</li>
+</ul>
+<ul>
+<li>A <b>binary operator</b> applies to two sets. The basic binary operators are logical <b>OR</b> and logical <b>AND</b>. They perform the <a href="../../../../articles/u/n/i/Union_%28set_theory%29.html" title="Union (set theory)">union</a> and <a href="../../../../articles/i/n/t/Intersection_%28set_theory%29.html" title="Intersection (set theory)">intersection</a> of sets. There are also other derived binary operators, such as <b>XOR</b> (exclusive OR).</li>
+</ul>
+<ul>
+<li>A <b>subset</b> is denoted by <img class="tex" alt="A \subseteq B" src="../../../../math/1/d/6/1d692925920a6f5ff7d9b834b166debc.png" /> and means every element in set A is also in set B.</li>
+</ul>
+<ul>
+<li>A <b>proper subset</b> is denoted by <img class="tex" alt="A \subset B" src="../../../../math/b/d/a/bdada2015b691adc22b8378ed4ef82d3.png" /> and means every element in set A is also in set B and the two sets are not equal.</li>
+</ul>
+<ul>
+<li>A <b>superset</b> is denoted by <img class="tex" alt="A \supseteq B" src="../../../../math/2/e/9/2e9def3789de2cb04ae38db587920983.png" /> and means every element in set B is also in set A.</li>
+</ul>
+<ul>
+<li>A <b>proper superset</b> is denoted by <img class="tex" alt="A \supset B" src="../../../../math/7/6/d/76d58b41f6104091421aa5d7fdbe5a65.png" /> and means every element in set B is also in set A and the two sets are not equal.</li>
+</ul>
+<p><a name="Example" id="Example"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Example">edit</a>]</span> <span class="mw-headline">Example</span></h2>
+<div class="floatright"><span><a href="../../../../articles/b/o/o/Image%7EBoolean_multiples_of_2_3_5.svg_3030.html" class="image" title="Boolean multiples of 2 3 5.svg"><img alt="" src="../../../../images/shared/thumb/7/73/Boolean_multiples_of_2_3_5.svg/480px-Boolean_multiples_of_2_3_5.svg.png" width="480" height="307" border="0" /></a></span></div>
+<p>Imagine that set A contains all even numbers (multiples of two) in "the universe" (defined in the example to the right as all integers between 0 and 30 inclusive) and set B contains all multiples of three in "the universe". Then the <b>intersection</b> of the two sets (all elements in sets A AND B) would be all multiples of six in "the universe".</p>
+<p>The complement of set A (all elements NOT in set A) would be all odd numbers in "the universe".</p>
+<p><a name="Chaining_operations_together" id="Chaining_operations_together"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Chaining operations together">edit</a>]</span> <span class="mw-headline">Chaining operations together</span></h3>
+<p>While at most two sets are joined in any Boolean operation, the new set formed by that operation can then be joined with other sets utilizing additional Boolean operations. Using the previous example, we can define a new set C as the set of all multiples of five in "the universe". Thus "sets A AND B AND C" would be all multiples of 30 in "the universe". If more convenient, we may consider set AB to be the intersection of sets A and B, or the set of all multiples of six in "the universe". Then we can say "sets AB AND C" are the set of all multiples of 30 in "the universe". We could then take it a step further, and call this result set ABC.</p>
+<p><a name="Use_of_parentheses" id="Use_of_parentheses"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Use of parentheses">edit</a>]</span> <span class="mw-headline">Use of parentheses</span></h3>
+<p>While any number of logical ANDs (or any number of logical ORs) may be chained together without ambiguity, the combination of ANDs and ORs and NOTs can lead to ambiguous cases. In such cases, parentheses may be used to clarify the order of operations. As always, the operations within the innermost pair is performed first, followed by the next pair out, etc., until all operations within parentheses have been completed. Then any operations outside the parentheses are performed.</p>
+<p><a name="Application_to_binary_values" id="Application_to_binary_values"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Application to binary values">edit</a>]</span> <span class="mw-headline">Application to binary values</span></h3>
+<p>In this example we have used <a href="../../../../articles/n/a/t/Natural_numbers.html" class="mw-redirect" title="Natural numbers">natural numbers</a>, while in Boolean logic binary numbers are used. The universe, for example, could contain just two elements, "0" and "1" (or "true" and "false", "yes" and "no", "on" or "off", etc.). We could also combine binary values together to get binary words, such as, in the case of two digits, "00", "01", "10", and "11". Applying set logic to those values, we could have a set of all values where the first digit is "0" ("00" and "01") and the set of all values where the first and second digits are different ("01" and "10"). The intersection of the two sets would then be the single element, "01". This could be shown by the following Boolean expression, where "1st" is the first digit and "2nd" is the second digit:</p>
+<p><b>(NOT 1st) AND (1st XOR 2nd)</b></p>
+<p><a name="Properties" id="Properties"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Properties">edit</a>]</span> <span class="mw-headline">Properties</span></h2>
+<p>We define symbols for the two primary binary operations as <img class="tex" alt="\land / \cap" src="../../../../math/1/3/4/134e8b7f4f459efcd9ea69556dcb481f.png" /> (logical AND/set intersection) and <img class="tex" alt="\lor / \cup" src="../../../../math/0/6/c/06cc83cbbd21b610db8477e301a4d4ea.png" /> (logical OR/set union), and for the single unary operation <img class="tex" alt="\lnot" src="../../../../math/8/e/f/8efca960b209402104b448a5ad9486a8.png" /> / ~ (logical NOT/set complement). We will also use the values 0 (logical FALSE/the empty set) and 1 (logical TRUE/the universe). The following properties apply to both Boolean logic and set logic (although only the notation for Boolean logic is displayed here):</p>
+<dl>
+<dd>
+<table cellpadding="5">
+<tr>
+<td><img class="tex" alt="a \lor (b \lor c) = (a \lor b) \lor c " src="../../../../math/5/a/9/5a923d6ff87d86c2b07d3992750b467e.png" /></td>
+<td><img class="tex" alt="a \land (b \land c) = (a \land b) \land c " src="../../../../math/7/4/3/743b72cfa6a9dd44972e07bf7dd984a7.png" /></td>
+<td><a href="../../../../articles/a/s/s/Associativity.html" title="Associativity">associativity</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt="a \lor b = b \lor a " src="../../../../math/0/3/e/03e69b8b3bbe46ba0501e7e64b2ccc36.png" /></td>
+<td><img class="tex" alt="a \land  b = b \land a " src="../../../../math/d/8/8/d884090c85b7b6b72ae28cb92c7a2e15.png" /></td>
+<td><a href="../../../../articles/c/o/m/Commutativity.html" title="Commutativity">commutativity</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt="a  \lor (a \land b) = a " src="../../../../math/b/7/c/b7c58c08fc46805ee8364eed49b45a19.png" /></td>
+<td><img class="tex" alt="a \land (a \lor b) = a " src="../../../../math/7/6/3/763857e9fa14ed2585357d2fc32afe8f.png" /></td>
+<td><a href="../../../../articles/a/b/s/Absorption_laws.html" class="mw-redirect" title="Absorption laws">absorption</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt="a \lor  (b \land c) = (a \lor b) \land (a \lor c) " src="../../../../math/4/1/6/416f837a354ddd44b555d224f8fef871.png" /></td>
+<td><img class="tex" alt="a \land  (b \lor c) = (a \land b) \lor (a \land c) " src="../../../../math/0/a/c/0accfb26d95807d7384b52bf37e17f90.png" /></td>
+<td><a href="../../../../articles/d/i/s/Distributivity.html" title="Distributivity">distributivity</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt="a \lor  \lnot a = 1 " src="../../../../math/e/a/2/ea2d991f94ebba5449915b9c8f1af741.png" /></td>
+<td><img class="tex" alt="a \land \lnot a = 0 " src="../../../../math/3/b/6/3b651b0e972d805ed6ec1710d2da4cbf.png" /></td>
+<td><a href="../../../../articles/c/o/m/Complemented_lattice.html" title="Complemented lattice">complements</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt="a \lor a = a" src="../../../../math/d/c/d/dcde135bcb12c77e7ded7fed217ce166.png" /></td>
+<td><img class="tex" alt="a \land a = a " src="../../../../math/0/1/f/01f04899ce96ca79453bacf7c0dfcadd.png" /></td>
+<td><a href="../../../../articles/i/d/e/Idempotent.html" class="mw-redirect" title="Idempotent">idempotency</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt="a \lor 0 = a " src="../../../../math/f/a/d/fade97e1c2a7ced884f70128cc8e858e.png" /></td>
+<td><img class="tex" alt="a \land 1 = a " src="../../../../math/3/5/3/353a81d04057aa03ef9644200abc1501.png" /></td>
+<td rowspan="2"><a href="../../../../articles/b/o/u/Bounded_poset.html" class="mw-redirect" title="Bounded poset">boundedness</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt="a \lor 1 = 1 " src="../../../../math/b/e/7/be7a7145eea43f394c92c4bf78a20f01.png" /></td>
+<td><img class="tex" alt="a \land 0 = 0 " src="../../../../math/9/3/c/93cb859c9e73e575fd68627f81c079eb.png" /></td>
+</tr>
+<tr>
+<td><img class="tex" alt="\lnot 0 = 1 " src="../../../../math/a/4/5/a4546e3e3c1afde06e6f64abd92242df.png" /></td>
+<td><img class="tex" alt="\lnot 1 = 0 " src="../../../../math/b/b/e/bbe90d0da52424d50af8ccef72f3dfb3.png" /></td>
+<td>0 and 1 are <a href="../../../../articles/c/o/m/Complementation.html" class="mw-redirect" title="Complementation">complements</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt="\lnot (a \lor b) = \lnot a  \land \lnot b" src="../../../../math/f/e/6/fe609ccc97a3f08d1c79284ce2a0b903.png" /></td>
+<td><img class="tex" alt="\lnot (a \land b) = \lnot a  \lor \lnot b" src="../../../../math/4/9/8/4988c1393d471a33a5544a819d6afe7f.png" /></td>
+<td><a href="../../../../articles/d/e/_/De_Morgan%27s_laws_174e.html" title="De Morgan's laws">de Morgan's laws</a></td>
+</tr>
+<tr>
+<td><img class="tex" alt=" \lnot \lnot a = a " src="../../../../math/4/a/5/4a518a52a8bb7648d49ac7ab1d4f0515.png" /></td>
+<td></td>
+<td><a href="../../../../articles/i/n/v/Involution.html" title="Involution">involution</a></td>
+</tr>
+</table>
+</dd>
+</dl>
+<p>The first three properties define a <a href="../../../../articles/l/a/t/Lattice_%28order%29.html" title="Lattice (order)">lattice</a>; the first five define a <a href="../../../../articles/b/o/o/Boolean_algebra.html" title="Boolean algebra">Boolean algebra</a>. The remaining five are a consequence of the first five.</p>
+<p><a name="Truth_tables" id="Truth_tables"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Truth tables">edit</a>]</span> <span class="mw-headline">Truth tables</span></h2>
+<p>For Boolean logic using only two values, 0 and 1, the INTERSECTION and UNION of those values may be defined using <a href="../../../../articles/t/r/u/Truth_tables.html" class="mw-redirect" title="Truth tables">truth tables</a> such as these:</p>
+<table>
+<tr>
+<td width="80"></td>
+<td>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr>
+<th><img class="tex" alt="\cap" src="../../../../math/e/7/8/e78f632038354aae583f795a73d4e6b8.png" /></th>
+<th>0</th>
+<th>1</th>
+</tr>
+<tr>
+<th>0</th>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>0</td>
+<td>1</td>
+</tr>
+</table>
+</td>
+<td width="40"></td>
+<td>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr>
+<th><img class="tex" alt="\cup" src="../../../../math/4/3/2/432c1df69e11aba7c5c5070e7578609f.png" /></th>
+<th>0</th>
+<th>1</th>
+</tr>
+<tr>
+<th>0</th>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>1</th>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<ul>
+<li>More complex truth tables involving multiple inputs, and other Boolean operations, may also be created.</li>
+</ul>
+<ul>
+<li>Truth tables have applications in <a href="../../../../articles/l/o/g/Logic.html" title="Logic">logic</a>, interpreting 0 as FALSE, 1 as TRUE, <img class="tex" alt="\cap" src="../../../../math/e/7/8/e78f632038354aae583f795a73d4e6b8.png" /> as AND, <img class="tex" alt="\cup" src="../../../../math/4/3/2/432c1df69e11aba7c5c5070e7578609f.png" /> as OR, and ¬ as NOT.</li>
+</ul>
+<p><a name="Other_notations" id="Other_notations"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Other notations">edit</a>]</span> <span class="mw-headline">Other notations</span></h2>
+<p><a href="../../../../articles/m/a/t/Mathematician.html" title="Mathematician">Mathematicians</a> and <a href="../../../../articles/e/n/g/Engineer.html" title="Engineer">engineers</a> often use plus (+) for OR and a product sign (<img class="tex" alt="\cdot" src="../../../../math/3/6/f/36f8ae4c86b69d52d037a6802d91cc4a.png" />) for AND. OR and AND are somewhat analogous to addition and multiplication in other <a href="../../../../articles/a/l/g/Algebraic_structure.html" title="Algebraic structure">algebraic structures</a>, and this notation makes it very easy to get <a href="../../../../articles/c/a/n/Canonical_form_%28Boolean_algebra%29_8518.html" title="Canonical form (Boolean algebra)">sum of products form</a> for normal algebra. NOT may be represented by a line drawn above the expression being negated (<img class="tex" alt="\overline{x}" src="../../../../math/4/d/8/4d8a563baa616b3bd56826256c46d50e.png" />).</p>
+<p><a href="../../../../articles/p/r/o/Programmer.html" title="Programmer">Programmers</a> will often use a pipe symbol (|) for OR, an ampersand (&amp;) for AND, and a tilde (~) for NOT. In many <a href="../../../../articles/p/r/o/Programming_language.html" title="Programming language">programming languages</a>, these symbols stand for <a href="../../../../articles/b/i/t/Bitwise_operation.html" title="Bitwise operation">bitwise operations</a>. "||", "&amp;&amp;", and "!" are used for variants of these operations.</p>
+<p>Another notation uses "meet" for AND and "join" for OR. However, this can lead to confusion, as the term "join" is also commonly used for any Boolean operation which combines sets together, which includes both AND and OR.</p>
+<p><a name="Basic_mathematics_use_of_Boolean_terms" id="Basic_mathematics_use_of_Boolean_terms"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Basic mathematics use of Boolean terms">edit</a>]</span> <span class="mw-headline">Basic mathematics use of Boolean terms</span></h2>
+<ul>
+<li>In the case of simultaneous equations, they are connected with an implied logical AND:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>x + y = 2</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>AND</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>x - y = 2</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>The same applies to simultaneous inequalities:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>x + y &lt; 2</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>AND</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>x - y &lt; 2</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>The greater than or equals sign (<img class="tex" alt="\ge" src="../../../../math/8/f/b/8fbe2a506fe3db0835548e1b648ec977.png" />) and less than or equals sign (<img class="tex" alt="\le" src="../../../../math/4/9/d/49dc1443f33cf63082d6e193dd2af78f.png" />) may be assumed to contain a logical OR:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>X &lt; 2</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>OR</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>X = 2</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>The plus/minus sign (<img class="tex" alt="\pm" src="../../../../math/5/7/2/5722e2f6169308b8be3542900c6d6553.png" />), as in the case of the solution to a square root problem, may be taken as logical OR:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>WIDTH = 3</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>OR</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>WIDTH = -3</dd>
+</dl>
+</dd>
+</dl>
+<p><a name="English_language_use_of_Boolean_terms" id="English_language_use_of_Boolean_terms"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: English language use of Boolean terms">edit</a>]</span> <span class="mw-headline">English language use of Boolean terms</span></h2>
+<p>Care should be taken when converting an English sentence into a formal Boolean statement. Many English sentences have imprecise meanings, e.g. "All that glitters is <b>not</b> gold," which could mean that "nothing that glitters is gold" or "some things which glitter are not gold".</p>
+<p>AND and OR can also be used interchangeably in English, in certain cases:</p>
+<ul>
+<li>"I always carry an umbrella for when it rains <b>and</b> snows."</li>
+</ul>
+<ul>
+<li>"I always carry an umbrella for when it rains <b>or</b> snows."</li>
+</ul>
+<p>Sometimes the English words AND and OR have the opposite meaning in Boolean logic:</p>
+<ul>
+<li>"Give me all the red <b>and</b> blue berries" usually means "Give me all berries that are red <b>or</b> blue". An alternative phrasing for standard written English: "Give me all berries that are red as well as all berries that are blue".</li>
+</ul>
+<p>Also note that the word OR in English may correspond with either logical OR or logical XOR, depending on the context:</p>
+<ul>
+<li>"I start to sweat when the humidity <b>or</b> temperature is high." (logical OR)</li>
+</ul>
+<ul>
+<li>"You want ice cream and candy? You may have ice cream <b>or</b> candy." (logical XOR)</li>
+</ul>
+<p>The combination AND/OR is sometimes used in English to specify a logical OR, when just using the word OR alone might have been mistaken as meaning logical XOR:</p>
+<ul>
+<li>"I'm having chicken <b>and/or</b> beef for dinner." (logical OR). An alternative phrasing for standard written English: "I'm having chicken, or beef, or both, for dinner."</li>
+</ul>
+<ul>
+<li>The use of the "and/or" <a href="../../../../articles/v/i/r/Virgule.html" class="mw-redirect" title="Virgule">virgule</a> is generally disfavored in formal written English.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0" title="">[1]</a></sup> Such usage may introduce critical imprecision in legal instruments, research findings, and <a href="../../../../articles/s/p/e/Specification.html" class="mw-redirect" title="Specification">specifications</a> for computer programs or electronic circuits.</li>
+</ul>
+<p>A case where this is an issue is when specifications for a computer program or electronic circuit are supplied as an English paragraph describing their function. For example, the statement: "the program should verify that the applicant has checked the male <b>or</b> female box", should be taken as an XOR, and a check added to ensure that one, and only one, box is selected. In other cases, the interpretation of English may be less certain, and the author of the specification may need to be consulted to determine their true intent.</p>
+<p><a name="Applications" id="Applications"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Applications">edit</a>]</span> <span class="mw-headline">Applications</span></h2>
+<p><a name="Digital_electronic_circuit_design" id="Digital_electronic_circuit_design"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Digital electronic circuit design">edit</a>]</span> <span class="mw-headline">Digital electronic circuit design</span></h3>
+<p>Boolean logic is also used for circuit design in <a href="../../../../articles/e/l/e/Electrical_engineering.html" title="Electrical engineering">electrical engineering</a>; here 0 and 1 may represent the two different states of one <a href="../../../../articles/b/i/t/Bit.html" title="Bit">bit</a> in a <a href="../../../../articles/d/i/g/Digital_circuit.html" class="mw-redirect" title="Digital circuit">digital circuit</a>, typically high and low <a href="../../../../articles/v/o/l/Voltage.html" title="Voltage">voltage</a>. Circuits are described by expressions containing variables, and two such expressions are equal for all values of the variables if, and only if, the corresponding circuits have the same input-output behavior. Furthermore, every possible input-output behavior can be modeled by a suitable Boolean expression.</p>
+<p>Basic <a href="../../../../articles/l/o/g/Logic_gates.html" class="mw-redirect" title="Logic gates">logic gates</a> such as AND, OR, and NOT gates may be used alone, or in conjunction with NAND, NOR, and XOR gates, to control digital electronics and circuitry. Whether these gates are wired in <a href="../../../../articles/s/e/r/Series_and_parallel_circuits.html" title="Series and parallel circuits">series or parallel</a> controls the precedence of the operations.</p>
+<p><a name="Database_applications" id="Database_applications"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Database applications">edit</a>]</span> <span class="mw-headline">Database applications</span></h3>
+<p><a href="../../../../articles/r/e/l/Relational_databases.html" class="mw-redirect" title="Relational databases">Relational databases</a> use <a href="../../../../articles/s/q/l/SQL_9778.html" title="SQL">SQL</a>, or other database-specific languages, to perform queries, which may contain Boolean logic. For this application, each record in a table may be considered to be an "element" of a "set". For example, in SQL, these <a href="../../../../articles/s/e/l/SELECT_6322.html" class="mw-redirect" title="SELECT">SELECT</a> statements are used to retrieve data from tables in the database:</p>
+<pre>
+   SELECT * FROM EMPLOYEES WHERE LAST_NAME = 'Smith' AND FIRST_NAME = 'John' ;
+</pre>
+<pre>
+   SELECT * FROM EMPLOYEES WHERE LAST_NAME = 'Smith' OR  FIRST_NAME = 'John' ;
+</pre>
+<pre>
+   SELECT * FROM EMPLOYEES WHERE NOT LAST_NAME = 'Smith' ;
+</pre>
+<p>Parentheses may be used to explicitly specify the order in which Boolean operations occur, when multiple operations are present:</p>
+<pre>
+   SELECT * FROM EMPLOYEES WHERE (NOT LAST_NAME = 'Smith') AND (FIRST_NAME = 'John' OR FIRST_NAME = 'Mary') ;
+</pre>
+<p>Multiple sets of nested parentheses may also be used, where needed.</p>
+<p>Any Boolean operation (or operations) which combines two (or more) tables together is referred to as a <b>join</b>, in relational database terminology.</p>
+<p>In the field of <a href="../../../../articles/e/l/e/Electronic_Medical_Records_07e0.html" class="mw-redirect" title="Electronic Medical Records">Electronic Medical Records</a>, some software applications use Boolean logic to query their patient databases, in what has been named <a href="../../../../articles/c/o/n/Concept_Processing_3d0b.html" title="Concept Processing">Concept Processing</a> technology.</p>
+<p><a name="Search_engine_queries" id="Search_engine_queries"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Search engine queries">edit</a>]</span> <span class="mw-headline">Search engine queries</span></h3>
+<p>Search engine queries also employ Boolean logic. For this application, each web page on the Internet may be considered to be an "element" of a "set". The following examples use a syntax supported by <a href="../../../../articles/g/o/o/Google.html" title="Google">Google</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1" title="">[2]</a></sup></p>
+<ul>
+<li>Doublequotes are used to combine whitespace-separated words into a single search term.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2" title="">[3]</a></sup></li>
+<li>Whitespace is used to specify logical AND, as it is the default operator for joining search terms:</li>
+</ul>
+<pre>
+   "Search term 1" "Search term 2"
+</pre>
+<ul>
+<li>The OR keyword is used for logical OR:</li>
+</ul>
+<pre>
+   "Search term 1" OR "Search term 2"
+</pre>
+<ul>
+<li>The minus sign is used for logical NOT (AND NOT):</li>
+</ul>
+<pre>
+   "Search term 1" -"Search term 2"
+</pre>
+<p><a name="See_also" id="See_also"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: See also">edit</a>]</span> <span class="mw-headline">See also</span></h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a href="../../../../articles/w/i/k/Image%7EWikibooks-logo-en.svg_f0fc.html" class="image" title="Wikibooks"><img alt="Wikibooks" src="../../../../images/shared/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" width="50" height="57" border="0" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a href="../../../../articles/w/i/k/Wikibooks.html" title="Wikibooks">Wikibooks</a> <a href="http://en.wikibooks.org/wiki/How_to_search" class="extiw" title="wikibooks:How_to_search">How to search</a> has a page on the topic of
+<div style="margin-left:10px;"><i><b><a href="http://en.wikibooks.org/wiki/How_to_search/Boolean_Logic" class="extiw" title="wikibooks:How_to_search/Boolean_Logic">Boolean Logic</a></b></i></div>
+</div>
+</div>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a href="../../../../articles/w/i/k/Image%7EWikibooks-logo-en.svg_f0fc.html" class="image" title="Wikibooks"><img alt="Wikibooks" src="../../../../images/shared/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" width="50" height="57" border="0" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a href="../../../../articles/w/i/k/Wikibooks.html" title="Wikibooks">Wikibooks</a> <a href="http://en.wikibooks.org/wiki/Electronics" class="extiw" title="wikibooks:Electronics">Electronics</a> has a page on the topic of
+<div style="margin-left:10px;"><i><b><a href="http://en.wikibooks.org/wiki/Electronics/Boolean_Algebra" class="extiw" title="wikibooks:Electronics/Boolean_Algebra">Boolean Algebra</a></b></i></div>
+</div>
+</div>
+<ul>
+<li><a href="../../../../articles/b/o/o/Boolean_algebra_topics.html" class="mw-redirect" title="Boolean algebra topics">Boolean algebra topics</a></li>
+<li><a href="../../../../articles/b/o/o/Boolean_domain.html" title="Boolean domain">Boolean domain</a></li>
+<li><a href="../../../../articles/b/o/o/Boolean_function.html" title="Boolean function">Boolean function</a></li>
+<li><a href="../../../../articles/b/o/o/Boolean-valued_function.html" title="Boolean-valued function">Boolean-valued function</a></li>
+<li><i><a href="../../../../articles/l/a/w/Laws_of_Form_d219.html" title="Laws of Form">Laws of Form</a></i></li>
+<li><a href="../../../../articles/l/o/g/Logic_minimization.html" class="mw-redirect" title="Logic minimization">Logic minimization</a></li>
+<li><a href="../../../../articles/l/o/g/Logic_gate.html" title="Logic gate">Logic gate</a></li>
+<li><a href="../../../../articles/l/o/g/Logical_graph.html" title="Logical graph">Logical graph</a></li>
+<li><a href="../../../../articles/v/e/n/Venn_diagram.html" title="Venn diagram">Venn diagram</a></li>
+<li><a href="../../../../articles/t/e/r/Ternary_logic.html" title="Ternary logic">Ternary logic</a></li>
+</ul>
+<p><a name="Notes_and_references" id="Notes_and_references"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: Notes and references">edit</a>]</span> <span class="mw-headline">Notes and references</span></h2>
+<div class="references-small">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0" title="">^</a></b> <a href="http://www.ntsc.navy.mil/Resources/Library/Acqguide/SpecWord.htm#and_or" class="external text" title="http://www.ntsc.navy.mil/Resources/Library/Acqguide/SpecWord.htm#and_or" rel="nofollow">Usage Guide</a>.</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1" title="">^</a></b> Not all search engines support the same query syntax. Additionally, some organizations (such as Google) provide "specialized" search engines that support alternate or extended syntax. (See e.g.,<a href="http://www.google.com/help/cheatsheet.html" class="external text" title="http://www.google.com/help/cheatsheet.html" rel="nofollow">Syntax cheatsheet</a>, <a href="http://www.google.com/intl/en/help/faq_codesearch.html#regexp" class="external text" title="http://www.google.com/intl/en/help/faq_codesearch.html#regexp" rel="nofollow">Google codesearch supports regular expressions</a>).</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2" title="">^</a></b> Doublequote-delimited search terms are called "exact phrase" searches in the Google documentation.</li>
+</ol>
+</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_logic.html" title="Edit section: External links">edit</a>]</span> <span class="mw-headline">External links</span></h2>
+<ul>
+<li><a href="http://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html" class="external text" title="http://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html" rel="nofollow">The Calculus of Logic</a>, by George Boole, Cambridge and Dublin Mathematical Journal Vol. III (1848), pp. 183-98.</li>
+<li><a href="http://sourceforge.net/projects/logicaleval/" class="external text" title="http://sourceforge.net/projects/logicaleval/" rel="nofollow">Logical Formula Evaluator</a> (for Windows), a software which calculates all possible values of a logical formula</li>
+<li><a href="http://computer.howstuffworks.com/boolean.htm" class="external text" title="http://computer.howstuffworks.com/boolean.htm" rel="nofollow">How Stuff Works - Boolean Logic</a></li>
+<li>Maiki &amp; Boaz <a href="http://www.bdd-project.com" class="external text" title="http://www.bdd-project.com" rel="nofollow">BDD-PROJECT</a>, a Web Application for BDD reduction and visualization.</li>
+</ul>
+<table class="navbox" cellspacing="0" style=";">
+<tr>
+<td style="padding:2px;">
+<table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
+<tr>
+<th style=";" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">
+<div class="noprint plainlinksneverexpand" style="background-color:transparent; padding:0; white-space:nowrap; font-weight:normal; font-size:xx-small;&#160;;;border:none;;"><a href="../../../../articles/d/i/g/Template%7EDigital_systems_6034.html" title="Template:Digital systems"><span title="View this template" style=";;border:none;;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="../../../../articles/d/i/g/Template_talk%7EDigital_systems_9c3c.html" title="Template talk:Digital systems"><span style="color:#002bb8;;;border:none;;" title="Discussion about this template">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org../../../../articles/d/i/g/Template%7EDigital_systems_6034.html" class="external text" title="http://en.wikipedia.org../../../../articles/d/i/g/Template%7EDigital_systems_6034.html" rel="nofollow"><span style="color:#002bb8;;;border:none;;" title="You can edit this template. Please use the preview button before saving.">e</span></a></div>
+</div>
+<span style="font-size:110%;"><a href="../../../../articles/d/i/g/Digital.html" title="Digital">Digital</a> systems</span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Components</td>
+<td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="../../../../articles/l/o/g/Logic_gate.html" title="Logic gate">Logic gate</a><span style="font-weight:bold;">&#160;·</span> <a href="../../../../articles/d/i/g/Digital_circuit.html" class="mw-redirect" title="Digital circuit">digital circuit</a><span style="font-weight:bold;">&#160;·</span> <a href="../../../../articles/i/n/t/Integrated_circuit.html" title="Integrated circuit">integrated circuit</a> (IC)</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Theory</td>
+<td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><strong class="selflink">boolean logic</strong><span style="font-weight:bold;">&#160;·</span> <a href="../../../../articles/d/i/g/Digital_signal_processing.html" title="Digital signal processing">digital signal processing</a><span style="font-weight:bold;">&#160;·</span> <a href="../../../../articles/c/o/m/Computer_architecture.html" title="Computer architecture">computer architecture</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Applications</td>
+<td style="text-align:left;border-left:2px solid #fdfdfd;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="../../../../articles/d/i/g/Digital_photography.html" title="Digital photography">digital photography</a><span style="font-weight:bold;">&#160;·</span> <a href="../../../../articles/d/i/g/Digital_audio.html" title="Digital audio">digital audio</a><span style="font-weight:bold;">&#160;·</span> <a href="../../../../articles/d/i/g/Digital_video.html" title="Digital video">digital video</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 633/1000000
+Post-expand include size: 10764/2048000 bytes
+Template argument size: 2448/2048000 bytes
+Expensive parser function count: 0/500
+-->
+<div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="../../../../articles/c/a/t/Special%7ECategories_101d.html" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="../../../../articles/b/o/o/Category%7EBoolean_algebra_9990.html" title="Category:Boolean algebra">Boolean algebra</a></span> | <span dir='ltr'><a href="../../../../articles/l/o/g/Category%7ELogic_19a9.html" title="Category:Logic">Logic</a></span> | <span dir='ltr'><a href="../../../../articles/a/r/t/Category%7EArticles_with_example_code_2526.html" title="Category:Articles with example code">Articles with example code</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/b/o/o/Boolean_logic.html">Article</a></li><li id="ca-talk"
+	       	       ><a href="../../../../articles/b/o/o/Talk%7EBoolean_logic_5e61.html">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://en.wikipedia.org/wiki/Boolean_logic">Current revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/Wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="../../../../index.html">Main Page</a></li>
+	     	      <li id="n-Contents"><a href="../../../../articles/c/o/n/Portal%7EContents_b878.html">Contents</a></li>
+	     	      <li id="n-featuredcontent"><a href="../../../../articles/f/e/a/Portal%7EFeatured_content_5442.html">Featured content</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/Portal%7ECurrent_events_bb60.html">Current events</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-interaction'>
+	  <h5>Interaction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-aboutsite"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html">About Wikipedia</a></li>
+	     	      <li id="n-portal"><a href="../../../../articles/c/o/m/Wikipedia%7ECommunity_Portal_6a3c.html">Community portal</a></li>
+	     	      <li id="n-recentchanges"><a href="../../../../articles/r/e/c/Special%7ERecentChanges_e0d0.html">Recent changes</a></li>
+	     	      <li id="n-contact"><a href="../../../../articles/c/o/n/Wikipedia%7EContact_us_afd6.html">Contact Wikipedia</a></li>
+	     	      <li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate">Donate to Wikipedia</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help%7EContents_22de.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	<div id="p-lang" class="portlet">
+	  <h5>Languages</h5>
+	  <div class="pBody">
+	    <ul>
+	      	      <li>
+	      <a href="../../../../../cs/articles/b/o/o/Booleova_logika.html">Česky</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../fr/articles/a/l/g/Alg%C3%A8bre_de_Boole_%28logique%29_be62.html">Français</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../hi/articles/%E0%A4%AC/%E0%A5%82/%E0%A4%B2/%E0%A4%AC%E0%A5%82%E0%A4%B2%E0%A5%80%E0%A4%AF_%E0%A4%AC%E0%A5%80%E0%A4%9C%E0%A4%97%E0%A4%A3%E0%A4%BF%E0%A4%A4_%28%E0%A4%A4%E0%A4%B0%E0%A5%8D%E0%A4%95%E0%A4%B6%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B0%29.html">हिन्दी</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../he/articles/%D7%9C/%D7%95/%D7%92/%D7%9C%D7%95%D7%92%D7%99%D7%A7%D7%94_%D7%91%D7%95%D7%9C%D7%99%D7%90%D7%A0%D7%99%D7%AA.html">עברית</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../ja/articles/%E3%83%96/%E3%83%BC/%E3%83%AB/%E3%83%96%E3%83%BC%E3%83%AB%E8%AB%96%E7%90%86.html">日本語</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../ru/articles/%D0%B0/%D0%BB/%D0%B3/%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0_%D0%BB%D0%BE%D0%B3%D0%B8%D0%BA%D0%B8.html">Русский</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../zh/articles/%E9%80%BB/%E8%BE%91/%E4%BB%A3/%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0.html">中文</a>
+	      </li>
+	      	    </ul>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>	<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="../../../../misc/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>	<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 14:15, 30 April 2008 by Wikipedia user <a href="../../../../articles/j/a/n/User%7EJAnDbot_5c44.html" title="User:JAnDbot">JAnDbot</a>. Based on work by Wikipedia user(s) <a href="../../../../articles/c/l/u/User%7EClueBot_8791.html" title="User:ClueBot">ClueBot</a>, <a href="../../../../articles/c/b/m/User%7ECBM_8e39.html" title="User:CBM">CBM</a>, <a href="../../../../articles/l/a/m/User%7ELambiam_e5bb.html" title="User:Lambiam">Lambiam</a>, <a href="../../../../articles/s/t/u/User%7EStuRat_7df3.html" title="User:StuRat">StuRat</a>, <a href="../../../../articles/g/i/f/User%7EGiftlite_9506.html" title="User:Giftlite">Giftlite</a>, <a href="../../../../articles/h/a/i/User%7EHairy_Dude_fc1c.html" title="User:Hairy Dude">Hairy Dude</a>, <a href="../../../../articles/d/r/e/User%7EDreadstar_585d.html" title="User:Dreadstar">Dreadstar</a>, Jpporter, <a href="../../../../articles/j/2E/d/User%7EJ.delanoy_743e.html" title="User:J.delanoy">J.delanoy</a>, <a href="../../../../articles/a/d/d/User%7EAddshore_8983.html" title="User:Addshore">Addshore</a>, <a href="../../../../articles/c/o/m/User%7ECometstyles_5139.html" title="User:Cometstyles">Cometstyles</a>, <a href="../../../../articles/b/a/l/User%7EBallchin2therevenge_ef26.html" title="User:Ballchin2therevenge">Ballchin2therevenge</a>, <a href="../../../../articles/g/r/e/User%7EGregbard_5bcd.html" title="User:Gregbard">Gregbard</a>, <a href="../../../../articles/s/c/i/User%7EScifiintel_126b.html" title="User:Scifiintel">Scifiintel</a>, <a href="../../../../articles/h/a/n/User%7EHans_Adler_12d3.html" title="User:Hans Adler">Hans Adler</a>, <a href="../../../../articles/a/r/t/User%7EArthur_Rubin_34a7.html" title="User:Arthur Rubin">Arthur Rubin</a>, <a href="../../../../articles/q/u/i/User%7EQuidam65_8a5e.html" title="User:Quidam65">Quidam65</a>, <a href="../../../../articles/m/a/x/User%7EMaxim_20ef.html" title="User:Maxim">Maxim</a>, <a href="../../../../articles/r/g/2/User%7ERG2_a3d0.html" title="User:RG2">RG2</a>, <a href="../../../../articles/s/k/i/User%7ESkippydo_d851.html" title="User:Skippydo">Skippydo</a>, <a href="../../../../articles/c/h/a/User%7ECharles_Matthews_cceb.html" title="User:Charles Matthews">Charles Matthews</a> and <a href="../../../../articles/t/r/o/User%7ETrovatore_c393.html" title="User:Trovatore">Trovatore</a> and Anonymous user(s) of Wikipedia.</li>	  <li id="f-copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>	  <li id="f-about"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html" title="Wikipedia:About">About Wikipedia</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/Wikipedia%7EGeneral_disclaimer_3e44.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

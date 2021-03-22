@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Boolean datatype - Wikipedia, the free encyclopedia</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+    <script type="text/javascript" src="../../../../raw/gen.js"></script>        <style type="text/css">/*<![CDATA[*/
+@import "../../../../raw/MediaWiki%7ECommon.css";
+@import "../../../../raw/MediaWiki%7EMonobook.css";
+@import "../../../../raw/gen.css";
+/*]]>*/</style>          </head>
+  <body
+    class="ns-0">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Boolean datatype</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>In <a href="../../../../articles/c/o/m/Computer_science.html" title="Computer science">computer science</a>, the <b><a href="../../../../articles/b/o/o/Boolean_algebra_%28logic%29.html" title="Boolean algebra (logic)">Boolean</a> datatype</b>, sometimes called the <i>logical datatype</i>, is a <a href="../../../../articles/p/r/i/Primitive_datatype.html" class="mw-redirect" title="Primitive datatype">primitive datatype</a> having one of two values: <i>non-zero</i> (often 1, or -1) and <i>zero</i> (which are equivalent to <b><a href="../../../../articles/t/r/u/Truth_value.html" title="Truth value">true</a></b> and <b>false</b>, respectively). It is the special case of a <a href="../../../../articles/b/i/n/Binary_numeral_system.html" title="Binary numeral system">binary</a> numeric datatype of only one digit, or <a href="../../../../articles/b/i/t/Bit.html" title="Bit">bit</a>, and can also be represented in any other <a href="../../../../articles/r/a/d/Radix.html" title="Radix">radix</a> by restricting the range of allowed values for certain operations.</p>
+<p>In some languages the Boolean datatype is defined to represent more than two truth values. For instance the ISO SQL:1999 standard defined a Boolean data type for SQL which could hold three possible values: true, false, unknown (SQL <a href="../../../../articles/n/u/l/Null_%28SQL%29_5ddc.html" title="Null (SQL)">null</a> is treated as equivalent to the unknown truth value, but only for the Boolean data type).</p>
+<p>This datatype is used in Boolean and other operations such as <a href="../../../../articles/l/o/g/Logical_conjunction.html" title="Logical conjunction">and</a> (<code>AND</code>, <code>&amp;</code>, <code>*</code>), <a href="../../../../articles/l/o/g/Logical_disjunction.html" title="Logical disjunction">or</a> (<code>OR</code>, <code>|</code>, <code>+</code>), <a href="../../../../articles/e/x/c/Exclusive_disjunction.html" class="mw-redirect" title="Exclusive disjunction">exclusive or/not equivalent</a> (<code>xor</code>, <code>NEQV</code>, <code>^</code>), <a href="../../../../articles/l/o/g/Logical_equivalence.html" title="Logical equivalence">equal</a> (<code>EQV</code>, <code>=</code>, <code>==</code>) and <a href="../../../../articles/n/e/g/Negation.html" title="Negation">not</a> (<code>NOT</code>, <code>~</code>, <code>!</code>) which correspond to some of the operations of <a href="../../../../articles/b/o/o/Boolean_algebra_%28logic%29.html" title="Boolean algebra (logic)">Boolean algebra</a> and <a href="../../../../articles/a/r/i/Arithmetic.html" title="Arithmetic">arithmetic</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a href="#Ada"><span class="tocnumber">1</span> <span class="toctext">Ada</span></a></li>
+<li class="toclevel-1"><a href="#Algol"><span class="tocnumber">2</span> <span class="toctext">Algol</span></a></li>
+<li class="toclevel-1"><a href="#C"><span class="tocnumber">3</span> <span class="toctext">C</span></a>
+<ul>
+<li class="toclevel-2"><a href="#C99"><span class="tocnumber">3.1</span> <span class="toctext">C99</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#C.2B.2B"><span class="tocnumber">4</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-1"><a href="#C.23"><span class="tocnumber">5</span> <span class="toctext">C#</span></a></li>
+<li class="toclevel-1"><a href="#Fortran"><span class="tocnumber">6</span> <span class="toctext">Fortran</span></a></li>
+<li class="toclevel-1"><a href="#Java"><span class="tocnumber">7</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-1"><a href="#JavaScript"><span class="tocnumber">8</span> <span class="toctext">JavaScript</span></a></li>
+<li class="toclevel-1"><a href="#Lambda_calculus"><span class="tocnumber">9</span> <span class="toctext">Lambda calculus</span></a></li>
+<li class="toclevel-1"><a href="#Lisp"><span class="tocnumber">10</span> <span class="toctext">Lisp</span></a></li>
+<li class="toclevel-1"><a href="#ML"><span class="tocnumber">11</span> <span class="toctext">ML</span></a></li>
+<li class="toclevel-1"><a href="#Objective-C"><span class="tocnumber">12</span> <span class="toctext">Objective-C</span></a></li>
+<li class="toclevel-1"><a href="#Ocaml"><span class="tocnumber">13</span> <span class="toctext">Ocaml</span></a></li>
+<li class="toclevel-1"><a href="#Pascal"><span class="tocnumber">14</span> <span class="toctext">Pascal</span></a></li>
+<li class="toclevel-1"><a href="#Perl"><span class="tocnumber">15</span> <span class="toctext">Perl</span></a></li>
+<li class="toclevel-1"><a href="#PHP"><span class="tocnumber">16</span> <span class="toctext">PHP</span></a></li>
+<li class="toclevel-1"><a href="#Python"><span class="tocnumber">17</span> <span class="toctext">Python</span></a></li>
+<li class="toclevel-1"><a href="#Ruby"><span class="tocnumber">18</span> <span class="toctext">Ruby</span></a></li>
+<li class="toclevel-1"><a href="#Scheme"><span class="tocnumber">19</span> <span class="toctext">Scheme</span></a></li>
+<li class="toclevel-1"><a href="#SQL"><span class="tocnumber">20</span> <span class="toctext">SQL</span></a></li>
+<li class="toclevel-1"><a href="#Visual_Basic"><span class="tocnumber">21</span> <span class="toctext">Visual Basic</span></a></li>
+<li class="toclevel-1"><a href="#XPath_and_XQuery"><span class="tocnumber">22</span> <span class="toctext">XPath and XQuery</span></a></li>
+<li class="toclevel-1"><a href="#See_also"><span class="tocnumber">23</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a href="#Notes_and_references"><span class="tocnumber">24</span> <span class="toctext">Notes and references</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<p><a name="Ada" id="Ada"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Ada">edit</a>]</span> <span class="mw-headline">Ada</span></h2>
+<p><a href="../../../../articles/a/d/a/Ada_programming_language.html" class="mw-redirect" title="Ada programming language">Ada</a> defines <code>Boolean</code> in the package Standard as an enumerated type with values <code>False</code> and <code>True</code> where <code>False</code> &lt; <code>True</code>.</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-ada">
+<span class="kw3">type</span> Boolean <span class="kw1">is</span> <span class="br0">(</span>False, True<span class="br0">)</span>;
+ 
+p : Boolean := True;
+...
+<span class="kw1">if</span> p <span class="kw1">then</span>
+  ...
+<span class="kw1">end</span> <span class="kw1">if</span>;
+</pre></div>
+<p>The relational operators (<code>=</code>, <code>/=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>) apply to all enumerated types, including <code>Boolean</code>. Boolean operators <code>and</code>, <code>or</code>, <code>xor</code>, and <code>not</code> are defined on <code>Boolean</code> and any declared subtype. The Boolean operators also apply to arrays of <code>Boolean</code> values.</p>
+<p><a name="Algol" id="Algol"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Algol">edit</a>]</span> <span class="mw-headline">Algol</span></h2>
+<p><a href="../../../../articles/a/l/g/Algol_60.html" class="mw-redirect" title="Algol 60">Algol 60</a> had a <code>Boolean</code> datatype and associated operations, defined in the Algol 60 report. This was abbreviated to <code><u>bool</u></code> in <a href="../../../../articles/a/l/g/ALGOL_68_023b.html" title="ALGOL 68">ALGOL 68</a>.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0" title="">[1]</a></sup></p>
+<p>An actual extract from the <b>ALGOL 68</b> language specification (page 177) where the boolean operators are defined:</p>
+<p>10.2.2. Operations on Boolean Operands</p>
+<ol style="list-style-type: lower-alpha">
+<li><b>op</b> ∨ = (<b>bool</b> a, b) <b>bool</b>:( a | <b>true</b> | b );</li>
+<li><b>op</b> ∧ = (<b>bool</b> a, b) <b>bool</b>: ( a | b | <b>false</b> );</li>
+<li><b>op</b> ¬ = (<b>bool</b> a) <b>bool</b>: ( a | <b>false</b> | <b>true</b> );</li>
+<li><b>op</b> = = (<b>bool</b> a, b) <b>bool</b>:( a∧b ) ∨ ( ¬b∧¬a );</li>
+<li><b>op</b> ≠ = (<b>bool</b> a, b) <b>bool</b>: ¬(a=b);</li>
+<li><b>op</b> <b>abs</b> = (<b>bool</b> a)<b>int</b>: ( a | 1 | 0 );</li>
+</ol>
+<p><a name="C" id="C"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: C">edit</a>]</span> <span class="mw-headline">C</span></h2>
+<p>Prior to <a href="../../../../articles/c/_/%28/C_%28programming_language%29.html#C99" title="C (programming language)">C99</a>, the standards for the <a href="../../../../articles/c/_/%28/C_%28programming_language%29.html" title="C (programming language)">C programming language</a> provided no Boolean type. This however does not mean that C90 cannot represent the concept of boolean values, as all the boolean operators (&amp;&amp;, ||) and conditional statements (if, while) in C interpret nonzero values to signify <b>true</b> and zero values to signify <b>false</b>. Thus, it is common to store boolean values in variables of another type, such as an integer or an enum. For convenience, it is also common to create a <a href="../../../../articles/t/y/p/Typedef.html" title="Typedef">typedef</a> for a boolean type, which resolves to some existing datatype. The <a href="../../../../articles/c/_/%28/C_%28programming_language%29.html#C99" title="C (programming language)">C99</a> standard also provides a built-in boolean type.</p>
+<p>To illustrate Booleans in C, note that the C code:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-c">
+<span class="kw1">if</span> <span class="br0">(</span>my_variable<span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"True!<span class="es0">\n</span>"</span><span class="br0">)</span>;
+<span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+  <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"False!<span class="es0">\n</span>"</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+<p>is equivalent to:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-c">
+<span class="kw1">if</span> <span class="br0">(</span>my_variable != <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"True!<span class="es0">\n</span>"</span><span class="br0">)</span>;
+<span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+  <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"False!<span class="es0">\n</span>"</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+<p>This is straightforward for <a href="../../../../articles/i/n/t/Integer.html" title="Integer">integer</a> datatypes. Since C standards mandate that <code>0</code> be interpreted as the <a href="../../../../articles/n/u/l/Null_pointer.html" class="mw-redirect" title="Null pointer">null pointer</a> when used in a pointer context or cast to a pointer, the above construct can also be used to check a pointer for NULL, although some <a href="../../../../articles/c/o/d/Code_style.html" class="mw-redirect" title="Code style">code styles</a> discourage this use. While the same conditional is also valid for <a href="../../../../articles/f/l/o/Floating-point.html" class="mw-redirect" title="Floating-point">floating-point</a> values, special care must be taken when comparing them for equality, since they often contain rounded results. Traditionally, integers are used to contain boolean variables.</p>
+<p>While it is not necessary to name the true and false values in order to test variables for truth or falsehood, it is necessary to do so in order to assign values to them. (One way is to use the values zero and one, which have the advantage of being language-independent.) Alternatively, the <code><a href="../../../../articles/e/n/u/Enumerated_type.html" title="Enumerated type">enum</a></code> keyword allows for naming elements in the language of your choice, for example:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-c">
+<span class="kw4">typedef</span> <span class="kw2">enum</span> <span class="br0">{</span> <span class="kw2">FALSE</span>, <span class="kw2">TRUE</span> <span class="br0">}</span> boolean;
+...
+<span class="me1">boolean</span> b;
+</pre></div>
+<p>The following typical <a href="../../../../articles/c/_/p/C_preprocessor.html" title="C preprocessor">preprocessor</a> macros are also often used.</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-c">
+<span class="co2">#define FALSE 0</span>
+<span class="co2">#define TRUE 1</span>
+...
+<span class="kw4">int</span> f = <span class="kw2">FALSE</span>;
+</pre></div>
+<p>Sometimes <code>TRUE</code> may be defined as -1 or ~0 (the bitwise complement of zero). This means that all bits of the integer are set to 1, on the now common <a href="../../../../articles/t/w/o/Two%27s_complement.html" title="Two's complement">two's complement</a> computer architectures.</p>
+<p>However, problems arise from the fact that <i>any</i> non-zero value represents true in C, while the value <code>TRUE</code> is represented by a <i>specific</i> value. So while in other languages, <code>if (foo == TRUE) ...</code> is merely redundant, in C, it is actually <i>incorrect</i> code.</p>
+<p><a name="C99" id="C99"></a></p>
+<h3><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: C99">edit</a>]</span> <span class="mw-headline">C99</span></h3>
+<p>In C99, there is a <code>bool</code> type, along with the values <code>true</code> and <code>false</code>, defined in the <code>&lt;<a href="../../../../articles/s/t/d/Stdbool.h.html" title="Stdbool.h">stdbool.h</a>&gt;</code> header:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-c">
+<span class="co2">#include &lt;stdbool.h&gt;</span>
+bool b = <span class="kw2">false</span>;
+...
+<span class="me1">b</span> = <span class="kw2">true</span>;
+</pre></div>
+<p><a name="C.2B.2B" id="C.2B.2B"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: C++">edit</a>]</span> <span class="mw-headline">C++</span></h2>
+<p>During its standardization process, the <a href="../../../../articles/c/%2B/%2B/C%2B%2B.html" title="C++">C++</a> <a href="../../../../articles/p/r/o/Programming_language.html" title="Programming language">programming language</a> introduced the <code>bool</code>, <code>true</code> and <code>false</code> keywords, adding a native datatype to support boolean data. Its size is implementation defined.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1" title="">[2]</a></sup> <code>bool</code> was introduced in 1993<sup id="cite_ref-2" class="reference"><a href="#cite_note-2" title="">[3]</a></sup>.</p>
+<p>The 1998 C++ Standard Library defines a specialization of the <code>vector&lt;bool&gt;</code> class. To optimize space, the elements are packed so that every bool only uses one bit of memory. This is widely considered a mistake. <code>vector&lt;bool&gt;</code> does not meet the requirements for a STL container. For instance, a <code>container&lt;T&gt;::reference</code> must be a true <a href="../../../../articles/l/v/a/Lvalue.html" class="mw-redirect" title="Lvalue">lvalue</a> of type <code>T</code>. This is not the case with <code>vector&lt;bool&gt;</code>. Similarly, the <code>vector&lt;bool&gt;::iterator</code> does not yield a <code>bool&amp;</code> when <a href="../../../../articles/d/e/r/Dereference_operator.html" title="Dereference operator">dereferenced</a>. There is a general consensus among the C++ Standard Committee and the Library Working Group that <code>vector&lt;bool&gt;</code> should be deprecated or entirely removed from the next version of the standard.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3" title="">[4]</a></sup><sup id="cite_ref-4" class="reference"><a href="#cite_note-4" title="">[5]</a></sup></p>
+<p><a name="C.23" id="C.23"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: C#">edit</a>]</span> <span class="mw-headline">C#</span></h2>
+<p>In <a href="../../../../articles/c/_/s/C_Sharp_%28programming_language%29_be48.html" title="C Sharp (programming language)">C#</a>, Boolean variables are identified through the reserved word <code>bool</code>, which is an alias for the predefined struct type <code>System.Boolean</code>. It occupies one <a href="../../../../articles/b/y/t/Byte.html" title="Byte">byte</a>. No standard conversions exist between <code>bool</code> and other types. The language also provides a boolean type <code>DBbool</code> that can represent three values: <code>true</code>, <code>false</code>, and <code>null</code>. This is similar to the type used for boolean expressions in <a href="../../../../articles/s/q/l/SQL_9778.html" title="SQL">SQL</a><sup id="cite_ref-csharplang_5-0" class="reference"><a href="#cite_note-csharplang-5" title="">[6]</a></sup></p>
+<p>Code to output a Boolean could be represented like this:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-csharp">
+<span class="kw4">bool</span> myBool = <span class="br0">(</span>i == <span class="nu0">5</span><span class="br0">)</span>;
+<span class="kw5">System</span>.<span class="me1">Console</span>.<span class="me1">WriteLine</span><span class="br0">(</span>myBool ? <span class="st0">"I = 5"</span> : <span class="st0">"I != 5"</span><span class="br0">)</span>;
+</pre></div>
+<p><a name="Fortran" id="Fortran"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Fortran">edit</a>]</span> <span class="mw-headline">Fortran</span></h2>
+<p>The <code>LOGICAL</code> keyword and associated operations <code>.NOT.</code>, <code>.AND.</code>, <code>.OR.</code>, etc. were introduced in the <a href="../../../../articles/1/9/5/1950s.html" title="1950s">1950s</a>, before <a href="../../../../articles/f/o/r/Fortran.html" title="Fortran">Fortran</a> was standardized.</p>
+<p><a name="Java" id="Java"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Java">edit</a>]</span> <span class="mw-headline">Java</span></h2>
+<p>In the <a href="../../../../articles/j/a/v/Java_%28programming_language%29.html" title="Java (programming language)">Java programming language</a>, boolean variables are represented by the primitive type <code>boolean</code>. The <a href="../../../../articles/j/a/v/Java_Virtual_Machine_34be.html" title="Java Virtual Machine">Java Virtual Machine (JVM)</a> abstracts away from the actual representation in memory, so JVM writers can represent booleans in whatever manner is convenient (for example, one byte, or one <a href="../../../../articles/w/o/r/Word_%28computing%29.html" title="Word (computing)">word</a>).</p>
+<p>The Java Language Specification does not permit any explicit or implicit <a href="../../../../articles/c/a/s/Cast_%28computer_science%29.html" class="mw-redirect" title="Cast (computer science)">casts</a> to or from <code>boolean</code>. Thus, it requires the compiler to reject this code:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-java">
+<span class="kw4">int</span> i = <span class="nu0">1</span>;
+<span class="kw1">if</span> <span class="br0">(</span>i<span class="br0">)</span>
+  <span class="kw3">System</span>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">(</span><span class="st0">"i is not zero."</span><span class="br0">)</span>;
+<span class="kw1">else</span>
+  <span class="kw3">System</span>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">(</span><span class="st0">"i is zero."</span><span class="br0">)</span>;
+</pre></div>
+<p>because the integer variable <code>i</code> cannot be cast to a boolean, and the <code>if</code> statement requires a <code>boolean</code> condition.<sup id="cite_ref-jls_6-0" class="reference"><a href="#cite_note-jls-6" title="">[7]</a></sup></p>
+<p>In Java, <code>boolean</code> values (like other primitive types) can be appended to Strings. This feature provides a default visual representation of a boolean (<code>true</code> is displayed as "true" and <code>false</code> as "false").<sup id="cite_ref-jls_6-1" class="reference"><a href="#cite_note-jls-6" title="">[7]</a></sup></p>
+<p><a name="JavaScript" id="JavaScript"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: JavaScript">edit</a>]</span> <span class="mw-headline">JavaScript</span></h2>
+<p><a href="../../../../articles/j/a/v/JavaScript_6861.html" title="JavaScript">JavaScript</a> has two keywords <code>true</code> and <code>false</code>, both of which are written in lowercase. It is a weakly typed language and does not have an explicit Boolean datatype for its variables. However many values will evaluate to <code>false</code> when used in a logical context, including zero, <code>null</code>, zero length strings, and <code>unknown</code> properties of objects. All other variable values, including empty arrays and empty objects, will evaluate to <code>true</code>. The language does offer a <code>Boolean</code> object which can be used as a wrapper for handling boolean values. The <code>Boolean</code> object will always evaluate to <code>true</code> even if it has a value of <code>false</code>.</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-javascript">
+<span class="kw2">var</span> objBool = <span class="kw2">new</span> Boolean<span class="br0">(</span><span class="kw2">false</span><span class="br0">)</span>;
+ 
+<span class="kw1">if</span> <span class="br0">(</span> <span class="kw2">false</span> || <span class="nu0">0</span> || <span class="st0">""</span> || <span class="kw2">null</span> || window.<span class="me1">not_a_property</span> <span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw3">alert</span><span class="br0">(</span><span class="st0">"never this"</span><span class="br0">)</span>;    
+<span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span> <span class="kw2">true</span> &amp;&amp; <span class="br0">[</span><span class="br0">]</span> &amp;&amp; <span class="br0">{</span><span class="br0">}</span> &amp;&amp; objBool <span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw3">alert</span><span class="br0">(</span><span class="st0">"Hello Wikipedia"</span><span class="br0">)</span>;             <span class="co1">// will bring up this message </span>
+<span class="br0">}</span>
+</pre></div>
+<p><a name="Lambda_calculus" id="Lambda_calculus"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Lambda calculus">edit</a>]</span> <span class="mw-headline">Lambda calculus</span></h2>
+<p>In the <a href="../../../../articles/l/a/m/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a> formal model of computing, booleans are represented as <a href="../../../../articles/c/h/u/Church_booleans.html" class="mw-redirect" title="Church booleans">Church booleans</a>.</p>
+<p><a name="Lisp" id="Lisp"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Lisp">edit</a>]</span> <span class="mw-headline">Lisp</span></h2>
+<p><a href="../../../../articles/l/i/s/Lisp_%28programming_language%29.html" title="Lisp (programming language)">Lisp</a> has two special symbols <code>T</code> and <code>NIL</code> which represent the logical values of true and false respectively. However, any non-<code>NIL</code> value is interpreted by a LISP system as true. The special symbol <code>NIL</code> is also represented by <code>()</code>, the empty list. So the empty list is false, but any list with data has the logical value of true. Therefore "nothing" is false and everything else is true.</p>
+<p><a name="ML" id="ML"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: ML">edit</a>]</span> <span class="mw-headline">ML</span></h2>
+<p>Like Ocaml, <a href="../../../../articles/m/l/_/ML_programming_language_82b3.html" class="mw-redirect" title="ML programming language">ML</a> has a <code>bool</code> type that has <code>true</code> and <code>false</code> values. For example:</p>
+<pre>
+- fun isittrue x = if x then "YES" else "NO" ;
+&gt; val isittrue = fn : bool -&gt; string
+- isittrue true;
+&gt; val it = "YES" : string
+- isittrue false;
+&gt; val it = "NO" : string
+- isittrue (8=8);
+&gt; val it = "YES" : string
+- isittrue (7=5);
+&gt; val it = "NO" : string
+</pre>
+<p><a name="Objective-C" id="Objective-C"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Objective-C">edit</a>]</span> <span class="mw-headline">Objective-C</span></h2>
+<p><a href="../../../../articles/o/b/j/Objective-C_a508.html" title="Objective-C">Objective-C</a> provides a type <code>BOOL</code>, and macros <code>YES</code> and <code>NO</code>. Since Objective-C is a superset of <a href="../../../../articles/c/_/%28/C_%28programming_language%29.html" title="C (programming language)">C</a>, <a href="../../../../articles/b/o/o/Boolean_datatype.html#C" title="Boolean datatype">C language semantics for booleans</a> also apply.</p>
+<p><a name="Ocaml" id="Ocaml"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Ocaml">edit</a>]</span> <span class="mw-headline">Ocaml</span></h2>
+<p><a href="../../../../articles/o/c/a/Ocaml.html" class="mw-redirect" title="Ocaml">Ocaml</a> has a <code>bool</code> type that has <code>true</code> and <code>false</code> values.</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-ocaml">
+# <span class="nu0">1</span> = <span class="nu0">1</span> ;;
+- : bool = <span class="kw1">true</span>
+</pre></div>
+<p>Like other enumerated types, a value of this type uses a word of memory.</p>
+<p><a name="Pascal" id="Pascal"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Pascal">edit</a>]</span> <span class="mw-headline">Pascal</span></h2>
+<p><code>Boolean</code> is a basic datatype provided by <a href="../../../../articles/p/a/s/Pascal_%28programming_language%29.html" title="Pascal (programming language)">Pascal</a>. Its definition and uses:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-pascal">
+<span class="coMULTI">(* declaration in system or standard*)</span>
+<span class="kw4">Type</span> 
+   <span class="kw4">Boolean</span> = <span class="br0">(</span><span class="kw2">False</span>,<span class="kw2">True</span><span class="br0">)</span>;
+ 
+<span class="coMULTI">(* usage *)</span>
+ 
+<span class="kw1">var</span>
+  value: <span class="kw4">Boolean</span>;
+ 
+...
+ 
+<span class="me1">value</span> := <span class="kw2">True</span>;
+value := <span class="kw2">False</span>;
+ 
+<span class="kw1">if</span> value <span class="kw1">then</span>
+<span class="kw1">begin</span>
+...
+<span class="kw1">end</span>;
+</pre></div>
+<p>Note that values outside the enum are not defined. Some compilers like Delphi have as extension special boolean type that map onto C numeric types for interfacing purposes. (Delphi: bytebool,wordbool,longbool)</p>
+<p><a name="Perl" id="Perl"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Perl">edit</a>]</span> <span class="mw-headline">Perl</span></h2>
+<p>In the <a href="../../../../articles/p/e/r/Perl.html" title="Perl">Perl programming language</a>, there is no distinction between numbers, strings and other non-aggregate data types. (They are all called "scalar".) Aggregate types without any elements, empty strings, numbers which equal a value of 0, the strings <code>""</code> and <code>"0"</code>, and undefined variables evaluate to "false" when used in a Boolean context. All other values (including strings such as <code>0.0</code> and <code>0E0</code> which are "zero but true") evaluate to "true".</p>
+<p>Elements of aggregates may also be tested against "existence" or "non-existence"<a href="http://perldoc.perl.org/functions/exists.html" class="external autonumber" title="http://perldoc.perl.org/functions/exists.html" rel="nofollow">[1]</a>, and all variables may be evaluated as either "defined" or "undefined".<a href="http://perldoc.perl.org/functions/defined.html" class="external autonumber" title="http://perldoc.perl.org/functions/defined.html" rel="nofollow">[2]</a> (An element of a hash or array that has been assigned the value <code>undef</code> exists but is undefined.) In Perl this distinction is important when evaluating scalars in a boolean manner to prevent "false falses" where one of the above values should be considered "true".</p>
+<p>There are no built-in true or false constants in Perl 5, however the values do exist internally in <a href="../../../../articles/p/e/r/Perl6.html" class="mw-redirect" title="Perl6">Perl6</a>.</p>
+<p><code>1</code> is traditionally used for true, and constructs such as <code>... while 1</code> are special-cased to avoid advisory warnings. Internally, recent versions of Perl 5 have a variety of predefined yesses and nos, so that the recommended way to provide a false value has recently shifted from <code>undef</code> to<code>&#160;!1</code> .</p>
+<p><a name="PHP" id="PHP"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: PHP">edit</a>]</span> <span class="mw-headline">PHP</span></h2>
+<p>PHP has a boolean datatype <sup id="cite_ref-7" class="reference"><a href="#cite_note-7" title="">[8]</a></sup> with two values: true and false (case doesn't matter).</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-php">
+<span class="re0">$var</span> = <span class="kw2">true</span>;
+<span class="re0">$var</span> = <span class="kw2">false</span>;
+<span class="kw3">print</span> <span class="re0">$var</span> == <span class="kw2">true</span> ? <span class="st0">"T"</span> : <span class="st0">"F"</span>;
+<span class="kw3">print</span> <span class="re0">$var</span> === <span class="kw2">true</span> ? <span class="st0">"T"</span> : <span class="st0">"F"</span>;
+<span class="kw3">print</span> <span class="kw3">is_bool</span><span class="br0">(</span><span class="re0">$var</span><span class="br0">)</span> ? <span class="st0">"T"</span> : <span class="st0">"F"</span>;
+<span class="kw3">print</span> <span class="kw3">gettype</span><span class="br0">(</span><span class="re0">$var</span><span class="br0">)</span>;
+</pre></div>
+<p>Several values evaluate to a logical false <sup id="cite_ref-8" class="reference"><a href="#cite_note-8" title="">[9]</a></sup> with the loose comparison operator <code>==</code>. There are generally empty instances of a type, or are considered equivalent to the number <a href="../../../../articles/0/_/%28/0_%28number%29.html" title="0 (number)">0</a>. These vales are:</p>
+<ul>
+<li>false</li>
+<li>zero</li>
+<li>"0"</li>
+<li>NULL</li>
+<li>empty array</li>
+<li>empty string</li>
+</ul>
+<p>PHP programmers wishing to distinguish a boolean variable set to false from other types of variable must use the strict comparison operator <code>===</code>.</p>
+<p><a name="Python" id="Python"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Python">edit</a>]</span> <span class="mw-headline">Python</span></h2>
+<p>The <a href="../../../../articles/p/y/t/Python_%28programming_language%29.html" title="Python (programming language)">Python programming language</a> defines True and False values as its boolean type, as well as allowing all objects to be tested for their truth value. The following values are considered false:</p>
+<ul>
+<li>Numeric zero, None, False.</li>
+<li>Empty containers such as empty strings, lists, tuples, dicts and sets.</li>
+<li>User defined object instances have control over their boolean value through special methods <code>__nonzero__</code><sup id="cite_ref-9" class="reference"><a href="#cite_note-9" title="">[10]</a></sup> and <code>__len__</code>.</li>
+</ul>
+<p>In all other cases, objects are considered true.</p>
+<p>Boolean operators and boolean built-in types always return one of the boolean values True and False <i>except</i> for the operators "<code>or</code>" and "<code>and</code>" which return one of their operands (from left to right, the first operand that determines the boolean value of the expression).<sup id="cite_ref-10" class="reference"><a href="#cite_note-10" title="">[11]</a></sup></p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-python">
+&gt;&gt;&gt; <span class="kw1">class</span> spam: <span class="kw1">pass</span>    <span class="co1"># spam is assigned a class object.</span>
+... 
+&gt;&gt;&gt; eggs = <span class="st0">"eggs"</span>       <span class="co1"># eggs is assigned a string object.</span>
+&gt;&gt;&gt; spam == eggs        <span class="co1"># (Note double equals sign for equality testing).</span>
+<span class="kw2">False</span>
+&gt;&gt;&gt; spam != eggs        <span class="co1"># != and == always return bool values.</span>
+<span class="kw2">True</span>
+&gt;&gt;&gt; spam <span class="kw1">and</span> eggs       <span class="co1"># and returns an operand.</span>
+<span class="st0">'eggs'</span>
+&gt;&gt;&gt; spam <span class="kw1">or</span> eggs        <span class="co1"># or also returns an operand.</span>
+&lt;class <span class="kw3">__main__</span>.<span class="me1">spam</span> at 0x01292660&gt;
+&gt;&gt;&gt;
+</pre></div>
+<p><a name="Ruby" id="Ruby"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Ruby">edit</a>]</span> <span class="mw-headline">Ruby</span></h2>
+<p>The <a href="../../../../articles/r/u/b/Ruby_programming_language.html" class="mw-redirect" title="Ruby programming language">Ruby programming language</a> does not have a Boolean data type as part of the language. Like many other interpreted languages, all variables are dynamically typed. Instead, <a href="../../../../articles/r/u/b/Ruby_programming_language.html" class="mw-redirect" title="Ruby programming language">ruby</a> defines the explicit values of <code>false</code> and <code>nil</code>, and everything else is considered <code>true</code>, including 0, <code>[ ]</code>, and the empty string <code>""</code>. The values <code>true</code>, <code>false</code>, and <code>nil</code> can be assigned to variables, returned from functions or methods, and compared in Boolean expressions.</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-ruby">
+a = <span class="nu0">0</span>
+<span class="kw1">if</span> <span class="br0">(</span>a<span class="br0">)</span> 
+  <span class="kw3">print</span> <span class="st0">"true"</span>
+<span class="kw1">else</span>
+  <span class="kw3">print</span> <span class="st0">"false"</span>
+<span class="kw1">end</span>
+</pre></div>
+<p>will print "true", which might come as a surprise to a new user of the language.</p>
+<p>Since Ruby is a pure <a href="../../../../articles/o/b/j/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> language, even the "explicitly" defined values of <code>true</code>, <code>false</code> and <code>nil</code> are objects that each have their own class:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-ruby">
+<span class="kw3">p</span> <span class="kw2">false</span>.<span class="kw1">class</span>
+<span class="kw3">p</span> <span class="kw2">true</span>.<span class="kw1">class</span>
+<span class="kw3">p</span> <span class="kw2">nil</span>.<span class="kw1">class</span>
+</pre></div>
+<p>Would output "FalseClass", "TrueClass" and "NilClass" respectively.</p>
+<p><a name="Scheme" id="Scheme"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Scheme">edit</a>]</span> <span class="mw-headline">Scheme</span></h2>
+<p><a href="../../../../articles/s/c/h/Scheme_%28programming_language%29.html" title="Scheme (programming language)">Scheme</a> has two special symbols <code>#t</code> and <code>#f</code> which represent the logical values of true and false respectively. However, any non-<code>#f</code> value is interpreted as true. Note that unlike Lisp, <code>nil</code> or <code>'()</code>, the empty list, is separate from <code>#f</code> in Scheme, and therefore is considered true.</p>
+<p><a name="SQL" id="SQL"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: SQL">edit</a>]</span> <span class="mw-headline">SQL</span></h2>
+<p><a href="../../../../articles/s/q/l/SQL_9778.html" title="SQL">SQL</a> supports three-valued logic (3VL), and comparison predicates in SQL can return any of three possible results: true, false, or unknown. The Boolean datatype was introduced in the ISO SQL:1999 standard, which specified that in addition to the three possible SQL Boolean values, instances of the datatype could be set to null<sup id="cite_ref-sql:1999_11-0" class="reference"><a href="#cite_note-sql:1999-11" title="">[12]</a></sup>. For DBMSs that implement the ISO SQL:1999 standard, the following code creates a table which holds instances of the Boolean data type.</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-sql">
+<span class="kw1">CREATE</span> <span class="kw1">TABLE</span> test1 
+<span class="br0">(</span>
+  a int, 
+  b <span class="kw1">BOOLEAN</span>
+<span class="br0">)</span>;
+ 
+<span class="kw1">INSERT</span> <span class="kw1">INTO</span> test1 
+<span class="kw1">VALUES</span> <span class="br0">(</span><span class="nu0">1</span>, true<span class="br0">)</span>;
+ 
+<span class="kw1">INSERT</span> <span class="kw1">INTO</span> test1 
+<span class="kw1">VALUES</span> <span class="br0">(</span><span class="nu0">2</span>, false<span class="br0">)</span>;
+ 
+<span class="kw1">INSERT</span> <span class="kw1">INTO</span> test1
+<span class="kw1">VALUES</span> <span class="br0">(</span><span class="nu0">3</span>, <span class="kw1">NULL</span><span class="br0">)</span>;
+ 
+<span class="co1">-- The SQL:1999 standard says that vendors can use null in place of the </span>
+<span class="co1">-- SQL Boolean value unknown.  It is left to the vendor to decide if</span>
+<span class="co1">-- null should be used to completely replace unknown.  The standard also </span>
+<span class="co1">-- says that null should be treated as equivalent to unknown, which is an </span>
+<span class="co1">-- inconsistency.  The following line may not work on all SQL:1999-compliant </span>
+<span class="co1">-- systems.</span>
+ 
+<span class="kw1">INSERT</span> <span class="kw1">INTO</span> test1
+<span class="kw1">VALUES</span> <span class="br0">(</span><span class="nu0">4</span>, unknown<span class="br0">)</span>;
+ 
+<span class="kw1">SELECT</span> * 
+<span class="kw1">FROM</span> test1;
+</pre></div>
+<p>The SQL Boolean data type did not gain widespread adoption, owing to inconsistencies in the standard and lack of support from vendors. Most SQL DBMSs use other data types like bit, byte, and char to simulate the behavior of Boolean data types.</p>
+<p><a name="Visual_Basic" id="Visual_Basic"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Visual Basic">edit</a>]</span> <span class="mw-headline">Visual Basic</span></h2>
+<p>In <a href="../../../../articles/v/i/s/Visual_Basic_5ea7.html" title="Visual Basic">Visual Basic</a> Boolean values from comparisons can be stored in variables with the <code>Boolean</code> data type, which is stored as a 16-bit signed integer, but should only have the values <code>True(-1)</code> and <code>False(0)</code>. For example:</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-vb">
+<span class="kw1">Dim</span> isSmall <span class="kw1">As</span> <span class="kw1">Boolean</span>
+isSmall = intMyNumber &lt; <span class="nu0">10</span>       <span class="co1">' Expression evaluates to True or False</span>
+<span class="kw1">If</span> isSmall <span class="kw1">Then</span>
+   <span class="kw1">MsgBox</span><span class="br0">(</span><span class="st0">"The number is small"</span><span class="br0">)</span>
+<span class="kw1">End</span> <span class="kw1">If</span>
+ 
+<span class="kw1">Dim</span> hellFreezesOver <span class="kw1">As</span> <span class="kw1">Boolean</span>   <span class="co1">' Boolean variables are initialized as False</span>
+hellFreezesOver = <span class="kw1">False</span>          <span class="co1">' Or you can use an assignment statement</span>
+<span class="kw1">Do</span>
+   <span class="kw1">Call</span> CheckAndProcessUserInput<span class="br0">(</span><span class="br0">)</span>
+<span class="kw1">Loop</span> Until hellFreezesOver
+</pre></div>
+<p>Note: Although Boolean values should only be -1 or 0, other values can be coerced into them by calling a function with a <code>Variant</code> <code>ByRef</code> parameter. It is highly recommended that you do not do this.</p>
+<div dir="ltr" style="text-align: left;">
+<pre class="source-vb">
+<span class="kw1">Sub</span> Voo<span class="br0">(</span>ByRef v <span class="kw1">As</span> Variant<span class="br0">)</span>
+   v = <span class="nu0">1</span>
+<span class="kw1">End</span> <span class="kw1">Sub</span>
+ 
+<span class="kw1">Sub</span> Bar<span class="br0">(</span>ByRef b <span class="kw1">As</span> <span class="kw1">Boolean</span><span class="br0">)</span>
+   b = <span class="nu0">1</span>
+<span class="kw1">End</span> <span class="kw1">Sub</span>
+ 
+<span class="kw1">Dim</span> b1 <span class="kw1">As</span> <span class="kw1">Boolean</span>, b2 <span class="kw1">As</span> <span class="kw1">Boolean</span>
+b1 = <span class="kw1">True</span>
+b2 = <span class="kw1">True</span>
+Debug.<span class="kw1">Print</span> <span class="br0">(</span>b1 = b2<span class="br0">)</span> <span class="co1">'True</span>
+<span class="kw1">Call</span> Voo<span class="br0">(</span>b2<span class="br0">)</span>
+Debug.<span class="kw1">Print</span> <span class="br0">(</span>b1 = b2<span class="br0">)</span> <span class="co1">'False</span>
+<span class="kw1">Call</span> Bar<span class="br0">(</span>b2<span class="br0">)</span>
+Debug.<span class="kw1">Print</span> <span class="br0">(</span>b1 = b2<span class="br0">)</span> <span class="co1">'True</span>
+</pre></div>
+<p><a name="XPath_and_XQuery" id="XPath_and_XQuery"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: XPath and XQuery">edit</a>]</span> <span class="mw-headline">XPath and XQuery</span></h2>
+<p><a href="../../../../articles/x/p/a/XPath_b645.html" title="XPath">XML Path Language</a> (XPath 2.0) and <a href="../../../../articles/x/q/u/XQuery_433d.html" title="XQuery">XML Query Language</a> (XQuery 1.0) both rely on <a href="../../../../articles/x/m/l/XML_Schema_%28W3C%29_361c.html" title="XML Schema (W3C)">XML Schema</a> for Boolean data type support. The XML Schema xs:boolean data type supports both true and false Boolean values. XPath and XQuery define a set of rules for calculating the <i>effective Boolean value</i> of expressions.</p>
+<p>XPath 1.0 and languages based on it, like XML Stylesheet Language (XSL), also support Boolean data types and implicit calculation of effective Boolean values from non-Boolean expressions.</p>
+<p><a name="See_also" id="See_also"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: See also">edit</a>]</span> <span class="mw-headline">See also</span></h2>
+<ul>
+<li><a href="../../../../articles/t/r/u/True_%28Unix%29_4b2b.html" title="True (Unix)">true</a> and <a href="../../../../articles/f/a/l/False_%28Unix%29_56df.html" title="False (Unix)">false</a> <a href="../../../../articles/s/h/e/Shell_scripting.html" class="mw-redirect" title="Shell scripting">shell scripting</a> commands</li>
+<li><a href="../../../../articles/s/h/a/Shannon%27s_expansion.html" title="Shannon's expansion">Shannon's expansion</a></li>
+</ul>
+<p><a name="Notes_and_references" id="Notes_and_references"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/b/o/o/Boolean_datatype.html" title="Edit section: Notes and references">edit</a>]</span> <span class="mw-headline">Notes and references</span></h2>
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0" title="">^</a></b> <a href="http://www.fh-jena.de/~kleine/history/languages/Algol68-Report.pdf" class="external text" title="http://www.fh-jena.de/~kleine/history/languages/Algol68-Report.pdf" rel="nofollow">Report on the Algorithmic Language ALGOL 68, Section 10.2.2.</a> (Aug 1968).</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1" title="">^</a></b> <a href="http://www.bond.id.au/~gnb/wp/cd2/index.html" class="external text" title="http://www.bond.id.au/~gnb/wp/cd2/index.html" rel="nofollow">Working Paper for Draft Proposed International Standard for Information Systems-- Programming Language C++</a> (Dec 1996).</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2" title="">^</a></b> <a href="http://www.research.att.com/~bs/hopl-almost-final.pdf" class="external text" title="http://www.research.att.com/~bs/hopl-almost-final.pdf" rel="nofollow">Evolving a language in and for the real world: C++ 1991-2006</a> (2007).</li>
+<li id="cite_note-3"><b><a href="#cite_ref-3" title="">^</a></b> <a href="http://www.gotw.ca/publications/N1211.pdf" class="external text" title="http://www.gotw.ca/publications/N1211.pdf" rel="nofollow">vector&lt;bool&gt;: More Problems, Better Solutions</a> (Aug 1999).</li>
+<li id="cite_note-4"><b><a href="#cite_ref-4" title="">^</a></b> <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2204.html" class="external text" title="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2204.html" rel="nofollow">A Specification to deprecate vector&lt;bool&gt;</a> (Mar 2007).</li>
+<li id="cite_note-csharplang-5"><b><a href="#cite_ref-csharplang_5-0" title="">^</a></b> <i>C# Language Specifications</i>, online at <a href="http://msdn.microsoft.com/en-us/library/aa664483(VS.71).aspx" class="external free" title="http://msdn.microsoft.com/en-us/library/aa664483(VS.71).aspx" rel="nofollow">http://msdn.microsoft.com/en-us/library/aa664483(VS.71).aspx</a></li>
+<li id="cite_note-jls-6">^ <a href="#cite_ref-jls_6-0" title=""><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-jls_6-1" title=""><sup><i><b>b</b></i></sup></a> <i>Java Language Specification</i>, 3rd edition - online at <a href="http://java.sun.com/docs/books/jls/" class="external free" title="http://java.sun.com/docs/books/jls/" rel="nofollow">http://java.sun.com/docs/books/jls/</a></li>
+<li id="cite_note-7"><b><a href="#cite_ref-7" title="">^</a></b> <a href="http://www.php.net/manual/en/language.types.boolean.php" class="external text" title="http://www.php.net/manual/en/language.types.boolean.php" rel="nofollow">PHP: Booleans - Manual</a></li>
+<li id="cite_note-8"><b><a href="#cite_ref-8" title="">^</a></b> <a href="http://www.php.net/manual/en/types.comparisons.php" class="external text" title="http://www.php.net/manual/en/types.comparisons.php" rel="nofollow">PHP: PHP type comparison tables - Manual</a></li>
+<li id="cite_note-9"><b><a href="#cite_ref-9" title="">^</a></b> <a href="http://docs.python.org/ref/customization.html" class="external text" title="http://docs.python.org/ref/customization.html" rel="nofollow">Special method names: Basic customization</a>. <i>Python Language Reference</i>.</li>
+<li id="cite_note-10"><b><a href="#cite_ref-10" title="">^</a></b> <a href="http://docs.python.org/ref/Booleans.html" class="external text" title="http://docs.python.org/ref/Booleans.html" rel="nofollow">Boolean operations</a>.</li>
+<li id="cite_note-sql:1999-11"><b><a href="#cite_ref-sql:1999_11-0" title="">^</a></b> ISO/IEC. <a href="http://www.ncb.ernet.in/education/modules/dbms/SQL99/ansi-iso-9075-1-1999.pdf" class="external text" title="http://www.ncb.ernet.in/education/modules/dbms/SQL99/ansi-iso-9075-1-1999.pdf" rel="nofollow">ISO/IEC 9075-1:1999 SQL Standard (pdf format)</a>. <i>Section 4.4.3.3</i>. 1999.</li>
+</ol>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 1133/1000000
+Post-expand include size: 3434/2048000 bytes
+Template argument size: 2292/2048000 bytes
+Expensive parser function count: 0/500
+-->
+<div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="../../../../articles/c/a/t/Special%7ECategories_101d.html" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="../../../../articles/b/o/o/Category%7EBoolean_algebra_9990.html" title="Category:Boolean algebra">Boolean algebra</a></span> | <span dir='ltr'><a href="../../../../articles/d/a/t/Category%7EData_types_60a4.html" title="Category:Data types">Data types</a></span> | <span dir='ltr'><a href="../../../../articles/a/r/t/Category%7EArticles_with_example_ALGOL_68_code_084c.html" title="Category:Articles with example ALGOL 68 code">Articles with example ALGOL 68 code</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/b/o/o/Boolean_datatype.html">Article</a></li><li id="ca-talk"
+	       	       ><a href="../../../../articles/b/o/o/Talk%7EBoolean_datatype_58f6.html">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://en.wikipedia.org/wiki/Boolean_datatype">Current revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/Wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="../../../../index.html">Main Page</a></li>
+	     	      <li id="n-Contents"><a href="../../../../articles/c/o/n/Portal%7EContents_b878.html">Contents</a></li>
+	     	      <li id="n-featuredcontent"><a href="../../../../articles/f/e/a/Portal%7EFeatured_content_5442.html">Featured content</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/Portal%7ECurrent_events_bb60.html">Current events</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-interaction'>
+	  <h5>Interaction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-aboutsite"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html">About Wikipedia</a></li>
+	     	      <li id="n-portal"><a href="../../../../articles/c/o/m/Wikipedia%7ECommunity_Portal_6a3c.html">Community portal</a></li>
+	     	      <li id="n-recentchanges"><a href="../../../../articles/r/e/c/Special%7ERecentChanges_e0d0.html">Recent changes</a></li>
+	     	      <li id="n-contact"><a href="../../../../articles/c/o/n/Wikipedia%7EContact_us_afd6.html">Contact Wikipedia</a></li>
+	     	      <li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate">Donate to Wikipedia</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help%7EContents_22de.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	<div id="p-lang" class="portlet">
+	  <h5>Languages</h5>
+	  <div class="pBody">
+	    <ul>
+	      	      <li>
+	      <a href="../../../../../es/articles/t/i/p/Tipo_de_dato_l%C3%B3gico.html">Español</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../de/articles/b/o/o/Boolesche_Variable_362b.html">Deutsch</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../fr/articles/b/o/o/Bool%C3%A9en.html">Français</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../it/articles/v/a/r/Variabile_booleana.html">Italiano</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../ja/articles/%E3%83%96/%E3%83%BC/%E3%83%AA/%E3%83%96%E3%83%BC%E3%83%AA%E3%82%A2%E3%83%B3%E5%9E%8B.html">日本語</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../ko/articles/%EB%B6%88/%EB%A6%B0/_/%EB%B6%88%EB%A6%B0_%EC%9E%90%EB%A3%8C%ED%98%95.html">한국어</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../no/articles/b/o/o/Boolean.html">‪Norsk (bokmål)‬</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../pl/articles/t/y/p/Typ_logiczny.html">Polski</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../pt/articles/b/o/o/Booleano.html">Português</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../ru/articles/%D0%BB/%D0%BE/%D0%B3/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%82%D0%B8%D0%BF.html">Русский</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../sv/articles/b/o/o/Boolean.html">Svenska</a>
+	      </li>
+	      	    </ul>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>	<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="../../../../misc/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>	<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 09:59, 13 June 2008 by Wikipedia user Gail. Based on work by Wikipedia user(s) Jamespurs, <a href="../../../../articles/c/l/u/User%7EClueBot_8791.html" title="User:ClueBot">ClueBot</a>, <a href="../../../../articles/g/r/e/User%7EGreenrd_ce6f.html" title="User:Greenrd">Greenrd</a>, <a href="../../../../articles/s/p/o/User%7ESpoon%21_4cc3.html" title="User:Spoon!">Spoon!</a>, <a href="../../../../articles/n/i/k/User%7ENikai_7c15.html" title="User:Nikai">Nikai</a>, <a href="../../../../articles/b/t/x/User%7EBtx40_4001.html" title="User:Btx40">Btx40</a>, <a href="../../../../articles/d/u/m/User%7EDumZiBoT_2099.html" title="User:DumZiBoT">DumZiBoT</a>, <a href="../../../../articles/a/n/d/User%7EAndyKali_322a.html" title="User:AndyKali">AndyKali</a>, Burbble, <a href="../../../../articles/s/q/l/User%7ESqlPac_eac7.html" title="User:SqlPac">SqlPac</a>, <a href="../../../../articles/h/i/t/User%7EHitherebrian_1cd7.html" title="User:Hitherebrian">Hitherebrian</a>, <a href="../../../../articles/s/m/a/User%7ESmackBot_cc7a.html" title="User:SmackBot">SmackBot</a>, <a href="../../../../articles/c/b/u/User%7ECburnett_adfd.html" title="User:Cburnett">Cburnett</a>, Zorakoid, <a href="../../../../articles/l/o/t/User%7ELOTRrules_17f6.html" title="User:LOTRrules">LOTRrules</a>, <a href="../../../../articles/u/f/r/User%7EUfretin_3ea1.html" title="User:Ufretin">Ufretin</a>, Torc2, <a href="../../../../articles/j/a/f/User%7EJafet.vixle_0c16.html" title="User:Jafet.vixle">Jafet.vixle</a>, <a href="../../../../articles/s/a/l/User%7ESalix_alba_9f89.html" title="User:Salix alba">Salix alba</a>, <a href="../../../../articles/j/o/k/User%7EJokes_Free4Me_dacb.html" title="User:Jokes Free4Me">Jokes Free4Me</a>, <a href="../../../../articles/t/h/i/User%7EThijs%21bot_bdf4.html" title="User:Thijs!bot">Thijs!bot</a>, <a href="../../../../articles/a/n/d/User%7EAndyluciano_4d5d.html" title="User:Andyluciano">Andyluciano</a>, <a href="../../../../articles/g/r/a/User%7EGracenotes_686d.html" title="User:Gracenotes">Gracenotes</a>, <a href="../../../../articles/t/r/o/User%7ETrovatore_c393.html" title="User:Trovatore">Trovatore</a>, <a href="../../../../articles/p/a/d/User%7EPaddy3118_35ef.html" title="User:Paddy3118">Paddy3118</a>, <a href="../../../../articles/t/h/i/User%7EThiseye_689a.html" title="User:Thiseye">Thiseye</a>, <a href="../../../../articles/r/j/w/User%7ERjwilmsi_027f.html" title="User:Rjwilmsi">Rjwilmsi</a>, <a href="../../../../articles/m/i/k/User%7EMikeblas_16be.html" title="User:Mikeblas">Mikeblas</a>, SoulComa, <a href="../../../../articles/n/e/v/User%7ENevilleDNZ_2f48.html" title="User:NevilleDNZ">NevilleDNZ</a>, <a href="../../../../articles/z/o/n/User%7EZondor_d557.html" title="User:Zondor">Zondor</a>, Letter M, <a href="../../../../articles/j/a/m/User%7EJamelan_a8b0.html" title="User:Jamelan">Jamelan</a>, Adammck, Praetorian42, <a href="../../../../articles/h/q/b/User%7EHqb_74ff.html" title="User:Hqb">Hqb</a>, Ashrentum, <a href="../../../../articles/e/d/c/User%7EEdC_ca7a.html" title="User:EdC">EdC</a>, <a href="../../../../articles/w/k/n/User%7EWknight94_8d60.html" title="User:Wknight94">Wknight94</a>, <a href="../../../../articles/g/w/e/User%7EGwern_2189.html" title="User:Gwern">Gwern</a>, <a href="../../../../articles/m/e/t/User%7EMetron4_6924.html" title="User:Metron4">Metron4</a>, <a href="../../../../articles/r/i/c/User%7ERichardcavell_48b5.html" title="User:Richardcavell">Richardcavell</a>, <a href="../../../../articles/r/e/t/User%7ERettetast_0619.html" title="User:Rettetast">Rettetast</a>, <a href="../../../../articles/a/n/t/User%7EAntiVandalBot_aa84.html" title="User:AntiVandalBot">AntiVandalBot</a>, <a href="../../../../articles/d/b/0/User%7EDb099221_94b5.html" title="User:Db099221">Db099221</a>, <a href="../../../../articles/s/g/o/User%7ESgould_944f.html" title="User:Sgould">Sgould</a>, <a href="../../../../articles/f/a/n/User%7EFanf_0f2e.html" title="User:Fanf">Fanf</a>, <a href="../../../../articles/d/e/v/User%7EDevastatorIIC_0823.html" title="User:DevastatorIIC">DevastatorIIC</a>, <a href="../../../../articles/m/a/r/User%7EMarudubshinki_b9b7.html" title="User:Marudubshinki">Marudubshinki</a>, <a href="../../../../articles/m/b/o/User%7EMboverload_cce2.html" title="User:Mboverload">Mboverload</a>, <a href="../../../../articles/h/e/n/User%7EHenning_Makholm_0024.html" title="User:Henning Makholm">Henning Makholm</a>, <a href="../../../../articles/b/u/c/User%7EBucketsofg_06fb.html" title="User:Bucketsofg">Bucketsofg</a>, <a href="../../../../articles/m/a/x/User%7EMax_Schwarz_f9d2.html" title="User:Max Schwarz">Max Schwarz</a>, <a href="../../../../articles/m/f/c/User%7EMfc_c18a.html" title="User:Mfc">Mfc</a>, <a href="../../../../articles/r/u/s/User%7ERussBot_6f95.html" title="User:RussBot">RussBot</a>, <a href="../../../../articles/d/o/u/User%7EDoug_Bell_8398.html" title="User:Doug Bell">Doug Bell</a>, <a href="../../../../articles/e/n/o/User%7EEnochlau_9436.html" title="User:Enochlau">Enochlau</a>, Cyclomedia, <a href="../../../../articles/c/h/r/User%7EChris_Mason_f853.html" title="User:Chris Mason">Chris Mason</a>, <a href="../../../../articles/s/a/m/User%7ESam_Pointon_24f4.html" title="User:Sam Pointon">Sam Pointon</a>, <a href="../../../../articles/r/o/y/User%7ERoyboycrashfan_c289.html" title="User:Royboycrashfan">Royboycrashfan</a>, <a href="../../../../articles/m/a/t/User%7EMathbot_604f.html" title="User:Mathbot">Mathbot</a>, <a href="../../../../articles/s/b/i/User%7ESbisolo_3513.html" title="User:Sbisolo">Sbisolo</a>, <a href="../../../../articles/k/c/o/User%7EKcordina_3fec.html" title="User:Kcordina">Kcordina</a>, <a href="../../../../articles/c/e/s/User%7ECesarB_5f7f.html" title="User:CesarB">CesarB</a>, <a href="../../../../articles/f/u/r/User%7EFurrykef_4620.html" title="User:Furrykef">Furrykef</a>, Spankthecrumpet, <a href="../../../../articles/m/e/l/User%7EMelchoir_2750.html" title="User:Melchoir">Melchoir</a>, <a href="../../../../articles/t/h/e/User%7EThe_Noodle_Incident_77b2.html" title="User:The Noodle Incident">The Noodle Incident</a>, <a href="../../../../articles/r/2E/_/User%7ER._S._Shaw_abc4.html" title="User:R. S. Shaw">R. S. Shaw</a>, <a href="../../../../articles/w/l/i/User%7EWlievens_2d8b.html" title="User:Wlievens">Wlievens</a>, <a href="../../../../articles/t/o/n/User%7ETony_Sidaway_8b51.html" title="User:Tony Sidaway">Tony Sidaway</a>, <a href="../../../../articles/g/r/i/User%7EGrick_595e.html" title="User:Grick">Grick</a>, <a href="../../../../articles/a/-/d/User%7EA-Day_b428.html" title="User:A-Day">A-Day</a>, <a href="../../../../articles/g/r/e/User%7EGrendelkhan_c5fb.html" title="User:Grendelkhan">Grendelkhan</a>, <a href="../../../../articles/m/i/n/User%7EMinority_Report_ada1.html" title="User:Minority Report">Minority Report</a> and <a href="../../../../articles/c/h/a/User%7ECharles_Matthews_cceb.html" title="User:Charles Matthews">Charles Matthews</a> and Anonymous user(s) of Wikipedia.</li>	  <li id="f-copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>	  <li id="f-about"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html" title="Wikipedia:About">About Wikipedia</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/Wikipedia%7EGeneral_disclaimer_3e44.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

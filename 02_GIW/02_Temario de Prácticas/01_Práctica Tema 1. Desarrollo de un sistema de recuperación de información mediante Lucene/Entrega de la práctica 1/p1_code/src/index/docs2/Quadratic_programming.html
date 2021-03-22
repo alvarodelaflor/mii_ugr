@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Quadratic programming - Wikipedia, the free encyclopedia</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+    <script type="text/javascript" src="../../../../raw/gen.js"></script>        <style type="text/css">/*<![CDATA[*/
+@import "../../../../raw/MediaWiki%7ECommon.css";
+@import "../../../../raw/MediaWiki%7EMonobook.css";
+@import "../../../../raw/gen.css";
+/*]]>*/</style>          </head>
+  <body
+    class="ns-0">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Quadratic programming</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p><b>Quadratic programming</b> (QP) is a special type of mathematical <a href="../../../../articles/o/p/t/Optimization_%28mathematics%29.html" title="Optimization (mathematics)">optimization</a> problem. It is the problem of optimizing (minimizing or maximizing) a quadratic function of several variables subject to linear constraints on these variables.</p>
+<p>The quadratic programming problem can be formulated as:<sup id="cite_ref-0" class="reference"><a href="#cite_note-0" title="">[1]</a></sup></p>
+<p>Assume <b>x</b> belongs to <img class="tex" alt="\mathbb{R}^{n}" src="../../../../math/c/6/e/c6ec82a44393c0e7953beb5cae3d971e.png" /> space. The <i>n</i>×<i>n</i> <a href="../../../../articles/m/a/t/Matrix_%28math%29.html" class="mw-redirect" title="Matrix (math)">matrix</a> <i>Q</i> is symmetric, and <b>c</b> is any <i>n</i>×1 vector.</p>
+<p>Minimize (with respect to <b>x</b>)</p>
+<dl>
+<dd><img class="tex" alt="f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^T Q\mathbf{x} + \mathbf{c}^T \mathbf{x}" src="../../../../math/6/1/7/617e6c2cb4d854562ee3bb991825e605.png" /></dd>
+</dl>
+<p>Subject to one or more constraints of the form:</p>
+<dl>
+<dd><img class="tex" alt=" Ax \leq b " src="../../../../math/6/9/b/69b646c748f4e69fc1aaf64dcc0c01ba.png" /> (inequality constraint)</dd>
+<dd><span class="texhtml"><i>E</i><i>x</i> = <i>d</i></span> (equality constraint)</dd>
+</dl>
+<p>where <img class="tex" alt="\mathbf{v}^T" src="../../../../math/6/8/6/686256c00f5c9552f7b3dbb0b50ff833.png" /> indicates the vector <a href="../../../../articles/t/r/a/Transpose.html" title="Transpose">transpose</a> of <img class="tex" alt="\mathbf{v}" src="../../../../math/0/a/a/0aa3ec374bdc0d6a17aecbb6bcda6a89.png" />. The notation <img class="tex" alt=" Ax \leq b " src="../../../../math/6/9/b/69b646c748f4e69fc1aaf64dcc0c01ba.png" /> means that every entry of the vector <i>Ax</i> is less than or equal to the corresponding entry of the vector <i>b</i>.</p>
+<p>If <i>Q</i> is a <a href="../../../../articles/p/o/s/Positive-definite_matrix.html" title="Positive-definite matrix">positive semidefinite matrix</a>, then <i>f</i>(<b>x</b>) is a <a href="../../../../articles/c/o/n/Convex_function.html" title="Convex function">convex function</a>. In this case the quadratic program has a global minimizer if there exists at least one vector <b>x</b> satisfying the constraints and <i>f</i>(<b>x</b>) is bounded below on the feasible region. If the matrix <i>Q</i> is <a href="../../../../articles/p/o/s/Positive-definite_matrix.html" title="Positive-definite matrix">positive definite</a> then this global minimizer is unique. If <i>Q</i> is zero, then the problem becomes a <a href="../../../../articles/l/i/n/Linear_programming.html" title="Linear programming">linear program</a>. From optimization theory, a necessary condition for a point <b>x</b> to be a global minimizer is for it to satisfy the <a href="../../../../articles/k/a/r/Karush-Kuhn-Tucker_173e.html" class="mw-redirect" title="Karush-Kuhn-Tucker">Karush-Kuhn-Tucker</a> (KKT) conditions. The KKT conditions are also sufficient when <i>f</i>(<b>x</b>) is convex.</p>
+<p>If there are only equality constraints, then the QP can be solved by a <a href="../../../../articles/l/i/n/Linear_system.html" title="Linear system">linear system</a>. Otherwise, a variety of methods for solving the QP are commonly used, including <a href="../../../../articles/i/n/t/Interior_point_method.html" title="Interior point method">interior point</a>, <a href="../../../../articles/a/c/t/Active_set.html" title="Active set">active set</a> and <a href="../../../../articles/c/o/n/Conjugate_gradient_method.html" title="Conjugate gradient method">conjugate gradient</a> methods.</p>
+<p>Convex quadratic programming is a special case of the more general field of <a href="../../../../articles/c/o/n/Convex_optimization.html" title="Convex optimization">convex optimization</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a href="#The_dual"><span class="tocnumber">1</span> <span class="toctext">The dual</span></a></li>
+<li class="toclevel-1"><a href="#Complexity"><span class="tocnumber">2</span> <span class="toctext">Complexity</span></a></li>
+<li class="toclevel-1"><a href="#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<p><a name="The_dual" id="The_dual"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/q/u/a/Quadratic_programming.html" title="Edit section: The dual">edit</a>]</span> <span class="mw-headline">The dual</span></h2>
+<p>The dual of a QP is also a QP. To see that let us focus on the case where <span class="texhtml"><i>c</i> = 0</span> and Q is positive semidefinite. We write the <a href="../../../../articles/l/a/g/Lagrange_multipliers.html" title="Lagrange multipliers">Lagrangian</a></p>
+<dl>
+<dd><span class="texhtml"><i>L</i>(<i>x</i>,λ) = (1 / 2)<i>x</i><sup><i>T</i></sup><i>Q</i><i>x</i> + λ<sup><i>T</i></sup>(<i>A</i><i>x</i> − <i>b</i>)</span></dd>
+</dl>
+<p>To calculate the dual function <span class="texhtml"><i>g</i>(λ)</span>, defined as <img class="tex" alt="g(\lambda) = \inf_x L(x,\lambda) " src="../../../../math/7/d/c/7dcb73f15515abd3c1786d75ec24dc53.png" /> we find the <a href="../../../../articles/i/n/f/Infimum.html" title="Infimum">infimum</a> of <span class="texhtml"><i>L</i></span>, using <img class="tex" alt="\nabla_x L(x,\lambda)=0" src="../../../../math/8/b/0/8b07352a1c3ff0ad2f67840ee80e1f03.png" />:</p>
+<dl>
+<dd><span class="texhtml"><i>x</i> * = − <i>Q</i> <sup>− 1</sup><i>A</i><sup><i>T</i></sup>λ</span>, hence the dual function is</dd>
+<dd><span class="texhtml"><i>g</i>(λ) = − (1 / 2)λ<sup><i>T</i></sup><i>A</i><i>Q</i> <sup>− 1</sup><i>A</i><sup><i>T</i></sup>λ − <i>b</i><sup><i>T</i></sup>λ</span></dd>
+</dl>
+<p>hence the dual of the QP is</p>
+<p>maximize&#160;: <span class="texhtml">− (1 / 2)λ<sup><i>T</i></sup><i>A</i><i>Q</i> <sup>− 1</sup><i>A</i><sup><i>T</i></sup>λ − <i>b</i><sup><i>T</i></sup>λ</span></p>
+<p>subject to&#160;:<img class="tex" alt="\lambda \geq 0" src="../../../../math/4/3/2/432b4cfb979f14a140b7205d6bc5dc56.png" /></p>
+<p><a name="Complexity" id="Complexity"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/q/u/a/Quadratic_programming.html" title="Edit section: Complexity">edit</a>]</span> <span class="mw-headline">Complexity</span></h2>
+<p>For <a href="../../../../articles/p/o/s/Positive-definite_matrix.html" title="Positive-definite matrix">positive definite</a> <i>Q</i>, the <a href="../../../../articles/e/l/l/Ellipsoid_method.html" title="Ellipsoid method">ellipsoid method</a> solves the problem in <a href="../../../../articles/p/o/l/Polynomial_time.html" title="Polynomial time">polynomial time</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1" title="">[2]</a></sup> If, on the other hand, <i>Q</i> is <a href="../../../../articles/n/e/g/Negative_definite.html" class="mw-redirect" title="Negative definite">negative definite</a>, then the problem is <a href="../../../../articles/n/p/-/NP-hard_1fde.html" title="NP-hard">NP-hard</a>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2" title="">[3]</a></sup> In fact, even if <i>Q</i> has only one negative <a href="../../../../articles/e/i/g/Eigenvalue.html" class="mw-redirect" title="Eigenvalue">eigenvalue</a>, the problem is <a href="../../../../articles/n/p/-/NP-hard_1fde.html" title="NP-hard">NP-hard</a>.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3" title="">[4]</a></sup></p>
+<p><a name="References" id="References"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/q/u/a/Quadratic_programming.html" title="Edit section: References">edit</a>]</span> <span class="mw-headline">References</span></h2>
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0" title="">^</a></b> <cite id="CITEREFNocedalWright2006">Nocedal, Jorge &amp; Wright, Stephen J. (2006), <i>Numerical Optimization</i> (2nd ed.), Berlin, New York: <a href="../../../../articles/s/p/r/Springer-Verlag_b2a3.html" class="mw-redirect" title="Springer-Verlag">Springer-Verlag</a>, p. 449, <a href="../../../../articles/b/o/o/Special%7EBookSources_9780387303031_d2b6.html" class="internal">ISBN 978-0-387-30303-1</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.title=Numerical+Optimization&amp;rft.aulast=Nocedal&amp;rft.aufirst=Jorge&amp;rft.date=2006&amp;rft.pages=p.+449&amp;rft.edition=2nd&amp;rft.place=Berlin%2C+New+York&amp;rft.place=Berlin%2C+New+York&amp;rft.pub=%5B%5BSpringer-Verlag%5D%5D&amp;rft.isbn=978-0-387-30303-1"><span style="display: none;">&#160;</span></span>.</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1" title="">^</a></b> Kozlov, M.K.; Tarasov, S.P.; Khachiyan, L.G. "Polynomial solvability of convex quadratic programming," in Sov. Math., Dokl. 20, 1108-1111 (1979). This is a translation from Dokl. Akad. Nauk SSSR 248, 1049-1051 (1979). ISSN: 0197-6788</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2" title="">^</a></b> Sahni, S. "Computationally related problems," in SIAM Journal on Computing, 3, 262--279, 1974.</li>
+<li id="cite_note-3"><b><a href="#cite_ref-3" title="">^</a></b> Quadratic programming with one negative eigenvalue is NP-hard, Panos M. Pardalos and Stephen A. Vavasis in Journal of Global Optimization, Volume 1, Number 1, 1991, pg.15-22.</li>
+</ol>
+<ul>
+<li><cite class="book" style="font-style:normal"><a href="../../../../articles/m/i/c/Michael_R._Garey_c2db.html" class="mw-redirect" title="Michael R. Garey">Michael R. Garey</a> and <a href="../../../../articles/d/a/v/David_S._Johnson_85aa.html" title="David S. Johnson">David S. Johnson</a> (1979). <i>Computers and Intractability: A Guide to the Theory of NP-Completeness</i>. W.H. Freeman. <a href="../../../../articles/b/o/o/Special%7EBookSources_0716710455_abc0.html" class="internal">ISBN 0-7167-1045-5</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Computers+and+Intractability%3A+A+Guide+to+the+Theory+of+NP-Completeness&amp;rft.au=%5B%5BMichael+R.+Garey%5D%5D+and+%5B%5BDavid+S.+Johnson%5D%5D&amp;rft.date=1979&amp;rft.pub=W.H.+Freeman"><span style="display: none;">&#160;</span></span> A6: MP2, pg.245.</li>
+</ul>
+<p><a name="See_also" id="See_also"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/q/u/a/Quadratic_programming.html" title="Edit section: See also">edit</a>]</span> <span class="mw-headline">See also</span></h2>
+<ul>
+<li><a href="../../../../articles/l/i/n/Linear_programming.html" title="Linear programming">Linear programming</a></li>
+<li><a href="../../../../articles/s/u/p/Support_vector_machine.html" title="Support vector machine">Support vector machine</a></li>
+</ul>
+<p><a name="External_links" id="External_links"></a></p>
+<h2><span class="editsection">[<a href="../../../../articles/q/u/a/Quadratic_programming.html" title="Edit section: External links">edit</a>]</span> <span class="mw-headline">External links</span></h2>
+<ul>
+<li><a href="http://www.numerical.rl.ac.uk/qp/qp.html" class="external text" title="http://www.numerical.rl.ac.uk/qp/qp.html" rel="nofollow">A page about QP</a></li>
+<li><a href="http://www-fp.mcs.anl.gov/otc/Guide/OptWeb/continuous/constrained/qprog" class="external text" title="http://www-fp.mcs.anl.gov/otc/Guide/OptWeb/continuous/constrained/qprog" rel="nofollow">NEOS guide to QP</a></li>
+</ul>
+<dl>
+<dt>Software packages that include QP solvers</dt>
+</dl>
+<ul>
+<li><a href="http://www.aimms.com/" class="external text" title="http://www.aimms.com/" rel="nofollow">AIMMS Optimization Modeling</a>, the <a href="../../../../articles/a/i/m/AIMMS_6cc7.html" title="AIMMS">AIMMS</a> software</li>
+<li><a href="http://www.gams.com/" class="external text" title="http://www.gams.com/" rel="nofollow">GAMS</a>, see also <a href="../../../../articles/g/e/n/General_Algebraic_Modeling_System_366e.html" title="General Algebraic Modeling System">GAMS</a></li>
+<li><a href="http://www.mosek.com" class="external text" title="http://www.mosek.com" rel="nofollow">MOSEK</a></li>
+<li>free implementations of the algorithm of Goldfarb and Idnani (1982, 1983):
+<ul>
+<li><a href="http://cran.r-project.org/web/packages/quadprog/index.html" class="external text" title="http://cran.r-project.org/web/packages/quadprog/index.html" rel="nofollow">QuadProg</a> in <a href="../../../../articles/r/_/%28/R_%28programming_language%29.html" title="R (programming language)">R</a> (a port from <a href="../../../../articles/s/_/%28/S_%28programming_language%29.html" title="S (programming language)">S</a>)</li>
+<li><a href="http://www.diegm.uniud.it/digaspero/index.php?page=software" class="external text" title="http://www.diegm.uniud.it/digaspero/index.php?page=software" rel="nofollow">QuadProg++</a> in C++</li>
+<li><a href="http://www.lis.deis.unical.it/~furfaro/uQuadProg/uQuadProg.php" class="external text" title="http://www.lis.deis.unical.it/~furfaro/uQuadProg/uQuadProg.php" rel="nofollow">uQuadProg</a> a port of QuadProg++ that uses <a href="../../../../articles/b/l/a/BLAS_f0c2.html" class="mw-redirect" title="BLAS">BLAS</a></li>
+</ul>
+</li>
+<li><a href="http://www.mat.univie.ac.at/~neum/software/minq" class="external text" title="http://www.mat.univie.ac.at/~neum/software/minq" rel="nofollow">MINQ</a> Matlab program</li>
+<li><a href="http://www.cgal.org/Pkg/QPSolver" class="external text" title="http://www.cgal.org/Pkg/QPSolver" rel="nofollow">Linear and Quadratic Programming Solver in CGAL, the Computational Geometry Algorithms Library</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 681/1000000
+Post-expand include size: 4308/2048000 bytes
+Template argument size: 1207/2048000 bytes
+Expensive parser function count: 0/500
+-->
+<div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="../../../../articles/c/a/t/Special%7ECategories_101d.html" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="../../../../articles/o/p/t/Category%7EOptimization_10f3.html" title="Category:Optimization">Optimization</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/q/u/a/Quadratic_programming.html">Article</a></li><li id="ca-talk"
+	       	       ><a href="../../../../articles/q/u/a/Talk%7EQuadratic_programming_b99f.html">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://en.wikipedia.org/wiki/Quadratic_programming">Current revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/Wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="../../../../index.html">Main Page</a></li>
+	     	      <li id="n-Contents"><a href="../../../../articles/c/o/n/Portal%7EContents_b878.html">Contents</a></li>
+	     	      <li id="n-featuredcontent"><a href="../../../../articles/f/e/a/Portal%7EFeatured_content_5442.html">Featured content</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/Portal%7ECurrent_events_bb60.html">Current events</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-interaction'>
+	  <h5>Interaction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-aboutsite"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html">About Wikipedia</a></li>
+	     	      <li id="n-portal"><a href="../../../../articles/c/o/m/Wikipedia%7ECommunity_Portal_6a3c.html">Community portal</a></li>
+	     	      <li id="n-recentchanges"><a href="../../../../articles/r/e/c/Special%7ERecentChanges_e0d0.html">Recent changes</a></li>
+	     	      <li id="n-contact"><a href="../../../../articles/c/o/n/Wikipedia%7EContact_us_afd6.html">Contact Wikipedia</a></li>
+	     	      <li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate">Donate to Wikipedia</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help%7EContents_22de.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	<div id="p-lang" class="portlet">
+	  <h5>Languages</h5>
+	  <div class="pBody">
+	    <ul>
+	      	      <li>
+	      <a href="../../../../../cs/articles/k/v/a/Kvadratick%C3%A9_programov%C3%A1n%C3%AD.html">Česky</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../fr/articles/p/r/o/Programmation_quadratique.html">Français</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../sl/articles/k/v/a/Kvadrati%C4%8Dno_programiranje.html">Slovenščina</a>
+	      </li>
+	      	      <li>
+	      <a href="../../../../../zh/articles/%E4%BA%8C/%E6%AC%A1/%E8%A7%84/%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92.html">中文</a>
+	      </li>
+	      	    </ul>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>	<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="../../../../misc/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>	<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 09:41, 11 June 2008 by Wikipedia user <a href="../../../../articles/j/i/t/User%7EJitse_Niesen_c0c4.html" title="User:Jitse Niesen">Jitse Niesen</a>. Based on work by Wikipedia user(s) <a href="../../../../articles/z/i/l/User%7EZilupe_bb6d.html" title="User:Zilupe">Zilupe</a>, <a href="../../../../articles/t/h/i/User%7EThijs%21bot_bdf4.html" title="User:Thijs!bot">Thijs!bot</a>, <a href="../../../../articles/d/a/w/User%7EDawn_Bard_208b.html" title="User:Dawn Bard">Dawn Bard</a>, <a href="../../../../articles/l/u/n/User%7ELunch_e74c.html" title="User:Lunch">Lunch</a>, <a href="../../../../articles/p/h/i/User%7EPhil_Bridger_199e.html" title="User:Phil Bridger">Phil Bridger</a>, Akasha27, <a href="../../../../articles/z/y/2/User%7EZy26_73af.html" title="User:Zy26">Zy26</a>, Selain03, Andreas Fabri, <a href="../../../../articles/g/a/l/User%7EGal_chechik_6639.html" title="User:Gal chechik">Gal chechik</a>, <a href="../../../../articles/s/m/a/User%7ESmackBot_cc7a.html" title="User:SmackBot">SmackBot</a>, Nysin, <a href="../../../../articles/a/j/g/User%7EAjgorhoe_1441.html" title="User:Ajgorhoe">Ajgorhoe</a>, A quant, <a href="../../../../articles/d/p/v/User%7EDpv_75fb.html" title="User:Dpv">Dpv</a>, <a href="../../../../articles/z/a/s/User%7EZaslav_7e27.html" title="User:Zaslav">Zaslav</a>, <a href="../../../../articles/t/h/a/User%7EThat_Guy%2C_From_That_Show%21_4388.html" title="User:That Guy, From That Show!">That Guy, From That Show!</a>, <a href="../../../../articles/m/a/r/User%7EMarekpetrik_23d1.html" title="User:Marekpetrik">Marekpetrik</a>, G.de.Lange, <a href="../../../../articles/d/c/o/User%7EDcoetzee_a2a7.html" title="User:Dcoetzee">Dcoetzee</a>, <a href="../../../../articles/t/g/d/User%7ETgdwyer_45f8.html" title="User:Tgdwyer">Tgdwyer</a>, <a href="../../../../articles/m/i/a/User%7EMiaow_Miaow_f24d.html" title="User:Miaow Miaow">Miaow Miaow</a>, <a href="../../../../articles/q/u/u/User%7EQuuxplusone_9b50.html" title="User:Quuxplusone">Quuxplusone</a>, <a href="../../../../articles/m/a/t/User%7EMathbot_604f.html" title="User:Mathbot">Mathbot</a>, <a href="../../../../articles/s/h/d/User%7EShd_d446.html" title="User:Shd">Shd</a>, <a href="../../../../articles/a/b/c/User%7EABCD_d6a3.html" title="User:ABCD">ABCD</a>, <a href="../../../../articles/c/r/u/User%7ECrust_e04a.html" title="User:Crust">Crust</a>, <a href="../../../../articles/m/i/l/User%7EMilkmandan_1e7a.html" title="User:Milkmandan">Milkmandan</a>, <a href="../../../../articles/h/i/k/User%7EHike395_91ce.html" title="User:Hike395">Hike395</a>, <a href="../../../../articles/l/o/c/User%7ELockeownzj00_ffbe.html" title="User:Lockeownzj00">Lockeownzj00</a>, <a href="../../../../articles/j/a/r/User%7EJaredwf_4536.html" title="User:Jaredwf">Jaredwf</a>, <a href="../../../../articles/r/o/b/User%7ERobbot_3bd9.html" title="User:Robbot">Robbot</a> and <a href="../../../../articles/i/w/n/User%7EIwnbap_d7a5.html" title="User:Iwnbap">Iwnbap</a> and Anonymous user(s) of Wikipedia.</li>	  <li id="f-copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>	  <li id="f-about"><a href="../../../../articles/a/b/o/Wikipedia%7EAbout_8d82.html" title="Wikipedia:About">About Wikipedia</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/Wikipedia%7EGeneral_disclaimer_3e44.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

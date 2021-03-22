@@ -40,14 +40,16 @@ public class Searcher {
             System.out.println("Se ha producido un error, posiblemente no hay ningún índice creado.\nSe creará automáticamente y volveremos a intentarlo...");
             res = true;
         }
-        try {
-            ExecuteIndex.createIndex();
-            System.out.println("Repitiendo búsqueda");
-            IndexReader reader = DirectoryReader.open(indexDirectory);
-            indexSearcher = new IndexSearcher(reader);
-            queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
-        } catch (Exception e) {
-            System.out.println("Se ha vuelto a producir un error.\nError: " + e.getMessage());
+        if (res) {
+            try {
+                ExecuteIndex.createIndex();
+                System.out.println("Repitiendo búsqueda");
+                IndexReader reader = DirectoryReader.open(indexDirectory);
+                indexSearcher = new IndexSearcher(reader);
+                queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
+            } catch (Exception e) {
+                System.out.println("Se ha vuelto a producir un error.\nError: " + e.getMessage());
+            }
         }
     }
 

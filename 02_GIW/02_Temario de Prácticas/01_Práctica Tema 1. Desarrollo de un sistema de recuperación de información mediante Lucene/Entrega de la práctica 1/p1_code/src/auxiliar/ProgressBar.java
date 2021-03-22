@@ -11,7 +11,7 @@ public class ProgressBar {
 
             public void run() {
                 System.out.print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
-                System.out.print("Processing---------");
+                System.out.print("Procesando---------");
                 System.out.print(percent+"%");
 
                 try {

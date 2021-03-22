@@ -2,6 +2,8 @@ package index;
 
 import auxiliar.Constants;
 import auxiliar.ProgressBar;
+import org.apache.lucene.analysis.CharArraySet;
+import org.apache.lucene.analysis.StopFilter;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.TextField;
@@ -10,11 +12,11 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Alvaro de la Flor Bonilla
@@ -35,8 +37,11 @@ public class Indexer {
      * @throws IOException
      */
     public Indexer(String indexDirectoryPath) throws IOException {
-        // Builds an analyzer with the default stop words
-        StandardAnalyzer analyzer = new StandardAnalyzer();
+        // Add stop words
+        List<String> words = readWords();
+        CharArraySet stopSet = StopFilter.makeStopSet(words);
+        // Builds an analyzer with stop words
+        StandardAnalyzer analyzer = new StandardAnalyzer(stopSet);
         // A Directory provides an abstraction layer for storing a list of files. A directory contains only files (no sub-folder hierarchy)
         Directory indexDirectory =  FSDirectory.open(Paths.get(indexDirectoryPath));
         // Holds all the configuration that is used to create an IndexWriter
@@ -77,8 +82,8 @@ public class Indexer {
             Document document = getDocument(file);
             writer.addDocument(document);
         } catch (Exception e) {
-            String msg = "An error occurred while indexing the file.\n";
-            String path = "File path: " + file.getCanonicalPath() + "\n";
+            String msg = "Se ha producido un error indexando el archivo.\n";
+            String path = "Localización del archivo: " + file.getCanonicalPath() + "\n";
             String error = "Error: " + e.getLocalizedMessage();
             System.out.println(msg + path + error);
         }
@@ -103,12 +108,23 @@ public class Indexer {
         try {
             for (File file : files) {
                 progressBar.processing(i, files.length);
-                if(!file.isDirectory()
-                        && !file.isHidden()
-                        && file.exists()
-                        && file.canRead()
-                        && filter.accept(file)
-                ){
+                Boolean checkIsDirectory = !file.isDirectory();
+                Boolean checkIsHidden = !file.isHidden();
+                Boolean checkExists = file.exists();
+                Boolean checkCanRead = file.canRead();
+                //Boolean checkAccept = filter.accept(file);
+                List<Boolean> check = Arrays.asList(checkIsDirectory, checkIsHidden, checkExists, checkCanRead);
+                List<String> msgs = Arrays.asList("Fallo en el directorio", "Archivo oculto", "Archivo no existente", "Archivo no leíble", "Archivo no aceptado");
+                Boolean checkAux = true;
+                int msg = 0;
+                for (Boolean pass: check) {
+                    if (!pass) {
+                        System.out.println("No se puede indexar por un fallo en el archivo\nError: " + msgs.get(msg));
+                        checkAux = false;
+                    }
+                    msg++;
+                }
+                if(checkAux){
                     indexFile(file);
                 }
                 i++;
@@ -118,6 +134,37 @@ public class Indexer {
         }
 
         return writer.numRamDocs();
+    }
+
+    public List<String> readWords() {
+        List<String> resEn = new ArrayList<>();
+        List<String> resEs = new ArrayList<>();
+        List<String> res = new ArrayList<>();
+        String lineEn;
+        String lineEs;
+        BufferedReader bufferedReaderEn;
+        BufferedReader bufferedReaderEs;
+        try {
+            bufferedReaderEn = new BufferedReader(new FileReader("./src/index/words/en.txt"));
+            bufferedReaderEs = new BufferedReader(new FileReader("./src/index/words/es.txt"));
+
+            while ((lineEn = bufferedReaderEn.readLine()) != null) {
+                resEn.add(lineEn);
+            }
+            bufferedReaderEn.close();
+            while ((lineEs = bufferedReaderEs.readLine()) != null) {
+                resEs.add(lineEs);
+            }
+            bufferedReaderEs.close();
+        } catch (IOException e) {
+            System.out.println("Se ha producido un error.\nError: " + e.getMessage());
+        }
+        if (Constants.language.equals("EN")) {
+            res.addAll(resEn);
+        } else {
+            res.addAll(resEs);
+        }
+        return res;
     }
 
     /**

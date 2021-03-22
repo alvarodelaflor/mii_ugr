@@ -31,7 +31,7 @@ public class ExecuteSearch {
         }
     }
 
-    public static void createSearch(String indexDir) throws IOException, ParseException {
+    public static void createSearch() throws IOException, ParseException {
         Scanner scanner = new Scanner (System.in);
         String input = "";
         Boolean res = true;
@@ -39,14 +39,14 @@ public class ExecuteSearch {
         System.out.println("Establezca el término que desea buscar:");
         input = scanner.nextLine ();
 
-        ExecuteSearch.search(input, indexDir);
+        ExecuteSearch.search(input, Constants.indexDir);
 
         while (res) {
             Map<Boolean, String> aux = Execute.ask("¿Desea realizar otra búsqueda?", Arrays.asList("s", "n").stream().collect(Collectors.toSet()), 5);
             if (aux.get(true).equals("s")) {
                 System.out.println("Establezca el término que desea buscar:");
                 input = scanner.nextLine();
-                ExecuteSearch.search(input, indexDir);
+                ExecuteSearch.search(input, Constants.indexDir);
             } else {
                 res = false;
             }
