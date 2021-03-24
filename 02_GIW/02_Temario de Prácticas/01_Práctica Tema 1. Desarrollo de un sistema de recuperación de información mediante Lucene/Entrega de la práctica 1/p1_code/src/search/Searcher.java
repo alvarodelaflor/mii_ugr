@@ -1,7 +1,10 @@
 package search;
 
 import auxiliar.Constants;
+import auxiliar.Execute;
 import index.ExecuteIndex;
+import org.apache.lucene.analysis.CharArraySet;
+import org.apache.lucene.analysis.StopFilter;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
@@ -18,6 +21,7 @@ import org.apache.lucene.store.FSDirectory;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.List;
 
 /**
  * @author Alvaro de la Flor Bonilla
@@ -46,7 +50,14 @@ public class Searcher {
                 System.out.println("Repitiendo búsqueda");
                 IndexReader reader = DirectoryReader.open(indexDirectory);
                 indexSearcher = new IndexSearcher(reader);
-                queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
+
+                // Add stop words
+                List<String> words = Execute.readWords();
+                CharArraySet stopSet = StopFilter.makeStopSet(words);
+
+                // Builds an analyzer with stop words
+                StandardAnalyzer analyzer = new StandardAnalyzer(stopSet);
+                queryParser = new QueryParser(Constants.CONTENTS, analyzer);
             } catch (Exception e) {
                 System.out.println("Se ha vuelto a producir un error.\nError: " + e.getMessage());
             }
@@ -58,7 +69,7 @@ public class Searcher {
         return indexSearcher.search(query, Constants.MAX_SEARCH);
     }
 
-    public Document getDocument(ScoreDoc scoreDoc) throws CorruptIndexException, IOException {
+    public Document getDocument(ScoreDoc scoreDoc) throws IOException {
         return indexSearcher.doc(scoreDoc.doc);
     }
 }

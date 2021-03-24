@@ -1,6 +1,7 @@
 package index;
 
 import auxiliar.Constants;
+import auxiliar.Execute;
 import auxiliar.ProgressBar;
 import org.apache.lucene.analysis.CharArraySet;
 import org.apache.lucene.analysis.StopFilter;
@@ -38,7 +39,7 @@ public class Indexer {
      */
     public Indexer(String indexDirectoryPath) throws IOException {
         // Add stop words
-        List<String> words = readWords();
+        List<String> words = Execute.readWords();
         CharArraySet stopSet = StopFilter.makeStopSet(words);
         // Builds an analyzer with stop words
         StandardAnalyzer analyzer = new StandardAnalyzer(stopSet);
@@ -59,12 +60,13 @@ public class Indexer {
      * @throws IOException
      */
     private Document getDocument(File file) throws IOException {
+        // First, we create the document that we are going to index
         Document doc = new Document();
 
+        // We set as parameters to search for the title, location and content.
         TextField contentField = new TextField(Constants.CONTENTS, new FileReader(file));
         TextField fileNameField = new TextField(Constants.FILE_NAME, file.getName(),TextField.Store.YES);
         TextField filePathField = new TextField(Constants.FILE_PATH, file.getCanonicalPath(),TextField.Store.YES);
-
         doc.add(contentField);
         doc.add(fileNameField);
         doc.add(filePathField);
@@ -112,7 +114,7 @@ public class Indexer {
                 Boolean checkIsHidden = !file.isHidden();
                 Boolean checkExists = file.exists();
                 Boolean checkCanRead = file.canRead();
-                //Boolean checkAccept = filter.accept(file);
+
                 List<Boolean> check = Arrays.asList(checkIsDirectory, checkIsHidden, checkExists, checkCanRead);
                 List<String> msgs = Arrays.asList("Fallo en el directorio", "Archivo oculto", "Archivo no existente", "Archivo no leíble", "Archivo no aceptado");
                 Boolean checkAux = true;
@@ -134,37 +136,6 @@ public class Indexer {
         }
 
         return writer.getMaxCompletedSequenceNumber();
-    }
-
-    public List<String> readWords() {
-        List<String> resEn = new ArrayList<>();
-        List<String> resEs = new ArrayList<>();
-        List<String> res = new ArrayList<>();
-        String lineEn;
-        String lineEs;
-        BufferedReader bufferedReaderEn;
-        BufferedReader bufferedReaderEs;
-        try {
-            bufferedReaderEn = new BufferedReader(new FileReader("./src/index/words/en.txt"));
-            bufferedReaderEs = new BufferedReader(new FileReader("./src/index/words/es.txt"));
-
-            while ((lineEn = bufferedReaderEn.readLine()) != null) {
-                resEn.add(lineEn);
-            }
-            bufferedReaderEn.close();
-            while ((lineEs = bufferedReaderEs.readLine()) != null) {
-                resEs.add(lineEs);
-            }
-            bufferedReaderEs.close();
-        } catch (IOException e) {
-            System.out.println("Se ha producido un error.\nError: " + e.getMessage());
-        }
-        if (Constants.language.equals("EN")) {
-            res.addAll(resEn);
-        } else {
-            res.addAll(resEs);
-        }
-        return res;
     }
 
     /**

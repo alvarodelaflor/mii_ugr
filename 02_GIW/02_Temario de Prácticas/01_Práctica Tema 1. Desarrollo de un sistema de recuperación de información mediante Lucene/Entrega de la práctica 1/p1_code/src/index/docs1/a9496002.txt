@@ -1,3 +1,4 @@
+Hola mi nombre es Carlos Bonilla estudiante del máster de informática en la universidad de Granada
 Title       : An Investigation of the Performance Characteristics of the Lottery Procedure for
                Controlling Risk Preferences
 Type        : Award
