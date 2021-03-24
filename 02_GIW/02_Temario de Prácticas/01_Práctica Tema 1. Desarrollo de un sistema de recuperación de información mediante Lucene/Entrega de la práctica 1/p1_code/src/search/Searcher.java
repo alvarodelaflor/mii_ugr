@@ -39,7 +39,15 @@ public class Searcher {
         try {
             IndexReader reader = DirectoryReader.open(indexDirectory);
             indexSearcher = new IndexSearcher(reader);
-            queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
+
+            // Add stop words
+            List<String> words = Execute.readWords();
+            CharArraySet stopSet = StopFilter.makeStopSet(words);
+
+            // Builds an analyzer with stop words
+            StandardAnalyzer analyzer = new StandardAnalyzer(stopSet);
+
+            queryParser = new QueryParser(Constants.CONTENTS, analyzer);
         } catch (Exception e) {
             System.out.println("Se ha producido un error, posiblemente no hay ningún índice creado.\nSe creará automáticamente y volveremos a intentarlo...");
             res = true;

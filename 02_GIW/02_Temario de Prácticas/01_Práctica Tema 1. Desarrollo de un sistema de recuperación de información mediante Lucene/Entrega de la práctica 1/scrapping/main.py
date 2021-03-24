@@ -28,18 +28,14 @@ i = 1
 with alive_bar(total=len(lis), title='Progress') as bar:
     z = 1
     for li in lis:
-        f = open('./books/' + str(z) + '-' + li+'.txt', 'w')
+        f = open('./books/' + str(z) + '-' + li+'.html', 'w')
         f.close()
         z = z + 1
     for li in lis:
-        link = 'https://www.gutenberg.org/files/' + li + '/' + li + '-0.txt'
+        link = 'https://www.gutenberg.org/files/' + li + '/' + li + '-h/' + li + '-h.htm'
         res = False
         try:
-            f = open('./books/' + str(i) + '-' + li + '.txt', 'w')
-            page = urllib.request.urlopen(link)
-            pagetext = page.read()  ## Save the html and later save in the file
-            f.write(str(pagetext))
-            f.close()
+            urlretrieve(link, './books/' + str(i) + '-' + li + '.html')
         except Exception as e:
             print('Fallo al descargar: ' + link + ' Error: ' + str(e))
             res = True
@@ -47,53 +43,10 @@ with alive_bar(total=len(lis), title='Progress') as bar:
             try:
                 print('Usando alternativa de descarga 1')
                 link = 'https://www.gutenberg.org/cache/epub/' + li + '/pg' + li + '.txt'
-                f = open('./books/' + str(i) + '-' + li + '.txt', 'w')
-                page = urllib.request.urlopen(link)
-                pagetext = page.read()  ## Save the html and later save in the file
-                f.write(str(pagetext))
-                f.close()
+                urlretrieve(link, './books/' + str(i) + '-' + li + '.html')
                 res = False
             except:
                 print('Fallo al descargar (usando alternativa 1): ' + link)
-                res = True
-        if res:
-            try:
-                print('Usando alternativa de descarga 2')
-                link = 'https://www.gutenberg.org/file/' + li + '/' + li + '.txt'
-                f = open('./books/' + str(i) + '-' + li + '.txt', 'w')
-                page = urllib.request.urlopen(link)
-                pagetext = page.read()  ## Save the html and later save in the file
-                f.write(str(pagetext))
-                f.close()
-                res = False
-            except:
-                print('Fallo al descargar (usando alternativa 2): ' + link)
-                res = True
-        if res:
-            try:
-                print('Usando alternativa de descarga 3')
-                link = 'https://www.gutenberg.org/cache/epub/' + li + '/pg' + li + '.txt'
-                f = open('./books/' + str(i) + '-' + li + '.txt', 'w')
-                page = urllib.request.urlopen(link)
-                pagetext = page.read()  ## Save the html and later save in the file
-                f.write(str(pagetext))
-                f.close()
-                res = False
-            except:
-                print('Fallo al descargar (usando alternativa 3): ' + link)
-                res = True
-        if res:
-            try:
-                print('Usando alternativa de descarga 4')
-                link = 'https://www.gutenberg.org/files/' + li + '/' + li + '.txt'
-                f = open('./books/' + str(i) + '-' + li + '.txt', 'w')
-                page = urllib.request.urlopen(link)
-                pagetext = page.read()  ## Save the html and later save in the file
-                f.write(str(pagetext))
-                f.close()
-                res = False
-            except:
-                print('Fallo al descargar (usando alternativa 4): ' + link)
                 res = True
         print("Book" + str(i))
         bar()
