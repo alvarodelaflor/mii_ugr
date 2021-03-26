@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-smartcn-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-common-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-morfologik-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-nori-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-phonetic-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-opennlp-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-icu-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-kuromoji-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-analyzers-stempel-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-core-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-queryparser-8.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

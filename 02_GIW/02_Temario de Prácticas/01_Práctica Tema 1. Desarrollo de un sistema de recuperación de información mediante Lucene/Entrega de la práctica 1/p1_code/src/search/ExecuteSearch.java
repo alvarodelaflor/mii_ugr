@@ -41,22 +41,21 @@ public class ExecuteSearch {
     }
 
     public static Boolean calculateIndividualScore(Float score, String searchQuery, Float maxScore, Float minScore) {
+        Boolean res = false;
         Integer words = Arrays.stream(searchQuery.split(" ")).filter(x -> !x.equals(" ")).collect(Collectors.toList()).size();
 
-        Boolean res = false;
-        Float scoreNormalize = ((score + words * 0.47f) * 10) / maxScore;
+        Float scoreNormalizeMax = ((score + words * 0.39f) * 10) / maxScore;
+        minScore = (minScore * 10) / maxScore;
 
-        Float normalizeGen = normalize(scoreNormalize);
-
-        if ((1 - normalizeGen) < Constants.umbral) {
+        if ((1 - normalize(scoreNormalizeMax, minScore)) < Constants.umbral) {
             res = true;
         }
 
         return res;
     }
 
-    public static Float normalize(Float val) {
-        return (val - 0) / (10 - 0);
+    public static Float normalize(Float val, Float min) {
+        return (val - min) / (10 - min);
     }
 
     public static void createSearch() throws IOException, ParseException {
