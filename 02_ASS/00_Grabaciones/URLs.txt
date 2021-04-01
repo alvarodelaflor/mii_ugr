@@ -8,3 +8,4 @@ Videos
 2021-03-12 -> ERROR
 2021-03-19 -> https://youtu.be/CkiKaRHsHVk (PARTE I)
 	      TODO (PARTE II)
+2021-03-26 -> https://youtu.be/HoCGjbfPrt0
