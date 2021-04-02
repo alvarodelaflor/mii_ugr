@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://p1_c/p1_c_elements/trasera.tscn" type="PackedScene" id=1]
-
-[node name="Spatial" type="Spatial"]
-
-[node name="CSGMesh" type="CSGMesh" parent="."]
-
-[node name="trasera" parent="CSGMesh" instance=ExtResource( 1 )]
