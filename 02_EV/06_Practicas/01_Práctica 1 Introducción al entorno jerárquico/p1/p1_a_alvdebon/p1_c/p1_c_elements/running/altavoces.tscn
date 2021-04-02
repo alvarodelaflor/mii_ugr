@@ -1,0 +1,25 @@
+[gd_scene format=2]
+
+[node name="altavoz" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.98046, 0.196716, 0, -0.196716, 0.98046, 0, 0, 0, 1, 0, 1, 0 )
+width = 0.656432
+height = 1.13709
+depth = 0.765888
+
+[node name="CSGSphere" type="CSGSphere" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.317116, -0.210989, 0 )
+operation = 2
+radius = 0.314024
+
+[node name="CSGSphere2" type="CSGSphere" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147609, 0.318164, 0 )
+operation = 2
+radius = 0.24885
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox"]
+transform = Transform( 0.905198, -0.42499, 0, 0.42499, 0.905198, 0, 0, 0, 1, -0.442661, 0.274574, 0 )
+width = 0.0852227
+height = 0.708502
+depth = 0.10782
