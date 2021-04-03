@@ -60,10 +60,10 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
     openldap:
-      image: bitnami/openldap:2
+      image: larrycai/openldap
       ports:
-        - '1389:1389'
-        - '1636:1636'
+        - '389:389'
+        - '636:636'
       environment:
         - LDAP_ADMIN_USERNAME=admin
         - LDAP_ADMIN_PASSWORD=adminpassword
