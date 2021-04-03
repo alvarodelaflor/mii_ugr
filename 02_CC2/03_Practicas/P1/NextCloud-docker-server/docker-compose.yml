@@ -1,23 +1,15 @@
 version: '3'
 
-networks:
-  app-tier:
-
 services:
     nginx:
       build: ./nginx
       ports:
         - '31010:80'
-      networks: 
-        - app-tier
-      tty: true
-      links:
+      depends_on:
       - nextcloud01
       - nextcloud02
-      - nextcloud03
     nextcloud01:
-      build:
-        ./nextcloud
+      image: 'nextcloud:21.0.0-apache'
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -29,14 +21,9 @@ services:
       - NEXTCLOUD_ADMIN_USER=admin
       - NEXTCLOUD_ADMIN_PASSWORD=password
       depends_on: 
-      - mariadb
-      networks: 
-      - app-tier
-      links:
       - mariadb
     nextcloud02:
-      build:
-        ./nextcloud
+      image: 'nextcloud:21.0.0-fpm'
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -49,35 +36,12 @@ services:
       - NEXTCLOUD_ADMIN_PASSWORD=password
       depends_on: 
       - mariadb
-      networks: 
-      - app-tier
-
-    nextcloud03:
-      build:
-        ./nextcloud
-      restart: always
-      volumes:
-      - nextcloud:/var/www/html
-      environment:
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=password
-      - MYSQL_HOST=mariadb
-      - NEXTCLOUD_ADMIN_USER=admin
-      - NEXTCLOUD_ADMIN_PASSWORD=password
-      depends_on: 
-      - mariadb
-      networks: 
-      - app-tier
-
     mariadb:
       image: "mariadb:10.4.8-bionic"
       command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
       restart: always
       volumes:
       - db:/var/lib/mysql
-      networks: 
-      - app-tier
       environment:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_PASSWORD=password
@@ -94,8 +58,6 @@ services:
         - LDAP_ADMIN_PASSWORD=adminpassword
         - LDAP_USERS=user01,user02
         - LDAP_PASSWORDS=password1,password2
-      networks: 
-      - app-tier
       volumes:
         - 'openldap_data:/bitnami/openldap'
 volumes:
