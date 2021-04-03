@@ -1,8 +1,14 @@
 version: '3'
 
+networks:
+  my-network:
+    driver: bridge
+
 services:
     nginx:
       build: ./nginx
+      networks:
+        - my-network
       ports:
         - '31010:80'
       depends_on:
@@ -10,6 +16,8 @@ services:
       - nextcloud02
     nextcloud01:
       image: 'nextcloud:21.0.0-apache'
+      networks:
+        - my-network
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -24,6 +32,8 @@ services:
       - mariadb
     nextcloud02:
       image: 'nextcloud:21.0.0-apache'
+      networks:
+        - my-network
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -38,6 +48,8 @@ services:
       - mariadb
     mariadb:
       image: "mariadb:10.4.8-bionic"
+      networks:
+        - my-network
       command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
       restart: always
       volumes:
@@ -48,19 +60,23 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
     openldap:
-      image: osixia/openldap
+      image: bitnami/openldap:2
       ports:
-        - '389:389'
-        - '636:636'
-      restart: always
+        - '1389:1389'
+        - '1636:1636'
       environment:
         - LDAP_ADMIN_USERNAME=admin
         - LDAP_ADMIN_PASSWORD=adminpassword
         - LDAP_USERS=user01,user02
         - LDAP_PASSWORDS=password1,password2
+      networks:
+        - my-network
       volumes:
         - 'openldap_data:/bitnami/openldap'
 volumes:
     openldap_data:
-    nextcloud:      
-    db:    
+      driver: local
+    nextcloud:
+      driver: local 
+    db:
+      driver: local
