@@ -23,7 +23,7 @@ services:
       depends_on: 
       - mariadb
     nextcloud02:
-      image: 'nextcloud:21.0.0-fpm'
+      image: 'nextcloud:21.0.0-apache'
       restart: always
       volumes:
       - nextcloud:/var/www/html
