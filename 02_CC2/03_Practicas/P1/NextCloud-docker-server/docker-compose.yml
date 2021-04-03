@@ -3,7 +3,7 @@ version: '3'
 services:
     nginx:
       build: ./nginx
-
+      container_name: nginx_15408846
       ports:
         - '31010:80'
       depends_on:
@@ -11,7 +11,7 @@ services:
       - nextcloud02
     nextcloud01:
       image: 'nextcloud:21.0.0-apache'
-
+      container_name: nextcloud01_15408846
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -26,7 +26,7 @@ services:
       - mariadb
     nextcloud02:
       image: 'nextcloud:21.0.0-apache'
-
+      container_name: nextcloud02_15408846
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -41,7 +41,7 @@ services:
       - mariadb
     mariadb:
       image: "mariadb:10.4.8-bionic"
-
+      container_name: mariadb_15408846
       command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
       restart: always
       volumes:
@@ -53,6 +53,7 @@ services:
       - MYSQL_USER=nextcloud
     openldap:
       image: larrycai/openldap
+      container_name: openldap_15408846
       ports:
         - '389:389'
         - '636:636'
