@@ -2,23 +2,22 @@ version: '3'
 
 networks:
   app-tier:
-    driver: bridge
 
 services:
     nginx:
       build: ./nginx
       ports:
-        - '80:80'
+        - '31010:80'
       networks: 
         - app-tier
-      depends_on: 
-        - nextcloud01
-        - nextcloud02
-        - nextcloud03
+      tty: true
+      links:
+      - nextcloud01
+      - nextcloud02
+      - nextcloud03
     nextcloud01:
-      image: "nextcloud:21.0.0-apache"
-      ports:
-      - '9001:80'
+      build:
+        ./nextcloud
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -33,10 +32,11 @@ services:
       - mariadb
       networks: 
       - app-tier
+      links:
+      - mariadb
     nextcloud02:
-      image: "nextcloud:21.0.0-apache"
-      ports:
-      - '9002:80'
+      build:
+        ./nextcloud
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -51,10 +51,10 @@ services:
       - mariadb
       networks: 
       - app-tier
+
     nextcloud03:
-      image: "nextcloud:21.0.0-apache"
-      ports:
-      - '9003:80'
+      build:
+        ./nextcloud
       restart: always
       volumes:
       - nextcloud:/var/www/html
@@ -68,7 +68,8 @@ services:
       depends_on: 
       - mariadb
       networks: 
-      - app-tier   
+      - app-tier
+
     mariadb:
       image: "mariadb:10.4.8-bionic"
       command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
@@ -99,8 +100,5 @@ services:
         - 'openldap_data:/bitnami/openldap'
 volumes:
     openldap_data:
-      driver: local  
-    nextcloud:
-      driver: local        
-    db:
-      driver: local        
+    nextcloud:      
+    db:    
