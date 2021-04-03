@@ -8,7 +8,7 @@ services:
     nginx:
       build: ./nginx
       ports:
-        - '80:8000'
+        - '80:80'
       networks: 
         - app-tier
       depends_on: 
@@ -81,7 +81,26 @@ services:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_PASSWORD=password
       - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud         
+      - MYSQL_USER=nextcloud
+    openldap:
+      image: osixia/openldap
+      ports:
+        - '389:389'
+        - '636:636'
+      restart: always
+      environment:
+        - LDAP_ADMIN_USERNAME=admin
+        - LDAP_ADMIN_PASSWORD=adminpassword
+        - LDAP_USERS=user01,user02
+        - LDAP_PASSWORDS=password1,password2
+      networks: 
+      - app-tier
+      volumes:
+        - 'openldap_data:/bitnami/openldap'
 volumes:
+    openldap_data:
+      driver: local  
     nextcloud:
+      driver: local        
     db:
+      driver: local        
