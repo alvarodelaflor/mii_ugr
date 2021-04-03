@@ -3,7 +3,7 @@ version: '3'
 services:
     nginx:
       build: ./nginx
-      container_name: nginx_15408846
+      container_name: servicio_nginx_15408846
       ports:
         - '31010:80'
       depends_on:
@@ -11,10 +11,10 @@ services:
       - nextcloud02
     nextcloud01:
       image: 'nextcloud:21.0.0-apache'
-      container_name: nextcloud01_15408846
+      container_name: servicio_nextcloud01_15408846
       restart: always
       volumes:
-      - nextcloud:/var/www/html
+      - nextcloud_15408846:/var/www/html
       environment:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
@@ -26,10 +26,10 @@ services:
       - mariadb
     nextcloud02:
       image: 'nextcloud:21.0.0-apache'
-      container_name: nextcloud02_15408846
+      container_name: servicio_nextcloud02_15408846
       restart: always
       volumes:
-      - nextcloud:/var/www/html
+      - nextcloud_15408846:/var/www/html
       environment:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
@@ -41,11 +41,11 @@ services:
       - mariadb
     mariadb:
       image: "mariadb:10.4.8-bionic"
-      container_name: mariadb_15408846
+      container_name: servicio_mariadb_15408846
       command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
       restart: always
       volumes:
-      - db:/var/lib/mysql
+      - db_15408846:/var/lib/mysql
       environment:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_PASSWORD=password
@@ -53,7 +53,7 @@ services:
       - MYSQL_USER=nextcloud
     openldap:
       image: larrycai/openldap
-      container_name: openldap_15408846
+      container_name: servicio_openldap_15408846
       ports:
         - '389:389'
         - '636:636'
@@ -64,11 +64,11 @@ services:
         - LDAP_PASSWORDS=password1,password2
 
       volumes:
-        - 'openldap_data:/bitnami/openldap'
+        - 'openldap_data_15408846:/bitnami/openldap'
 volumes:
-    openldap_data:
+    openldap_data_15408846:
       driver: local
-    nextcloud:
+    nextcloud_15408846:
       driver: local 
-    db:
+    db_15408846:
       driver: local
