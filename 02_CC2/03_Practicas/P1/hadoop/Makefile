@@ -27,3 +27,6 @@ start-nc02:
 
 start-nc03:
 	cd NextCloud-docker-server && docker-compose start nextcloud03
+
+disable-plugins:
+	cd NextCloud-docker-server && bash disable1.sh && bash disable2.sh
