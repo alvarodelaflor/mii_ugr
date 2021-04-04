@@ -1,0 +1,74 @@
+version: '3'
+
+services:
+    nginx:
+      build: ./nginx
+      container_name: servicio_nginx_15408846
+      ports:
+        - '31010:80'
+      depends_on:
+      - nextcloud01
+      - nextcloud02
+    nextcloud01:
+      image: 'nextcloud:21.0.0-apache'
+      container_name: servicio_nextcloud01_15408846
+      restart: always
+      volumes:
+      - nextcloud_15408846:/var/www/html
+      environment:
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=password
+      - MYSQL_HOST=servicio_mariadb_15408846
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=password
+      depends_on: 
+      - mariadb
+    nextcloud02:
+      image: 'nextcloud:21.0.0-apache'
+      container_name: servicio_nextcloud02_15408846
+      restart: always
+      volumes:
+      - nextcloud_15408846:/var/www/html
+      environment:
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=password
+      - MYSQL_HOST=servicio_mariadb_15408846
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=password
+      depends_on: 
+      - mariadb
+    mariadb:
+      image: "mariadb:10.4.8-bionic"
+      container_name: servicio_mariadb_15408846
+      command: "--transaction-isolation=READ-COMMITTED --binlog-format=ROW"
+      restart: always
+      volumes:
+      - db_15408846:/var/lib/mysql
+      environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    openldap:
+      image: larrycai/openldap
+      container_name: servicio_openldap_15408846
+      ports:
+        - '389:389'
+        - '636:636'
+      environment:
+        - LDAP_ADMIN_USERNAME=admin
+        - LDAP_ADMIN_PASSWORD=adminpassword
+        - LDAP_USERS=user01,user02
+        - LDAP_PASSWORDS=password1,password2
+
+      volumes:
+        - 'openldap_data_15408846:/bitnami/openldap'
+volumes:
+    openldap_data_15408846:
+      driver: local
+    nextcloud_15408846:
+      driver: local 
+    db_15408846:
+      driver: local

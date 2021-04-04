@@ -1,0 +1,16 @@
+dn: cn=alvarodelaflor,ou=Users,dc=openstack,dc=org
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: alvarodelaflor
+uid: alvarodelaflor
+uidNumber: 16859
+gidNumber: 100
+homeDirectory: /home/alvarodelaflor
+loginShell: /bin/bash
+gecos: alvarodelaflor
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
