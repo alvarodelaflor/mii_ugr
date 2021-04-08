@@ -140,9 +140,9 @@ def get_20_random_movies():
 def user_rate(movies):
     rates = []
     i = 1
-    print("Establezca su valoración para las siguientes películas 20 películas")
+    print("Establezca su valoración para las siguientes películas 20 películas\n")
     for movie in movies:
-        print(str(i) + "   " + movie.title)
+        print("\n" + str(i) + "   " + movie.title)
         rate = ask("Inserte su valoración", ["1", "2", "3", "4", "5"], 3)
         if rate[1] == "-1":
             print("No se ha insertado ninguna calificación válida, se establece 3 por defecto\n")
@@ -168,7 +168,7 @@ def ask(question, options, attempts):
     aux = True
     i = 1
     while aux and i <= attempts:
-        user_input = input(question + "\n\nDesición (opciones: " + str(options) + "): ")
+        user_input = input(question + "\nDesición (opciones: " + str(options) + "): ")
         if user_input not in options:
             print('Opción, no válida, inténtelo de nuevo. Intento ' + str(i) + " (máximo: " + str(attempts) + ")")
             i = i + 1
