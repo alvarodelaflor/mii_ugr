@@ -6,8 +6,7 @@ from utilities.user_util import *
 def p2():
     user_input = ask("1   Ejecutar recomendador\n2   Volver a cargar base de datos\n0   Salir", ["1", "2", "0"], 3)
     if user_input[True] == "1":
-        movies = get_20_random_movies()
-        user_rate(movies)
+        user_rates = user_rate(get_20_random_movies())
         print("TODO")
     elif user_input[True] == "2":
         print("Volviendo a cargar datos de películas. En progreso...")
@@ -33,18 +32,3 @@ def ask(question, options, attempts):
             aux = False
             res = (True, user_input)
     return res
-
-
-def user_rate(movies):
-    rates = {}
-    i = 1
-    print("Establezca su valoración para las siguientes películas 20 películas")
-    for movie in movies:
-        print(str(i) + "   " + movie.title)
-        rate = ask("Inserte su valoración", ["1", "2", "3", "4", "5"], 3)
-        if rate[1] == "-1":
-            print("No se ha insertado ninguna calificación válida, se establece 3 por defecto\n")
-        else:
-            rates[i] = (movie, rate[1])
-        i = i + 1
-    return rates

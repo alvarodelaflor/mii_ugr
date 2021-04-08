@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 from random import uniform, random, sample
+from utilities.execute import ask
 
 from pymongo import MongoClient
 
@@ -134,3 +135,18 @@ def get_20_random_movies():
     query = {"movie_id": {"$in": ids}}
     movies = list(map(lambda x: to_class(x), list(movies_mongodb.find(query))))
     return movies
+
+
+def user_rate(movies):
+    rates = {}
+    i = 1
+    print("Establezca su valoración para las siguientes películas 20 películas")
+    for movie in movies:
+        print(str(i) + "   " + movie.title)
+        rate = ask("Inserte su valoración", ["1", "2", "3", "4", "5"], 3)
+        if rate[1] == "-1":
+            print("No se ha insertado ninguna calificación válida, se establece 3 por defecto\n")
+        else:
+            rates[i] = (movie, rate[1])
+        i = i + 1
+    return rates
