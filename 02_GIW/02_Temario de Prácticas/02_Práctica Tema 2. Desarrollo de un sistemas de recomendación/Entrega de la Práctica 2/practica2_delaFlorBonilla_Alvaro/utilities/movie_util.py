@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
+from random import uniform, random, sample
 
-from bson.json_util import dumps
 from pymongo import MongoClient
 
 from utilities import constants
@@ -120,4 +120,17 @@ def filter_movie(movie_id=None, title=None, release_date=None, video_release_dat
 
     movies = list(map(lambda x: to_class(x), list(movies_mongodb.find(query))))
 
+    return movies
+
+
+def get_20_random_movies():
+    movies_id = sample(range(1, 1682), 20)
+    ids = list(map(lambda x: str(x), movies_id))
+
+    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
+    db = client.get_database('giw_db')
+    movies_mongodb = db.movies
+
+    query = {"movie_id": {"$in": ids}}
+    movies = list(map(lambda x: to_class(x), list(movies_mongodb.find(query))))
     return movies
