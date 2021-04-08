@@ -1,5 +1,6 @@
 from math import sqrt
 from utilities.rate_util import *
+from utilities.progress_bar import *
 import shelve
 
 
@@ -33,8 +34,8 @@ def load_dict(rates_add):
             dict_user[user][itemid] = rating
         # We associate our static dictionary with our previous dictionary (dict_user)
         static_dict['dict_user'] = dict_user
-        # We obtain the same dictionary as in the previous case but setting the movies as key
-        static_dict['dict_item'] = transform_dict_user(dict_user)
+        # We calculate the similarity matrix
+        static_dict['sim_items'] = calculate_similar_items(dict_user, n=20)
         static_dict.close()
     # If the last rates have not been added correctly, an error is thrown
     else:
@@ -94,7 +95,7 @@ def sim_pearson(dict_user, p1, p2):
 
 # Returns the best matches for person from the dict_user dictionary.
 # Number of results and similarity function are optional params.
-def topMatches(dict_user, person, n=5, similarity=sim_pearson):
+def top_matches(dict_user, person, n=20, similarity=sim_pearson):
     scores = [(similarity(dict_user, person, other), other)
               for other in dict_user if other != person]
     scores.sort()
@@ -145,13 +146,14 @@ def calculate_similar_items(dict_user, n=10):
     # Create a dictionary of items
     result = {}
     # Invert the preference
+    print("Permutando matriz...")
     dict_item = transform_dict_user(dict_user)
-    c = 0
+
+    print("\nCalculando matriz de similitud...\n")
+
     for item in dict_item:
         # Status updates for large datasets
-        c += 1
-        if c % 100 == 0: print("%d / %d" % (c, len(dict_item)))
         # Find the most similar items to this one
-        scores = topMatches(dict_item, item, n=n, similarity=sim_distance)
+        scores = top_matches(dict_item, item, n=n, similarity=sim_distance)
         result[item] = scores
     return result
