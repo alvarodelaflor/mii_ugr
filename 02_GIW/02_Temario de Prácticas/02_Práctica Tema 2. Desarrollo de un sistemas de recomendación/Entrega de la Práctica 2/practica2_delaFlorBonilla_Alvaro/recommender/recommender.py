@@ -3,24 +3,41 @@ from utilities.rate_util import *
 import shelve
 
 
-def loadDict(rates_add):
-    # Creamos la matriz de usuarios y puntuaciones de cada item
+def load_dict(rates_add):
+    """
+    Main method for finding similarity between items
+    :param rates_add: Last rating made by the user to whom movies are to be recommended
+    :return:
+    """
+    # We create the matrix of users and scores for each item
     Prefs={}
-    shelf = shelve.open("dataRS.dat")
+    # Instantiate a persistent dictionary
+    shelf = shelve.open("./data/p2.dat")
+    # We obtain all the initial scores
     rates = get_all_rates()
-    leng = len(rates)
+    leng1 = len(rates)
+    # We add the latest ratings made by users
     rates.extend(rates_add)
-    leng = len(rates)
-    for rate in rates:
-        user = int(rate.user_id)
-        itemid = int(rate.item_id)
-        rating = float(rate.rating)
-        Prefs.setdefault(user, {})
-        Prefs[user][itemid] = rating
-    shelf['Prefs']=Prefs
-    shelf['ItemsPrefs']=transformPrefs(Prefs)
-    shelf['SimItems']=calculateSimilarItems(Prefs, n=20)
-    shelf.close()
+    leng2 = len(rates)
+    # We check that the last ratings have been added correctly
+    check = (leng1 + 20) == leng2
+    if check:
+
+        for rate in rates:
+            user = int(rate.user_id)
+            itemid = int(rate.item_id)
+            rating = float(rate.rating)
+            # We create the key in the dictionary in case it does not exist
+            Prefs.setdefault(user, {})
+            # We associate to each user/movie its rating
+            Prefs[user][itemid] = rating
+        # We associate our static dictionary with our previous dictionary (Prefs)
+        shelf['Prefs'] = Prefs
+        shelf['ItemsPrefs']=transformPrefs(Prefs)
+        shelf['SimItems']=calculateSimilarItems(Prefs, n=20)
+        shelf.close()
+    else:
+        raise ValueError("The last ratings have not been added correctly.")
 
 
 # Returns a distance-based similarity score for person1 and person2
@@ -141,10 +158,10 @@ def calculateSimilarItems(prefs, n=10):
 
 
 def getRecommendations(prefs, person, similarity=sim_pearson):
-    '''
+    """
     Gets recommendations for a person by using a weighted average
     of every other user's rankings
-    '''
+    """
 
     totals = {}
     simSums = {}
