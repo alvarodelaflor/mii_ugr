@@ -40,6 +40,14 @@ def to_class(rate):
     return Rate(user_id=rate.get('user_id'), item_id=rate.get('item_id'), rating=rate.get('rating'), timestamp=rate.get('timestamp'))
 
 
+def get_all_rates():
+    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
+    db = client.get_database('giw_db')
+    rates_mongodb = db.rates
+    rates = list(map(lambda x: to_class(x), list(rates_mongodb.find({}))))
+    return rates
+
+
 def filter_rate(user_id=None, item_id=None, rating=None, timestamp=None):
     client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
     db = client.get_database('giw_db')

@@ -1,12 +1,12 @@
 import json
 from datetime import datetime
 from random import uniform, random, sample
-from utilities.execute import ask
 
 from pymongo import MongoClient
 
 from utilities import constants
 from classes.Movie import Movie
+from classes.Rate import Rate
 
 const = constants.Constants()
 
@@ -138,7 +138,7 @@ def get_20_random_movies():
 
 
 def user_rate(movies):
-    rates = {}
+    rates = []
     i = 1
     print("Establezca su valoración para las siguientes películas 20 películas")
     for movie in movies:
@@ -146,7 +146,33 @@ def user_rate(movies):
         rate = ask("Inserte su valoración", ["1", "2", "3", "4", "5"], 3)
         if rate[1] == "-1":
             print("No se ha insertado ninguna calificación válida, se establece 3 por defecto\n")
+            user_id = '944'
+            item_id = movie.movie_id
+            rating = "3"
+            timestamp = datetime.now().timestamp()
+            new_rate = Rate(user_id=user_id, item_id=item_id, rating=rating, timestamp=timestamp)
+            rates.append(new_rate)
         else:
-            rates[i] = (movie, rate[1])
+            user_id = '944'
+            item_id = movie.movie_id
+            rating = rate[1]
+            timestamp = datetime.now().timestamp()
+            new_rate = Rate(user_id=user_id, item_id=item_id, rating=rating, timestamp=timestamp)
+            rates.append(new_rate)
         i = i + 1
     return rates
+
+
+def ask(question, options, attempts):
+    res = (False, "-1")
+    aux = True
+    i = 1
+    while aux and i <= attempts:
+        user_input = input(question + "\n\nDesición (opciones: " + str(options) + "): ")
+        if user_input not in options:
+            print('Opción, no válida, inténtelo de nuevo. Intento ' + str(i) + " (máximo: " + str(attempts) + ")")
+            i = i + 1
+        else:
+            aux = False
+            res = (True, user_input)
+    return res
