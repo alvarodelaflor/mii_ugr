@@ -66,3 +66,25 @@ training_data
 
 A diferencia de la tabla anterior, podemos observar como en esta nueva tabla aparecen los valores perdidos como `NA`.
 
+En primer lugar, tal y como vimos en clase utilizaremos la funciones `summary` y `df_status` para obtener una visión general de los datos que vamos a tratar.
+
+```{r resumen}
+summary(training_data)
+```
+
+```{r status}
+df_status(training_data)
+```
+
+```{r tabla}
+table(training_data$Label)
+```
+
+```{r clases, warning=FALSE}
+ggplot(training_data) +
+  geom_histogram(aes(x = Label, fill = as.factor(Label)), stat = "count") +
+  labs(x = "", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+
