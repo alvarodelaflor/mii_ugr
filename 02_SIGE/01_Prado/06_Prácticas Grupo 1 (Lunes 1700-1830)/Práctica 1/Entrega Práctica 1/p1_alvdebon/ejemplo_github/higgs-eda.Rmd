@@ -1,0 +1,156 @@
+---
+title: "Exploración de datos del problema Higgs"
+author: "Juan Gómez Romero"
+output:
+    html_document: 
+      toc: yes
+      number_sections: yes
+      code_folding: show
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+library(knitr)
+library(tidyverse)
+library(funModeling)
+library(DataExplorer)
+```
+
+# Problema
+
+Descripción del problema.
+
+# Análisis exploratorio
+
+## Descarga de datos
+
+```{r descargar}
+if(!file.exists("data/training.csv")) {
+  library(httr)  
+  url <- "http://sl.ugr.es/higgs_sige"
+  GET(url, write_disk(temp <- tempfile(fileext = ".zip")))
+  unzip(temp, exdir = "data")
+  unlink(temp)
+}
+```
+
+## Lectura de datos
+
+Datos de entrenamiento:
+
+```{r leer-entrenamiento}
+training_data_raw <- read_csv("data/training.csv")
+training_data_raw
+```
+
+Datos de validación:
+
+```{r leer-validacion}
+test_data_raw <- read_csv("data/test.csv")
+```
+
+Antes de comenzar, se recodifican los valores perdidos como `NA`:
+
+```{r recodificar}
+training_data <- training_data_raw %>%
+  na_if(-999.0)
+```
+
+## Observar distribución de los valores
+
+Visión general del conjunto de datos:
+
+```{r resumen}
+# glimpse(training_data)
+summary(training_data)
+```
+
+Estado del conjunto de datos:
+
+```{r status}
+df_status(training_data)
+```
+
+## Analizar clases
+
+Podemos ver cuántos valores tenemos de cada clase:
+
+```{r tabla}
+table(training_data$Label)
+```
+
+Y crear un histograma:
+
+```{r clases, warning=FALSE}
+ggplot(training_data) +
+  geom_histogram(aes(x = Label, fill = as.factor(Label)), stat = "count") +
+  labs(x = "", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+## Analizar clases por variable
+
+Podemos analizar cómo están distribuidos las clases para los valores de una variable (_estratificación_):
+
+```{r clases-var}
+ggplot(training_data) +
+  geom_histogram(aes(x = DER_met_phi_centrality, fill = as.factor(Label)), bins = 10) +
+  labs(x = "DER_met_phi_centrality", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+Incluso considerar una pseudo-distribución de probabilidad:
+
+```{r densidad}
+ggplot(training_data) +
+  geom_density(aes(x = DER_met_phi_centrality, fill = Label, color = Label), alpha = 0.3) +
+  labs(x = "DER_met_phi_centrality", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)")) +
+  scale_color_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+Utilizando [Shiny](https://shiny.rstudio.com/), se puede extender para todas las variables (sin `NA`s).
+
+```{r densidad-interactiva, echo=FALSE}
+cols <- training_data %>%
+  select_if(~ !any(is.na(.))) %>%
+  select(starts_with(c("DER", "PRI"))) %>%
+  names() %>%
+  sort()
+
+inputPanel(
+  selectInput("x_variable", label = "Variable x:",
+              choices = cols, 
+              selected = cols[1])
+)
+
+renderPlot({
+  ggplot(training_data) + 
+    geom_density(aes_string(x = input$x_variable, fill = "Label", color = "Label"), alpha = 0.3) +
+    labs(x = "", y = "") +
+    scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)")) +
+    scale_color_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+})
+
+renderUI({
+  HTML(paste0(
+    "<p>Correlacion con objetivo de clasificación: <b>",
+    cor(training_data[input$x_variable], as.numeric(factor(training_data$Label))),
+    "</b></p>"
+  ))
+})
+```
+
+# Análisis exploratorio con DataExplorer
+[DataExplorer](https://boxuancui.github.io/DataExplorer/) permite crear un informe de un conjunto de datos incluyendo varios gráficos exploratorios.
+```{r generar-informe, include=FALSE}
+create_report(training_data)
+```
+
+También es posible crear los gráficos por separado:
+```{r}
+plot_intro(training_data)
+```
+
+Existen otros paquetes que realizan tareas similares. Aquí puedes ver un resumen: [The Landscape of R Packages for Automated Exploratory Data Analysis](https://arxiv.org/pdf/1904.02101.pdf).

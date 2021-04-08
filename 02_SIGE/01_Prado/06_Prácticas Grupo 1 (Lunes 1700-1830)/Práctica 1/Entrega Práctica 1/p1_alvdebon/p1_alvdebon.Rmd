@@ -1,0 +1,68 @@
+---
+title: "Exploración de datos del problema Higgs"
+author: "Álvaro de la Flor Bonilla"
+output:
+    html_document: 
+      toc: yes
+      number_sections: yes
+      code_folding: show
+runtime: shiny
+---
+
+En primer lugar importamos todas las librerías que vamos a utilizar
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+library(knitr)
+library(tidyverse)
+library(funModeling)
+library(DataExplorer)
+```
+
+# Problema
+
+En esta práctica se analizarán datos del experimento ATLAS del CERN-LHC, que perseguía laidentificación experimental de la partícula bosón de Higgs.El problema consiste en predecir si un registro de evento corresponde al decaimiento de un bosón de Higgs o se trata de ruido de fondo. Se trabajará sobre el conjunto de datos ofrecido en la competición de Kaggle Higgs Boson Machine Learning Challenge: https://www.kaggle.com/c/higgs-boson/.El conjunto de datos se puede  descargar  directamente  desde  este  enlace: http://sl.ugr.es/higgs_sige.Los  eventos recogidos en este conjunto de datos han sido generados de forma sintética con un simulado.
+
+# Análisis Exploratorio
+
+## Descarga de datos
+
+Los ficheros que se van a utilizar ("training.csv" y "test.csv") se encuentran disponibles en la carpeta "data". Aún así, para evitar posibles errores, se provee una solución alternativa para la descarga de datos directa del repositorio.
+
+```{r descargar}
+if(!file.exists("data/training.csv")) {
+  library(httr)  
+  url <- "http://sl.ugr.es/higgs_sige"
+  GET(url, write_disk(temp <- tempfile(fileext = ".zip")))
+  unzip(temp, exdir = "data")
+  unlink(temp)
+}
+```
+
+
+## Lectura de datos
+
+Datos de entrenamiento:
+
+```{r leer-entrenamiento}
+training_data_raw <- read_csv("data/training.csv")
+training_data_raw
+```
+
+Datos de validación:
+
+```{r leer-validacion}
+test_data_raw <- read_csv("data/test.csv")
+test_data_raw
+```
+
+Tal y como se indica en el guión de prácticas, se recodifican los valores perdidos como `NA`, es decir, los valores (-0.999.0) los transformamos en `NA`:
+
+```{r recodificar}
+training_data <- training_data_raw %>%
+  na_if(-999.0)
+training_data
+```
+
+A diferencia de la tabla anterior, podemos observar como en esta nueva tabla aparecen los valores perdidos como `NA`.
+
