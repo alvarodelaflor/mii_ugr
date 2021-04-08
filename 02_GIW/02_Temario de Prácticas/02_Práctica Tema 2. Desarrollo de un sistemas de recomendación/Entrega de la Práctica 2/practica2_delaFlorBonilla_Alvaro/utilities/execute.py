@@ -1,19 +1,11 @@
-from utilities.movie_util import *
-from utilities.rate_util import *
 from utilities.user_util import *
-from recommender.recommender import *
-import shelve
+from recommender.execute_recommender import *
 
 
 def p2():
     user_input = ask("1   Ejecutar recomendador\n2   Volver a cargar base de datos\n0   Salir", ["1", "2", "0"], 3)
     if user_input[True] == "1":
-        loadDict(user_rate(get_20_random_movies()))
-        ranking = getRecommendations(shelve.open("dataRS.dat")['ItemsPrefs'], 944)
-        print("Le recomendamos las siguientes películas:")
-        for i in range(0, 20):
-            movie = filter_movie(str(ranking[i][1]))[0]
-            print('Nombre: ' + movie.title + '\nPuntuación: ' + str(ranking[i][0]) + '/5')
+        execute_search()
     elif user_input[True] == "2":
         print("Volviendo a cargar datos de películas. En progreso...")
         save_movies(read_u_item())

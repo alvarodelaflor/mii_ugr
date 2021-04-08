@@ -4,7 +4,8 @@ import shelve
 
 
 def loadDict(rates_add):
-    Prefs={}   # matriz de usuarios y puntuaciones a cada a items
+    # Creamos la matriz de usuarios y puntuaciones de cada item
+    Prefs={}
     shelf = shelve.open("dataRS.dat")
     rates = get_all_rates()
     leng = len(rates)
@@ -137,36 +138,6 @@ def calculateSimilarItems(prefs, n=10):
         scores = topMatches(itemPrefs, item, n=n, similarity=sim_distance)
         result[item] = scores
     return result
-
-
-def getRecommendedItems(prefs, itemMatch, user):
-    userRatings = prefs[user]
-    scores = {}
-    totalSim = {}
-    # Loop over items rated by this user
-    for (item, rating) in userRatings.items():
-        # Loop over items similar to this one
-        for (similarity, item2) in itemMatch[item]:
-            print(item2)
-            # Ignore if this user has already rated this item
-            if item2 in userRatings: continue
-            # Weighted sum of rating times similarity
-            scores.setdefault(item2, 0)
-            scores[item2] += similarity * rating
-            # Sum of all the similarities
-            totalSim.setdefault(item2, 0)
-            totalSim[item2] += similarity
-
-    # Divide each total score by total weighting to get an average
-    try:
-        rankings = [(score / totalSim[item], item) for item, score in scores.items()]
-    except ZeroDivisionError:
-        rankings = []
-
-    # Return the rankings from highest to lowest
-    rankings.sort()
-    rankings.reverse()
-    return rankings
 
 
 def getRecommendations(prefs, person, similarity=sim_pearson):
