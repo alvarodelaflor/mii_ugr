@@ -1,14 +1,10 @@
 import json
 from datetime import datetime
-from random import uniform, random, sample
-
+from random import sample
 from pymongo import MongoClient
-
-from utilities import constants
+from utilities.constants import *
 from classes.Movie import Movie
 from classes.Rate import Rate
-
-const = constants.Constants()
 
 
 def get_genres(genres_cod):
@@ -57,7 +53,7 @@ def get_genres(genres_cod):
 
 def read_u_item():
     movies = []
-    with open(const.get_url_u_item()) as f:
+    with open(get_url_u_item()) as f:
         lines = f.readlines()
         for line in lines:
             x = line.split('|')

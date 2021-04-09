@@ -1,16 +1,12 @@
 import json
-
 from pymongo import MongoClient
-
-from utilities import constants
+from utilities.constants import *
 from classes.User import User
-
-const = constants.Constants()
 
 
 def read_u_user():
     users = []
-    with open(const.get_url_u_user()) as f:
+    with open(get_url_u_user()) as f:
         lines = f.readlines()
         for line in lines:
             x = line.split('|')

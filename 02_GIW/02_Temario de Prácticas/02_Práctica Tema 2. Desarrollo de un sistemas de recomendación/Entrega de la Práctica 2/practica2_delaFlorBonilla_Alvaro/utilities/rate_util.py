@@ -1,17 +1,14 @@
 import json
 
-from bson.json_util import dumps
+from datetime import datetime
 from pymongo import MongoClient
-
-from utilities import constants
+from utilities.constants import *
 from classes.Rate import Rate
-
-const = constants.Constants()
 
 
 def read_u_data():
     rates = []
-    with open(const.get_url_u_data()) as f:
+    with open(get_url_u_data()) as f:
         lines = f.readlines()
         for line in lines:
             x = line.split('\t')
@@ -34,6 +31,18 @@ def save_rates(rates):
     for rate in rates:
         rate_dict.append(json.loads(rate.to_json()))
     rates_mongodb.insert_many(rate_dict)
+
+
+def save_user_rate_search(rates, recommendations):
+    print("\nGuardando resultados en base de datos...\n")
+    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
+    db = client.get_database('giw_db')
+    recommendation_mongodb = db.recommendation
+    today = datetime.today().strftime("%d/%m/%Y %H:%M:%S")
+    recommendation_json = []
+    for recommendation in recommendations:
+        recommendation_json.append({"title": recommendation[0]['title'], "id": recommendation[1]['id'], "rate": recommendation[2]['rate']})
+    recommendation_mongodb.insert_one({today: (rates, recommendation_json)})
 
 
 def to_class(rate):

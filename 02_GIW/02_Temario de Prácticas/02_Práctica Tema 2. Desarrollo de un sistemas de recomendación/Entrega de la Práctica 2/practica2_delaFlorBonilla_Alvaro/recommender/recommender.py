@@ -1,6 +1,6 @@
 from math import sqrt
 from utilities.rate_util import *
-from utilities.progress_bar import *
+from utilities.constants import *
 import shelve
 
 
@@ -13,15 +13,14 @@ def load_dict(rates_add):
     # We create the matrix of users and scores for each item
     dict_user={}
     # Instantiate a persistent dictionary
-    static_dict = shelve.open("./data/p2.dat")
+    static_dict = shelve.open(get_url_dict())
     # We obtain all the initial scores
     rates = get_all_rates()
-    leng1 = len(rates)
+    length = len(rates)
     # We add the latest ratings made by users
     rates.extend(rates_add)
-    leng2 = len(rates)
     # We check that the last ratings have been added correctly
-    check = (leng1 + 20) == leng2
+    check = (length + get_number_of_movies_to_qualify()) == len(rates)
     if check:
         for rate in rates:
             # We obtain the main variables
@@ -35,7 +34,7 @@ def load_dict(rates_add):
         # We associate our static dictionary with our previous dictionary (dict_user)
         static_dict['dict_user'] = dict_user
         # We calculate the similarity matrix
-        static_dict['sim_items'] = calculate_similar_items(dict_user, n=20)
+        static_dict['sim_items'] = calculate_similar_items(dict_user, n=get_number_of_recommended_movies)
         static_dict.close()
     # If the last rates have not been added correctly, an error is thrown
     else:
@@ -47,10 +46,12 @@ def sim_distance(dict_user, person1, person2):
     # Get the list of shared_items
     si = {}
     for item in dict_user[person1]:
-        if item in dict_user[person2]: si[item] = 1
+        if item in dict_user[person2]:
+            si[item] = 1
 
         # if they have no ratings in common, return 0
-        if len(si) == 0: return 0
+        if len(si) == 0:
+            return 0
 
         # Add up the squares of all the differences
         sum_of_squares = sum([pow(dict_user[person1][item] - dict_user[person2][item], 2)
@@ -95,12 +96,12 @@ def sim_pearson(dict_user, p1, p2):
 
 # Returns the best matches for person from the dict_user dictionary.
 # Number of results and similarity function are optional params.
-def top_matches(dict_user, person, n=20, similarity=sim_pearson):
+def top_matches(dict_user, person, similarity=sim_pearson):
     scores = [(similarity(dict_user, person, other), other)
               for other in dict_user if other != person]
     scores.sort()
     scores.reverse()
-    return scores[0:n]
+    return scores[0:get_number_of_recommended_movies()]
 
 
 # Gets recommendations for a person by using a weighted average of every other user's rankings
@@ -142,7 +143,7 @@ def transform_dict_user(dict_user):
     return result
 
 
-def calculate_similar_items(dict_user, n=10):
+def calculate_similar_items(dict_user, n=get_number_of_recommended_movies()):
     # Create a dictionary of items
     result = {}
     # Invert the preference
@@ -154,6 +155,6 @@ def calculate_similar_items(dict_user, n=10):
     for item in dict_item:
         # Status updates for large datasets
         # Find the most similar items to this one
-        scores = top_matches(dict_item, item, n=n, similarity=sim_distance)
+        scores = top_matches(dict_item, item, similarity=sim_distance)
         result[item] = scores
     return result
