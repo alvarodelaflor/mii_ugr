@@ -11,7 +11,7 @@ def execute_search():
     rates = user_rate(get_20_random_movies())
     load_dict(rates)
     ranking = getRecommendations(shelve.open(get_url_dict())['dict_item'], 944)
-    ids = list(map(lambda x: str(x[1]), ranking))[:20]
+    ids = list(map(lambda x: str(x[1]), ranking))[:get_number_of_recommended_movies()]
     movies = filter_movie({"$in": ids})
     rates_json = list(map(lambda x: x.to_json(), rates))
     movies_and_id = list(map(lambda x: ({"title": x.title}, {"id": x.movie_id}, {"rate": list(filter(lambda y: (str(y[1]) == x.movie_id), ranking))[0][0]}), movies))
