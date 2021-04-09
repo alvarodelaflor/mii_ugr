@@ -33,8 +33,6 @@ def load_dict(rates_add):
             dict_user[user][itemid] = rating
         # We associate our static dictionary with our previous dictionary (dict_user)
         static_dict['dict_user'] = dict_user
-        # We calculate the similarity matrix
-        static_dict['sim_items'] = calculate_similar_items(dict_user, n=get_number_of_recommended_movies)
         static_dict.close()
     # If the last rates have not been added correctly, an error is thrown
     else:
@@ -125,6 +123,13 @@ def top_matches(dict_user, person, similarity=get_pearson):
 
 
 def get_recommendations(dict_user, person, similarity=get_pearson):
+    """
+    Movies rated based on previous user ratings
+    :param dict_user:
+    :param person:
+    :param similarity:
+    :return:
+    """
     totals = {}
     simSums = {}
     for other in dict_user:
@@ -160,21 +165,4 @@ def transform_dict_user(dict_user):
 
             # Permute the values
             result[item][person] = dict_user[person][item]
-    return result
-
-
-def calculate_similar_items(dict_user, n=get_number_of_recommended_movies()):
-    # Create a dictionary of items
-    result = {}
-    # Invert the preference
-    print("Permutando matriz...")
-    dict_item = transform_dict_user(dict_user)
-
-    print("\nCalculando matriz de similitud...\n")
-
-    for item in dict_item:
-        # Status updates for large datasets
-        # Find the most similar items to this one
-        scores = top_matches(dict_item, item, similarity=get_distance)
-        result[item] = scores
     return result
