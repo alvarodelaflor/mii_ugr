@@ -44,6 +44,7 @@ def load_dict(rates_add):
 def get_distance(dict_user, user_1, user_2):
     """
     Calculates distance between two users
+    Translated from slide 31 of topic 2
     :param dict_user: dictionary with all user ratings
     :param user_1: user who just made the ratings
     :param user_2: user to which it is compared
@@ -55,7 +56,6 @@ def get_distance(dict_user, user_1, user_2):
         if item in dict_user[user_2]:
             common_movies[item] = 1
 
-        # if they have no ratings in common, return 0
         if len(common_movies) == 0:
             return 0
 
