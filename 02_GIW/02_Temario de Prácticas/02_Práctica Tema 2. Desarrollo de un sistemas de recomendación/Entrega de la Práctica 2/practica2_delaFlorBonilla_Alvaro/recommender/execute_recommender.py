@@ -10,7 +10,7 @@ def custom_order(e):
 def execute_search():
     rates = user_rate(get_20_random_movies())
     load_dict(rates)
-    ranking = get_recommendations(shelve.open(get_url_dict())['dict_item'], get_new_user_id())
+    ranking = get_recommendations(shelve.open(get_url_dict())['dict_user'], int(get_new_user_id()))
     ids = list(map(lambda x: str(x[1]), ranking))[:get_number_of_recommended_movies()]
     movies = filter_movie({"$in": ids})
     rates_json = list(map(lambda x: x.to_json(), rates))

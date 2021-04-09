@@ -97,7 +97,7 @@ def sim_pearson(dict_user, p1, p2):
 # Returns the best matches for person from the dict_user dictionary.
 # Number of results and similarity function are optional params.
 def top_matches(dict_user, person, similarity=sim_pearson):
-    scores = [(similarity(dict_user, person, other), other)
+    scores = [(similarity(dict_user, int(person), other), other)
               for other in dict_user if other != person]
     scores.sort()
     scores.reverse()
@@ -105,7 +105,7 @@ def top_matches(dict_user, person, similarity=sim_pearson):
 
 
 # Gets recommendations for a person by using a weighted average of every other user's rankings
-def getRecommendations(dict_user, person, similarity=sim_pearson):
+def get_recommendations(dict_user, person, similarity=sim_pearson):
     totals = {}
     simSums = {}
     for other in dict_user:
@@ -125,7 +125,8 @@ def getRecommendations(dict_user, person, similarity=sim_pearson):
                 simSums[item] += sim
 
     # Create the normalized list
-    rankings = [(total / simSums[item], item) for item, total in totals.items()]
+    rankings_aux = [(total / simSums[item], item) for item, total in totals.items()]
+    rankings = list(filter(lambda x: (5 - x[0] > 0.01), rankings_aux))
     # Return the sorted list
     rankings.sort()
     rankings.reverse()
