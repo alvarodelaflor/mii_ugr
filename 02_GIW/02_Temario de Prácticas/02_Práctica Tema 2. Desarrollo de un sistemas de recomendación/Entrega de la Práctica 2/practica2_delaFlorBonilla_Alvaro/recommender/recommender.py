@@ -66,43 +66,53 @@ def get_distance(dict_user, user_1, user_2):
         return 1 / (1 + sum_of_squares)
 
 
-# Returns the Pearson correlation coefficient for p1 and p2
-def sim_pearson(dict_user, p1, p2):
-    # Get the list of mutually rated items
-    si = {}
-    for item in dict_user[p1]:
-        if item in dict_user[p2]: si[item] = 1
+def get_pearson(dict_user, item_1, item_2):
+    """
+    Calculates Pearson's correlation between two objects
+    :param dict_user:
+    :param item_1:
+    :param item_2:
+    :return:
+    """
+    # First we calculate the set of shared rates
+    common_item = {}
+    for item in dict_user[item_1]:
+        if item in dict_user[item_2]:
+            common_item[item] = 1
 
-    # if they are no ratings in common, return 0
-    if len(si) == 0: return 0
+    # If you do not share any rating, we return 0
+    if len(common_item) == 0:
+        return 0
 
     # Sum calculations
-    n = len(si)
+    n = len(common_item)
 
     # Sums of all the preferences
-    sum1 = sum([dict_user[p1][it] for it in si])
-    sum2 = sum([dict_user[p2][it] for it in si])
+    sum_1 = sum([dict_user[item_1][subitem] for subitem in common_item])
+    sum_2 = sum([dict_user[item_2][subitem] for subitem in common_item])
 
     # Sums of the squares
-    sum1Sq = sum([pow(dict_user[p1][it], 2) for it in si])
-    sum2Sq = sum([pow(dict_user[p2][it], 2) for it in si])
+    sum_sqrt_1 = sum([pow(dict_user[item_1][subitem], 2) for subitem in common_item])
+    sum_sqrt_2 = sum([pow(dict_user[item_2][subitem], 2) for subitem in common_item])
 
     # Sum of the products
-    pSum = sum([dict_user[p1][it] * dict_user[p2][it] for it in si])
+    product_sum = sum([dict_user[item_1][subitem] * dict_user[item_2][subitem] for subitem in common_item])
 
     # Calculate r (Pearson score)
-    num = pSum - (sum1 * sum2 / n)
-    den = sqrt((sum1Sq - pow(sum1, 2) / n) * (sum2Sq - pow(sum2, 2) / n))
-    if den == 0: return 0
+    numerator = product_sum - (sum_1 * sum_2 / n)
+    denominator = sqrt((sum_sqrt_1 - pow(sum_1, 2) / n) * (sum_sqrt_2 - pow(sum_2, 2) / n))
 
-    r = num / den
+    if denominator == 0:
+        return 0
+
+    r = numerator / denominator
 
     return r
 
 
 # Returns the best matches for person from the dict_user dictionary.
 # Number of results and similarity function are optional params.
-def top_matches(dict_user, person, similarity=sim_pearson):
+def top_matches(dict_user, person, similarity=get_pearson):
     scores = [(similarity(dict_user, int(person), other), other)
               for other in dict_user if other != person]
     scores.sort()
@@ -111,7 +121,7 @@ def top_matches(dict_user, person, similarity=sim_pearson):
 
 
 # Gets recommendations for a person by using a weighted average of every other user's rankings
-def get_recommendations(dict_user, person, similarity=sim_pearson):
+def get_recommendations(dict_user, person, similarity=get_pearson):
     totals = {}
     simSums = {}
     for other in dict_user:
