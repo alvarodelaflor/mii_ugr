@@ -80,7 +80,7 @@ def get_pearson(dict_user, item_1, item_2):
         if item in dict_user[item_2]:
             common_item[item] = 1
 
-    # If you do not share any rating, we return 0
+    # If it do not share any rating, we return 0
     if len(common_item) == 0:
         return 0
 
@@ -110,17 +110,20 @@ def get_pearson(dict_user, item_1, item_2):
     return r
 
 
-# Returns the best matches for person from the dict_user dictionary.
-# Number of results and similarity function are optional params.
 def top_matches(dict_user, person, similarity=get_pearson):
-    scores = [(similarity(dict_user, int(person), other), other)
-              for other in dict_user if other != person]
+    """
+    Calculates similarity to other user-movies
+    :param dict_user:
+    :param person:
+    :param similarity:
+    :return:
+    """
+    scores = [(similarity(dict_user, int(person), other), other) for other in dict_user if other != person]
     scores.sort()
     scores.reverse()
     return scores[0:get_number_of_recommended_movies()]
 
 
-# Gets recommendations for a person by using a weighted average of every other user's rankings
 def get_recommendations(dict_user, person, similarity=get_pearson):
     totals = {}
     simSums = {}
