@@ -1,7 +1,6 @@
 import json
 
 from datetime import datetime
-from pymongo import MongoClient
 from utilities.constants import *
 from classes.Rate import Rate
 
@@ -23,8 +22,7 @@ def read_u_data():
 
 
 def save_rates(rates):
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     rates_mongodb = db.rates
     rates_mongodb.drop()
     rate_dict = []
@@ -35,8 +33,7 @@ def save_rates(rates):
 
 def save_user_rate_search(rates, recommendations):
     print("\nGuardando resultados en base de datos...\n")
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     recommendation_mongodb = db.recommendation
     today = datetime.today().strftime("%d/%m/%Y %H:%M:%S")
     recommendation_json = []
@@ -50,16 +47,14 @@ def to_class(rate):
 
 
 def get_all_rates():
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     rates_mongodb = db.rates
     rates = list(map(lambda x: to_class(x), list(rates_mongodb.find({}))))
     return rates
 
 
 def filter_rate(user_id=None, item_id=None, rating=None, timestamp=None):
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     rates_mongodb = db.rates
 
     query = {}

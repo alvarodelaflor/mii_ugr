@@ -1,5 +1,4 @@
 import json
-from pymongo import MongoClient
 from utilities.constants import *
 from classes.User import User
 
@@ -22,8 +21,7 @@ def read_u_user():
 
 
 def save_users(rates):
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     users_mongodb = db.users
     users_mongodb.drop()
     user_dict = []
@@ -37,8 +35,7 @@ def to_class(user):
 
 
 def filter_user(user_id=None, age=None, gender=None, occupation=None, zip_code=None):
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     users_mongodb = db.users
 
     query = {}

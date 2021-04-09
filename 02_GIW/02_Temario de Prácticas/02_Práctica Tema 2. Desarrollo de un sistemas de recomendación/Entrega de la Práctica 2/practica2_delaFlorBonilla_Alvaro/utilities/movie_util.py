@@ -1,7 +1,6 @@
 import json
 from datetime import datetime
 from random import sample
-from pymongo import MongoClient
 from utilities.constants import *
 from classes.Movie import Movie
 from classes.Rate import Rate
@@ -71,8 +70,7 @@ def read_u_item():
 
 
 def save_movies(movies):
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     movies_mongodb = db.movies
     movies_mongodb.drop()
     movie_dict = []
@@ -94,8 +92,7 @@ def to_class(movie_json):
 
 
 def filter_movie(movie_id=None, title=None, release_date=None, video_release_date=None, imdb_url=None, genres=None, exact_genres=False):
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     movies_mongodb = db.movies
 
     query = {}
@@ -124,8 +121,7 @@ def get_20_random_movies():
     movies_id = sample(range(1, 1682), 20)
     ids = list(map(lambda x: str(x), movies_id))
 
-    client = MongoClient('mongodb+srv://giw:giw@cluster0.upja7.mongodb.net/giw_db?retryWrites=true&w=majority')
-    db = client.get_database('giw_db')
+    db = get_mongo_db()
     movies_mongodb = db.movies
 
     query = {"movie_id": {"$in": ids}}
