@@ -41,21 +41,27 @@ def load_dict(rates_add):
         raise ValueError("The last ratings have not been added correctly.")
 
 
-# Returns a distance-based similarity score for person1 and person2
-def sim_distance(dict_user, person1, person2):
+def get_distance(dict_user, user_1, user_2):
+    """
+    Calculates distance between two users
+    :param dict_user: dictionary with all user ratings
+    :param user_1: user who just made the ratings
+    :param user_2: user to which it is compared
+    :return:
+    """
     # Get the list of shared_items
-    si = {}
-    for item in dict_user[person1]:
-        if item in dict_user[person2]:
-            si[item] = 1
+    common_movies = {}
+    for item in dict_user[user_1]:
+        if item in dict_user[user_2]:
+            common_movies[item] = 1
 
         # if they have no ratings in common, return 0
-        if len(si) == 0:
+        if len(common_movies) == 0:
             return 0
 
         # Add up the squares of all the differences
-        sum_of_squares = sum([pow(dict_user[person1][item] - dict_user[person2][item], 2)
-                              for item in dict_user[person1] if item in dict_user[person2]])
+        sum_of_squares = sum([pow(dict_user[user_1][item] - dict_user[user_2][item], 2)
+                              for item in dict_user[user_1] if item in dict_user[user_2]])
 
         return 1 / (1 + sum_of_squares)
 
@@ -156,6 +162,6 @@ def calculate_similar_items(dict_user, n=get_number_of_recommended_movies()):
     for item in dict_item:
         # Status updates for large datasets
         # Find the most similar items to this one
-        scores = top_matches(dict_item, item, similarity=sim_distance)
+        scores = top_matches(dict_item, item, similarity=get_distance)
         result[item] = scores
     return result
