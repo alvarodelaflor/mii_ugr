@@ -40,6 +40,7 @@ def save_user_rate_search(rates, recommendations):
     for recommendation in recommendations:
         recommendation_json.append({"title": recommendation[0]['title'], "id": recommendation[1]['id'], "rate": recommendation[2]['rate']})
     recommendation_mongodb.insert_one({today: (rates, recommendation_json)})
+    return recommendation_json
 
 
 def to_class(rate):

@@ -11,6 +11,10 @@ rates_file_name = 'u.data'
 users_file_name = 'u.user'
 
 
+def get_new_user_id():
+    return "101010"
+
+
 def get_number_of_movies_to_qualify():
     return number_of_movies_to_qualify
 

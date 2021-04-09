@@ -138,14 +138,14 @@ def user_rate(movies):
         rate = ask("Inserte su valoración", ["1", "2", "3", "4", "5"], 3)
         if rate[1] == "-1":
             print("No se ha insertado ninguna calificación válida, se establece 3 por defecto\n")
-            user_id = '944'
+            user_id = get_new_user_id()
             item_id = movie.movie_id
             rating = "3"
             timestamp = datetime.now().timestamp()
             new_rate = Rate(user_id=user_id, item_id=item_id, rating=rating, timestamp=timestamp)
             rates.append(new_rate)
         else:
-            user_id = '944'
+            user_id = get_new_user_id()
             item_id = movie.movie_id
             rating = rate[1]
             timestamp = datetime.now().timestamp()
