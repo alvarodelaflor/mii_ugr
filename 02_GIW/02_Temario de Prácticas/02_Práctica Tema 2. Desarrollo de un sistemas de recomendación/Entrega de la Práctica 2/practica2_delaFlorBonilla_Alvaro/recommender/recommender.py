@@ -48,7 +48,7 @@ def get_distance(dict_user, user_1, user_2):
     :param user_2: user to which it is compared
     :return:
     """
-    # Get the list of shared_items
+    # Get the dict of shared movies
     common_movies = {}
     for item in dict_user[user_1]:
         if item in dict_user[user_2]:
@@ -64,48 +64,48 @@ def get_distance(dict_user, user_1, user_2):
         return 1 / (1 + sum_of_squares)
 
 
-def get_pearson(dict_user, item_1, item_2):
+def get_pearson(dict_user, user_1, user_2):
     """
-    Calculates Pearson's correlation between two objects
+    Calculates Pearson's correlation between two users
     :param dict_user:
-    :param item_1:
-    :param item_2:
+    :param user_1:
+    :param user_2:
     :return:
     """
     # First we calculate the set of shared rates
     common_item = {}
-    for item in dict_user[item_1]:
-        if item in dict_user[item_2]:
+    for item in dict_user[user_1]:
+        if item in dict_user[user_2]:
             common_item[item] = 1
 
+    # Sum calculations
+    size = len(common_item)
+
     # If it do not share any rating, we return 0
-    if len(common_item) == 0:
+    if size == 0:
         return 0
 
-    # Sum calculations
-    n = len(common_item)
-
     # Sums of all the preferences
-    sum_1 = sum([dict_user[item_1][subitem] for subitem in common_item])
-    sum_2 = sum([dict_user[item_2][subitem] for subitem in common_item])
+    sum_1 = sum([dict_user[user_1][movie] for movie in common_item])
+    sum_2 = sum([dict_user[user_2][movie] for movie in common_item])
 
     # Sums of the squares
-    sum_sqrt_1 = sum([pow(dict_user[item_1][subitem], 2) for subitem in common_item])
-    sum_sqrt_2 = sum([pow(dict_user[item_2][subitem], 2) for subitem in common_item])
+    sum_sqrt_1 = sum([pow(dict_user[user_1][movie], 2) for movie in common_item])
+    sum_sqrt_2 = sum([pow(dict_user[user_2][movie], 2) for movie in common_item])
 
     # Sum of the products
-    product_sum = sum([dict_user[item_1][subitem] * dict_user[item_2][subitem] for subitem in common_item])
+    product_sum = sum([dict_user[user_1][movie] * dict_user[user_2][movie] for movie in common_item])
 
     # Calculate r (Pearson score)
-    numerator = product_sum - (sum_1 * sum_2 / n)
-    denominator = sqrt((sum_sqrt_1 - pow(sum_1, 2) / n) * (sum_sqrt_2 - pow(sum_2, 2) / n))
+    numerator = product_sum - (sum_1 * sum_2 / size)
+    denominator = sqrt((sum_sqrt_1 - pow(sum_1, 2) / size) * (sum_sqrt_2 - pow(sum_2, 2) / size))
 
     if denominator == 0:
         return 0
 
-    r = numerator / denominator
+    res = numerator / denominator
 
-    return r
+    return res
 
 
 def top_matches(dict_user, person, similarity=get_pearson):
