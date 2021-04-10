@@ -162,11 +162,12 @@ def get_recommendations(dict_user, person, similarity=get_pearson):
 
 
 def transform_dict_user(dict_user):
-    result = {}
+    dict_item = {}
     for person in dict_user:
-        for item in dict_user[person]:
-            result.setdefault(item, {})
+        for movie in dict_user[person]:
+            dict_item.setdefault(movie, {})
 
-            # Permute the values
-            result[item][person] = dict_user[person][item]
-    return result
+            # Permute the values of person by movie
+            dict_item[movie][person] = dict_user[person][movie]
+
+    return dict_item
