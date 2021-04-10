@@ -130,30 +130,34 @@ def get_recommendations(dict_user, person, similarity=get_pearson):
     :param similarity:
     :return:
     """
-    totals = {}
-    simSums = {}
+    weighted_score = {}
+    similarity_sums = {}
     for other in dict_user:
-        # don't compare me to myself
-        if other == person: continue
-        sim = similarity(dict_user, person, other)
-        # ignore scores of zero or lower
-        if sim <= 0: continue
-        for item in dict_user[other]:
-            # only score movies I haven't seen yet
-            if item not in dict_user[person] or dict_user[person][item] == 0:
+        # Don't compare the same user
+        if other == person:
+            continue
+        similarity_result = similarity(dict_user, person, other)
+        # Ignore scores of zero or lower
+        if similarity_result <= 0:
+            continue
+        for movie in dict_user[other]:
+            # We add movies not seen by the user
+            if movie not in dict_user[person] or dict_user[person][movie] == 0:
                 # Similarity * Score
-                totals.setdefault(item, 0)
-                totals[item] += dict_user[other][item] * sim
+                weighted_score.setdefault(movie, 0)
+                weighted_score[movie] += dict_user[other][movie] * similarity_result
                 # Sum of similarities
-                simSums.setdefault(item, 0)
-                simSums[item] += sim
+                similarity_sums.setdefault(movie, 0)
+                similarity_sums[movie] += similarity_result
 
     # Create the normalized list
-    rankings_aux = [(total / simSums[item], item) for item, total in totals.items()]
+    rankings_aux = [(total / similarity_sums[item], item) for item, total in weighted_score.items()]
     rankings = list(filter(lambda x: (5 - x[0] > 0.01), rankings_aux))
+
     # Return the sorted list
     rankings.sort()
     rankings.reverse()
+
     return rankings
 
 
