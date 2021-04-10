@@ -162,6 +162,11 @@ def get_recommendations(dict_user, person, similarity=get_pearson):
 
 
 def transform_dict_user(dict_user):
+    """
+    Swap the current dictionary to access the movies
+    :param dict_user:
+    :return:
+    """
     dict_item = {}
     for person in dict_user:
         for movie in dict_user[person]:
