@@ -19,4 +19,7 @@ def execute_search():
     movies_rated = save_user_rate_search(rates_json, movies_and_id)
     print("Le recomendamos las siguientes películas:")
     for i in range(0, get_number_of_recommended_movies()):
-        print('Nombre: ' + movies_rated[i]['title'] + '\nPuntuación: ' + str(movies_rated[i]['rate']) + '/5\n')
+        try:
+            print('Nombre: ' + movies_rated[i]['title'] + '\nPuntuación: ' + str(movies_rated[i]['rate']) + '/5\n')
+        except ValueError as f:
+            print('Error: ' + str(f))

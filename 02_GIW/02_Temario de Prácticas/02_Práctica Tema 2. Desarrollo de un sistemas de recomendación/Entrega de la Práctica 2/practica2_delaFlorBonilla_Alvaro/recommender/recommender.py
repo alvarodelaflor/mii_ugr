@@ -39,27 +39,28 @@ def load_dict(rates_add):
         raise ValueError("The last ratings have not been added correctly.")
 
 
-def get_distance(dict_user, user_1, user_2):
+def get_distance(dict_user, movie_1, movie_2):
     """
     Calculates distance between two users
     Translated from slide 31 of topic 2
+    En esta práctica no lo vamos a utilizar pero es interesante para recomendar una pelicula en función de otra
     :param dict_user: dictionary with all user ratings
-    :param user_1: user who just made the ratings
-    :param user_2: user to which it is compared
+    :param movie_1: user who just made the ratings
+    :param movie_2: user to which it is compared
     :return:
     """
     # Get the dict of shared movies
     common_movies = {}
-    for item in dict_user[user_1]:
-        if item in dict_user[user_2]:
+    for item in dict_user[movie_1]:
+        if item in dict_user[movie_2]:
             common_movies[item] = 1
 
         if len(common_movies) == 0:
             return 0
 
         # Add up the squares of all the differences
-        sum_of_squares = sum([pow(dict_user[user_1][item] - dict_user[user_2][item], 2)
-                              for item in dict_user[user_1] if item in dict_user[user_2]])
+        sum_of_squares = sum([pow(dict_user[movie_1][item] - dict_user[movie_2][item], 2)
+                              for item in dict_user[movie_1] if item in dict_user[movie_2]])
 
         return 1 / (1 + sum_of_squares)
 
