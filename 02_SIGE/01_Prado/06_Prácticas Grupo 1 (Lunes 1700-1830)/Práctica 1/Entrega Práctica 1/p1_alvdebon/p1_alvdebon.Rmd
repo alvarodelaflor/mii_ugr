@@ -17,6 +17,10 @@ library(knitr)
 library(tidyverse)
 library(funModeling)
 library(DataExplorer)
+library(naniar)
+library(caret)
+library(mice)
+library(corrplot)
 ```
 
 # Problema
@@ -45,46 +49,186 @@ if(!file.exists("data/training.csv")) {
 Datos de entrenamiento:
 
 ```{r leer-entrenamiento}
-training_data_raw <- read_csv("data/training.csv")
-training_data_raw
+training_data_raw_higgs <- read_csv("data/training.csv")
+training_data_raw_higgs
 ```
 
 Datos de validación:
 
 ```{r leer-validacion}
-test_data_raw <- read_csv("data/test.csv")
-test_data_raw
+test_data_raw_higgs <- read_csv("data/test.csv")
+test_data_raw_higgs
 ```
 
 Tal y como se indica en el guión de prácticas, se recodifican los valores perdidos como `NA`, es decir, los valores (-0.999.0) los transformamos en `NA`:
 
 ```{r recodificar}
-training_data <- training_data_raw %>%
+training_data_higgs <- training_data_raw_higgs %>%
   na_if(-999.0)
-training_data
+training_data_higgs
 ```
 
 A diferencia de la tabla anterior, podemos observar como en esta nueva tabla aparecen los valores perdidos como `NA`.
 
-En primer lugar, tal y como vimos en clase utilizaremos la funciones `summary` y `df_status` para obtener una visión general de los datos que vamos a tratar.
+## Estado de los datos
+
+### Observar distribución de los valores
+
+En primer lugar, tal y como vimos en clase utilizaremos la funciones `summary` y `df_status` para obtener una visión general de los datos que vamos a trata y `vis_miss` para conocer el porcentaje de valores perdidos.
 
 ```{r resumen}
-summary(training_data)
+summary(training_data_higgs)
 ```
 
 ```{r status}
-df_status(training_data)
+df_status(training_data_higgs)
 ```
 
 ```{r tabla}
-table(training_data$Label)
+vis_miss(training_data_higgs, warn_large_data = FALSE)
+```
+
+De los estudios anteriores, podemos observar que existen dos clases (`Label` y `PRI_jet_num`) que cuentan con un número muchísimo más reducido de variables.
+
+```{r tabla}
+table(training_data_higgs$Label)
 ```
 
 ```{r clases, warning=FALSE}
-ggplot(training_data) +
+ggplot(training_data_higgs) +
   geom_histogram(aes(x = Label, fill = as.factor(Label)), stat = "count") +
   labs(x = "", y = "") +
   scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
 ```
 
+```{r tabla}
+table(training_data_higgs$PRI_jet_num)
+```
 
+```{r clases, warning=FALSE}
+ggplot(training_data_higgs) +
+  geom_histogram(aes(x = PRI_jet_num, fill = as.factor(PRI_jet_num)), stat = "count") +
+  labs(x = "", y = "") +
+  scale_fill_discrete(name ="Number of Jets", labels=c("1", "2", "3", "4"))
+```
+
+Podemos analizar cómo están distribuidos las clases para los valores de una variable, en este caso entre las dos últimas que hemos mostrado en los gráficos.
+
+```{r clases-var}
+ggplot(training_data_higgs) +
+  geom_histogram(aes(x = PRI_jet_num, fill = as.factor(Label)), bins = 10) +
+  labs(x = "PRI_jet_num", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+Algunas observaciones interesantes:
+
+  -   El valor de *EventId* es único.
+  -   Existen dos valores diferentes para *Label*, que es nuestro objetivo de clasificación
+  -   Existen cuatro valores diferentes para *PRI_jet_num* (El número de jets -> Un jet es una lluvia de hadrones, que se originan a partir de un quark o un gluón, agrupados tras producirse en colisiones de partículas.)
+  -   En el 65,73% de los casos (164333/250000) NO ocurre una señal de aparición del Boson *backgroud (b)*
+  -   Aparecen valores perdidos (*na*) en muchas de las variables como en *DER_mass_MMC* (15.25%), *DER_deltaeta_jet_jet* (70.98%), *DER_mass_jet_jet* (70.98%), *DER_prodeta_jet_jet* (70.98%), *DER_lep_eta_centrality* (70.98%), *PRI_jet_leading_pt* (39.97%), *PRI_jet_leading_eta* (39.97%), *PRI_jet_leading_phi* (39.97%), *PRI_jet_subleading_pt* (70.98%), *PRI_jet_subleading_eta* (70.98%) y *PRI_jet_subleading_phi* (70.98%) 
+
+# Transformación y limpieza de valores numéricos
+
+### Valores perdidos
+
+```{r}
+status_higgs <- df_status(training_data_higgs)
+
+## columnas con NAs
+na_cols_higgs <- status_higgs %>%
+  filter(p_na > 39) %>%
+  select(variable)
+
+## eliminar columnas
+remove_cols_higgs <- bind_rows(
+  list(na_cols_higgs)
+)
+data_reduced_higgs <- training_data_higgs %>%
+  select(-one_of(remove_cols_higgs$variable))
+df_status(training_data_higgs)
+df_status(data_reduced_higgs)
+```
+
+
+### Tratamiento de valores perdidos
+
+En este apartado procedemos a tratar los numerosos valores perdidos que contiene el conjunto de datos. Si bien existen multitud de técnicas para aplicar, yo voy a considerar las siguientes:
+
+
+* **Imputación de NAs**. Al contrario que la anterior, esta técnica más sofisticada es una de las más utilizadas según he estado investigando. Para aplicarla existen varias librerías pero al parecer la más popular es `mice` debido a las múltiples operaciones que puede llevar a cabo para asignar un valor a cada NA [5]. Dependiendo de la naturaleza de los datos, existen métodos específicos aunque también dispone de métodos generales aplicables a cualquier tipo de dato.
+
+```{r message=FALSE, warning=FALSE, results='hide', echo=TRUE}
+# Especificamos el número de imputaciones, el número de iteraciones
+# por imputación y el método a utilizar para imputar los NAs
+# Primera imputación de NAs utilizando clasificación y arboles de decisión ('cart')
+modelo_mice<-mice(data_reduced_higgs,m=1,maxit=1,meth='cart',seed=500)
+# Obtenemos el conjunto de datos imputado
+datos_imputados<-complete(modelo_mice)
+# Devolvemos el conjunto resultante
+df_status(datos_imputados)
+```
+
+### Correlación
+
+#### Correlación entre las variables y la columna a predecir
+```{r message=FALSE, warning=FALSE, results='hide', echo=TRUE}
+data_num <-
+  datos_imputados %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate_if(is.factor, as.numeric)
+cor(data_num)
+```
+
+Visualmente, podemos verlo como tabla de correlación o como mapa de calor:
+```{r visualizacion-correlacion}
+rcorr(as.matrix(data_num))
+corrplot(cor(data_num), type = "upper", diag = F, order = "hclust", tl.col = "black", tl.srt = 45)
+heatmap(x = cor(data_num), symm = TRUE)
+```
+
+
+```{r}
+data_num <- datos_imputados %>%
+  na.exclude() %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate_if(is.factor, as.numeric)
+```
+
+Ahora sí podemos calcular la correlación:
+```{r}
+cor_target <- correlation_table(data_num, target='Label')
+```
+
+Y quedarnos solo con las variables que tienen una correlación por encima del 0.01 (en valor absoluto):
+```{r}
+important_vars <- cor_target %>% 
+  filter(abs(Label) >= 0.01)
+
+data <- datos_imputados %>%
+  select(one_of(important_vars$Variable))
+df_status(data)
+```
+
+#### Creación de modelo predictivo
+
+Una vez están listos los datos, podemos crear un modelo predictivo que evalúa la importancia de las variables
+
+```{r entrenamiento-rpart}
+# Parámetros
+rpartCtrl <- trainControl(verboseIter = F, classProbs = TRUE, summaryFunction = twoClassSummary)
+rpartParametersGrid <- expand.grid(.cp = c(0.01, 0.05))
+# Conjuntos de entrenamiento y validación
+trainIndex <- createDataPartition(data$Label, p = .8, list = FALSE, times = 1)
+train <- data[trainIndex, ] 
+# Entrenamiento del modelo
+rpartModel <- train(Label ~ ., 
+                    data = train, 
+                    method = "rpart", 
+                    metric = "ROC", 
+                    trControl = rpartCtrl, 
+                    tuneGrid = rpartParametersGrid)
+# Visualización del modelo
+rpart.plot(rpartModel$finalModel)
+```
