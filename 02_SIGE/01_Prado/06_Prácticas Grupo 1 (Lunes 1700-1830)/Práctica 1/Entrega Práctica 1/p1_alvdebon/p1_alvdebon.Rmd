@@ -14,7 +14,7 @@ En primer lugar importamos todas las librerías que vamos a utilizar
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message = FALSE)
-install.packages("DMwR",repos="https://cran.r-project.org/bin/windows/contrib/3.3/bitops_1.0-6.zip",dependencies=TRUE,type="source") 
+remove.packages(htmltools)
 library(knitr)
 library(tidyverse)
 library(funModeling)
@@ -27,6 +27,13 @@ library(pROC)
 library(rpart.plot)
 library(ROSE)
 library(DMwR)
+library(DataExplorer)
+library(knitr)
+library(htmltools)
+library(magrittr)
+library(dplyr)
+library(tidyr)
+library(purrr)
 ```
 
 # Problema
@@ -125,6 +132,54 @@ ggplot(training_data_higgs) +
   geom_histogram(aes(x = PRI_jet_num, fill = as.factor(Label)), bins = 10) +
   labs(x = "PRI_jet_num", y = "") +
   scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+Podemos analizar cómo están distribuidos las clases para los valores de una variable (_estratificación_):
+
+```{r clases-var}
+ggplot(training_data_higgs) +
+  geom_histogram(aes(x = DER_met_phi_centrality, fill = as.factor(Label)), bins = 10) +
+  labs(x = "DER_met_phi_centrality", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+Incluso considerar una pseudo-distribución de probabilidad:
+
+```{r densidad}
+ggplot(training_data_higgs) +
+  geom_density(aes(x = DER_met_phi_centrality, fill = Label, color = Label), alpha = 0.3) +
+  labs(x = "DER_met_phi_centrality", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)")) +
+  scale_color_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+Utilizando [Shiny](https://shiny.rstudio.com/), se puede extender para todas las variables (sin `NA`s).
+
+```{r densidad-interactiva, echo=FALSE}
+cols <- training_data_higgs %>%
+  select_if(~ !any(is.na(.))) %>%
+  select(starts_with(c("DER", "PRI"))) %>%
+  names() %>%
+  sort()
+inputPanel(
+  selectInput("x_variable", label = "Variable x:",
+              choices = cols, 
+              selected = cols[1])
+)
+renderPlot({
+  ggplot(training_data) + 
+    geom_density(aes_string(x = input$x_variable, fill = "Label", color = "Label"), alpha = 0.3) +
+    labs(x = "", y = "") +
+    scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)")) +
+    scale_color_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+})
+renderUI({
+  HTML(paste0(
+    "<p>Correlacion con objetivo de clasificación: <b>",
+    cor(training_data[input$x_variable], as.numeric(factor(training_data$Label))),
+    "</b></p>"
+  ))
+})
 ```
 
 Algunas observaciones interesantes:
@@ -331,11 +386,35 @@ varImp(rpartModel)
 varImp(rfModel)
 ```
 
+# Outliers
+
+```{r}
+  datos_finales<-data[, -which(names(data) %in% c("Label"))]
+  i <- 1
+  for(col in datos_finales) {
+    # Calculamos los cuantiles 25 y 75 para comprobar es un outlier
+    quantiles<-quantile(col, probs=c(0.25, 0.75))
+    # Calculamos los cuantiles 5 y 95 para asociar como nuevos valores a los outliers
+    nuevos_valores<-quantile(col, probs=c(0.05, 0.95))
+    # Calculamos la varianza máxima que puede sufrir un valor
+    H<-1.5*IQR(col)
+    # Sustitución de outliers
+    col[col < (quantiles[1] - H)] <- nuevos_valores[1]
+    col[col > (quantiles[2] + H)] <- nuevos_valores[2]
+    # Actualizamos el dataset
+    datos_finales[i]<-col
+    i <- i + 1
+  }
+  # Volvemos a añadir la columna `isFraud`
+  datos_finales<-cbind(data, Label=data$Label)
+  # Devolvemos los datos resultantes
+  datos_finales
+```
 
 # Balanceo de clases
 
 ```{r}
-data_rose <- ROSE(Label ~ ., data = data, seed = 1)$data
+data_rose <- ROSE(Label ~ ., data = datos_finales, seed = 1)$data
 ```
 
 ```{r clases, warning=FALSE}
