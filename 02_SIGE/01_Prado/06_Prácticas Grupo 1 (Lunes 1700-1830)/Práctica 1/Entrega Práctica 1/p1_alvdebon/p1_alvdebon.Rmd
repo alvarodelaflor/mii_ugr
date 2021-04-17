@@ -147,6 +147,14 @@ Incluso considerar una pseudo-distribución de probabilidad:
 
 ```{r densidad}
 ggplot(training_data_higgs) +
+  geom_density(aes(x = PRI_jet_num, fill = Label, color = Label), alpha = 0.3) +
+  labs(x = "DER_met_phi_centrality", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)")) +
+  scale_color_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+```{r densidad}
+ggplot(training_data_higgs) +
   geom_density(aes(x = DER_met_phi_centrality, fill = Label, color = Label), alpha = 0.3) +
   labs(x = "DER_met_phi_centrality", y = "") +
   scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)")) +
@@ -192,7 +200,9 @@ Algunas observaciones interesantes:
 
 # Transformación y limpieza de valores numéricos
 
-### Valores perdidos
+En esta sección en primer lugar trataremos los valores pérdidos, para ello hemos decido utilizr el valor 39% como máximo (siguiendo las recomendaciones de alguno de los foros que hemos visitado).
+
+Por otro lado también aprovecharemos para eliminar aquellas variables cuyos valores presentan más del 80% de valores distintos, ya que realmente no aportan información útil para nuestro sistema.
 
 ```{r}
 status_higgs <- df_status(training_data_higgs)
@@ -271,7 +281,7 @@ cor_target <- correlation_table(data_num, target='Label')
 Y quedarnos solo con las variables que tienen una correlación por encima del 0.01 (en valor absoluto):
 ```{r}
 important_vars <- cor_target %>% 
-  filter(abs(Label) >= 0.01)
+  filter(abs(Label) >= 0.03)
 
 data <- datos_imputados %>%
   select(one_of(important_vars$Variable))
@@ -362,29 +372,6 @@ roc_validation <- plot.roc(auc,
                            main=paste('Validation AUC:', round(auc$auc[[1]], 2)))
 ```
 
-### Otros modelos de predicción
-Otro modelo de predicción que calcula importancia de variables es [<tt>rf</tt>](https://cran.r-project.org/web/packages/randomForest/) (Random Forest):
-
-Lo intenté, pero debido a la potencia de mi equipo después de 3 horas seguía procesando
-```{r entrenamiento-rf}
-rfModel <- train(Label ~ ., data = train, method = "rf", metric = "ROC", trControl = rpartCtrl)
-predictionValidationProb <- predict(rfModel, val, type = "prob")
-auc <- roc(val$Label, predictionValidationProb[["s"]], levels = unique(val[["Label"]]))
-roc_validation <- plot.roc(auc, 
-                           ylim=c(0,1), 
-                           type = "S" , 
-                           print.thres = TRUE, 
-                           main=paste('Validation AUC:', round(auc$auc[[1]], 2)))
-```
-
-# Importancia de las variables con modelo de predicción
-
-Una vez que los modelos han sido entrenados, podemos estudiar la importancia que cada otorga a las variabales utilizando [<tt>varImp</tt>](https://topepo.github.io/caret/variable-importance.html) en [<tt>caret</tt>](http://topepo.github.io/caret/):
-
-```{r importancia-variables1}
-varImp(rpartModel)
-varImp(rfModel)
-```
 
 # Outliers
 
@@ -406,7 +393,7 @@ varImp(rfModel)
     i <- i + 1
   }
   # Volvemos a añadir la columna `isFraud`
-  datos_finales<-cbind(data, Label=data$Label)
+  datos_finales<-cbind(datos_finales, Label=data$Label)
   # Devolvemos los datos resultantes
   datos_finales
 ```
