@@ -21,6 +21,8 @@ library(naniar)
 library(caret)
 library(mice)
 library(corrplot)
+library(pROC)
+library(rpart.plot)
 ```
 
 # Problema
@@ -220,7 +222,7 @@ Una vez están listos los datos, podemos crear un modelo predictivo que evalúa 
 rpartCtrl <- trainControl(verboseIter = F, classProbs = TRUE, summaryFunction = twoClassSummary)
 rpartParametersGrid <- expand.grid(.cp = c(0.01, 0.05))
 # Conjuntos de entrenamiento y validación
-trainIndex <- createDataPartition(data$Label, p = .8, list = FALSE, times = 1)
+trainIndex <- createDataPartition(data$Label, p = .4, list = FALSE, times = 1)
 train <- data[trainIndex, ] 
 # Entrenamiento del modelo
 rpartModel <- train(Label ~ ., 
@@ -232,3 +234,90 @@ rpartModel <- train(Label ~ .,
 # Visualización del modelo
 rpart.plot(rpartModel$finalModel)
 ```
+
+Obtenemos resultados con el conjunto de validación:
+```{r validacion-rpart}
+# Predicciones con clases
+val        <- data[-trainIndex, ]
+prediction <- predict(rpartModel, val, type = "raw") 
+# Predicciones con probabilidades
+predictionValidationProb <- predict(rpartModel, val, type = "prob")
+```
+
+Y calculamos las métricas de calidad del clasificador (matriz de confusión y curva ROC):
+```{r validacion-metricas}
+cm_train <- confusionMatrix(table(prediction, val[["Label"]]))
+cm_train
+auc <- roc(val$Label, predictionValidationProb[["b"]], levels = unique(val[["Label"]]))
+roc_validation <- plot.roc(auc, 
+                           ylim=c(0,1), 
+                           type = "S" , 
+                           print.thres = TRUE, 
+                           main=paste('Validation AUC:', round(auc$auc[[1]], 2)))
+```
+```{r validacion-metricas}
+data$Weight <- NULL
+```
+
+```{r entrenamiento-rpart}
+# Parámetros
+rpartCtrl <- trainControl(verboseIter = F, classProbs = TRUE, summaryFunction = twoClassSummary)
+rpartParametersGrid <- expand.grid(.cp = c(0.01, 0.05))
+# Conjuntos de entrenamiento y validación
+trainIndex <- createDataPartition(data$Label, p = .4, list = FALSE, times = 1)
+train <- data[trainIndex, ] 
+# Entrenamiento del modelo
+rpartModel <- train(Label ~ ., 
+                    data = train, 
+                    method = "rpart", 
+                    metric = "ROC", 
+                    trControl = rpartCtrl, 
+                    tuneGrid = rpartParametersGrid)
+# Visualización del modelo
+rpart.plot(rpartModel$finalModel)
+```
+
+```{r validacion-rpart}
+# Predicciones con clases
+val        <- data[-trainIndex, ]
+prediction <- predict(rpartModel, val, type = "raw") 
+# Predicciones con probabilidades
+predictionValidationProb <- predict(rpartModel, val, type = "prob")
+```
+
+Y calculamos las métricas de calidad del clasificador (matriz de confusión y curva ROC):
+```{r validacion-metricas}
+cm_train <- confusionMatrix(table(prediction, val[["Label"]]))
+cm_train
+auc <- roc(val$Label, predictionValidationProb[["b"]], levels = unique(val[["Label"]]))
+roc_validation <- plot.roc(auc, 
+                           ylim=c(0,1), 
+                           type = "S" , 
+                           print.thres = TRUE, 
+                           main=paste('Validation AUC:', round(auc$auc[[1]], 2)))
+```
+
+### Otros modelos de predicción
+Otro modelo de predicción que calcula importancia de variables es [<tt>rf</tt>](https://cran.r-project.org/web/packages/randomForest/) (Random Forest):
+
+Lo intenté, pero debido a la potencia de mi equipo después de 3 horas seguía procesando
+```{r entrenamiento-rf}
+rfModel <- train(Label ~ ., data = train, method = "rf", metric = "ROC", trControl = rpartCtrl)
+predictionValidationProb <- predict(rfModel, val, type = "prob")
+auc <- roc(val$Label, predictionValidationProb[["s"]], levels = unique(val[["Label"]]))
+roc_validation <- plot.roc(auc, 
+                           ylim=c(0,1), 
+                           type = "S" , 
+                           print.thres = TRUE, 
+                           main=paste('Validation AUC:', round(auc$auc[[1]], 2)))
+```
+
+# Importancia de las variables con modelo de predicción
+
+Una vez que los modelos han sido entrenados, podemos estudiar la importancia que cada otorga a las variabales utilizando [<tt>varImp</tt>](https://topepo.github.io/caret/variable-importance.html) en [<tt>caret</tt>](http://topepo.github.io/caret/):
+
+```{r importancia-variables1}
+varImp(rpartModel)
+varImp(rfModel)
+```
+
