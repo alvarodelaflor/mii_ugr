@@ -11,8 +11,10 @@ runtime: shiny
 
 En primer lugar importamos todas las librerías que vamos a utilizar
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message = FALSE)
+install.packages("DMwR",repos="https://cran.r-project.org/bin/windows/contrib/3.3/bitops_1.0-6.zip",dependencies=TRUE,type="source") 
 library(knitr)
 library(tidyverse)
 library(funModeling)
@@ -23,6 +25,8 @@ library(mice)
 library(corrplot)
 library(pROC)
 library(rpart.plot)
+library(ROSE)
+library(DMwR)
 ```
 
 # Problema
@@ -143,10 +147,16 @@ na_cols_higgs <- status_higgs %>%
   filter(p_na > 39) %>%
   select(variable)
 
+## columnas con valores diferentes
+dif_cols <- status_higgs %>%
+  filter(unique > 0.8 * nrow(training_data_raw_higgs)) %>%
+  select(variable)
+
 ## eliminar columnas
 remove_cols_higgs <- bind_rows(
-  list(na_cols_higgs)
+  list(na_cols_higgs, dif_cols)
 )
+
 data_reduced_higgs <- training_data_higgs %>%
   select(-one_of(remove_cols_higgs$variable))
 df_status(training_data_higgs)
@@ -319,5 +329,122 @@ Una vez que los modelos han sido entrenados, podemos estudiar la importancia que
 ```{r importancia-variables1}
 varImp(rpartModel)
 varImp(rfModel)
+```
+
+
+# Balanceo de clases
+
+```{r}
+data_rose <- ROSE(Label ~ ., data = data, seed = 1)$data
+```
+
+```{r clases, warning=FALSE}
+ggplot(data_rose) +
+  geom_histogram(aes(x = Label, fill = as.factor(Label)), stat = "count") +
+  labs(x = "", y = "") +
+  scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
+```
+
+# Clasificadores
+
+## Funciones
+Definimos funciones auxiliares de nuestro programa: cálculo de valores ROC.
+```{r}
+#' Cálculo de valores ROC
+#' @param data Datos originales
+#' @param predictionProb Predicciones
+#' @param target_var Variable objetivo de predicción
+#' @param positive_class Clase positiva de la predicción
+#' 
+#' @return Lista con valores de resultado \code{$auc}, \code{$roc}
+#' 
+#' @examples 
+#' rfModel <- train(Class ~ ., data = train, method = "rf", metric = "ROC", trControl = rfCtrl, tuneGrid = rfParametersGrid)
+#' roc_res <- my_roc(data = validation, predict(rfModel, validation, type = "prob"), "Class", "Good")
+my_roc <- function(data, predictionProb, target_var, positive_class) {
+  auc <- roc(data[[target_var]], predictionProb[[positive_class]], levels = unique(data[[target_var]]))
+  roc <- plot.roc(auc, ylim=c(0,1), type = "S" , print.thres = T, main=paste('AUC:', round(auc$auc[[1]], 2)))
+  return(list("auc" = auc, "roc" = roc))
+}
+```
+
+# Modelos de clasificación clásicos
+Primero, particionamos los datos para la clasificación:
+
+```{r}
+trainIndex <- createDataPartition(data_rose$Label, p = .75, list = FALSE)
+train <- data[ trainIndex, ] 
+val   <- data[-trainIndex, ]
+```
+
+## rpart
+
+### Entrenamiento
+Modelo 1:
+```{r}
+rpartCtrl <- trainControl(
+  verboseIter = F, 
+  classProbs = TRUE, 
+  summaryFunction = twoClassSummary)
+rpartParametersGrid <- expand.grid(
+  .cp = c(0.001, 0.01, 0.1, 0.5))
+rpartModel1 <- train(
+  Label ~ ., 
+  data = train, 
+  method = "rpart", 
+  metric = "ROC", 
+  trControl = rpartCtrl, 
+  tuneGrid = rpartParametersGrid)
+```
+
+Modelo 2 (con validación cruzada):
+```{r}
+rpartCtrl2 <- trainControl(
+  verboseIter = F, 
+  classProbs = TRUE, 
+  method = "repeatedcv",
+  number = 10,
+  repeats = 1,
+  summaryFunction = twoClassSummary)
+rpartModel2 <- train(Label ~ ., 
+                     data = train, 
+                     method = "rpart", 
+                     metric = "ROC", 
+                     trControl = rpartCtrl2, 
+                     tuneGrid = rpartParametersGrid)
+```
+
+### Visualización
+
+Visualización del modelo 1
+```{r}
+rpart.plot(rpartModel1$finalModel)
+```
+
+Visualización del modelo 1. (Se omite el modelo 2)
+```{r}
+rpart.plot(rpartModel2$finalModel)
+```
+
+Importancia de variables:
+```{r}
+varImp(rpartModel1)
+```
+
+Importancia de variables:
+```{r}
+varImp(rpartModel2)
+```
+
+### Validación
+
+Modelo 1:
+```{r}
+rfModel1_roc <- my_roc(val, predict(rpartModel1, val, type = "prob"), "Label", "s")
+```
+
+Modelo 2:
+```{r}
+rfModel2_roc <- my_roc(val, predict(rpartModel2, val, type = "prob"), "Label", "s")
 ```
 
