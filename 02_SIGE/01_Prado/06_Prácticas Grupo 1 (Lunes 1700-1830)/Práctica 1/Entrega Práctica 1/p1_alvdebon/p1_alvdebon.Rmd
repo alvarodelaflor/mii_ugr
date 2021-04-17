@@ -448,3 +448,20 @@ Modelo 2:
 rfModel2_roc <- my_roc(val, predict(rpartModel2, val, type = "prob"), "Label", "s")
 ```
 
+
+## SVM
+
+```{r}
+svm_grid <- expand.grid(.nIter = 5)
+svm_control <- trainControl(method = "repeatedcv", number = 10,
+                                repeats = 5)
+svm_model <- train(Label ~ .,data = train,
+                       method = "LogitBoost",
+                       metric = "ROC",
+                       trControl = svm_control,
+                       tuneGrid = svm_grid)
+```
+
+```{r}
+rfModel3_roc <- my_roc(val, predict(svm_model, val, type = "prob"), "Label", "s")
+```
