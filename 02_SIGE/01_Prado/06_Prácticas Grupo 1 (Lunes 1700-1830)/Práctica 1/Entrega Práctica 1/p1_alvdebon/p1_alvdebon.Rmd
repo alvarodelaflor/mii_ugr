@@ -148,7 +148,7 @@ Incluso considerar una pseudo-distribución de probabilidad:
 ```{r densidad}
 ggplot(training_data_higgs) +
   geom_density(aes(x = PRI_jet_num, fill = Label, color = Label), alpha = 0.3) +
-  labs(x = "DER_met_phi_centrality", y = "") +
+  labs(x = "PRI_jet_num", y = "") +
   scale_fill_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)")) +
   scale_color_discrete(name ="Clase", labels=c("(b)ackground", "higg(s)"))
 ```
@@ -200,9 +200,9 @@ Algunas observaciones interesantes:
 
 # Transformación y limpieza de valores numéricos
 
-En esta sección en primer lugar trataremos los valores pérdidos, para ello hemos decido utilizr el valor 39% como máximo (siguiendo las recomendaciones de alguno de los foros que hemos visitado).
+En esta sección en primer lugar trataremos los valores perdidos, para ello hemos decido utilizr el valor 39% como máximo (siguiendo las recomendaciones de alguno de los foros que hemos visitado).
 
-Por otro lado también aprovecharemos para eliminar aquellas variables cuyos valores presentan más del 80% de valores distintos, ya que realmente no aportan información útil para nuestro sistema.
+También aprovecharemos para eliminar aquellas variables cuyos valores presentan más del 80% de valores distintos, ya que realmente no aportan información útil para nuestro sistema.
 
 ```{r}
 status_higgs <- df_status(training_data_higgs)
@@ -231,10 +231,9 @@ df_status(data_reduced_higgs)
 
 ### Tratamiento de valores perdidos
 
-En este apartado procedemos a tratar los numerosos valores perdidos que contiene el conjunto de datos. Si bien existen multitud de técnicas para aplicar, yo voy a considerar las siguientes:
+En este apartado procedemos a tratar los numerosos valores perdidos que contiene el conjunto de datos. Si bien existen multitud de técnicas para aplicar, vamos a considerar la siguiente:
 
-
-* **Imputación de NAs**. Al contrario que la anterior, esta técnica más sofisticada es una de las más utilizadas según he estado investigando. Para aplicarla existen varias librerías pero al parecer la más popular es `mice` debido a las múltiples operaciones que puede llevar a cabo para asignar un valor a cada NA [5]. Dependiendo de la naturaleza de los datos, existen métodos específicos aunque también dispone de métodos generales aplicables a cualquier tipo de dato.
+* **Imputación de NAs**. Esta técnica más sofisticada es una de las más utilizadas según he estado investigando. Para aplicarla existen varias librerías pero al parecer la más popular es `mice` debido a las múltiples operaciones que puede llevar a cabo para asignar un valor a cada NA [5]. Dependiendo de la naturaleza de los datos, existen métodos específicos aunque también dispone de métodos generales aplicables a cualquier tipo de dato.
 
 ```{r message=FALSE, warning=FALSE, results='hide', echo=TRUE}
 # Especificamos el número de imputaciones, el número de iteraciones
@@ -278,7 +277,7 @@ Ahora sí podemos calcular la correlación:
 cor_target <- correlation_table(data_num, target='Label')
 ```
 
-Y quedarnos solo con las variables que tienen una correlación por encima del 0.01 (en valor absoluto):
+Y quedarnos solo con las variables que tienen una correlación por encima del 0.03 (en valor absoluto):
 ```{r}
 important_vars <- cor_target %>% 
   filter(abs(Label) >= 0.03)
@@ -446,6 +445,7 @@ val   <- data[-trainIndex, ]
 ## rpart
 
 ### Entrenamiento
+
 Modelo 1:
 ```{r}
 rpartCtrl <- trainControl(
@@ -515,7 +515,7 @@ rfModel2_roc <- my_roc(val, predict(rpartModel2, val, type = "prob"), "Label", "
 ```
 
 
-## SVM
+## LogitBoost
 
 ```{r}
 svm_grid <- expand.grid(.nIter = 5)
