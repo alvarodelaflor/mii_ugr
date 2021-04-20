@@ -1,0 +1,171 @@
+---
+title: "2_actividad_evaluable"
+author: "Alvaro de la Flor Bonilla"
+date: "20/4/2021"
+output: html_document
+---
+
+Crea un cuaderno .Rmd a partir de titanic-dl.Rmd para mejorar los resultados del modelo predicción del fichero:
+
+Puedes modificar, entre otros:
+
+    Arquitectura de la red
+    Algoritmos de optimización 
+    Hiperparámetros (tasa de aprendizaje)
+    Otros aspectos: número de epochs, tamaño del batch, etc.
+
+Sube el cuaderno, indicando al final del mismo en una tabla las métricas de tu modelo mejorado.
+
+En primer lugar importamos las librerías necesarias.
+
+```{r}
+.rs.restartR()
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(keras)
+library(tensorflow)
+library(tidyverse)
+library(caret)
+set.seed(0)
+```
+
+```{r instalacion}
+library(keras)
+install_keras(
+  method = "conda",            # usar conda
+  tensorflow = "default",      # tensorflow = "gpu"
+  envname = "r-tensorflow"     # nombre del nuevo entorno
+)
+```
+
+```{r}
+library(tensorflow)
+install_tensorflow()
+```
+
+Comprobamos que ya sí está disponible: 
+```{r keras-disponible}
+is_keras_available()
+```
+
+Realizamos la lectura de los datos
+
+```{r lectura}
+data <- read_csv('train.csv') %>%
+  select(Survived, Pclass, Sex, Age, Fare) %>%
+  mutate(Sex = as.numeric(as.factor(Sex)) - 1) %>%
+  na.omit()
+
+data
+```
+
+```{r particion-datos}
+trainIndex <- createDataPartition(data$Survived, p = .7, list = FALSE)
+train      <- data[trainIndex, ] 
+val        <- data[-trainIndex, ]
+
+x_train <- train %>%
+  select(-Survived) %>%
+  data.matrix()
+
+y_train <- train %>%
+  select(Survived) %>%
+  data.matrix()
+
+x_val <- val %>%
+  select(-Survived) %>%
+  data.matrix()
+
+y_val <- val %>%
+  select(Survived) %>%
+  data.matrix()
+```
+
+El siguiente paso que vamos a hacer es crear la función para el modelo de entremaiento.
+
+```{r}
+model <- keras_model_sequential()
+model <- model %>% 
+  layer_dense(units = 64, activation = "relu", input_shape = c(ncol(data) - 1)) %>%
+  layer_dense(units = 32, activation = "sigmoid") %>%
+  layer_dense(units = 16, activation = "sigmoid") %>% 
+  layer_dropout(rate = 0.3) %>% 
+  layer_dense(units = 8, activation = "sigmoid") %>% 
+  layer_dropout(rate = 0.3) %>% 
+  layer_dense(units = 1, activation = "sigmoid")
+```
+
+```{r}
+model %>% compile(
+  optimizer = "adam",
+  loss = "binary_crossentropy",
+  metrics = c("accuracy")
+) 
+```
+
+```{r}
+history <- model %>% 
+  fit(
+    x_train, y_train, 
+    epochs = 64, 
+    batch_size = 32, 
+    validation_split = 0.16,
+    callbacks = callback_tensorboard("logs/run")
+  )
+```
+
+
+Hemos creado un nuevo modelo que cuenta con las siguientes características:
+
+  - La arquitectura de su red de basa en siete capas. Cuatro de ellas de tipo `sigmoid`, una del tipo `relu` y dos del tipo `dropout`. Esta última capa permite poner aleatoriamente     unidades a 0 para evitar situaciones de sobreajuste.
+
+  - Como algoritmo de optimización vamos a utilizar `adam` ya que es de los más utilizados en la actualidad.
+  
+  - Como número de iteraciones o `epoch` hemos utilizado 64.
+  
+  - Como tamaño `batch` hemos utilizado 32.
+  
+```{r}
+plot(history)
+```
+  
+# Validación y predicción
+
+```{r validacion}
+x_val <- val %>%
+  select(-Survived) %>%
+  data.matrix()
+
+y_val <- val %>%
+  select(Survived) %>%
+  data.matrix()
+
+model %>% evaluate(x_val, y_val)
+```
+
+Comparando resultados, en el caso anterior (modelo de ensaño que se dado), solo se alcanzaba un `accuracy` de 0.7196 mientras que gracias a las técnicas utilizadas hemos conseguido aumentarlos hasta el 0.7897.
+
+Además, también podemos crear un modelo de predicción y evaluar los resultado posteriormente con la matriz de confusión.
+
+```{r matriz-confusion}
+predictions <- model %>% predict_classes(x_val)
+cm <- confusionMatrix(as.factor(y_val), as.factor(predictions))
+cm_prop <- prop.table(cm$table)
+cm$table
+```
+
+Y su representación:
+
+```{r matriz-confusion-visual}
+library(scales)
+cm_tibble <- as_tibble(cm$table) 
+
+ggplot(data = cm_tibble) + 
+  geom_tile(aes(x=Reference, y=Prediction, fill=n), colour = "white") +
+  geom_text(aes(x=Reference, y=Prediction, label=n), colour = "white") +
+  scale_fill_continuous(trans = 'reverse') 
+```
+

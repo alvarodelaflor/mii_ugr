@@ -1,0 +1,173 @@
+---
+title: "Deep Learning con conjunto de datos Titanic"
+output:
+  html_document:
+      code_folding: "show"
+      toc: true
+      toc_depth: 2
+      toc_float: true
+      df_print: paged
+---
+
+```{r}
+.rs.restartR()
+```
+
+Deep Learning con el dataset [titanic](https://www.kaggle.com/c/titanic/).
+
+> El hundimiento del Titanic es una de las tragedias marítimas más conocidas de la historia. El 15 de abril de 1912, durante su viaje inaugural, el Titanic se hundió después de chocar contra un iceberg. En el accidente murieron 1502 personas de las 2224 que habían embarcado, inluyendo pasajeros y tripulación. Una de las razones por las que no se encontraron más supervivientes fue la falta de espacio en los barcos salvavidas. Así, aunque la suerte sin duda sonrió a los supervivientes, también resultaron más favorecidos algunos grupos de personas, como las mujeres, los niños y los pasajeros de la clase superior.
+
+**En este problema analizaremos qué tipos de personas tuvieron más probabilidades de sobrevivir. Para ello, aplicaremos técnicas de Deep Learning para predecir qué pasajeros sobrevivieron al hundimiento.**
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(keras)
+library(tidyverse)
+library(caret)
+set.seed(0)
+```
+
+# Instalación de Keras y Tensorflow (opcional)
+Las instrucciones para instalar [Tensorflow + Keras para R](https://keras.rstudio.com) están disponibles [aquí](https://tensorflow.rstudio.com/reference/keras/install_keras/). 
+
+En resumen, primero hay que instalar el paquete `keras` de R, que inicialmente no es funcional, con `install.packages("keras")`. Después se utiliza la función `install_keras()` para realizar la instalación de Keras R y del _backend_ de Tensorflow. Es recomendable disponer de una instalación previa de [Anaconda](https://www.anaconda.com) para gestionar Python y los entornos.
+
+```{r instalacion}
+library(keras)
+install_keras(
+  method = "conda",            # usar conda
+  tensorflow = "default",      # tensorflow = "gpu"
+  envname = "r-tensorflow"     # nombre del nuevo entorno
+)
+```
+
+```{r}
+library(tensorflow)
+install_tensorflow()
+```
+
+Comprobamos que ya sí está disponible: 
+```{r keras-disponible}
+is_keras_available()
+```
+
+
+# Leer datos
+Comenzamos leyendo los datos del problema y seleccionando las variables que funcionan bien para la predicción: _Pclass_, _Sex_, _Age_, _Fare_. El objetivo de predicción es _Survived_. Omitimos los valores perdidos, aunque sería interesante [trabajar con ellos](https://github.com/jgromero/sige2020/blob/master/Teor%C3%ADa/02%20Depuraci%C3%B3n%20y%20calidad%20de%20datos/code/titanic-missing-noise.Rmd).
+
+```{r lectura}
+data <- read_csv('train.csv') %>%
+  select(Survived, Pclass, Sex, Age, Fare) %>%
+  mutate(Sex = as.numeric(as.factor(Sex)) - 1) %>%
+  na.omit()
+
+data
+```
+
+# Red neuronal simple
+A continuación, creamos la red neuronal que vamos a utilizar. Optamos por una red bastante sencilla:
+
+* Una capa de entrada, de tamaño `ncol(data) - 1` (todas las variables menos el objetivo de predicción)
+* Dos capas ocultas, con 32 y 16 neuronas respectivamente y activación tipo "relu"
+* Una capa de salida, con 1 neurona y activación tipo "sigmoid"
+
+```{r crear-rn}
+model <- keras_model_sequential()
+model <- model %>% 
+  layer_dense(units = 32, activation = "relu", input_shape = c(ncol(data) - 1)) %>%
+  layer_dense(units = 16, activation = "relu") %>%
+  layer_dense(units = 1, activation = "sigmoid")
+```
+
+Podemos revisar la arquitectura de la red y los parámetros (pesos) que se deben aprender:
+```{r descripcion-rn}
+summary(model)
+```
+
+# Entrenamiento
+Para entrenar el modelo, primero utilizamos `compile()` para especificar el optimizador, la función de pérdida, etc.
+```{r configurar-entrenamiento}
+model %>% compile(
+  loss = 'binary_crossentropy',
+  metrics = c('accuracy'),
+  optimizer = optimizer_adam()
+)
+```
+
+Después, especificamos el conjunto de entrenamiento y validación, que deben especificarse por separado y con tipo de dato `matrix`.
+```{r particion-datos}
+trainIndex <- createDataPartition(data$Survived, p = .7, list = FALSE)
+train      <- data[trainIndex, ] 
+val        <- data[-trainIndex, ]
+
+x_train <- train %>%
+  select(-Survived) %>%
+  data.matrix()
+
+y_train <- train %>%
+  select(Survived) %>%
+  data.matrix()
+```
+
+Ya podemos ajustar el modelo con `fit`. Los parámetros que especificamos son el número de iteraciones completas (`epochs`) y el tamaño del lote para el gradiente descendente con minilotes (`batch_size`). También puede indicarse que se quiere utilizar una parte del conjunto de entrenamiento para realizar validación al final de cada _epoch_.
+```{r entrenamiento}
+history <- model %>% 
+  fit(
+    x_train, y_train, 
+    epochs = 20, 
+    batch_size = 100,  # cambiar a 20 (más: https://arxiv.org/abs/1804.07612) 
+    validation_split = 0.10
+  )
+plot(history)
+```
+
+Es posible utilizar diversos _callbacks_ con `fit()`, como por ejemplo el `callback_tensorboard()`.
+```{r entrenamiento-callback}
+history <- model %>% 
+  fit(
+    x_train, y_train, 
+    epochs = 20, 
+    batch_size = 100, 
+    validation_split = 0.10,
+    callbacks = callback_tensorboard("logs/run")
+  )
+tensorboard("logs/run")
+```
+
+# Validación y predicción
+Podemos evaluar el modelo sobre el conjunto de validación:
+```{r validacion}
+x_val <- val %>%
+  select(-Survived) %>%
+  data.matrix()
+
+y_val <- val %>%
+  select(Survived) %>%
+  data.matrix()
+
+model %>% evaluate(x_val, y_val)
+```
+
+Y, finalmente, realizar predicciones con él:
+```{r prediccion}
+predictions <- model %>% predict_classes(x_val)
+```
+
+Con las predicciones, se puede estudiar el comportamiento de la red con los datos de validación. Así, creamos una matriz de confusión:
+```{r matriz-confusion}
+cm <- confusionMatrix(as.factor(y_val), as.factor(predictions))
+cm_prop <- prop.table(cm$table)
+cm$table
+```
+
+Y, por último, generar una representación visual de la matriz de confusión:
+```{r matriz-confusion-visual}
+library(scales)
+cm_tibble <- as_tibble(cm$table) 
+
+ggplot(data = cm_tibble) + 
+  geom_tile(aes(x=Reference, y=Prediction, fill=n), colour = "white") +
+  geom_text(aes(x=Reference, y=Prediction, label=n), colour = "white") +
+  scale_fill_continuous(trans = 'reverse') 
+```
+```

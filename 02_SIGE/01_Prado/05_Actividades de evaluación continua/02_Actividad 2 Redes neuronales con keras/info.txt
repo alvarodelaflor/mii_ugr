@@ -1,0 +1,12 @@
+Crea un cuaderno .Rmd a partir de titanic-dl.Rmd para mejorar los resultados del modelo predicción del fichero:
+
+Puedes modificar, entre otros:
+
+    Arquitectura de la red
+    Algoritmos de optimización 
+    Hiperparámetros (tasa de aprendizaje)
+    Otros aspectos: número de epochs, tamaño del batch, etc.
+
+Sube el cuaderno, indicando al final del mismo en una tabla las métricas de tu modelo mejorado.
+
+URL (titanic-dl.Rmd) -> https://github.com/jgromero/sige2021/blob/main/teor%C3%ADa/tema%204/titanic/titanic-dl.Rmd
