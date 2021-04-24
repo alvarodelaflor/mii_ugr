@@ -1,7 +1,11 @@
 tool
 extends MultiMeshInstance
 
-export var cube_per_side = 16
+export var cube_per_side = 2 setget reload_scene
+
+func reload_scene(size_cube):
+	cube_per_side = size_cube
+	setup_mutimesh()
 	
 func setup_mutimesh():
 	self.multimesh = MultiMesh.new()
@@ -11,7 +15,7 @@ func setup_mutimesh():
 	self.multimesh.visible_instance_count = self.multimesh.instance_count
 	
 	var mesh = CubeMesh.new()
-	mesh.size = Vector3(1,1,1)
+	mesh.size = Vector3(cube_per_side,cube_per_side, cube_per_side)
 	self.multimesh.mesh = mesh
 	
 	var cube_size = 1
