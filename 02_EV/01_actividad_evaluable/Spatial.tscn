@@ -3,16 +3,18 @@
 [ext_resource path="res://MultiMeshInstance.gd" type="Script" id=1]
 
 [sub_resource type="CubeMesh" id=1]
+size = Vector3( 1, 1, 1 )
 
 [sub_resource type="MultiMesh" id=2]
 transform_format = 1
-instance_count = 8
-visible_instance_count = 8
+instance_count = 1
+visible_instance_count = 1
 mesh = SubResource( 1 )
-transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Spatial" type="Spatial"]
 
 [node name="MultiMeshInstance" type="MultiMeshInstance" parent="."]
 multimesh = SubResource( 2 )
 script = ExtResource( 1 )
+cube_per_side = 1
