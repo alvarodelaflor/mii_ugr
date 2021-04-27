@@ -14,3 +14,7 @@
 02_SSBW/Proyecto/backend/.idea/
 
 02_SSBW/Proyecto/backend/venv/
+
+02_SSBW/Proyecto/backend/Recetas/api/__pycache__/
+
+02_SSBW/Proyecto/backend/Recetas/api/migrations/
