@@ -1,7 +1,7 @@
 certifi==2018.1.18
 chardet==3.0.4
 defusedxml==0.5.0
-Django==3.2
+Django==2.1
 django-braces==1.12.0
 django-cors-headers==2.1.0
 django-filter==1.1.0
@@ -23,3 +23,4 @@ rest-social-auth==4.0.0
 social-auth-app-django==3.1.0
 social-auth-core==3.3.0
 urllib3==1.22
+djongo
