@@ -10,7 +10,7 @@ from rest_framework.decorators import api_view
 
 
 @api_view(['GET', 'POST', 'DELETE'])
-def tutorial_list(request):
+def receta_list(request):
     if request.method == 'GET':
         tutorials = Receta.objects.all()
 
@@ -23,16 +23,17 @@ def tutorial_list(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def tutorial_detail(request, pk):
-    # find tutorial by pk (id)
+def receta_detail(request, pk):
     try:
         receta = Receta.objects.get(pk=pk)
-    except Receta.DoesNotExist:
+    except receta.DoesNotExist:
         return JsonResponse({'message': 'The tutorial does not exist'}, status=status.HTTP_404_NOT_FOUND)
-
-        # GET / PUT / DELETE tutorial
 
 
 @api_view(['GET'])
-def tutorial_list_published(request):
-# GET all published tutorials
+def receta_list_published(request):
+    tutorials = Receta.objects.filter(published=True)
+
+    if request.method == 'GET':
+        tutorials_serializer = RecetaSerializer(tutorials, many=True)
+        return JsonResponse(tutorials_serializer.data, safe=False)
