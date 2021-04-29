@@ -1,0 +1,17 @@
+Práctica 2 (entrega)
+Realiza todos los ejercicios en un único proyecto de Godot.
+Incorpora los ejercicios realizados en Blender en una carpeta dentro del propio proyecto de Godot que se llame BLENDER.
+
+Para que puedan ser evaluados, los archivos de Blender deberán tener todos los modificadores y operaciones SIN APLICAR. Igualmente, nombra las piezas de tal forma que pueda verse de la forma más clara posible todo el proceso de construcción y los operadores aplicados.
+
+Tanto en los modelos realizados en Blender, como en las animaciones, se puntuará la calidad y eficiencia en el proceso de construcción/animación, siendo mucho más relevante que el número de modelos realizados.
+
+De forma orientativa, para cumplir con todos los objetivos de modelado habría que intentar cubrir la mayoría de las operaciones vistas en clase en entre uno o tres modelos (al menos 4 operaciones), siempre dependiendo de la complejidad de dichas operaciones. Puedes descargar el resto de modelos que necesites para tu escena de Internet.
+
+Puedes tomar como ejemplo el siguiente modelo, que cumpliría en un único modelo todas las transformaciones vistas en clase:
+
+VER IMAGEN EN LA CARPETA
+
+Sigue las instrucciones de la guía de prácticas. Una vez realizada, comprime la carpeta del proyecto en un archivo ZIP o tgz (por favor no uses RAR u otros compresores), y añádelo en la entrega (no se te olvide aceptar la entrega).
+
+Solamente si el fichero superara la cantidad límite de subida de Prado: ponte en contacto con el profesor y compartele el fichero mediante Google Drive (puedes usar la cuenta go de la UGR). Copia el enlace en la entrega.
