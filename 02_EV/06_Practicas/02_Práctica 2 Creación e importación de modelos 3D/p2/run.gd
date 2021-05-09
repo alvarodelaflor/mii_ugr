@@ -10,5 +10,5 @@ func _process(delta):
 	
 func get_input_keyboard(delta):
 	var y_rotation = 0
-	if (Input.is_action_pressed("derecha")):
+	if (Input.is_action_pressed("espacio")):
 		get_node("Armature/AnimationPlayer").play("Walk")
