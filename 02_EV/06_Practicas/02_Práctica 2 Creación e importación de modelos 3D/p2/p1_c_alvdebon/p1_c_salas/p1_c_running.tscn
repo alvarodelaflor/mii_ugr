@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://p1_c_alvdebon/p1_c_elements/running/maquina_correr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://p1_c_alvdebon/p1_c_elements/vestuario/trasera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://p1_c_alvdebon/p1_c_elements/running/pared_fondo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://p1_c_alvdebon/p1_c_elements/running/altavoces.tscn" type="PackedScene" id=4]
-
+[ext_resource path="res://run.tscn" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
 
@@ -28,15 +28,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3 )
 
 [node name="trasera" parent="." instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 4, 8 )
+visible = false
 
 [node name="pared_fondo" parent="." instance=ExtResource( 3 )]
 transform = Transform( -3.49691e-09, 0, 6, 0, 4, 0, -0.08, 0, -2.62268e-07, 0, 4, -8 )
 
 [node name="lateral_1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.08, 0, 0, 0, 4, 0, 0, 0, 8.088, 6, 4, 0 )
+visible = false
 
 [node name="lateral_2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.08, 0, 0, 0, 4, 0, 0, 0, 8.088, -6, 4, 0 )
+visible = false
 
 [node name="techo" parent="." instance=ExtResource( 3 )]
 transform = Transform( -3.49691e-09, -4, 0, 0.08, -1.74846e-07, 0, 0, 0, 8.088, 0, 8, 0 )
@@ -51,3 +54,6 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 5, 
 
 [node name="altavoz2" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 5, -7.5 )
+
+[node name="run" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1.5982, 0, -0.000390426, 0, 1.5982, 0, 0.000390426, 0, -1.5982, 0, 0.181937, 3.37589 )
