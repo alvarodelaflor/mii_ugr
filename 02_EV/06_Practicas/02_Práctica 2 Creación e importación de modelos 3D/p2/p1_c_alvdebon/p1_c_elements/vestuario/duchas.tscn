@@ -1,0 +1,61 @@
+[gd_scene format=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="suelo" type="CSGBox" parent="."]
+transform = Transform( -2.66639e-07, 0, 1.5, 0, 0.01, 0, -6.3745, 0, -6.85176e-08, 0, 0, 0 )
+width = 1.8881
+
+[node name="rejilla_agua" type="CSGBox" parent="suelo"]
+transform = Transform( 0.999999, 0, 1.77636e-15, 0, 0.999999, 0, -5.68434e-14, 0, 1, -6.59663e-09, 0, 0.613714 )
+operation = 2
+width = 1.81848
+height = 96.079
+depth = 0.189117
+
+[node name="pared" type="CSGBox" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 4, 0, 0, 0, 6, 1.4, 4, 0 )
+
+[node name="tuberia" type="CSGCylinder" parent="."]
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 12, -5.24537e-07, 1.21258, 5.9642, 0 )
+
+[node name="alcachofa" type="CSGMesh" parent="."]
+
+[node name="mango" type="CSGBox" parent="alcachofa"]
+transform = Transform( 0.769227, -0.638897, -0.0100006, 0.638929, 0.769266, 0, 0.0076931, -0.00638965, 0.99995, 0.874436, 6.44511, 0 )
+width = 0.158842
+height = 1.09475
+depth = 0.146614
+
+[node name="CSGCylinder" type="CSGCylinder" parent="alcachofa"]
+transform = Transform( -0.652773, -0.757554, 0, 0.757554, -0.652773, 0, 0, 0, 1, 0.500237, 6.73927, -0.00749779 )
+radius = 0.330475
+height = 0.133505
+
+[node name="alcachofa2" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+
+[node name="mango" type="CSGBox" parent="alcachofa2"]
+transform = Transform( 0.769227, -0.638897, -0.0100006, 0.638929, 0.769266, 0, 0.0076931, -0.00638965, 0.99995, 0.874436, 6.44511, 0 )
+width = 0.158842
+height = 1.09475
+depth = 0.146614
+
+[node name="CSGCylinder" type="CSGCylinder" parent="alcachofa2"]
+transform = Transform( -0.652773, -0.757554, 0, 0.757554, -0.652773, 0, 0, 0, 1, 0.500237, 6.73927, -0.00749779 )
+radius = 0.330475
+height = 0.133505
+
+[node name="alcachofa3" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+
+[node name="mango" type="CSGBox" parent="alcachofa3"]
+transform = Transform( 0.769227, -0.638897, -0.0100006, 0.638929, 0.769266, 0, 0.0076931, -0.00638965, 0.99995, 0.874436, 6.44511, 0 )
+width = 0.158842
+height = 1.09475
+depth = 0.146614
+
+[node name="CSGCylinder" type="CSGCylinder" parent="alcachofa3"]
+transform = Transform( -0.652773, -0.757554, 0, 0.757554, -0.652773, 0, 0, 0, 1, 0.500237, 6.73927, -0.00749779 )
+radius = 0.330475
+height = 0.133505

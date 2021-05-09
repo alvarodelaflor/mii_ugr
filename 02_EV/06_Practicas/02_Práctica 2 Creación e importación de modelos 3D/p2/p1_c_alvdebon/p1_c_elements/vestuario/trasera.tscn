@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="trasera" type="CSGMesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+
+[node name="pared_fondo" type="CSGBox" parent="."]
+transform = Transform( 0.08, 0, 0, 0, 4, 0, 0, 0, 6, 0, 0, 0 )
+
+[node name="hueco_puerta" type="CSGBox" parent="."]
+transform = Transform( 0.0872, 0, 0, 0, 2.8, 0, 0, 0, 1.2, 0, -1.201, -3.5 )
+operation = 2
+
+[node name="hueco_ventana" type="CSGBox" parent="."]
+transform = Transform( 0.0872, 0, 0, 0, 2.8, 0, 0, 0, 1.2, 0, 0.665834, 2.01031 )
+operation = 2
+height = 1.18925
+depth = 4.26883
+
+[node name="puerta" type="CSGMesh" parent="."]
+transform = Transform( -3.81163e-09, 0, 1.2, 0, 2.8, 0, -0.0872, 0, -5.24537e-08, -1.23, -1.201, -4.73 )
+
+[node name="puerta" type="CSGBox" parent="puerta"]
+
+[node name="ventana_puerta" type="CSGSphere" parent="puerta/puerta"]
+transform = Transform( 1.54, 0, 0, 0, 0.3, 0, 0, 0, 0.7, 0, 0.428572, 0 )
+operation = 2

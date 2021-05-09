@@ -1,0 +1,69 @@
+[gd_scene format=2]
+
+[node name="maquina_correr" type="Spatial"]
+
+[node name="Suelo" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0.113142, 0 )
+height = 0.103132
+
+[node name="pata_1" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0625, 0, 0, 0, 1, 0.9, 0.03, 1.4 )
+radius = 0.0510514
+
+[node name="pata_2" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0625, 0, 0, 0, 1, -0.9, 0.03, 1.4 )
+radius = 0.0510514
+
+[node name="motor" type="CSGCylinder" parent="."]
+transform = Transform( -8.74228e-08, -2, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.0645427, -1.8828 )
+radius = 0.443376
+
+[node name="rebaja_motor" type="CSGBox" parent="motor"]
+transform = Transform( -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0, 0.5, -0.564543, 2.46769e-08, -0.0389259 )
+operation = 2
+width = 2.24572
+
+[node name="proteccion_1" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.973128, 0.17292, 0.0156754 )
+width = 0.123386
+height = 0.0659656
+depth = 3.10257
+
+[node name="proteccion_2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975726, 0.17292, 0.0156754 )
+width = 0.123386
+height = 0.0659656
+depth = 3.10257
+
+[node name="mesa" type="CSGMesh" parent="."]
+
+[node name="mano_1" type="CSGBox" parent="mesa"]
+transform = Transform( 1, 0, 0, 0, 0.832921, -0.553392, 0, 0.553392, 0.832921, 0.950919, 1.05826, -1.20194 )
+width = 0.0929524
+depth = 0.111604
+
+[node name="mano_2" type="CSGBox" parent="mesa"]
+transform = Transform( 1, 0, 0, 0, 0.832921, -0.553392, 0, 0.553392, 0.832921, -0.950404, 1.05826, -1.20194 )
+width = 0.0929524
+depth = 0.111604
+
+[node name="CSGBox" type="CSGBox" parent="mesa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87473, -0.711697 )
+height = 0.0920405
+depth = 1.3272
+
+[node name="CSGCylinder" type="CSGCylinder" parent="mesa/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.638189 )
+operation = 2
+height = 0.326425
+
+[node name="CSGBox2" type="CSGBox" parent="mesa"]
+transform = Transform( 1, 0, 0, 0, 0.932286, 0.361722, 0, -0.361722, 0.932286, 0, 2.1924, -1.3328 )
+width = 1.23994
+height = 0.598264
+depth = 0.0819411
+
+[node name="CSGCylinder" type="CSGCylinder" parent="mesa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85054, 1.93719, -0.910008 )
+radius = 0.0928309
+height = 0.110434
