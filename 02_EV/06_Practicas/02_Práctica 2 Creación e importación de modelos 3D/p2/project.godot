@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="P 1 A Alvdebon"
-run/main_scene="res://p2_final/p1_d_alvdebon.tscn"
+run/main_scene="res://p2_final/p2_final.tscn"
 config/icon="res://icon.png"
 
 [input]

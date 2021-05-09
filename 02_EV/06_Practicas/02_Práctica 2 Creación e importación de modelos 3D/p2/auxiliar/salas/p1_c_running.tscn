@@ -10,23 +10,18 @@
 
 [node name="trasera" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 4, 8 )
-visible = false
 
 [node name="pared_fondo" parent="." instance=ExtResource( 3 )]
 transform = Transform( -3.49691e-09, 0, 6, 0, 4, 0, -0.08, 0, -2.62268e-07, 0, 4, -8 )
-visible = false
 
 [node name="lateral_1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.08, 0, 0, 0, 4, 0, 0, 0, 8.088, 6, 4, 0 )
-visible = false
 
 [node name="lateral_2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.08, 0, 0, 0, 4, 0, 0, 0, 8.088, -6, 4, 0 )
-visible = false
 
 [node name="techo" parent="." instance=ExtResource( 3 )]
 transform = Transform( -3.49691e-09, -4, 0, 0.08, -1.74846e-07, 0, 0, 0, 8.088, 0, 8, 0 )
-visible = false
 height = 3.03735
 depth = 1.99908
 
