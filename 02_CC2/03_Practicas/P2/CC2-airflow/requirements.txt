@@ -1,0 +1,9 @@
+statsmodels
+dnspython
+pymongo
+pmdarima
+Flask
+gevent
+gunicorn
+requests
+dnspython
