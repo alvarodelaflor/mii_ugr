@@ -8,57 +8,49 @@ de negocio así como el de los microservicios.
 """
 import pytest
 import prediction
-
-"""Clase con la lógica de la aplicación para realizar las predicciones"""
-pred = prediction.Prediction()
-
-
-def test1_get_predicciones_arima():
-    """Test para comprobar que el período indicado es un número. En este caso
-        no lo es y por lo tanto se produce una excepción."""
-    with pytest.raises(ValueError):
-        assert pred.get_predictions_arima('hola')
-
-
-def test2_get_predicciones_arima():
-    """Test para comprobar que el objeto devuelto es un dataframe con las predicciones
-        realizadas por ARIMA."""
-    respuesta = pred.get_predictions_arima(24)
-    assert type(respuesta) == list
-
-
-def test1_get_predicciones_api():
-    """Test para comprobar que el período indicado es un número. En este caso
-        no lo es y por lo tanto se produce una excepción."""
-    with pytest.raises(ValueError):
-        assert pred.get_prediction_wheatherapi('hola')
-
-
-def test2_get_predicciones_api():
-    """Test para comprobar que el objeto devuelto es un dataframe con las predicciones
-        realizadas por la API Dark Sky."""
-    respuesta = pred.get_predictions_arima(12)
-    assert type(respuesta) == list
-
-"""Microservicio de la versión 1: ARIMA"""
 import api_v1
-app_v1 = api_v1.app.test_client()
+import api_v2
+
+"""Cargamos las predicciones"""
+prediction_arima = prediction.Prediction()
 
 
-def test_obtener_predicciones_arima():
-    """Test para comprobar el funcionamiento del microservicio de la versión 1."""
+def test_arima_1():
+    """Solo pueden indicarse horas en arima, no strings"""
+    with pytest.raises(ValueError):
+        assert prediction_arima.get_predictions_arima('fail')
+
+
+def test_arima_2():
+    """El objeto devuelto debe ser una lista"""
+    respuesta = prediction_arima.get_predictions_arima(24)
+    assert type(respuesta) == list
+
+
+def test_arima_3():
+    """Funcionamiento correcto de la API 1"""
+    app_v1 = api_v1.app.test_client()
     respuesta = app_v1.get('/servicio/v1/prediccion/24horas/')
     assert (respuesta.status_code == 200)
 
-"""Microservicio de la versión 2: Dark Sky API"""
-import api_v2
-app_v2 = api_v2.app.test_client()
+
+def test_wheatherapi_1():
+    """Solo pueden indicarse número de dias en wheatherapi, no strings"""
+    with pytest.raises(ValueError):
+        assert prediction_arima.get_prediction_wheatherapi('hola')
 
 
-def test_obtener_predicciones_api():
-    """Test para comprobar el funcionamiento del microservicio de la versión 2."""
-    respuesta = app_v2.get('/servicio/v2/prediccion/24horas/')
-    assert (respuesta.status_code == 200)
+def test_wheatherapi_2():
+    """El objeto devuelto debe ser una lista"""
+    response = prediction_arima.get_predictions_arima(12)
+    assert type(response) == list
+
+
+def test_wheatherapi_3():
+    """Funcionamiento correcto de la API 2"""
+    app_v2 = api_v2.app.test_client()
+    response = app_v2.get('/servicio/v2/prediccion/24horas/')
+    assert (response.status_code == 200)
 
 
 if __name__ == '__main__':
