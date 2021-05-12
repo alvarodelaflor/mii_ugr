@@ -22,3 +22,5 @@
 02_SSBW/Proyecto/backend/Recetas/.idea/
 
 02_SSBW/Proyecto/backend/Recetas/Recetas/__pycache__/
+
+*.p

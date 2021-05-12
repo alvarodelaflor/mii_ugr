@@ -1,9 +1,10 @@
-statsmodels
+statsmodels~=0.12.2
 dnspython
-pymongo
-pmdarima
-Flask
+pymongo~=3.11.3
+pmdarima~=1.8.2
+Flask~=1.1.2
 gevent
 gunicorn
-requests
+requests~=2.25.1
 dnspython
+pandas~=1.2.4

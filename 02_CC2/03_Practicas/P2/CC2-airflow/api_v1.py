@@ -1,28 +1,51 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-API REST que proporciona el servicio de predicción de temperatura y humedad para
-24/48/72 horas utilizando ARIMA.
-
-@author: Lidia Sánchez Mérida
+@author: Álvaro de la Flor Bonilla (github: alvarodelaflor)
 """
 import json
-"""Framework Flask para implementar el microservicio REST"""
-from flask import Flask, Response
-app = Flask(__name__)
-
-"""Objeto de la clase de la lógica de negocio."""
 import prediccion
+from flask import Flask, Response
+
+app = Flask(__name__)
 pred = prediccion.Prediccion()
+
 
 @app.route("/")
 def index():
-    return Response("Microservicio REST para la predicción de temperatura y humedad utilizando ARIMA.", status=200)
+    return Response("<p>"
+                        "<strong>ARIMA</strong> - Predicción de temperatura y humedad<br>"
+                        
+                        "</br>Puede usar las siguientes rutas:</br>"
+                    
+                        "</br>  1.- <a href='/servicio/v1/prediccion/24horas/'>/servicio/v1/prediccion/24horas/<a> Para predicciones en las proximas 24 horas"
+                        "</br>  2.- <a href='/servicio/v1/prediccion/48horas/'>/servicio/v1/prediccion/48horas/<a> Para predicciones en las proximas 48 horas"
+                        "</br>  3.- <a href='/servicio/v1/prediccion/72horas/'>/servicio/v1/prediccion/72horas/<a> Para predicciones en las proximas 72 horas"
+                    "</p>", status=200)
 
-@app.route("/arima/<string:tiempo>", methods=['GET'])
-def obtener_prediccion_arima(tiempo):
-    resultado = pred.get_predicciones_arima(tiempo)
-    if (len(resultado) > 0):
-        return Response(json.dumps(resultado), status=200, mimetype="application/json")
+
+@app.route("/servicio/v1/prediccion/24horas/", methods=['GET'])
+def get_arima_prediction_24():
+    result = pred.get_predictions_arima(24)
+    if len(result) > 0:
+        return Response(json.dumps(result), status=200, mimetype="application/json")
+    else:
+        return Response("No hay predicciones", status=400)
+
+
+@app.route("/servicio/v1/prediccion/48horas/", methods=['GET'])
+def get_arima_prediction_48():
+    result = pred.get_predictions_arima(48)
+    if len(result) > 0:
+        return Response(json.dumps(result), status=200, mimetype="application/json")
+    else:
+        return Response("No hay predicciones", status=400)
+
+
+@app.route("/servicio/v1/prediccion/72horas/", methods=['GET'])
+def get_arima_prediction_72():
+    result = pred.get_predictions_arima(72)
+    if len(result) > 0:
+        return Response(json.dumps(result), status=200, mimetype="application/json")
     else:
         return Response("No hay predicciones", status=400)

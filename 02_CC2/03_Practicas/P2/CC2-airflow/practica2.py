@@ -24,9 +24,9 @@ def get_datos():
     """Función que captura, preprocesa y almacena los datos"""
     import sys
     sys.path.append('/tmp/workflow/servicio')
-    import datos
-    datos_clase = datos.Datos()
-    datos_clase.get_datos()
+    import data
+    datos_clase = data.Datos()
+    datos_clase.get_data()
 
 ############################ FIN FUNCIONES DE PYTHON ############################
 

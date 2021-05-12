@@ -6,7 +6,6 @@ opciones para predecir la temperatura y la humedad de la ciudad de San Francisco
 
 @author: Lidia Sánchez Mérida
 """
-from statsmodels.tsa.arima_model import ARIMA
 import pandas as pd
 import pmdarima as pm
 import pymongo
@@ -16,6 +15,7 @@ import requests
 import os
 import zipfile
 import time
+
 
 class Prediccion:
     
@@ -44,7 +44,7 @@ class Prediccion:
         zipObj.write("./modelos/modelo_"+modelo+".p")
         zipObj.close()
 
-    def get_predicciones_arima(self, periodo):
+    def get_predictions_arima(self, periodo):
         """Comprobamos si el período es realmente un número."""
         try:
             tiempo = int(periodo)
@@ -93,7 +93,7 @@ class Prediccion:
         
         return resultado
 
-    def get_predicciones_api(self, periodo):
+    def get_prediction_wheatherapi(self, periodo):
         """Comprobamos si el período es realmente un número."""
         try:
             tiempo = int(periodo)

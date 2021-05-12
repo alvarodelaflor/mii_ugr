@@ -28,7 +28,7 @@ def test1_get_predicciones_api():
     """Test para comprobar que el período indicado es un número. En este caso
         no lo es y por lo tanto se produce una excepción."""
     with pytest.raises(ValueError):
-        assert pred.get_predicciones_api('hola')
+        assert pred.get_prediction_wheatherapi('hola')
 
 def test2_get_predicciones_api():
     """Test para comprobar que el objeto devuelto es un dataframe con las predicciones
