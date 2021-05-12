@@ -4,11 +4,11 @@
 @author: Álvaro de la Flor Bonilla (github: alvarodelaflor)
 """
 import json
-import prediccion
+import prediction
 from flask import Flask, Response
 
 app = Flask(__name__)
-pred = prediccion.Prediccion()
+pred = prediction.Prediction()
 
 
 @app.route("/")
