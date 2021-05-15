@@ -1,0 +1,16 @@
+FROM python:3.6-slim-stretch
+
+# Puerto al que se conectará el microservicio
+ENV PORT ${PORT}
+
+# Copiamos  los ficheros del código del servicio y los modelos
+COPY . ./
+
+# Actualizamos el sistema operativo.
+RUN apt-get update && pip install --upgrade pip && pip install --requirement requirements.txt
+
+# Informamos acerca del puerto en el que se van a escuchar las peticiones.
+EXPOSE ${PORT}
+
+# Ejecutamos el microservicio REST en diez copias del servidor Gunicorn de forma asíncrona.
+CMD gunicorn --workers=4 -b 0.0.0.0:${PORT} api_v2:app
