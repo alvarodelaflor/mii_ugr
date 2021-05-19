@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="pared_fondo" type="CSGBox"]
+transform = Transform( 0.08, 0, 0, 0, 4, 0, 0, 0, 6, 0, 0, 0 )

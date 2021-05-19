@@ -1,0 +1,195 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://cinta_correr_texture.escn" type="PackedScene" id=1]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Normal.jpg" type="Texture" id=2]
+[ext_resource path="res://texturas/maquina_correr/plastic_3/Plastic006_2K_Color.jpg" type="Texture" id=3]
+[ext_resource path="res://texturas/maquina_correr/Treadmill Rubber.jpg" type="Texture" id=4]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Roughness.jpg" type="Texture" id=5]
+[ext_resource path="res://texturas/maquina_correr/plastic_4/Plastic007_4K_Normal.jpg" type="Texture" id=6]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Color.jpg" type="Texture" id=7]
+[ext_resource path="res://texturas/maquina_correr/plastic_3/Plastic006_2K_Roughness.jpg" type="Texture" id=8]
+[ext_resource path="res://texturas/maquina_correr/plastic_4/Plastic007_4K_Roughness.jpg" type="Texture" id=9]
+[ext_resource path="res://texturas/maquina_correr/plastic_3/Plastic006_2K_Displacement.jpg" type="Texture" id=10]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Metalness.jpg" type="Texture" id=11]
+[ext_resource path="res://texturas/maquina_correr/plastic_4/Plastic007_4K_Displacement.jpg" type="Texture" id=12]
+[ext_resource path="res://texturas/maquina_correr/plastic_3/Plastic006_2K_Normal.jpg" type="Texture" id=13]
+[ext_resource path="res://texturas/maquina_correr/plastic_4/Plastic007_4K_Color.jpg" type="Texture" id=14]
+[ext_resource path="res://texturas/maquina_correr/plastic_2/Plastic010_2K_Displacement.jpg" type="Texture" id=15]
+[ext_resource path="res://texturas/maquina_correr/TM Screen.jpg" type="Texture" id=16]
+[ext_resource path="res://texturas/maquina_correr/plastic_2/Plastic010_2K_Color.jpg" type="Texture" id=17]
+[ext_resource path="res://texturas/maquina_correr/plastic_2/Plastic010_2K_Roughness.jpg" type="Texture" id=18]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 0.0117647, 0.0117647, 1 )
+albedo_texture = ExtResource( 14 )
+metallic = 0.54
+metallic_specular = 0.0
+roughness_texture = ExtResource( 9 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 6 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 12 )
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.278431, 0.254902, 0.254902, 1 )
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 0, 0, 1 )
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.27
+roughness_texture = ExtResource( 8 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 13 )
+depth_enabled = true
+depth_scale = 1.0
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0, 0, 0, 1 )
+albedo_texture = ExtResource( 17 )
+roughness_texture = ExtResource( 18 )
+normal_enabled = true
+normal_scale = 1.0
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 15 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 16 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.498039, 0.498039, 0.498039, 1 )
+albedo_texture = ExtResource( 17 )
+roughness_texture = ExtResource( 18 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.980392, 0.027451, 0.027451, 1 )
+albedo_texture = ExtResource( 7 )
+metallic = 0.53
+metallic_specular = 0.76
+metallic_texture = ExtResource( 11 )
+metallic_texture_channel = 4
+roughness_texture = ExtResource( 5 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0, 0, 1 )
+albedo_texture = ExtResource( 14 )
+metallic_specular = 0.0
+roughness_texture = ExtResource( 9 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 6 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 12 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.0
+roughness = 0.0
+roughness_texture = ExtResource( 8 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 13 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 1, 0, 0, 1 )
+albedo_texture = ExtResource( 14 )
+metallic_specular = 0.0
+roughness_texture = ExtResource( 9 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 6 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 12 )
+
+[node name="cinta_correr_texture" instance=ExtResource( 1 )]
+
+[node name="Anclaje" parent="Treadmill_Model/Base" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, -4.26326e-14, 0, 4.26326e-14, 1, 0, 0, 0 )
+material/0 = SubResource( 6 )
+
+[node name="base_patas" parent="Treadmill_Model/Base" index="1"]
+material/0 = SubResource( 6 )
+
+[node name="cinta" parent="Treadmill_Model/Base" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, -4.26326e-14, 0, 4.26326e-14, 1, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="codo_union" parent="Treadmill_Model/Base" index="3"]
+material/0 = SubResource( 2 )
+
+[node name="Front_Screen" parent="Treadmill_Model/Base" index="4"]
+transform = Transform( 0.537644, 0, -0.832706, -3.55271e-14, 1.33871, -1.42109e-14, 0.625183, 5.68434e-14, 0.716109, -10.3063, 0.178765, -17.1298 )
+material/0 = SubResource( 9 )
+material/1 = SubResource( 10 )
+
+[node name="Huecos" parent="Treadmill_Model/Base" index="5"]
+material/0 = SubResource( 11 )
+
+[node name="Lateral" parent="Treadmill_Model/Base" index="6"]
+material/0 = SubResource( 2 )
+
+[node name="Motor" parent="Treadmill_Model/Base" index="8"]
+material/0 = SubResource( 3 )
+material/1 = SubResource( 4 )
+
+[node name="Parte de arriba" parent="Treadmill_Model/Base" index="9"]
+material/0 = SubResource( 5 )
+
+[node name="Pies" parent="Treadmill_Model/Base" index="10"]
+transform = Transform( 1, 0, 0, 0, 1, -4.26326e-14, 0, 4.26326e-14, 1, 0, 0, 0 )
+material/0 = SubResource( 6 )
+
+[node name="Pies_base" parent="Treadmill_Model/Base" index="11"]
+material/0 = SubResource( 2 )
+
+[node name="Supporting_Rods" parent="Treadmill_Model/Base" index="12"]
+transform = Transform( 1, 0, 0, 0, 1, -8.52651e-14, 0, 8.52651e-14, 1, 0, 0, 0 )
+material/0 = SubResource( 8 )
+
+[node name="extrudedSurface1001" parent="Treadmill_Model/handle_L" index="0"]
+material/0 = SubResource( 8 )
+
+[node name="pCylinder8001" parent="Treadmill_Model/handle_L" index="1"]
+transform = Transform( 5.54244e-08, 0, -0.652003, 0, 0.734118, 1.69407e-21, 0.734118, 0, 4.92249e-08, -3.98951, 5.65508, -13.4189 )
+material/0 = SubResource( 7 )
+
+[node name="extrudedSurface1" parent="Treadmill_Model/handle_R" index="0"]
+material/0 = SubResource( 8 )
+
+[node name="pCylinder8" parent="Treadmill_Model/handle_R" index="1"]
+transform = Transform( 5.54244e-08, 0, -0.652003, 0, 0.734118, 1.69407e-21, 0.734118, 0, 4.92249e-08, -3.98951, 5.65508, -13.4189 )
+material/0 = SubResource( 7 )

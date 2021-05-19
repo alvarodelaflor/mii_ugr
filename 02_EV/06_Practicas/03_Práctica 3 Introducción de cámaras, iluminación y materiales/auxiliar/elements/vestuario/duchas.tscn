@@ -1,0 +1,134 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://texturas/suelo/rejilla/MetalWalkway011_2K_Color.jpg" type="Texture" id=1]
+[ext_resource path="res://texturas/suelo/rejilla/MetalWalkway011_2K_Metalness.jpg" type="Texture" id=2]
+[ext_resource path="res://texturas/suelo/Tiles078_2K_Displacement.jpg" type="Texture" id=3]
+[ext_resource path="res://texturas/suelo/rejilla/MetalWalkway011_2K_Opacity.jpg" type="Texture" id=4]
+[ext_resource path="res://texturas/suelo/rejilla/MetalWalkway011_2K_Normal.jpg" type="Texture" id=5]
+[ext_resource path="res://texturas/pared/3/Bricks019_2K_Color.jpg" type="Texture" id=6]
+[ext_resource path="res://texturas/pared/3/Bricks019_2K_Displacement.jpg" type="Texture" id=7]
+[ext_resource path="res://texturas/pared/3/Bricks019_2K_Normal.jpg" type="Texture" id=8]
+[ext_resource path="res://texturas/pared/3/Bricks019_2K_Roughness.jpg" type="Texture" id=9]
+[ext_resource path="res://texturas/pared/3/Bricks019_2K_AmbientOcclusion.jpg" type="Texture" id=10]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Roughness.jpg" type="Texture" id=11]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Normal.jpg" type="Texture" id=12]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Color.jpg" type="Texture" id=13]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Metalness.jpg" type="Texture" id=14]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Displacement.jpg" type="Texture" id=15]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+metallic_specular = 0.51
+metallic_texture = ExtResource( 2 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 5 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 4 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+refraction_enabled = true
+refraction_scale = 0.05
+refraction_texture = ExtResource( 3 )
+refraction_texture_channel = 0
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 6 )
+roughness_texture = ExtResource( 9 )
+normal_enabled = true
+normal_scale = 2.38
+normal_texture = ExtResource( 8 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 10 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+refraction_enabled = true
+refraction_scale = 0.05
+refraction_texture = ExtResource( 7 )
+refraction_texture_channel = 0
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 13 )
+metallic_texture = ExtResource( 14 )
+roughness_texture = ExtResource( 11 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 12 )
+refraction_enabled = true
+refraction_scale = 0.05
+refraction_texture = ExtResource( 15 )
+refraction_texture_channel = 0
+
+[node name="Spatial" type="Spatial"]
+
+[node name="suelo" type="CSGBox" parent="."]
+transform = Transform( -2.66639e-07, 0, 1.5, 0, 0.01, 0, -6.3745, 0, -6.85176e-08, 0, 0, 0 )
+width = 1.8881
+material = SubResource( 1 )
+
+[node name="rejilla_agua" type="CSGBox" parent="suelo"]
+transform = Transform( 0.999999, 0, 1.77636e-15, 0, 0.999999, 0, -5.68434e-14, 0, 1, -6.59663e-09, 0, 0.613714 )
+operation = 2
+width = 1.81848
+height = 96.079
+depth = 0.189117
+
+[node name="pared" type="CSGBox" parent="."]
+transform = Transform( 0.1, 0, 0, 0, -1.69478e-07, -5.81579, 0, 4, -2.62268e-07, 1.4, 4, 0 )
+height = 2.99055
+depth = 1.35471
+material = SubResource( 2 )
+
+[node name="tuberia" type="CSGCylinder" parent="."]
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 12, -5.24537e-07, 1.21258, 5.9642, 0 )
+material = SubResource( 3 )
+
+[node name="alcachofa" type="CSGMesh" parent="."]
+material = SubResource( 3 )
+
+[node name="mango" type="CSGBox" parent="alcachofa"]
+transform = Transform( 0.769227, -0.638897, -0.0100006, 0.638929, 0.769266, 0, 0.0076931, -0.00638965, 0.99995, 0.874436, 6.44511, 0 )
+width = 0.158842
+height = 1.09475
+depth = 0.146614
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="alcachofa"]
+transform = Transform( -0.652773, -0.757554, 0, 0.757554, -0.652773, 0, 0, 0, 1, 0.500237, 6.73927, -0.00749779 )
+radius = 0.330475
+height = 0.133505
+material = SubResource( 3 )
+
+[node name="alcachofa2" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0089407, 9.53674e-07, -3.98167 )
+
+[node name="mango" type="CSGBox" parent="alcachofa2"]
+transform = Transform( 0.769227, -0.638897, -0.0100006, 0.638929, 0.769266, 0, 0.0076931, -0.00638965, 0.99995, 0.874436, 6.44511, 0 )
+width = 0.158842
+height = 1.09475
+depth = 0.146614
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="alcachofa2"]
+transform = Transform( -0.652773, -0.757554, 0, 0.757554, -0.652773, 0, 0, 0, 1, 0.500237, 6.73927, -0.00749779 )
+radius = 0.330475
+height = 0.133505
+material = SubResource( 3 )
+
+[node name="alcachofa3" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+
+[node name="mango" type="CSGBox" parent="alcachofa3"]
+transform = Transform( 0.769227, -0.638897, -0.0100006, 0.638929, 0.769266, 0, 0.0076931, -0.00638965, 0.99995, 0.874436, 6.44511, 0 )
+width = 0.158842
+height = 1.09475
+depth = 0.146614
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="alcachofa3"]
+transform = Transform( -0.652773, -0.757554, 0, 0.757554, -0.652773, 0, 0, 0, 1, 0.500237, 6.73927, -0.00749779 )
+radius = 0.330475
+height = 0.133505
+material = SubResource( 3 )
