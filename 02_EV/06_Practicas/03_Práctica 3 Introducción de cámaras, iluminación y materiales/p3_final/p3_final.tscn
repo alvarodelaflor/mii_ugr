@@ -1,6 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://auxiliar/p1_c_alvdebon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://texturas/ground/Ground032_2K_Color.jpg" type="Texture" id=2]
+[ext_resource path="res://texturas/ground/Ground032_2K_AmbientOcclusion.jpg" type="Texture" id=3]
+[ext_resource path="res://texturas/ground/Ground032_2K_Normal.jpg" type="Texture" id=4]
+[ext_resource path="res://texturas/ground/Ground032_2K_Roughness.jpg" type="Texture" id=5]
+[ext_resource path="res://auxiliar/salas/lamp_ext.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.168627, 0.184314, 0.192157, 1 )
@@ -9,6 +14,20 @@ sky_horizon_color = Color( 0.682353, 0.709804, 0.729412, 1 )
 [sub_resource type="Environment" id=2]
 background_mode = 2
 background_sky = SubResource( 1 )
+
+[sub_resource type="PlaneMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 2 )
+roughness_texture = ExtResource( 5 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 4 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 3 )
+ao_on_uv2 = false
+ao_texture_channel = 0
 
 [node name="Spatial" type="Spatial"]
 
@@ -26,46 +45,96 @@ transform = Transform( -0.897197, -0.173361, 0.406182, 0.173361, 0.707657, 0.684
 environment = SubResource( 2 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.5459, 0 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4459, 0 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
 
 [node name="SpotLight2" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.5459, 0 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4459, 0 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
 
 [node name="SpotLight3" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.5459, 0 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4459, 0 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
 
 [node name="SpotLight4" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.5459, 4 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4459, 4 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
 
 [node name="SpotLight5" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.5459, 4 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4459, 4 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
 
 [node name="SpotLight6" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.5459, 4 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4459, 4 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
 
 [node name="SpotLight7" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.5459, 8 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4459, 8 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
 
 [node name="SpotLight8" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.5459, 8 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4459, 8 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
 
 [node name="SpotLight9" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.5459, 8 )
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4459, 8 )
 light_energy = 9.4
+shadow_enabled = true
 spot_range = 7.6
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 13.8765, 0, 0, 0, 1, 0, 0, 0, 26.8573, 0, -0.0305462, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="Luna" type="DirectionalLight" parent="."]
+transform = Transform( 1.95299e-08, 0.447494, 0.894287, 5.86511e-08, -0.894287, 0.447494, 1, 4.37114e-08, -4.37114e-08, 24.3852, 20.5295, 0 )
+light_color = Color( 0.439216, 0.439216, 0.439216, 1 )
+light_energy = 0.31
+shadow_enabled = true
+
+[node name="lamp_ext" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8, -2.65383, 6.09121 )
+
+[node name="OmniLight" type="OmniLight" parent="lamp_ext"]
+transform = Transform( 1, 0, 0, 0, 0.555556, 0, 0, 0, 0.555556, 1.85858, 5.48323, 1.13065 )
+light_color = Color( 0.454902, 0.329412, 0.0941176, 1 )
+light_energy = 3.24
+shadow_enabled = true
+omni_range = 9.4
+
+[node name="lamp_ext2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8, -2.65383, -3.90879 )
+
+[node name="OmniLight" type="OmniLight" parent="lamp_ext2"]
+transform = Transform( 1, 0, 0, 0, 0.555556, 0, 0, 0, 0.555556, 1.85858, 5.48323, 1.13065 )
+light_color = Color( 0.454902, 0.329412, 0.0941176, 1 )
+light_energy = 3.24
+shadow_enabled = true
+omni_range = 9.4
+
+[node name="lamp_ext3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 7.96713, -2.65383, -14.0406 )
+
+[node name="OmniLight" type="OmniLight" parent="lamp_ext3"]
+transform = Transform( 1, 0, 0, 0, 0.555556, 0, 0, 0, 0.555556, 1.85858, 5.48323, 1.13065 )
+light_color = Color( 0.454902, 0.329412, 0.0941176, 1 )
+light_energy = 3.24
+shadow_enabled = true
+omni_range = 9.4
