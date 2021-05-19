@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://auxiliar/p1_c_alvdebon.tscn" type="PackedScene" id=1]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_top_color = Color( 0.168627, 0.184314, 0.192157, 1 )
+sky_horizon_color = Color( 0.682353, 0.709804, 0.729412, 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -13,3 +21,51 @@ transform = Transform( -4.02028e-08, -0.392546, 0.919732, -1.71587e-08, 0.919732
 
 [node name="Camera" type="Camera" parent="CameraGimbal/InnerGimbal"]
 transform = Transform( -0.897197, -0.173361, 0.406182, 0.173361, 0.707657, 0.684959, -0.406182, 0.684959, -0.604853, 1.57914, 10.6247, -3.9895 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.5459, 0 )
+light_energy = 9.4
+spot_range = 7.6
+
+[node name="SpotLight2" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.5459, 0 )
+light_energy = 9.4
+spot_range = 7.6
+
+[node name="SpotLight3" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.5459, 0 )
+light_energy = 9.4
+spot_range = 7.6
+
+[node name="SpotLight4" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.5459, 4 )
+light_energy = 9.4
+spot_range = 7.6
+
+[node name="SpotLight5" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.5459, 4 )
+light_energy = 9.4
+spot_range = 7.6
+
+[node name="SpotLight6" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.5459, 4 )
+light_energy = 9.4
+spot_range = 7.6
+
+[node name="SpotLight7" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.5459, 8 )
+light_energy = 9.4
+spot_range = 7.6
+
+[node name="SpotLight8" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.5459, 8 )
+light_energy = 9.4
+spot_range = 7.6
+
+[node name="SpotLight9" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.5459, 8 )
+light_energy = 9.4
+spot_range = 7.6
