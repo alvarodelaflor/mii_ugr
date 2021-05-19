@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://auxiliar/salas/p1_c_vestuario.tscn" type="PackedScene" id=1]
 [ext_resource path="res://auxiliar/salas/p1_c_running.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://texturas/suelo/escalon/Marble012_2K_Color.jpg" type="Texture" id=7]
 [ext_resource path="res://texturas/suelo/escalon/Marble012_2K_Roughness.jpg" type="Texture" id=8]
 [ext_resource path="res://texturas/suelo/escalon/Marble012_2K_Normal.jpg" type="Texture" id=9]
+[ext_resource path="res://auxiliar/salas/Fence.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 7 )
@@ -169,3 +170,9 @@ width = 0.167454
 height = 151.488
 depth = 16.3177
 material = SubResource( 2 )
+
+[node name="Fence" parent="." instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1.83619, 0, -1.83619, 0, -8.02626e-08, 8.04847, 10.8267, -7.98924 )
+
+[node name="Fence2" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.17967, 0, -1.47165e-07, 0, 1.83619, 0, 1.23974e-07, 0, -1, -0.849488, 10.8267, -14.1547 )

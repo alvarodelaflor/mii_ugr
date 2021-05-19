@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://auxiliar/elements/vestuario/trasera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://auxiliar/elements/vestuario/lateral.tscn" type="PackedScene" id=2]
@@ -9,9 +9,7 @@
 [ext_resource path="res://texturas/suelo/Tiles078_2K_Displacement.jpg" type="Texture" id=7]
 [ext_resource path="res://texturas/suelo/Tiles078_2K_Roughness.jpg" type="Texture" id=8]
 
-[sub_resource type="PlaneMesh" id=1]
-
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 5 )
 roughness_texture = ExtResource( 8 )
 normal_enabled = true
@@ -44,12 +42,16 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.25, -4.5 )
 [node name="silla_blender_final2" parent="." instance=ExtResource( 3 )]
 transform = Transform( -3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 0, 1.25, 4.5 )
 
-[node name="Suelo" type="CSGMesh" parent="."]
-transform = Transform( 5.00386, 0, 0, 0, 1, 0, 0, 0, 5.92196, 1.00909, 0, 0 )
-mesh = SubResource( 1 )
-material = SubResource( 2 )
+[node name="Techo" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.95561, 0 )
+width = 12.1191
+height = 0.0886727
+depth = 12.1919
+material = SubResource( 1 )
 
-[node name="Suelo2" type="CSGMesh" parent="."]
-transform = Transform( 6.0967, 0, 0, 0, 1, 0, 0, 0, 6.07506, 0.0129073, 8.01511, 0 )
-mesh = SubResource( 1 )
-material = SubResource( 2 )
+[node name="Suelo" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0312152, 0 )
+width = 12.1191
+height = 0.0886727
+depth = 12.1919
+material = SubResource( 1 )
