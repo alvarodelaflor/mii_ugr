@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="03 Práctica 3 Introducción De Cámaras, Iluminación Y Materiales"
+run/main_scene="res://p3_final/p3_final.tscn"
 config/icon="res://icon.png"
 
 [rendering]
