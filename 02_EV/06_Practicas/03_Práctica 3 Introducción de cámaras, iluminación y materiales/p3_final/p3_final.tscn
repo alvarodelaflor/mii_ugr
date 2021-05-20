@@ -44,56 +44,56 @@ transform = Transform( -0.897197, -0.173361, 0.406182, 0.173361, 0.707657, 0.684
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
-[node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4459, 0 )
+[node name="run_1" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4078, 0 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
 
-[node name="SpotLight2" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4459, 0 )
+[node name="run_2" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4078, 0 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
 
-[node name="SpotLight3" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4459, 0 )
+[node name="run_3" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4078, 0 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
 
-[node name="SpotLight4" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4459, 4 )
+[node name="run_4" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4078, 4 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
 
-[node name="SpotLight5" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4459, 4 )
+[node name="run_5" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4078, 4 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
 
-[node name="SpotLight6" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4459, 4 )
+[node name="run_6" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4078, 4 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
 
-[node name="SpotLight7" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4459, 8 )
+[node name="run_7" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4078, 8 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
 
-[node name="SpotLight8" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4459, 8 )
+[node name="run_8" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.4078, 8 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
 
-[node name="SpotLight9" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4459, 8 )
+[node name="run_9" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.4078, 8 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
@@ -108,6 +108,22 @@ transform = Transform( 1.95299e-08, 0.447494, 0.894287, 5.86511e-08, -0.894287, 
 light_color = Color( 0.439216, 0.439216, 0.439216, 1 )
 light_energy = 0.31
 shadow_enabled = true
+
+[node name="vestuario_1_1" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00574398, 6.97623, 5.60317 )
+light_color = Color( 0.454902, 0.329412, 0.0941176, 1 )
+light_energy = 3.24
+shadow_enabled = true
+shadow_bias = 1.18
+omni_range = 9.4
+
+[node name="vestuario_1_2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00574398, 6.97623, -6.39683 )
+light_color = Color( 0.454902, 0.329412, 0.0941176, 1 )
+light_energy = 3.24
+shadow_enabled = true
+shadow_bias = 1.18
+omni_range = 9.4
 
 [node name="lamp_ext" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8, -2.65383, 6.09121 )

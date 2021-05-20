@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://texturas/maquina_correr/plastico/Plastic001_2K_Roughness.jpg" type="Texture" id=1]
+[ext_resource path="res://auxiliar/elements/lamp.escn" type="PackedScene" id=3]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Roughness.jpg" type="Texture" id=5]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Color.jpg" type="Texture" id=7]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+albedo_color = Color( 0.384314, 0.384314, 0.384314, 1 )
+albedo_texture = ExtResource( 7 )
+metallic = 0.11
+roughness_texture = ExtResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 0.752941, 0.705882, 0, 1 )
+roughness_texture = ExtResource( 1 )
+emission_enabled = true
+emission = Color( 0.690196, 0.584314, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[node name="lamp" instance=ExtResource( 3 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="cuerpo" parent="." index="0"]
+material/0 = SubResource( 1 )
+
+[node name="foco" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000229407, 0.0715115, -0.000654884 )
+material/0 = SubResource( 2 )
