@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://auxiliar/p1_c_alvdebon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://texturas/ground/Ground032_2K_Color.jpg" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://texturas/ground/Ground032_2K_Roughness.jpg" type="Texture" id=5]
 [ext_resource path="res://auxiliar/salas/lamp_ext.tscn" type="PackedScene" id=6]
 [ext_resource path="res://auxiliar/elements/logo.png" type="Texture" id=7]
+[ext_resource path="res://texturas/maquina_correr/plastic_2/Plastic010_2K_Color.jpg" type="Texture" id=8]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.168627, 0.184314, 0.192157, 1 )
@@ -30,17 +31,25 @@ ao_texture = ExtResource( 3 )
 ao_on_uv2 = false
 ao_texture_channel = 0
 
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.615686, 0.635294, 0.027451, 1 )
+albedo_texture = ExtResource( 8 )
+emission_enabled = true
+emission = Color( 0.956863, 0.784314, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
 [node name="Spatial" type="Spatial"]
 
 [node name="Spatial" parent="." instance=ExtResource( 1 )]
 
 [node name="CameraGimbal" type="Spatial" parent="."]
-transform = Transform( -4.02028e-08, -0.392546, 0.919732, -1.71587e-08, 0.919732, 0.392546, -1, 0, -4.37114e-08, 4.99706, 3.47951, 0 )
+transform = Transform( -4.02028e-08, -0.392546, 0.919732, -1.71587e-08, 0.919732, 0.392546, -1, 0, -4.37114e-08, 23.9543, 13.0398, -1.75022 )
 
 [node name="InnerGimbal" type="Spatial" parent="CameraGimbal"]
 
 [node name="Camera" type="Camera" parent="CameraGimbal/InnerGimbal"]
-transform = Transform( -0.897197, -0.173361, 0.406182, 0.173361, 0.707657, 0.684959, -0.406182, 0.684959, -0.604853, 1.57914, 10.6247, -3.9895 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
@@ -136,6 +145,10 @@ light_energy = 3.24
 shadow_enabled = true
 omni_range = 9.4
 
+[node name="CSGSphere" type="CSGSphere" parent="lamp_ext"]
+transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.77816, 5.40661, 1.15181 )
+material = SubResource( 5 )
+
 [node name="lamp_ext2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8, -2.65383, -3.90879 )
 
@@ -146,6 +159,10 @@ light_energy = 3.24
 shadow_enabled = true
 omni_range = 9.4
 
+[node name="CSGSphere2" type="CSGSphere" parent="lamp_ext2"]
+transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.77816, 5.40661, 1.15181 )
+material = SubResource( 5 )
+
 [node name="lamp_ext3" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 7.96713, -2.65383, -14.0406 )
 
@@ -155,6 +172,10 @@ light_color = Color( 0.454902, 0.329412, 0.0941176, 1 )
 light_energy = 3.24
 shadow_enabled = true
 omni_range = 9.4
+
+[node name="CSGSphere3" type="CSGSphere" parent="lamp_ext3"]
+transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.81103, 5.40661, 1.16791 )
+material = SubResource( 5 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 2.82936, 0, -2.82936, 0, -1.23675e-07, 6.0985, 11.9217, 4.01756 )
