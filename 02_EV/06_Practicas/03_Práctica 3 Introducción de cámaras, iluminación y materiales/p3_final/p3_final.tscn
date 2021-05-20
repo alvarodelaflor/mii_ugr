@@ -10,17 +10,17 @@
 [ext_resource path="res://texturas/maquina_correr/plastic_2/Plastic010_2K_Color.jpg" type="Texture" id=8]
 [ext_resource path="res://p3_final/light_animation.gd" type="Script" id=9]
 
-[sub_resource type="ProceduralSky" id=2]
+[sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.168627, 0.184314, 0.192157, 1 )
 sky_horizon_color = Color( 0.682353, 0.709804, 0.729412, 1 )
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=2]
 background_mode = 2
-background_sky = SubResource( 2 )
+background_sky = SubResource( 1 )
 
-[sub_resource type="PlaneMesh" id=4]
+[sub_resource type="PlaneMesh" id=3]
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 5 )
 normal_enabled = true
@@ -32,7 +32,7 @@ ao_texture = ExtResource( 3 )
 ao_on_uv2 = false
 ao_texture_channel = 0
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.615686, 0.635294, 0.027451, 1 )
 albedo_texture = ExtResource( 8 )
 emission_enabled = true
@@ -41,7 +41,7 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("lamp_ext2/OmniLight:light_energy")
@@ -69,7 +69,7 @@ transform = Transform( -4.02028e-08, -0.392546, 0.919732, -1.71587e-08, 0.919732
 [node name="Camera" type="Camera" parent="CameraGimbal/InnerGimbal"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 2 )
 
 [node name="run_1" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.4078, 0 )
@@ -127,8 +127,8 @@ spot_range = 7.6
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 13.8765, 0, 0, 0, 1, 0, 0, 0, 26.8573, 0, -0.0305462, 0 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
 [node name="Luna" type="DirectionalLight" parent="."]
 transform = Transform( 1.95299e-08, 0.447494, 0.894287, 5.86511e-08, -0.894287, 0.447494, 1, 4.37114e-08, -4.37114e-08, 24.3852, 20.5295, 0 )
@@ -164,7 +164,7 @@ omni_range = 9.4
 
 [node name="CSGSphere" type="CSGSphere" parent="lamp_ext"]
 transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.77816, 5.40661, 1.15181 )
-material = SubResource( 6 )
+material = SubResource( 5 )
 
 [node name="lamp_ext2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8, -2.65383, -3.90879 )
@@ -178,7 +178,7 @@ omni_range = 9.4
 
 [node name="CSGSphere2" type="CSGSphere" parent="lamp_ext2"]
 transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.77816, 5.40661, 1.15181 )
-material = SubResource( 6 )
+material = SubResource( 5 )
 
 [node name="lamp_ext3" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 7.96713, -2.65383, -14.0406 )
@@ -192,7 +192,7 @@ omni_range = 9.4
 
 [node name="CSGSphere3" type="CSGSphere" parent="lamp_ext3"]
 transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.81103, 5.40661, 1.16791 )
-material = SubResource( 6 )
+material = SubResource( 5 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 2.82936, 0, -2.82936, 0, -1.23675e-07, 6.0985, 11.9217, 4.01756 )
@@ -200,4 +200,4 @@ texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "light"
-anims/light = SubResource( 7 )
+anims/light = SubResource( 6 )
