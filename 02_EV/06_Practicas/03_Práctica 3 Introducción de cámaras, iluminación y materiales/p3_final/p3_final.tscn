@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://auxiliar/p1_c_alvdebon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://texturas/ground/Ground032_2K_Color.jpg" type="Texture" id=2]
@@ -39,6 +39,22 @@ emission = Color( 0.956863, 0.784314, 0, 1 )
 emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
+
+[sub_resource type="Animation" id=6]
+resource_name = "light"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("lamp_ext2/OmniLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1, 2.2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 3.24, 0.33, 0.0, 13.09, 1.45, 3.24 ]
+}
 
 [node name="Spatial" type="Spatial"]
 
@@ -180,3 +196,7 @@ material = SubResource( 5 )
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 2.82936, 0, -2.82936, 0, -1.23675e-07, 6.0985, 11.9217, 4.01756 )
 texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "light"
+anims/light = SubResource( 6 )
