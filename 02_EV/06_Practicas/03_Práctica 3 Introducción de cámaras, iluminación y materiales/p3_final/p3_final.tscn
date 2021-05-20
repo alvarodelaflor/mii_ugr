@@ -50,10 +50,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7, 1, 2.2, 2.5, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.3, 0.6, 0.8, 1, 1.2, 1.3, 1.6, 2, 2.2, 2.3, 2.6, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 3.24, 0.33, 0.0, 13.09, 1.45, 3.24 ]
+"values": [ 3.24, 0.3, 0.0, 0.3, 5.81, 3.64, 0.3, 0.0, 5.81, 3.62, 0.3, 0.0, 5.81, 3.62 ]
 }
 
 [node name="Spatial" type="Spatial"]
@@ -172,7 +172,7 @@ transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8, -2.65383, -3.90879 )
 [node name="OmniLight" type="OmniLight" parent="lamp_ext2"]
 transform = Transform( 1, 0, 0, 0, 0.555556, 0, 0, 0, 0.555556, 1.85858, 5.48323, 1.13065 )
 light_color = Color( 0.454902, 0.329412, 0.0941176, 1 )
-light_energy = 3.24
+light_energy = 3.62
 shadow_enabled = true
 omni_range = 9.4
 
