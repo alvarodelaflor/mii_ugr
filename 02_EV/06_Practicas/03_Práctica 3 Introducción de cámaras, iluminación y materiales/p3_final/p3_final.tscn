@@ -112,54 +112,63 @@ transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.285
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="run_2" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.2853, 0 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="run_3" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.2853, 0 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="run_4" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.2853, 4 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="run_5" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.2853, 4 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="run_6" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.2853, 4 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="run_7" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.2853, 8 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="run_8" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 4, 14.2853, 8 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="run_9" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -4, 14.2853, 8 )
 light_energy = 9.4
 shadow_enabled = true
 spot_range = 7.6
+spot_angle = 72.1
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 13.8765, 0, 0, 0, 1, 0, 0, 0, 26.8573, 0, -0.0305462, 0 )
