@@ -6,8 +6,8 @@ var jumpForce : float = 3.2
 var gravity : float = 9.8
 
 # Variables de la cámara
-var minLookAngle : float = -90.0
-var maxLookAngle : float = 90.0
+var minLookAngle : float = -25.0
+var maxLookAngle : float = 25.0
 var lookSensitivity : float = 10.0
 
 # Inicializamos vectores
