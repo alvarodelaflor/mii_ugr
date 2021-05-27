@@ -1,0 +1,113 @@
+El singleton será un observador, lo llamaremos SystemManager y gestionará todos los sistemas.
+
+Tendré que seleccionar en "Autoload" el script principal que deberé haber creado previamente.
+
+En esta misma ventana deberé activar que este objeto es de tipo "Singleton"
+
+
+1. Mis tres componentes son:
+
+	Los componentes son bastante tradicionales. Datos, en ocasiones representan estados y además afectarán a las mecánicas.
+
+	· POSITION: lugar en la que se encuentra el jugador en el mapa, en nuestro caso deberemos conocer las coordenadas x y z. Si se le retira la componente significará que un usuario le ha atacado y no puede moverse.
+	
+	· TIREDNESS: nivel de agotamiento del jugador, motivación de ese día y capacidad para correr ese día. Si se retira esta componente el jugador solo podrá caminar encima de la cinta. Puede ser consecuencia de un ataque de otro jugador o una lesión.
+
+	· PERFORMANCE: capacidad de correr del jugador, cuanto más entrene mejor rendimiento tendrá y por tanto podrá correr más rápido. Si no dispone de esta componente es un simple amateur (el jugador no puede activar funciones especiales de la cinta).
+
+	COMPONENTES EXTRA
+
+		· IS_RUN: indica si el jugador corre.
+
+	A modo resumen, mis componentes seguirán la siguiente estructura, un ejemplo (muy resumido) de ellas puede ser el siguiente:
+		
+		class_name Performance
+		extends Node
+
+		const component_name := "c_performance"
+
+		var performance: int = 5
+
+2. Mis entidades se representan computacionalmente como:
+
+	Mis entidades serán Nodos, por ejemplo podrán ser el avatar del jugador y la cinta de correr.
+	
+	NO podemos entender las entidades como una identificación que hace referencia a un componente para nada. Declararé cada entidad como un nodo base, adjuntándole a cada una de ellas su script y grupo de componentes secundarias y comprimiré todas en un único ".tscn".
+	
+	Como posteriormente veremos, realizaremos la comunicación entidades-componentes-sistemas a través de eventos y/o señales.
+
+3. Mis sistemas se representan computacionalmente como:
+
+	Los sistemas serán métodos gestionados por el nodo SystemManager del que hablamos al principio del documento.
+	
+	Los sistemas contarán con una matriz de requisitos. Estos requisitos definirán que entidades procesará el sistema y con cuales no deberá hacerlo.
+
+	Los sistemas serán capaces de comunicarse entre si, sin conocer realmente el nombre o referencia de ellos ya que se realizará una comunicación entre ellos por medio de eventos. Alternativamente podrán usar un sistema de señales que crearemos en el SystemManager que nombramos anteriormente.
+
+	Respecto a lo anterior el sistemas de señales puede funcionar como un tablón de anuncios a través de la dupla de métodos:
+		
+		· emit(callback_name, payload)
+		· subscribe(callback_name)
+
+4. Los métodos y su justificación son las siguientes:
+
+ACLARACIÓN: Los sistemas quedan identificados con la designación x_system()
+
+- 1. get_tired(): devuelve si el jugador esta corriendo o no. Su función es clara, si el jugador no esta corriendo se desactivarán el resto de funciones como la mejora y el agotamiento. Se hará uso de la componente específica para ello. Para ello se realizará una señal al evento obersvador, si el usuario no esta corriendo (le retiramos la componente a su entidad), los sistemas de mejora y cansancio no actuarán al comprobar en el "tablón de anuncios" que el usuario no esta corriendo.
+- 2. death(): si el jugador sobre pasa el cansancio puede producir la muerte. Si el jugador se cansa completamente se enviará una señal en la que se impedirá que se realice ninguna acción, el jugador se ha quedado "sin vida".
+- 3. get_animation_ia(): en función del estado del jugador (posición, cansancio, actividad que realiza...) calcula la animacion correspondiente. Se ha decidido realizar este método a parte del siguiente método (movement_ia) ya que en ocasiones (por ejemplo la animación de la muerte) se requiere calcular una animación que es completamente independiente al movimiento.
+- 4. movement_ia(): recibiendo como parámetros los comandos pulsados por el jugador y el resultado de las animaciones del método anterior, realiza el movimiento necesario para mover al avatar a sus nuevas coordenadas.
+- 5. calculate_tiredness(): calcula el nuevo nivel de cansancio.
+- 6. drain_system(): el objetivo de este método es aumentar el nivel de agotamiento del jugador a medida que corre. Cuando el jugador se cansa cambia su estilo de pisada.
+- 7. performance_ia(): a partir de datos como el cansancio, la velocidad de la cinta y su nivel de rendimiento anterior, calcula el nuevo rendimiento.
+- 8. camara_settings(): ajusta la visualización de la camara, por ejemplo si el usuario esta corriendo la vista no será en primera persona, como en el caso de cuando está andando.
+- 9. stop_movement(): existen ocasiones en los que el jugador esta encima de la cinta y solo queremos que se mueva sobra ella. Este método desactiva el movimiento posicional del avatar.
+- 10. restart_movement(): restaura el movimiento anterior.
+- 10. improve_running_performance_system(): a medida que el jugador corre y dependiendo de su cansancio mejorará su rendimiento corriendo. Realiza un estudio en combinación del cansancio y rendimiento anterior para calcular una actualización del nuevo rendimiento. Además a medida que el jugador mejora su rendimiento corriendo variará su estilo de pisada.
+- 11 (extra). player_movement_system(): actualiza las coordenadas del jugador y produce el movimiento.
+
+5. El pseudo algoritmo sería el siguiente:
+
+ACLARACIÓN: He decidido que voy a realizar esta sección en función de que pasaría si añadimos o retiramos cada una de las componentes que hemos expuestos anteriormente a nuestras entidades, ya que normalmente estas afectan a la mecánica. Tal y como expone el enunciado, lo que haré será el comportamiento de un sistema al que le afectan dos componentes y el comportamiento de otro de ellos al que le afecta solo una.
+
+	def player_movement_system() {
+		if (IS_RUN) {
+			emit(treamill_setting, [IS_RUN, POSITION]) // El sistema de la cinta recogerá esta señal y activará las acciones necesarias para la animación del movimiento de la cinta
+			camera_settings(IS_RUN)
+			stop_movement() // Esta acción no supone la retirada de la componente POSITION ya que ningún jugador le ha atacado
+			if (TIREDNESS) { // Si la entidad jugador no tiene la componente TIREDNESS no podrá correr, solo andar
+				get_animation_ia(IS_RUN)
+			} else {
+				get_animation_ia(WALK)
+				emit(treadmill_settings, [!TIREDNESS, POSITION]) // El sistema de la cinta recogerá esta señal y afectará a que el usuario no puede pulsar los botones de incrementar o bajar la velocidad de la cinta (se impide la animación de pulsar el botón y la acción en sí) ya que al no poseer la componente TIREDNESS como indicamos anteriormente solo puede caminar.
+			}
+			if (subscribe(player_down) == True) { // en el caso de que se reciba la señal de bajarse de la cinta
+				restart_movement()
+				get_animation_ia(down_treadmill) // con este método el jugador se bajará de la cinta
+			}
+		} else {
+			camera_settings(!IS_RUN) // Desactivamos la camara observadora en caso de que no este en la cinta, sino desplazándose por la plataforma
+			movement_ia(!IS_RUN)
+		}
+		movement_ia(POSITION, get_animation_ia()) // con este método se analizará la nueva posición del usuario, la animación que tiene que hacer para llegar hasta allí y los movimientos necesarios.
+	}
+
+	def drain_system() {
+		if (IS_RUN) { // ¿Está corriendo el jugador? En caso de que el jugador este corriendo también será necesario avisar al sistema de mejora de rendimiento 
+			emit(improve_running_performance_system, [IS_RUN, TIREDNESS_LEVEL])	
+			calculate_tiredness(TIREDNESS, POSITION, IS_RUN)
+		} else { // El jugador no esta corriendo simplente caminando
+			calculate_tiredness(TIREDNESS, POSITION) // Calculamos el nuevo nivel de cansancio en el que influye la nueva posición ya que no es lo mismo pasear por la acera que subir una escalera.
+		}
+		emit(animation, movement_ia) // Cuando una persona esta cansada por ejemplo realiza un movimiento de respiración distinto al de una completamente relajada. Casos como estos los estudiará automáticamente este método.	
+		if (TIREDNESS && get_tired <= 0) {
+			death()
+		}
+	}
+
+	def improve_running_performance_system() {
+		data = subscribe(improve_running_performance_system) // aquí obtengo el nivel de cansancio actual y si esta corriendo
+		new_performance = performance_ia()
+		emit(drain_system, new performance)
+		emit(animation, movement_ia)
+	}
