@@ -19,6 +19,10 @@ config/name="p4"
 run/main_scene="res://p4_final/p3_final.tscn"
 config/icon="res://icon.png"
 
+[gui]
+
+theme/use_hidpi=true
+
 [input]
 
 w={

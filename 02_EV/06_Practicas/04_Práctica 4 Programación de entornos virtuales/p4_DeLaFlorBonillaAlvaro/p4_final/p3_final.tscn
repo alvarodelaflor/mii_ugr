@@ -93,6 +93,104 @@ tracks/0/keys = PoolRealArray( 0, 1, 23.9543, 6.76439, -1.75022, -0.141658, 0.69
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 9 )
 
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="VBoxContainer" parent="Control"]
+margin_right = 191.0
+margin_bottom = 122.0
+rect_scale = Vector2( 0.52, 0.44 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Control/Grid"]
+margin_right = 191.0
+margin_bottom = 14.0
+text = "Avanzar"
+align = 1
+
+[node name="Button4" type="Button" parent="Control/Grid"]
+margin_top = 18.0
+margin_right = 191.0
+margin_bottom = 38.0
+text = "W"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Grid"]
+margin_top = 42.0
+margin_right = 191.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Izquierda" type="VBoxContainer" parent="Control/Grid/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 38.0
+
+[node name="Button" type="Button" parent="Control/Grid/HBoxContainer/Izquierda"]
+margin_right = 60.0
+margin_bottom = 20.0
+text = "A"
+
+[node name="Label" type="Label" parent="Control/Grid/HBoxContainer/Izquierda"]
+margin_top = 24.0
+margin_right = 60.0
+margin_bottom = 38.0
+text = "Izquierda"
+align = 1
+
+[node name="Retroceder" type="VBoxContainer" parent="Control/Grid/HBoxContainer"]
+margin_left = 64.0
+margin_right = 134.0
+margin_bottom = 38.0
+
+[node name="Button2" type="Button" parent="Control/Grid/HBoxContainer/Retroceder"]
+margin_right = 70.0
+margin_bottom = 20.0
+text = "S"
+
+[node name="Label2" type="Label" parent="Control/Grid/HBoxContainer/Retroceder"]
+margin_top = 24.0
+margin_right = 70.0
+margin_bottom = 38.0
+text = "Retroceder"
+align = 1
+
+[node name="Derecha" type="VBoxContainer" parent="Control/Grid/HBoxContainer"]
+margin_left = 138.0
+margin_right = 191.0
+margin_bottom = 38.0
+
+[node name="Button3" type="Button" parent="Control/Grid/HBoxContainer/Derecha"]
+margin_right = 53.0
+margin_bottom = 20.0
+text = "D"
+
+[node name="Label5" type="Label" parent="Control/Grid/HBoxContainer/Derecha"]
+margin_top = 24.0
+margin_right = 53.0
+margin_bottom = 38.0
+text = "Derecha"
+align = 1
+
+[node name="Button5" type="Button" parent="Control/Grid"]
+margin_top = 84.0
+margin_right = 191.0
+margin_bottom = 104.0
+text = "SPACE"
+
+[node name="Label4" type="Label" parent="Control/Grid"]
+margin_top = 108.0
+margin_right = 191.0
+margin_bottom = 122.0
+text = "Salto"
+align = 1
+
 [node name="Player" parent="." instance=ExtResource( 10 )]
 transform = Transform( -0.685704, 0, 0.72788, 0, 1, 0, -0.72788, 0, -0.685704, 11.7177, 1.45562, -21.3999 )
 
