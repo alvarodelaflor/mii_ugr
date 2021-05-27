@@ -74,18 +74,18 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
-	
-	# rotate the camera along the x axis
-	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
-	
-	# clamp camera x rotation axixs
-	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
-	
-	# rotate the player along their y axixs
-	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
-	
-	# reset the mouse delta vector
-	mouseDelta = Vector2()
+	if(camera.current==true):
+		# rotate the camera along the x axis
+		camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
+		
+		# clamp camera x rotation axixs
+		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
+		
+		# rotate the player along their y axixs
+		rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
+		
+		# reset the mouse delta vector
+		mouseDelta = Vector2()
 	
 func _input(event):
 	
