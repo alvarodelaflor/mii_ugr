@@ -8,8 +8,36 @@
 [ext_resource path="res://auxiliar/salas/lamp_ext.tscn" type="PackedScene" id=6]
 [ext_resource path="res://auxiliar/elements/logo.png" type="Texture" id=7]
 [ext_resource path="res://texturas/maquina_correr/plastic_2/Plastic010_2K_Color.jpg" type="Texture" id=8]
-[ext_resource path="res://p4_final/light_animation.gd" type="Script" id=9]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=10]
+
+[sub_resource type="GDScript" id=11]
+script/source = "extends Spatial
+
+signal camara_1
+signal camara_2
+
+func _ready():
+	pass
+	
+func _process(_delta):
+	get_input_keyboard()
+	
+func get_input_keyboard():
+	if (Input.is_action_pressed(\"q\")):
+		emit_signal(\"camara_1\")
+	elif (Input.is_action_pressed(\"e\")):
+		emit_signal(\"camara_2\")
+	elif (Input.is_action_pressed(\"l\")):
+		get_node(\"AnimationPlayer\").play(\"light\")
+	elif (Input.is_action_pressed(\"c\")):
+		get_node(\"AnimationPlayer2\").play(\"camara\")
+	elif (Input.is_action_pressed(\"r\")):
+		get_node(\"AnimationPlayer3\").play(\"run\")
+		
+
+func _on_Spatial_camara_1():
+	$CameraGimbal/InnerGimbal/Camera.current=true
+"
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 2 )
@@ -23,15 +51,15 @@ ao_texture = ExtResource( 3 )
 ao_on_uv2 = false
 ao_texture_channel = 0
 
-[sub_resource type="ProceduralSky" id=1]
+[sub_resource type="ProceduralSky" id=5]
 sky_top_color = Color( 0.168627, 0.184314, 0.192157, 1 )
 sky_horizon_color = Color( 0.682353, 0.709804, 0.729412, 1 )
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=6]
 background_mode = 2
-background_sky = SubResource( 1 )
+background_sky = SubResource( 5 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
 albedo_color = Color( 0.615686, 0.635294, 0.027451, 1 )
 albedo_texture = ExtResource( 8 )
@@ -41,7 +69,7 @@ emission_energy = 0.6
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("lamp_ext2/OmniLight:light_energy")
@@ -68,8 +96,7 @@ tracks/1/keys = {
 "values": [ 0.4, 0.2, 0.001, 0.2, 0.6, 0.4, 0.2, 0.001, 0.2, 0.6, 0.4, 0.2, 0.001, 0.2, 0.6, 0.4 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "camara"
+[sub_resource type="Animation" id=9]
 length = 4.0
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CameraGimbal")
@@ -79,8 +106,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, 23.9543, 6.76439, -1.75022, -0.141658, 0.692772, 0.141658, 0.692772, 1, 1, 1, 0.5, 1, -2.80777, 4.18562, 4.78327, -0.320001, -0.405917, -0.168051, 0.839398, 1, 1, 1, 3.5, 1, -2.80777, 4.18562, 4.78327, -0.320001, -0.405917, -0.168051, 0.839398, 1, 1, 1, 4, 1, 23.9543, 6.76439, -1.75022, -0.141658, 0.692772, 0.141658, 0.692772, 1, 1, 1 )
 
-[sub_resource type="Animation" id=8]
-resource_name = "run"
+[sub_resource type="Animation" id=10]
 length = 4.0
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CameraGimbal")
@@ -91,7 +117,7 @@ tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, 23.9543, 6.76439, -1.75022, -0.141658, 0.692772, 0.141658, 0.692772, 1, 1, 1, 0.5, 1, -1.9164, 13.4683, -4.64977, -0.00870253, 0.903647, 0.423926, -0.0602705, 0.999999, 1, 1, 3.501, 1, -1.9164, 13.4683, -4.64977, -0.00870253, 0.903647, 0.423926, -0.0602704, 0.999999, 1, 1, 4, 1, 23.9543, 6.76439, -1.75022, -0.141658, 0.692772, 0.141658, 0.692772, 1, 1, 1 )
 
 [node name="Spatial" type="Spatial"]
-script = ExtResource( 9 )
+script = SubResource( 11 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -108,28 +134,77 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="Control/Grid"]
-margin_right = 191.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Grid"]
+margin_right = 209.0
+margin_bottom = 38.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camara Player" type="VBoxContainer" parent="Control/Grid/HBoxContainer2"]
+margin_left = 16.0
+margin_right = 75.0
+margin_bottom = 38.0
+
+[node name="Label" type="Label" parent="Control/Grid/HBoxContainer2/Camara Player"]
+margin_right = 59.0
+margin_bottom = 14.0
+text = "Camara 1"
+align = 1
+
+[node name="Button" type="Button" parent="Control/Grid/HBoxContainer2/Camara Player"]
+margin_top = 18.0
+margin_right = 59.0
+margin_bottom = 38.0
+text = "Q"
+
+[node name="Avanzar" type="VBoxContainer" parent="Control/Grid/HBoxContainer2"]
+margin_left = 79.0
+margin_right = 129.0
+margin_bottom = 38.0
+
+[node name="Label2" type="Label" parent="Control/Grid/HBoxContainer2/Avanzar"]
+margin_right = 50.0
 margin_bottom = 14.0
 text = "Avanzar"
 align = 1
 
-[node name="Button4" type="Button" parent="Control/Grid"]
+[node name="Button2" type="Button" parent="Control/Grid/HBoxContainer2/Avanzar"]
 margin_top = 18.0
-margin_right = 191.0
+margin_right = 50.0
 margin_bottom = 38.0
-text = "W"
+text = "S"
+
+[node name="CamaraZ" type="VBoxContainer" parent="Control/Grid/HBoxContainer2"]
+margin_left = 133.0
+margin_right = 192.0
+margin_bottom = 38.0
+
+[node name="Label5" type="Label" parent="Control/Grid/HBoxContainer2/CamaraZ"]
+margin_right = 59.0
+margin_bottom = 14.0
+text = "Camara 2"
+align = 1
+
+[node name="Button3" type="Button" parent="Control/Grid/HBoxContainer2/CamaraZ"]
+margin_top = 18.0
+margin_right = 59.0
+margin_bottom = 38.0
+text = "E"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Grid"]
 margin_top = 42.0
-margin_right = 191.0
+margin_right = 209.0
 margin_bottom = 80.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Izquierda" type="VBoxContainer" parent="Control/Grid/HBoxContainer"]
-margin_right = 60.0
+margin_left = 9.0
+margin_right = 69.0
 margin_bottom = 38.0
 
 [node name="Button" type="Button" parent="Control/Grid/HBoxContainer/Izquierda"]
@@ -145,8 +220,8 @@ text = "Izquierda"
 align = 1
 
 [node name="Retroceder" type="VBoxContainer" parent="Control/Grid/HBoxContainer"]
-margin_left = 64.0
-margin_right = 134.0
+margin_left = 73.0
+margin_right = 143.0
 margin_bottom = 38.0
 
 [node name="Button2" type="Button" parent="Control/Grid/HBoxContainer/Retroceder"]
@@ -162,8 +237,8 @@ text = "Retroceder"
 align = 1
 
 [node name="Derecha" type="VBoxContainer" parent="Control/Grid/HBoxContainer"]
-margin_left = 138.0
-margin_right = 191.0
+margin_left = 147.0
+margin_right = 200.0
 margin_bottom = 38.0
 
 [node name="Button3" type="Button" parent="Control/Grid/HBoxContainer/Derecha"]
@@ -180,13 +255,13 @@ align = 1
 
 [node name="Button5" type="Button" parent="Control/Grid"]
 margin_top = 84.0
-margin_right = 191.0
+margin_right = 209.0
 margin_bottom = 104.0
 text = "SPACE"
 
 [node name="Label4" type="Label" parent="Control/Grid"]
 margin_top = 108.0
-margin_right = 191.0
+margin_right = 209.0
 margin_bottom = 122.0
 text = "Salto"
 align = 1
@@ -213,7 +288,7 @@ transform = Transform( -1.19209e-07, -0.392546, 0.919732, -1.63913e-07, 0.919732
 transform = Transform( 1, 0, -1.49012e-08, 0, 0.922875, -0.385101, 1.49012e-08, 0.385101, 0.922875, 0, 0, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 6 )
 
 [node name="run_1" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 14.2853, 0 )
@@ -314,7 +389,7 @@ omni_range = 9.4
 [node name="CSGSphere" type="CSGSphere" parent="lamp_ext"]
 transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.77816, 5.64258, 1.15181 )
 radius = 0.4
-material = SubResource( 5 )
+material = SubResource( 7 )
 
 [node name="lamp_ext2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8, -2.65383, -3.90879 )
@@ -329,7 +404,7 @@ omni_range = 9.4
 [node name="CSGSphere2" type="CSGSphere" parent="lamp_ext2"]
 transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.77816, 5.64258, 1.15181 )
 radius = 0.4
-material = SubResource( 5 )
+material = SubResource( 7 )
 
 [node name="lamp_ext3" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 7.96713, -2.65383, -14.0406 )
@@ -344,7 +419,7 @@ omni_range = 9.4
 [node name="CSGSphere3" type="CSGSphere" parent="lamp_ext3"]
 transform = Transform( 0.155231, 0, 0, 0, 0.155231, 0, 0, 0, 0.155231, 1.81103, 5.64258, 1.16791 )
 radius = 0.4
-material = SubResource( 5 )
+material = SubResource( 7 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 2.82936, 0, -2.82936, 0, -1.23675e-07, 6.0985, 11.9217, 4.01756 )
@@ -352,10 +427,12 @@ texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "light"
-anims/light = SubResource( 6 )
+anims/light = SubResource( 8 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-anims/camara = SubResource( 7 )
+anims/camara = SubResource( 9 )
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
-anims/run = SubResource( 8 )
+anims/run = SubResource( 10 )
+[connection signal="camara_1" from="." to="." method="_on_Spatial_camara_1"]
+[connection signal="camara_2" from="." to="Player" method="_on_Spatial_camara_2"]

@@ -94,3 +94,7 @@ func _input(event):
 ###########################################################
 ##### PARTE 2  - MOVIMIENTO DE LA CAMARA CON EL RATÓN #####
 ###########################################################
+
+
+func _on_Spatial_camara_2():
+	get_node("Camera").current=true
