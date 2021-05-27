@@ -8,7 +8,10 @@ var gravity : float = 9.8
 # Variables de la cámara
 var minLookAngle : float = -25.0
 var maxLookAngle : float = 25.0
-var lookSensitivity : float = 10.0
+export var lookSensitivity : float = 10.0 setget change_sensitivity
+
+func change_sensitivity(new_sensitivity):
+	lookSensitivity = new_sensitivity
 
 # Inicializamos vectores
 var vel : Vector3 = Vector3()
