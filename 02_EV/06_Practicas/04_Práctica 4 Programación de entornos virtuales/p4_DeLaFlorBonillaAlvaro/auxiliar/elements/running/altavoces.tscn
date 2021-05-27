@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Roughness.jpg" type="Texture" id=1]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Normal.jpg" type="Texture" id=2]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Color.jpg" type="Texture" id=3]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Metalness.jpg" type="Texture" id=4]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Displacement.jpg" type="Texture" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.360784, 0.345098, 0.345098, 1 )
+albedo_texture = ExtResource( 3 )
+metallic_texture = ExtResource( 4 )
+roughness_texture = ExtResource( 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+refraction_enabled = true
+refraction_scale = 0.05
+refraction_texture = ExtResource( 5 )
+refraction_texture_channel = 0
+
+[node name="altavoz" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.98046, 0.196716, 0, -0.196716, 0.98046, 0, 0, 0, 1, 0, 1, 0 )
+use_collision = true
+width = 0.656432
+height = 1.13709
+depth = 0.765888
+material = SubResource( 1 )
+
+[node name="CSGSphere" type="CSGSphere" parent="CSGBox"]
+transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0.317116, -0.210989, 0 )
+operation = 2
+radius = 0.314024
+material = SubResource( 1 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147609, 0.318164, 0 )
+operation = 2
+radius = 0.24885
+material = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox"]
+transform = Transform( 0.905198, -0.42499, 0, 0.42499, 0.905198, 0, 0, 0, 1, -0.442661, 0.274574, 0 )
+width = 0.0852227
+height = 0.708502
+depth = 0.10782
+material = SubResource( 1 )

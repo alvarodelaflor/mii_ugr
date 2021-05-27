@@ -1,0 +1,82 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_Color.jpg" type="Texture" id=1]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_Roughness.jpg" type="Texture" id=2]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_Normal.jpg" type="Texture" id=3]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_AmbientOcclusion.jpg" type="Texture" id=4]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_Displacement.jpg" type="Texture" id=5]
+[ext_resource path="res://texturas/consigna/Wood019_2K_Roughness.jpg" type="Texture" id=6]
+[ext_resource path="res://texturas/consigna/Wood019_2K_Color.jpg" type="Texture" id=7]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Roughness.jpg" type="Texture" id=8]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Normal.jpg" type="Texture" id=9]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Color.jpg" type="Texture" id=10]
+[ext_resource path="res://texturas/consigna/Wood019_2K_Normal.jpg" type="Texture" id=11]
+[ext_resource path="res://texturas/maquina_correr/metal/Metal011_2K_Metalness.jpg" type="Texture" id=12]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+roughness_texture = ExtResource( 2 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 4 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 7 )
+roughness_texture = ExtResource( 6 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 11 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 10 )
+metallic = 0.91
+metallic_texture = ExtResource( 12 )
+roughness_texture = ExtResource( 8 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 9 )
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 4, 0 )
+
+[node name="pared_fondo" type="CSGBox" parent="."]
+transform = Transform( 0.08, 1.74846e-07, 2.62268e-07, -3.49691e-09, -1.74846e-07, 6, 3.49691e-09, -4, -2.62268e-07, 0, 0, 0 )
+use_collision = true
+height = 2.98303
+depth = 1.32979
+material = SubResource( 1 )
+
+[node name="consigna" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74228e-08, 0, -2 )
+use_collision = true
+
+[node name="caja" type="CSGBox" parent="consigna"]
+transform = Transform( 0.6, 0, -1.74846e-08, 0, 1, 0, -1.74846e-08, 0, 1, 0.6, 0, 0 )
+material = SubResource( 2 )
+
+[node name="cerradura" type="CSGCylinder" parent="consigna"]
+transform = Transform( -8.74228e-09, -0.2, -8.74228e-09, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -8.74228e-09, 0.2, 1.23021, 0, -0.59003 )
+material = SubResource( 3 )
+
+[node name="consigna2" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74228e-08, 0, 2 )
+use_collision = true
+
+[node name="caja" type="CSGBox" parent="consigna2"]
+transform = Transform( 0.6, 0, -1.74846e-08, 0, 1, 0, -1.74846e-08, 0, 1, 0.6, 0, 0 )
+material = SubResource( 2 )
+
+[node name="cerradura" type="CSGCylinder" parent="consigna2"]
+transform = Transform( -8.74228e-09, -0.2, -8.74228e-09, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -8.74228e-09, 0.2, 1.23021, 0, -0.59003 )
+material = SubResource( 3 )

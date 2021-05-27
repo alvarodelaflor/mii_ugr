@@ -1,0 +1,169 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://run.tscn" type="PackedScene" id=1]
+[ext_resource path="res://cinta_correr_texture.tscn" type="PackedScene" id=2]
+[ext_resource path="res://auxiliar/elements/running/pared_fondo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://auxiliar/elements/vestuario/trasera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://auxiliar/elements/running/altavoces.tscn" type="PackedScene" id=5]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_Color.jpg" type="Texture" id=6]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_Normal.jpg" type="Texture" id=7]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_AmbientOcclusion.jpg" type="Texture" id=8]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_Displacement.jpg" type="Texture" id=9]
+[ext_resource path="res://texturas/pared/1/Bricks028_2K_Roughness.jpg" type="Texture" id=10]
+[ext_resource path="res://texturas/techo/RoofingTiles001_2K_Normal.jpg" type="Texture" id=11]
+[ext_resource path="res://texturas/techo/RoofingTiles001_2K_Roughness.jpg" type="Texture" id=12]
+[ext_resource path="res://texturas/techo/RoofingTiles001_2K_Color.jpg" type="Texture" id=13]
+[ext_resource path="res://texturas/suelo/alternativa/WoodFloor032_2K_Displacement.png" type="Texture" id=14]
+[ext_resource path="res://texturas/suelo/alternativa/WoodFloor032_2K_Normal.png" type="Texture" id=15]
+[ext_resource path="res://texturas/suelo/alternativa/WoodFloor032_2K_Color.png" type="Texture" id=16]
+[ext_resource path="res://texturas/suelo/Tiles078_2K_Roughness.jpg" type="Texture" id=17]
+[ext_resource path="res://auxiliar/elements/running/lamp.tscn" type="PackedScene" id=18]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 6 )
+roughness_texture = ExtResource( 10 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 7 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 8 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 9 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 13 )
+roughness_texture = ExtResource( 12 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 11 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 12 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.733333, 0.67451, 0.67451, 1 )
+albedo_texture = ExtResource( 16 )
+metallic_specular = 0.0
+roughness_texture = ExtResource( 17 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 15 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 14 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="trasera" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 4, 8 )
+use_collision = true
+
+[node name="pared_fondo" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.58564e-16, 4, 7.86805e-07, 3.49691e-09, 5.24537e-07, -6, -0.08, 0, -2.62268e-07, 0, 4, -8 )
+use_collision = true
+height = 2.96596
+depth = 1.3334
+material = SubResource( 1 )
+
+[node name="lateral_1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.08, 0, 0, 0, -1.74846e-07, -8.088, 0, 4, -3.53538e-07, 6, 4, 0 )
+use_collision = true
+height = 4.05006
+depth = 0.989659
+material = SubResource( 1 )
+
+[node name="lateral_2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.08, 0, 0, 0, -1.74846e-07, -8.088, 0, 4, -3.53538e-07, -6, 4, 0 )
+use_collision = true
+height = 4.04289
+depth = 0.98922
+material = SubResource( 1 )
+
+[node name="techo" parent="." instance=ExtResource( 3 )]
+transform = Transform( -3.49691e-09, -4, 0, 0.08, -1.74846e-07, 0, 0, 0, 8.088, 0, 8, 0 )
+use_collision = true
+height = 3.03735
+depth = 1.99908
+material = SubResource( 2 )
+
+[node name="altavoz" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 5, -7.5 )
+
+[node name="altavoz3" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 5, -7.5 )
+
+[node name="altavoz2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 5, -7.5 )
+
+[node name="run" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.5982, 0, -0.000390426, 0, 1.5982, 0, 0.000390426, 0, -1.5982, 0, 0.181937, 5.25436 )
+script = null
+
+[node name="suelo" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0328218, 0 )
+use_collision = true
+width = 11.9196
+height = 0.030042
+depth = 16.0053
+material = SubResource( 3 )
+
+[node name="cinta_correr_texture" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.05957e-06, 0, -15.7058, 0, 12.9149, 0, 13.4261, 0, 1.76062e-06, 0, 0.0644928, 4.73986 )
+
+[node name="cinta_correr_texture2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.05957e-06, 0, -15.7058, 0, 12.9149, 0, 13.4261, 0, 1.76062e-06, 4, 0.0644928, 4.73986 )
+
+[node name="cinta_correr_texture3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.05957e-06, 0, -15.7058, 0, 12.9149, 0, 13.4261, 0, 1.76062e-06, -4, 0.0644928, 4.73986 )
+
+[node name="cinta_correr_texture4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.05957e-06, 0, -15.7058, 0, 12.9149, 0, 13.4261, 0, 1.76062e-06, -4, 0.0644928, -1.26014 )
+
+[node name="cinta_correr_texture5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.05957e-06, 0, -15.7058, 0, 12.9149, 0, 13.4261, 0, 1.76062e-06, 0, 0.0644928, -1.26014 )
+
+[node name="cinta_correr_texture6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.05957e-06, 0, -15.7058, 0, 12.9149, 0, 13.4261, 0, 1.76062e-06, 4, 0.0644928, -1.26014 )
+
+[node name="cinta_correr_texture7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.05957e-06, 0, -15.7058, 0, 12.9149, 0, 13.4261, 0, 1.76062e-06, 4, 0.0644928, -1.26014 )
+
+[node name="lamp" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.97544, 0 )
+
+[node name="lamp7" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.97544, -4 )
+
+[node name="lamp9" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5.97544, -4 )
+
+[node name="lamp8" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5.97544, -4 )
+
+[node name="lamp2" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5.97544, 0 )
+
+[node name="lamp3" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5.97544, 0 )
+
+[node name="lamp4" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5.97544, 4 )
+
+[node name="lamp5" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.97544, 4 )
+
+[node name="lamp6" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5.97544, 4 )
