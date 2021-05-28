@@ -2,16 +2,16 @@ El singleton será un observador, lo llamaremos SystemManager y gestionará todo
 
 Tendré que seleccionar en "Autoload" el script principal que deberé haber creado previamente.
 
-En esta misma ventana deberé activar que este objeto es de tipo "Singleton"
+En esta misma ventana deberé activar que este objeto es de tipo "Singleton".
 
 
 1. Mis tres componentes son:
 
-	Los componentes son bastante tradicionales. Datos, en ocasiones representan estados y además afectarán a las mecánicas.
+	Los componentes son bastante tradicionales. Datos, estados y además afectarán a las mecánicas.
 
 	· POSITION: lugar en la que se encuentra el jugador en el mapa, en nuestro caso deberemos conocer las coordenadas x y z. Si se le retira la componente significará que un usuario le ha atacado y no puede moverse.
 	
-	· TIREDNESS: nivel de agotamiento del jugador, motivación de ese día y capacidad para correr ese día. Si se retira esta componente el jugador solo podrá caminar encima de la cinta. Puede ser consecuencia de un ataque de otro jugador o una lesión.
+	· TIREDNESS: nivel de agotamiento del jugador, motivación de ese día y capacidad para correr ese día. Si se retira esta componente el jugador solo podrá caminar encima de la cinta. Puede ser consecuencia de un ataque de otro jugador (sabotaje) o una lesión.
 
 	· PERFORMANCE: capacidad de correr del jugador, cuanto más entrene mejor rendimiento tendrá y por tanto podrá correr más rápido. Si no dispone de esta componente es un simple amateur (el jugador no puede activar funciones especiales de la cinta).
 
@@ -19,7 +19,7 @@ En esta misma ventana deberé activar que este objeto es de tipo "Singleton"
 
 		· IS_RUN: indica si el jugador corre.
 
-	A modo resumen, mis componentes seguirán la siguiente estructura, un ejemplo (muy resumido) de ellas puede ser el siguiente:
+	A modo resumen, mis componentes seguirán la siguiente estructura, un ejemplo (extremadamente resumido) de ellas puede ser el siguiente:
 		
 		class_name Performance
 		extends Node
@@ -49,6 +49,14 @@ En esta misma ventana deberé activar que este objeto es de tipo "Singleton"
 		· emit(callback_name, payload)
 		· subscribe(callback_name)
 
+	ACLARACIÓN: Aunque tal y como he podido ver mientras realizaba la práctica 4 básicamente basta con realizar crear la señal y elegir el nodo al que afectará.
+
+		signal camara_1
+			^
+			|
+		func _on_Spatial_camara_1():
+			// TODO
+
 4. Los métodos y su justificación son las siguientes:
 
 ACLARACIÓN: Los sistemas quedan identificados con la designación x_system()
@@ -62,6 +70,7 @@ ACLARACIÓN: Los sistemas quedan identificados con la designación x_system()
 - 7. performance_ia(): a partir de datos como el cansancio, la velocidad de la cinta y su nivel de rendimiento anterior, calcula el nuevo rendimiento.
 - 8. camara_settings(): ajusta la visualización de la camara, por ejemplo si el usuario esta corriendo la vista no será en primera persona, como en el caso de cuando está andando.
 - 9. stop_movement(): existen ocasiones en los que el jugador esta encima de la cinta y solo queremos que se mueva sobra ella. Este método desactiva el movimiento posicional del avatar.
+- 10. calculate_attack(): este método calcula el nivel de ataque que puede producir un jugador y actualiza el estado.
 - 10. restart_movement(): restaura el movimiento anterior.
 - 10. improve_running_performance_system(): a medida que el jugador corre y dependiendo de su cansancio mejorará su rendimiento corriendo. Realiza un estudio en combinación del cansancio y rendimiento anterior para calcular una actualización del nuevo rendimiento. Además a medida que el jugador mejora su rendimiento corriendo variará su estilo de pisada.
 - 11 (extra). player_movement_system(): actualiza las coordenadas del jugador y produce el movimiento.
@@ -100,6 +109,9 @@ ACLARACIÓN: He decidido que voy a realizar esta sección en función de que pas
 			calculate_tiredness(TIREDNESS, POSITION) // Calculamos el nuevo nivel de cansancio en el que influye la nueva posición ya que no es lo mismo pasear por la acera que subir una escalera.
 		}
 		emit(animation, movement_ia) // Cuando una persona esta cansada por ejemplo realiza un movimiento de respiración distinto al de una completamente relajada. Casos como estos los estudiará automáticamente este método.	
+		if (POSITION) { // Si el jugador ha sido atacado pierde la componente POSITION y no puede actualizar su nivel de ataque 
+			calculate_atack(TIREDNESS, PERFORMANCE)	
+		}		
 		if (TIREDNESS && get_tired <= 0) {
 			death()
 		}
@@ -108,6 +120,7 @@ ACLARACIÓN: He decidido que voy a realizar esta sección en función de que pas
 	def improve_running_performance_system() {
 		data = subscribe(improve_running_performance_system) // aquí obtengo el nivel de cansancio actual y si esta corriendo
 		new_performance = performance_ia()
-		emit(drain_system, new performance)
-		emit(animation, movement_ia)
+		calculate_atack(TIREDNESS, PERFORMANCE) Al aumentar su rendimiento, tiene mejor capacidad para atacar
+		emit(drain_system, new performance) // Si aumenta el nivel de rendimiento se cansará menos, se notifica al sistema de cansancio
+		emit(animation, movement_ia) // Al aumentar su rendimiento, mejora su estilo (a nivel visual) corriendo
 	}
