@@ -45,11 +45,11 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.25, -4.5 )
 transform = Transform( -3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 0, 1.25, 4.5 )
 
 [node name="Techo" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.91372, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.88321, 0 )
 use_collision = true
-width = 12.1191
+width = 12.0152
 height = 0.0886727
-depth = 12.1919
+depth = 12.1262
 material = SubResource( 1 )
 
 [node name="Suelo" type="CSGBox" parent="."]

@@ -166,10 +166,10 @@ depth = 12.7013
 material = SubResource( 2 )
 
 [node name="proteccion_5" type="CSGBox" parent="Escalera"]
-transform = Transform( -1, 0, -8.74228e-08, 4.37114e-07, 1.31134e-07, -5, 1.14641e-14, -0.2, -1.31134e-07, -11.1204, 40.6122, 13.6842 )
-width = 0.167454
+transform = Transform( -1, 0, -8.74228e-08, 4.37114e-07, 1.31134e-07, -5, 1.14641e-14, -0.2, -1.31134e-07, -11.2012, 40.6122, 13.6675 )
+width = 0.302079
 height = 151.488
-depth = 16.3177
+depth = 15.8249
 material = SubResource( 2 )
 
 [node name="Fence" parent="." instance=ExtResource( 10 )]
