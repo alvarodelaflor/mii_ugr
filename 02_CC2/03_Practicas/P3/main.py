@@ -24,7 +24,6 @@ def save_data():
 
     """Tratamos los datos"""
     lines = raw.split("\n")
-    titles = lines[0].split(",")
 
     elements = []
     for i in range(1, len(lines)):
@@ -35,22 +34,21 @@ def save_data():
 
         element = {"cdatetime":cdatetime, "crimedescr":crimedescr}
         elements.append(element)
-    """Conectamos con el contenedor de MongoDB"""
 
     collection = login()
     collection.remove()
 
     bulk = collection.initialize_unordered_bulk_op()
 
-    print("Inicio del guardado")
+    print("\nInicio del guardado")
     for element in elements:
         bulk.insert(element)
     bulk.execute()
-    print("Fin del guardado")
+    print("\nFin del guardado")
 
 
 def count_different_crimes():
-    print("Totalizar el número de delitos por cada tipo")
+    print("\nTotalizar el número de delitos por cada tipo")
     collection = login()
     result = collection.aggregate(
         [{"$group": {"_id": "$crimedescr", "count": {"$sum": 1}}}, {"$sort": {"count": 1}}])
@@ -59,7 +57,7 @@ def count_different_crimes():
 
 
 def most_crime_time():
-    print("Franja horaria (o franjas) con más número de delitos")
+    print("\nFranja horaria (o franjas) con más número de delitos")
     collection = login()
     result = collection.aggregate(
         [{"$group": {"_id": "$cdatetime", "count": {"$sum": 1}}}, {"$sort": {"count": 1}}])
@@ -68,12 +66,12 @@ def most_crime_time():
 
 
 def save():
-    print("Guardamos los datos")
+    print("\nGuardamos los datos")
     save_data()
 
 
 if __name__ == '__main__':
     #save()
-    #count_different_crimes()
+    count_different_crimes()
     most_crime_time()
 
