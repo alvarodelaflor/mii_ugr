@@ -72,6 +72,6 @@ def save():
 
 if __name__ == '__main__':
     #save()
-    count_different_crimes()
+    #count_different_crimes()
     most_crime_time()
 
