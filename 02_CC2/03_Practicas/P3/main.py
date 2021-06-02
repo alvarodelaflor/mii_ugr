@@ -29,7 +29,7 @@ def save_data():
     elements = []
     for i in range(1, len(lines)):
         first_split = lines[i].split("        ")
-        cdatetime = first_split[0].split(",")[0]
+        cdatetime = first_split[0].split(",")[0].split(" ")[1].split(":")[0]
         second_split = first_split[1][1:].split(",")
         crimedescr = second_split[1]
 
@@ -50,6 +50,7 @@ def save_data():
 
 
 def count_different_crimes():
+    print("Totalizar el número de delitos por cada tipo")
     collection = login()
     result = collection.aggregate(
         [{"$group": {"_id": "$crimedescr", "count": {"$sum": 1}}}, {"$sort": {"count": 1}}])
@@ -58,13 +59,21 @@ def count_different_crimes():
 
 
 def most_crime_time():
-    print("time")
+    print("Franja horaria (o franjas) con más número de delitos")
+    collection = login()
+    result = collection.aggregate(
+        [{"$group": {"_id": "$cdatetime", "count": {"$sum": 1}}}, {"$sort": {"count": 1}}])
+    for res in result:
+        print(res)
+
+
+def save():
+    print("Guardamos los datos")
+    save_data()
 
 
 if __name__ == '__main__':
-    print("Init")
-    #save_data()
+    #save()
     #count_different_crimes()
     most_crime_time()
-    print("End")
 
