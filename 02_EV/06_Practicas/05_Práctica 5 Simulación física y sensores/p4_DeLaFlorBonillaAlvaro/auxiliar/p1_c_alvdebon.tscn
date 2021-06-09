@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://auxiliar/salas/p1_c_vestuario.tscn" type="PackedScene" id=1]
+[ext_resource path="res://auxiliar/salas/p1_c_running.tscn" type="PackedScene" id=2]
+[ext_resource path="res://texturas/pared/4/Concrete036_2K_Color.jpg" type="Texture" id=3]
+[ext_resource path="res://texturas/pared/4/Concrete036_2K_Normal.jpg" type="Texture" id=4]
+[ext_resource path="res://texturas/pared/4/Concrete036_2K_Roughness.jpg" type="Texture" id=5]
+[ext_resource path="res://texturas/pared/4/Concrete036_2K_Displacement.jpg" type="Texture" id=6]
+[ext_resource path="res://texturas/suelo/escalon/Marble012_2K_Color.jpg" type="Texture" id=7]
+[ext_resource path="res://texturas/suelo/escalon/Marble012_2K_Roughness.jpg" type="Texture" id=8]
+[ext_resource path="res://texturas/suelo/escalon/Marble012_2K_Normal.jpg" type="Texture" id=9]
+[ext_resource path="res://auxiliar/salas/Fence.tscn" type="PackedScene" id=10]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 7 )
+roughness_texture = ExtResource( 8 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 9 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 3 )
+roughness_texture = ExtResource( 5 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 4 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 6 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="running" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 7.95435, 3.95939 )
+
+[node name="vestuario_hombres" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+
+[node name="vestuario_mujeres" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
+
+[node name="Escalera" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 1, 5, 0, -16.6715 )
+use_collision = true
+
+[node name="peldano_1" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 1, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_2" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -1, 3, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_3" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -2, 5, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_4" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -3, 7, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_5" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -4, 9, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_6" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -5, 11, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_7" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -6, 13, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_8" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -7, 15, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_9" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -7, 15, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_10" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -8, 17, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_11" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -9, 19, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_12" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -10, 21, 0 )
+material = SubResource( 1 )
+
+[node name="peldano_13" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -10, 21, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_14" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -8.00304, 23, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_15" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -7.00304, 25, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_16" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -6.00304, 27, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_17" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -5.00304, 29, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_18" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -4.00304, 31, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_19" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -3.00304, 33, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_20" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -2.00304, 35, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_21" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -1.00304, 37, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="peldano_22" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.4, -0.00304222, 39, 3 )
+depth = 2.43836
+material = SubResource( 1 )
+
+[node name="proteccion_1" type="CSGBox" parent="Escalera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.990953, 28.0083, 2.88634 )
+width = 0.167454
+height = 56.019
+depth = 3.56127
+material = SubResource( 2 )
+
+[node name="proteccion_2" type="CSGBox" parent="Escalera"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.09302, 28.0083, 1.1592 )
+width = 0.167454
+height = 56.019
+depth = 9.99546
+material = SubResource( 2 )
+
+[node name="proteccion_4" type="CSGBox" parent="Escalera"]
+transform = Transform( -4.18522e-08, 0, 0.957467, 0, 0.957467, 0, -0.957467, 0, -4.18522e-08, -5.0087, 40.6202, -1.59215 )
+width = 0.352521
+height = 84.9968
+depth = 12.7013
+material = SubResource( 2 )
+
+[node name="proteccion_5" type="CSGBox" parent="Escalera"]
+transform = Transform( -1, 0, -8.74228e-08, 4.37114e-07, 1.31134e-07, -5, 1.14641e-14, -0.2, -1.31134e-07, -11.2012, 40.6122, 13.6675 )
+width = 0.302079
+height = 151.488
+depth = 15.8249
+material = SubResource( 2 )
+
+[node name="Fence" parent="." instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1.83619, 0, -1.83619, 0, -8.02626e-08, 8.04847, 10.8267, -7.98924 )
+
+[node name="Fence2" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.17967, 0, -1.47165e-07, 0, 1.83619, 0, 1.23974e-07, 0, -1, -0.849488, 10.8267, -14.1547 )

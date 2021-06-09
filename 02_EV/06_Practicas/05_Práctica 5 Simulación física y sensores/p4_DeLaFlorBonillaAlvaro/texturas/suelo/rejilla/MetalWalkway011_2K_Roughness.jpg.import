@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/MetalWalkway011_2K_Roughness.jpg-dfa7f6a4f23f96688501ab181913e2a7.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://texturas/suelo/rejilla/MetalWalkway011_2K_Roughness.jpg"
+dest_files=[ "res://.import/MetalWalkway011_2K_Roughness.jpg-dfa7f6a4f23f96688501ab181913e2a7.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
