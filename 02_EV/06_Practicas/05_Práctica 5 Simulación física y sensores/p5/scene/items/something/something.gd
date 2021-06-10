@@ -150,11 +150,11 @@ func update_ammo(action = "Refresh", additional_ammo = 0):
 		"ExtraAmmo" : str(extra_ammo)
 	}
 	
-	weapon_manager.update_hud(weapon_data)
+	item_manager.update_hud(weapon_data)
 
 
 # Drops weapon on the ground, by instancing item_pickup, and removing itself from the tree
-func drop_weapon():
+func drop_item():
 	var pickup = Global.instantiate_node(item_pickup, global_transform.origin - player.global_transform.basis.z.normalized())
 	pickup.ammo_in_mag = ammo_in_mag
 	pickup.extra_ammo = extra_ammo

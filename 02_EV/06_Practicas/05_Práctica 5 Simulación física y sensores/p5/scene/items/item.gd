@@ -2,7 +2,7 @@ extends Spatial
 class_name Weapon
 
 # References
-var weapon_manager = null
+var item_manager = null
 var player = null
 var ray = null
 
@@ -37,4 +37,4 @@ func update_ammo(action = "Refresh"):
 		"Image" : weapon_image
 	}
 	
-	weapon_manager.update_hud(weapon_data)
+	item_manager.update_hud(weapon_data)

@@ -52,7 +52,7 @@ func _ready():
 
 # Initializes item's values
 func item_setup(i):
-	i.weapon_manager = self
+	i.item_manager = self
 	i.player = owner
 	i.ray = get_parent().get_node("Camera/RayCast")
 	i.visible = false
@@ -186,7 +186,7 @@ func add_item(item_data):
 # Will be called from player.gd
 func drop_item():
 	if current_item_slot != "Empty":
-		current_item.drop_weapon()
+		current_item.drop_item()
 		
 		# Need to be set to Unarmed in order call change_item() function
 		current_item = "Empty"
@@ -213,7 +213,7 @@ func switch_item(item_data):
 	# If we are unarmed, and pickup a item
 	# Then the item at the primary slot will be dropped and replaced with the new item
 	if current_item.name == "Unarmed":
-		items["Primary"].drop_weapon()
+		items["Primary"].drop_item()
 		yield(get_tree(), "idle_frame")
 		add_item(item_data)
 	
