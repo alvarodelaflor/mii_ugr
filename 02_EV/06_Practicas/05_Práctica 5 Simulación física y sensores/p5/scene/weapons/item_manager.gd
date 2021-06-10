@@ -1,16 +1,17 @@
 extends Spatial
 
 
-# All weapons in the game
-var all_weapons = {}
+# Almaceenamos todos los items que puede tener el jugador
+var all_items = {}
 
-# Carrying Weapons
-var weapons = {}
+# Almacenamos los items que porta el jugador
+var items = {}
 
 #HUD
 var hud
 
-var current_weapon # Reference to the current weapon equipped
+# Item actual
+var current_item # Reference to the current weapon equipped
 var current_weapon_slot = "Empty" # The current weapon slot
 
 var changing_weapon = false
@@ -24,7 +25,7 @@ func _ready():
 	hud = owner.get_node("HUD")
 	get_parent().get_node("Camera/RayCast").add_exception(owner) # Adds exception of player to the shooting raycast
 	
-	all_weapons = {
+	all_items = {
 		"Unarmed" : preload("res://scene/weapons/unarmed/unarmed.tscn"),
 		"Pistol_A" : preload("res://scene/weapons/armed/pistol/pistol_a/pistol_a.tscn"),
 		"Pistol_B" : preload("res://scene/weapons/armed/pistol/pistol_b/pistol_b.tscn"),
@@ -32,19 +33,19 @@ func _ready():
 		"Rifle_B" : preload("res://scene/weapons/armed/rifle/rifle_b/rifle_b.tscn")
 	}
 	
-	weapons = {
+	items = {
 		"Empty" : $Unarmed,
 		"Primary" : $Pistol_B,
 		"Secondary" : $Rifle_B
 	}
 	
 	# Initialize references for each weapons
-	for w in weapons:
-		if is_instance_valid(weapons[w]):
-			weapon_setup(weapons[w])
+	for w in items:
+		if is_instance_valid(items[w]):
+			weapon_setup(items[w])
 	
 	# Set current weapon to unarmed
-	current_weapon = weapons["Empty"]
+	current_item = items["Empty"]
 	change_item("Empty")
 	
 	# Disable process
@@ -63,15 +64,15 @@ func weapon_setup(w):
 func _process(delta):
 	
 	if unequipped_weapon == false:
-		if current_weapon.is_unequip_finished() == false:
+		if current_item.is_unequip_finished() == false:
 			return
 		
 		unequipped_weapon = true
 		
-		current_weapon = weapons[current_weapon_slot]
-		current_weapon.equip()
+		current_item = items[current_weapon_slot]
+		current_item.equip()
 	
-	if current_weapon.is_equip_finished() == false:
+	if current_item.is_equip_finished() == false:
 		return
 	
 	changing_weapon = false
@@ -82,22 +83,22 @@ func _process(delta):
 func change_item(new_weapon_slot):
 	
 	if new_weapon_slot == current_weapon_slot:
-		current_weapon.update_ammo() # Refresh
+		current_item.update_ammo() # Refresh
 		return
 	
-	if is_instance_valid(weapons[new_weapon_slot]) == false:
+	if is_instance_valid(items[new_weapon_slot]) == false:
 		return
 	
 	current_weapon_slot = new_weapon_slot
 	changing_weapon = true
 	
-	weapons[current_weapon_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
+	items[current_weapon_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
 	update_weapon_index()
 	
 	# Change Weapons
-	if is_instance_valid(current_weapon):
+	if is_instance_valid(current_item):
 		unequipped_weapon = false
-		current_weapon.unequip()
+		current_item.unequip()
 	
 	set_process(true)
 
@@ -117,25 +118,25 @@ func update_weapon_index():
 func next_item():
 	weapon_index += 1
 	
-	if weapon_index >= weapons.size():
+	if weapon_index >= items.size():
 		weapon_index = 0
 	
-	change_item(weapons.keys()[weapon_index])
+	change_item(items.keys()[weapon_index])
 
 func previous_item():
 	weapon_index -= 1
 	
 	if weapon_index < 0:
-		weapon_index = weapons.size() - 1
+		weapon_index = items.size() - 1
 	
-	change_item(weapons.keys()[weapon_index])
+	change_item(items.keys()[weapon_index])
 
 # Ammo Pickup
 func add_ammo(amount):
-	if is_instance_valid(current_weapon) == false || current_weapon.name == "Unarmed":
+	if is_instance_valid(current_item) == false || current_item.name == "Unarmed":
 		return false
 	
-	current_weapon.update_ammo("add", amount)
+	current_item.update_ammo("add", amount)
 	return true
 
 
@@ -143,13 +144,13 @@ func add_ammo(amount):
 # Add weapon to an existing empty slot
 func add_weapon(weapon_data):
 	
-	if not weapon_data["Name"] in all_weapons:
+	if not weapon_data["Name"] in all_items:
 		return
 	
-	if is_instance_valid(weapons["Primary"]) == false:
+	if is_instance_valid(items["Primary"]) == false:
 		
 		# Instance the new weapon
-		var weapon = Global.instantiate_node(all_weapons[weapon_data["Name"]], Vector3.ZERO, self)
+		var weapon = Global.instantiate_node(all_items[weapon_data["Name"]], Vector3.ZERO, self)
 		
 		# Initialize the new weapon references
 		weapon_setup(weapon)
@@ -159,15 +160,15 @@ func add_weapon(weapon_data):
 		weapon.transform.origin = weapon.equip_pos
 		
 		# Update the dictionary and change weapon
-		weapons["Primary"] = weapon
+		items["Primary"] = weapon
 		change_item("Primary")
 		
 		return
 	
-	if is_instance_valid(weapons["Secondary"]) == false:
+	if is_instance_valid(items["Secondary"]) == false:
 		
 		# Instance the new weapon
-		var weapon = Global.instantiate_node(all_weapons[weapon_data["Name"]], Vector3.ZERO, self)
+		var weapon = Global.instantiate_node(all_items[weapon_data["Name"]], Vector3.ZERO, self)
 		
 		# Initialize the new weapon references
 		weapon_setup(weapon)
@@ -177,7 +178,7 @@ func add_weapon(weapon_data):
 		weapon.transform.origin = weapon.equip_pos
 		
 		# Update the dictionary and change weapon
-		weapons["Secondary"] = weapon
+		items["Secondary"] = weapon
 		change_item("Secondary")
 		
 		return
@@ -187,14 +188,14 @@ func add_weapon(weapon_data):
 # Will be called from player.gd
 func drop_item():
 	if current_weapon_slot != "Empty":
-		current_weapon.drop_weapon()
+		current_item.drop_weapon()
 		
 		# Need to be set to Unarmed in order call change_weapon() function
-		current_weapon_slot = "Empty"
-		current_weapon = weapons["Empty"]
+		current_item = "Empty"
+		current_item = items["Empty"]
 		
 		# Update HUD
-		current_weapon.update_ammo()
+		current_item.update_ammo()
 
 
 
@@ -203,23 +204,23 @@ func switch_weapon(weapon_data):
 	
 	# Checks whether there's any empty slot available
 	# If there is, then we simply add that new weapon to the empty slot
-	for i in weapons:
-		if is_instance_valid(weapons[i]) == false:
+	for i in items:
+		if is_instance_valid(items[i]) == false:
 			add_weapon(weapon_data)
 			return
 	
 	
 	# If we are unarmed, and pickup a weapon
 	# Then the weapon at the primary slot will be dropped and replaced with the new weapon
-	if current_weapon.name == "Unarmed":
-		weapons["Primary"].drop_weapon()
+	if current_item.name == "Unarmed":
+		items["Primary"].drop_weapon()
 		yield(get_tree(), "idle_frame")
 		add_weapon(weapon_data)
 	
 	
 	# If the weapon to be picked up and the current weapon are same
 	# Theb the ammo of the new weapon is added to the currently equipped weapon
-	elif current_weapon.weapon_name == weapon_data["Name"]:
+	elif current_item.weapon_name == weapon_data["Name"]:
 		add_ammo(weapon_data["Ammo"] + weapon_data["ExtraAmmo"])
 	
 	
@@ -234,7 +235,7 @@ func switch_weapon(weapon_data):
 
 # Interaction Prompt
 func show_interaction_prompt(weapon_name):
-	var desc = "Add Ammo" if current_weapon.weapon_name == weapon_name else "Equip"
+	var desc = "Add Ammo" if current_item.weapon_name == weapon_name else "Equip"
 	hud.show_interaction_prompt(desc)
 
 func hide_interaction_prompt():
