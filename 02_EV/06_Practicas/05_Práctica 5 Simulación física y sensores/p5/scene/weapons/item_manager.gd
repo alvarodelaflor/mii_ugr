@@ -12,12 +12,12 @@ var hud
 
 # Item actual
 var current_item # Reference to the current weapon equipped
-var current_weapon_slot = "Empty" # The current weapon slot
+var current_item_slot = "Empty" # The current weapon slot
 
-var changing_weapon = false
-var unequipped_weapon = false
+var changing_item = false
+var unequipped_item = false
 
-var weapon_index = 0 # For switching weapons through mouse wheel
+var item_index = 0 # For switching weapons through mouse wheel
 
 
 func _ready():
@@ -63,41 +63,41 @@ func weapon_setup(w):
 # Process will be called when changing weapons
 func _process(delta):
 	
-	if unequipped_weapon == false:
+	if unequipped_item == false:
 		if current_item.is_unequip_finished() == false:
 			return
 		
-		unequipped_weapon = true
+		unequipped_item = true
 		
-		current_item = items[current_weapon_slot]
+		current_item = items[current_item_slot]
 		current_item.equip()
 	
 	if current_item.is_equip_finished() == false:
 		return
 	
-	changing_weapon = false
+	changing_item = false
 	set_process(false)
 
 
 
 func change_item(new_weapon_slot):
 	
-	if new_weapon_slot == current_weapon_slot:
+	if new_weapon_slot == current_item_slot:
 		current_item.update_ammo() # Refresh
 		return
 	
 	if is_instance_valid(items[new_weapon_slot]) == false:
 		return
 	
-	current_weapon_slot = new_weapon_slot
-	changing_weapon = true
+	current_item_slot = new_weapon_slot
+	changing_item = true
 	
-	items[current_weapon_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
+	items[current_item_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
 	update_weapon_index()
 	
 	# Change Weapons
 	if is_instance_valid(current_item):
-		unequipped_weapon = false
+		unequipped_item = false
 		current_item.unequip()
 	
 	set_process(true)
@@ -107,29 +107,29 @@ func change_item(new_weapon_slot):
 
 # Scroll weapon change
 func update_weapon_index():
-	match current_weapon_slot:
+	match current_item_slot:
 		"Empty":
-			weapon_index = 0
+			item_index = 0
 		"Primary":
-			weapon_index = 1
+			item_index = 1
 		"Secondary":
-			weapon_index = 2
+			item_index = 2
 
 func next_item():
-	weapon_index += 1
+	item_index += 1
 	
-	if weapon_index >= items.size():
-		weapon_index = 0
+	if item_index >= items.size():
+		item_index = 0
 	
-	change_item(items.keys()[weapon_index])
+	change_item(items.keys()[item_index])
 
 func previous_item():
-	weapon_index -= 1
+	item_index -= 1
 	
-	if weapon_index < 0:
-		weapon_index = items.size() - 1
+	if item_index < 0:
+		item_index = items.size() - 1
 	
-	change_item(items.keys()[weapon_index])
+	change_item(items.keys()[item_index])
 
 # Ammo Pickup
 func add_ammo(amount):
@@ -187,7 +187,7 @@ func add_weapon(weapon_data):
 
 # Will be called from player.gd
 func drop_item():
-	if current_weapon_slot != "Empty":
+	if current_item_slot != "Empty":
 		current_item.drop_weapon()
 		
 		# Need to be set to Unarmed in order call change_weapon() function
@@ -269,7 +269,7 @@ func process_item_pickup():
 func update_hud(weapon_data):
 	var weapon_slot = "1"
 	
-	match current_weapon_slot:
+	match current_item_slot:
 		"Empty":
 			weapon_slot = "1"
 		"Primary":
