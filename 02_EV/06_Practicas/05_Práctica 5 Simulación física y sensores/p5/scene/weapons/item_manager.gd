@@ -45,7 +45,7 @@ func _ready():
 	
 	# Set current weapon to unarmed
 	current_weapon = weapons["Empty"]
-	change_weapon("Empty")
+	change_item("Empty")
 	
 	# Disable process
 	set_process(false)
@@ -79,7 +79,7 @@ func _process(delta):
 
 
 
-func change_weapon(new_weapon_slot):
+func change_item(new_weapon_slot):
 	
 	if new_weapon_slot == current_weapon_slot:
 		current_weapon.update_ammo() # Refresh
@@ -114,38 +114,21 @@ func update_weapon_index():
 		"Secondary":
 			weapon_index = 2
 
-func next_weapon():
+func next_item():
 	weapon_index += 1
 	
 	if weapon_index >= weapons.size():
 		weapon_index = 0
 	
-	change_weapon(weapons.keys()[weapon_index])
+	change_item(weapons.keys()[weapon_index])
 
-func previous_weapon():
+func previous_item():
 	weapon_index -= 1
 	
 	if weapon_index < 0:
 		weapon_index = weapons.size() - 1
 	
-	change_weapon(weapons.keys()[weapon_index])
-
-
-
-
-
-# Firing and Reloading
-func fire():
-	if not changing_weapon:
-		current_weapon.fire()
-
-func fire_stop():
-	current_weapon.fire_stop()
-
-func reload():
-	if not changing_weapon:
-		current_weapon.reload()
-
+	change_item(weapons.keys()[weapon_index])
 
 # Ammo Pickup
 func add_ammo(amount):
@@ -177,7 +160,7 @@ func add_weapon(weapon_data):
 		
 		# Update the dictionary and change weapon
 		weapons["Primary"] = weapon
-		change_weapon("Primary")
+		change_item("Primary")
 		
 		return
 	
@@ -195,14 +178,14 @@ func add_weapon(weapon_data):
 		
 		# Update the dictionary and change weapon
 		weapons["Secondary"] = weapon
-		change_weapon("Secondary")
+		change_item("Secondary")
 		
 		return
 
 
 
 # Will be called from player.gd
-func drop_weapon():
+func drop_item():
 	if current_weapon_slot != "Empty":
 		current_weapon.drop_weapon()
 		
@@ -243,7 +226,7 @@ func switch_weapon(weapon_data):
 	# If we already have an equipped weapon, then we drop it
 	# And equip the new weapon
 	else:
-		drop_weapon()
+		drop_item()
 		
 		yield(get_tree(), "idle_frame")
 		add_weapon(weapon_data)
@@ -259,7 +242,7 @@ func hide_interaction_prompt():
 
 
 # Searches for weapon pickups, and based on player input executes further tasks (will be called from player.gd)
-func process_weapon_pickup():
+func process_item_pickup():
 	var from = global_transform.origin
 	var to = global_transform.origin - global_transform.basis.z.normalized() * 2.0
 	var space_state = get_world().direct_space_state

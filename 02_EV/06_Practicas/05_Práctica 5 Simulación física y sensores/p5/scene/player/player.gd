@@ -2,49 +2,50 @@ extends KinematicBody
 
 const MOUSE_SENSITIVITY = 0.1
 
-# Configuramos las camaras
-onready var camera = $CamRoot/Camera
-onready var weapon_manager = $CamRoot/Weapons
+# Variables fisicas
+const GRAVITY = -40.0
+const JUMP_SPEED = 15
+var jump_counter = 0 # Utilizamos esta variable para evitar que el jugador salte indefinidamente
+const SPEED = 10
+const SPRINT_SPEED = 20
+# Utilizamos las siguientes dos variables para suavizar el movimiento
+const AIR_ACCEL = 9.0
+const ACCEL = 15.0
 
-# Movement
+# Incicializamos los vectores
 var velocity = Vector3.ZERO
 var current_vel = Vector3.ZERO
 var dir = Vector3.ZERO
 
-const SPEED = 10
-const SPRINT_SPEED = 20
-const ACCEL = 15.0
+# Configuramos las camaras
+onready var camera = $CamRoot/Camera
+onready var item_manager = $CamRoot/Items
 
-# Jump
-const GRAVITY = -40.0
-const JUMP_SPEED = 15
-var jump_counter = 0
-const AIR_ACCEL = 9.0
-
-
-
+# Ocultamos inicialmente el cursor
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-
-
 func _process(delta):
+	# Si el usuario lo desea puede activar el cursor pulsando en la tecla ESC
 	window_activity()
 
-
+func window_activity():
+	if Input.is_action_just_pressed("ui_cancel"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
-	
+	# Capturamos las ordenes de desplazamiento con las teclas y permitimos movimiento
 	process_movement_inputs()
-	process_weapons()
-	process_jump(delta)
 	process_movement(delta)
-
-
-
+	# Capturamos la orden de salto
+	process_jump(delta)
+	# Modificar inventario
+	process_items()
 
 func process_movement_inputs():
-	# Get the input directions
 	dir = Vector3.ZERO
 	
 	if Input.is_action_pressed("forward"):
@@ -56,27 +57,15 @@ func process_movement_inputs():
 	if Input.is_action_pressed("left"):
 		dir -= camera.global_transform.basis.x
 	
-	# Normalizing the input directions
+	# Normalizamos
 	dir = dir.normalized()
-
-func process_jump(delta):
-	# Apply gravity
-	velocity.y += GRAVITY * delta
 	
-	if is_on_floor():
-		jump_counter = 0
-	
-	# Jump
-	if Input.is_action_just_pressed("jump") and jump_counter < 2:
-		jump_counter += 1
-		velocity.y = JUMP_SPEED
-
 func process_movement(delta):
-	# Set speed and target velocity
+	# Configuramos la velocidad y permitimos correr
 	var speed = SPRINT_SPEED if Input.is_action_pressed("sprint") else SPEED
 	var target_vel = dir * speed
 	
-	# Smooth out the player's movement
+	# Suavizamos el movimiento
 	var accel = ACCEL if is_on_floor() else AIR_ACCEL
 	current_vel = current_vel.linear_interpolate(target_vel, accel * delta)
 	
@@ -85,33 +74,33 @@ func process_movement(delta):
 	
 	velocity = move_and_slide(velocity, Vector3.UP, true, 4, deg2rad(45))
 
+func process_jump(delta):
+	# Applimos la gravedad
+	velocity.y += GRAVITY * delta
+	
+	if is_on_floor():
+		jump_counter = 0
+	
+	# Permitimos saltar si no ha saltado antes
+	if Input.is_action_just_pressed("jump") and jump_counter < 2:
+		jump_counter += 1
+		velocity.y = JUMP_SPEED
 
 
-
-func process_weapons():
+func process_items():
 	if Input.is_action_just_pressed("empty"):
-		weapon_manager.change_weapon("Empty")
+		item_manager.change_item("Empty")
 	if Input.is_action_just_pressed("primary"):
-		weapon_manager.change_weapon("Primary")
+		item_manager.change_item("Primary")
 	if Input.is_action_just_pressed("secondary"):
-		weapon_manager.change_weapon("Secondary")
+		item_manager.change_item("Secondary")
 	
-	# Firing
-	if Input.is_action_pressed("fire"):
-		weapon_manager.fire()
-	if Input.is_action_just_released("fire"):
-		weapon_manager.fire_stop()
-	
-	# Reloading
-	if Input.is_action_just_pressed("reload"):
-		weapon_manager.reload()
-	
-	# Drop Weapon
+	# Tirar Item
 	if Input.is_action_just_pressed("drop"):
-		weapon_manager.drop_weapon()
+		item_manager.drop_item()
 	
-	# Weapon Pickup
-	weapon_manager.process_weapon_pickup()
+	# Coger item
+	item_manager.process_item_pickup()
 
 
 
@@ -128,20 +117,9 @@ func _input(event):
 		if event.pressed:
 			match event.button_index:
 				BUTTON_WHEEL_UP:
-					weapon_manager.next_weapon()
+					item_manager.next_item()
 				BUTTON_WHEEL_DOWN:
-					weapon_manager.previous_weapon()
-
-
-
-# To show/hide the cursor
-func window_activity():
-	if Input.is_action_just_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+					item_manager.previous_item()
 
 func _on_Spatial_camara_2():
 	$CamRoot/Camera.current=true
