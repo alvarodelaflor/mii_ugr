@@ -23,7 +23,7 @@ func update_weapon_ui(weapon_data, weapon_slot):
 	display_ui.texture = weapon_data["Image"]
 	
 	if weapon_data["Name"] == "Unarmed":
-		weapon_ui.text = weapon_data["Name"]
+		weapon_ui.text = ""
 		return
 	
 	weapon_ui.text = weapon_data["Name"] + ": " + weapon_data["Ammo"] + "/" + weapon_data["ExtraAmmo"]

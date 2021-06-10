@@ -8,11 +8,6 @@
 [ext_resource path="res://scene/items/something/agua/agua_a/botella.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scene/elementos/arms_textured.tscn" type="PackedScene" id=9]
 
-
-
-
-
-
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
 mid_height = 0.8
