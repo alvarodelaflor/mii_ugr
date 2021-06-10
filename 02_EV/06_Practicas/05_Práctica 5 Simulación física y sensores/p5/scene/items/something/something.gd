@@ -7,11 +7,11 @@ export(PackedScene) var item_pickup
 # References
 var animation_player
 
-# Weapon States
+# Item States
 var is_firing = false
 var is_reloading = false
 
-# Weapon Parameters
+# Item Parameters
 export var ammo_in_mag = 15
 export var extra_ammo = 30
 onready var mag_size = ammo_in_mag
@@ -19,7 +19,7 @@ onready var mag_size = ammo_in_mag
 export var damage = 10
 export var fire_rate = 1.0
 
-# The offset of the weapon from the camera
+# The offset of the item from the camera
 export var equip_pos = Vector3.ZERO
 
 # Effects
@@ -100,7 +100,7 @@ func is_unequip_finished():
 
 
 
-# Show/Hide Weapon
+# Show/Hide Item
 func show_weapon():
 	visible = true
 
@@ -143,17 +143,17 @@ func update_ammo(action = "Refresh", additional_ammo = 0):
 			extra_ammo += additional_ammo
 	
 	
-	var weapon_data = {
+	var item_data = {
 		"Name" : item_name,
 		"Image" : weapon_image,
 		"Ammo" : str(ammo_in_mag),
 		"ExtraAmmo" : str(extra_ammo)
 	}
 	
-	item_manager.update_hud(weapon_data)
+	item_manager.update_hud(item_data)
 
 
-# Drops weapon on the ground, by instancing item_pickup, and removing itself from the tree
+# Drops item on the ground, by instancing item_pickup, and removing itself from the tree
 func drop_item():
 	var pickup = Global.instantiate_node(item_pickup, global_transform.origin - player.global_transform.basis.z.normalized())
 	pickup.ammo_in_mag = ammo_in_mag

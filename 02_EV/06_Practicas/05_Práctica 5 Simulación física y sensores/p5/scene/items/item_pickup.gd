@@ -1,7 +1,7 @@
 extends RigidBody
 
 
-# Weapon parameters that will be transferred if this weapon is picked
+# Item parameters that will be transferred if this item is picked
 export var item_name = "Weapon"
 export var ammo_in_mag = 5
 export var extra_ammo = 10

@@ -1,32 +1,32 @@
 extends Control
 
 
-var weapon_ui
+var item_ui
 var health_ui
 var display_ui
 var slot_ui
 
 
 func _enter_tree():
-	weapon_ui = $Background/WeaponUI
+	item_ui = $Background/ItemUI
 	health_ui = $Background/HealthUI
 	display_ui = $Background/Display/TextureRect
-	slot_ui = $Background/Display/WeaponSlot
+	slot_ui = $Background/Display/ItemSlot
 
 
 func _ready():
 	hide_interaction_prompt()
 
 
-func update_item_ui(weapon_data, weapon_slot):
-	slot_ui.text = weapon_slot
-	display_ui.texture = weapon_data["Image"]
+func update_item_ui(item_data, item_slot):
+	slot_ui.text = item_slot
+	display_ui.texture = item_data["Image"]
 	
-	if weapon_data["Name"] == "Unarmed":
-		weapon_ui.text = ""
+	if item_data["Name"] == "Unarmed":
+		item_ui.text = ""
 		return
 	
-	weapon_ui.text = weapon_data["Name"] + ": " + weapon_data["Ammo"] + "/" + weapon_data["ExtraAmmo"]
+	item_ui.text = item_data["Name"] + ": " + item_data["Ammo"] + "/" + item_data["ExtraAmmo"]
 
 
 # Show/Hide interaction prompt
