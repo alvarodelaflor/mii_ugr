@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scene/weapons/armed/rifle/rifle_b/Bottle_v1.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://scene/weapons/armed/rifle/rifle_b/Bottle_v1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scene/weapons/weapon_pickup.gd" type="Script" id=4]
+[ext_resource path="res://scene/items/armed/rifle/rifle_b/Bottle_v1.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://scene/items/armed/rifle/rifle_b/Bottle_v1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/items/weapon_pickup.gd" type="Script" id=4]
 
 [sub_resource type="Skin" id=1]
 resource_name = "Skin"

@@ -2,10 +2,10 @@
 
 [ext_resource path="res://scene/player/player.gd" type="Script" id=1]
 [ext_resource path="res://scene/ui/hud/hud.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/weapons/unarmed/unarmed.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/weapons/item_manager.gd" type="Script" id=6]
-[ext_resource path="res://scene/weapons/armed/pistol/pistol_b/pistol_b.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scene/weapons/armed/rifle/rifle_b/rifle_b.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/items/unarmed/unarmed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/items/item_manager.gd" type="Script" id=6]
+[ext_resource path="res://scene/items/armed/pistol/pistol_b/pistol_b.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/items/armed/rifle/rifle_b/rifle_b.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scene/elementos/arms_textured.tscn" type="PackedScene" id=9]
 
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/models/weapons/pistol_b/Pistol_B.glb" type="PackedScene" id=1]
-[ext_resource path="res://scene/weapons/muzzle_flash.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scene/weapons/armed/pistol/pistol.gd" type="Script" id=3]
+[ext_resource path="res://scene/items/muzzle_flash.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/items/armed/pistol/pistol.gd" type="Script" id=3]
 [ext_resource path="res://assets/models/weapons/ui/Pistol_B_UI.png" type="Texture" id=4]
-[ext_resource path="res://scene/weapons/armed/pistol/pistol_b/pistol_b_pickup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/weapons/armed/pistol/pistol_b/deporte.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/items/armed/pistol/pistol_b/pistol_b_pickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/items/armed/pistol/pistol_b/deporte.tscn" type="PackedScene" id=6]
 
 [node name="Pistol_B" instance=ExtResource( 1 )]
 script = ExtResource( 3 )

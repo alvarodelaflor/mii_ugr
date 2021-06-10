@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "Weapon",
 "class": "Armed",
 "language": "GDScript",
-"path": "res://scene/weapons/armed/armed.gd"
+"path": "res://scene/items/armed/armed.gd"
 }, {
 "base": "Spatial",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://scene/weapons/weapon.gd"
+"path": "res://scene/items/weapon.gd"
 } ]
 _global_script_class_icons={
 "Armed": "",

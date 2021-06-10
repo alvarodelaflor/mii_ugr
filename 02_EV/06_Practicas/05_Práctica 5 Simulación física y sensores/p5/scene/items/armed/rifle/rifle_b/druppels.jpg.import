@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/druppels.jpg-470c67459edf34aad05f0d5d637d88da.s3tc.stex"
-path.etc2="res://.import/druppels.jpg-470c67459edf34aad05f0d5d637d88da.etc2.stex"
+path.s3tc="res://.import/druppels.jpg-c1721f89bef4ee721dde6dc5f192dfbb.s3tc.stex"
+path.etc2="res://.import/druppels.jpg-c1721f89bef4ee721dde6dc5f192dfbb.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scene/weapons/armed/rifle/rifle_b/druppels.jpg"
-dest_files=[ "res://.import/druppels.jpg-470c67459edf34aad05f0d5d637d88da.s3tc.stex", "res://.import/druppels.jpg-470c67459edf34aad05f0d5d637d88da.etc2.stex" ]
+source_file="res://scene/items/armed/rifle/rifle_b/druppels.jpg"
+dest_files=[ "res://.import/druppels.jpg-c1721f89bef4ee721dde6dc5f192dfbb.s3tc.stex", "res://.import/druppels.jpg-c1721f89bef4ee721dde6dc5f192dfbb.etc2.stex" ]
 
 [params]
 
