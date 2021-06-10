@@ -88,19 +88,20 @@ func process_jump(delta):
 
 
 func process_items():
-	if Input.is_action_just_pressed("empty"):
-		item_manager.change_item("Empty")
-	if Input.is_action_just_pressed("primary"):
-		item_manager.change_item("Primary")
-	if Input.is_action_just_pressed("secondary"):
-		item_manager.change_item("Secondary")
-	
-	# Tirar Item
-	if Input.is_action_just_pressed("drop"):
-		item_manager.drop_item()
-	
-	# Coger item
-	item_manager.process_item_pickup()
+	if(camera.current==true):
+		if Input.is_action_just_pressed("empty"):
+			item_manager.change_item("Empty")
+		if Input.is_action_just_pressed("primary"):
+			item_manager.change_item("Primary")
+		if Input.is_action_just_pressed("secondary"):
+			item_manager.change_item("Secondary")
+		
+		# Tirar Item
+		if Input.is_action_just_pressed("drop"):
+			item_manager.drop_item()
+		
+		# Coger item
+		item_manager.process_item_pickup()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -113,12 +114,13 @@ func _input(event):
 			self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
 	
 	if event is InputEventMouseButton:
-		if event.pressed:
-			match event.button_index:
-				BUTTON_WHEEL_UP:
-					item_manager.next_item()
-				BUTTON_WHEEL_DOWN:
-					item_manager.previous_item()
+		if(camera.current==true):
+			if event.pressed:
+				match event.button_index:
+					BUTTON_WHEEL_UP:
+						item_manager.next_item()
+					BUTTON_WHEEL_DOWN:
+						item_manager.previous_item()
 
 func _on_Spatial_camara_2():
 	$CamRoot/Camera.current=true

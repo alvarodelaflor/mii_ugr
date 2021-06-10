@@ -32,7 +32,7 @@ margin_top = 28.2606
 margin_right = 250.37
 margin_bottom = 56.2606
 custom_fonts/font = ExtResource( 1 )
-text = "Health: 100"
+text = "Rendimiento: 65"
 __meta__ = {
 "_edit_use_anchors_": false
 }
