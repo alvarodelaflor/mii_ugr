@@ -11,7 +11,7 @@
 script = ExtResource( 5 )
 item_name = "Zapatilla"
 weapon_image = ExtResource( 6 )
-weapon_pickup = ExtResource( 4 )
+item_pickup = ExtResource( 4 )
 fire_rate = 3.0
 equip_pos = Vector3( 0.01, -0.22, -0.621 )
 impact_effect = ExtResource( 2 )

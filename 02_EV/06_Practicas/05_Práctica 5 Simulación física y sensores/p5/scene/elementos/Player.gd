@@ -1,6 +1,6 @@
 extends KinematicBody
 
-export(PackedScene) var weapon_pickup
+export(PackedScene) var item_pickup
 
 # Variables físicas
 var moveSpeed : float = 6.0

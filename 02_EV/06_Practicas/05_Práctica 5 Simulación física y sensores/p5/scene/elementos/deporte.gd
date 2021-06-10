@@ -4,12 +4,12 @@ export var item_name = "Weapon"
 export var ammo_in_mag = 5
 export var extra_ammo = 10
 onready var mag_size = ammo_in_mag
-export(PackedScene) var weapon_pickup
+export(PackedScene) var item_pickup
 
 func _ready():
 	connect("sleeping_state_changed", self, "on_sleeping")
 	
-func get_weapon_pickup_data():
+func get_item_pickup_data():
 	return {
 		"Name": item_name,
 		"Ammo": ammo_in_mag,

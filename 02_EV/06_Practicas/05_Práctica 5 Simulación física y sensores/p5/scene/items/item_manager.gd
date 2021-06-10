@@ -252,8 +252,8 @@ func process_item_pickup():
 	if collision:
 		var body = collision["collider"]
 		
-		if body.has_method("get_weapon_pickup_data"):
-			var weapon_data = body.get_weapon_pickup_data()
+		if body.has_method("get_item_pickup_data"):
+			var weapon_data = body.get_item_pickup_data()
 			
 			show_interaction_prompt(weapon_data["Name"])
 			

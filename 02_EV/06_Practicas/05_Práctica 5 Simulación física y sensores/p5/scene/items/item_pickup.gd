@@ -13,7 +13,7 @@ func _ready():
 
 
 
-func get_weapon_pickup_data():
+func get_item_pickup_data():
 	return{
 		"Name" : item_name,
 		"Ammo" : ammo_in_mag,

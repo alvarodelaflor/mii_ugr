@@ -11,7 +11,7 @@
 script = ExtResource( 1 )
 item_name = "Botella"
 weapon_image = ExtResource( 2 )
-weapon_pickup = ExtResource( 5 )
+item_pickup = ExtResource( 5 )
 fire_rate = 2.75
 equip_pos = Vector3( 0.02, -0.258, -0.585 )
 impact_effect = ExtResource( 3 )
