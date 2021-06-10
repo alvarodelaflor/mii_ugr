@@ -145,7 +145,7 @@ func update_ammo(action = "Refresh", additional_ammo = 0):
 	
 	var item_data = {
 		"Name" : item_name,
-		"Image" : weapon_image,
+		"Image" : item_image,
 		"Ammo" : str(ammo_in_mag),
 		"ExtraAmmo" : str(extra_ammo)
 	}

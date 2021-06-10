@@ -6,12 +6,12 @@ var item_manager = null
 var player = null
 var ray = null
 
-# Weapon States
+# Item States
 var is_equipped = false
 
-# Weapon Parameters
-export var item_name = "Weapon"
-export(Texture) var weapon_image = null
+# Item Parameters
+export var item_name = "Item"
+export(Texture) var item_image = null
 
 
 # Equip/Unequip Cycle
@@ -32,9 +32,9 @@ func is_unequip_finished():
 # Update Ammo
 func update_ammo(action = "Refresh"):
 	
-	var weapon_data = {
+	var item_data = {
 		"Name" : item_name,
-		"Image" : weapon_image
+		"Image" : item_image
 	}
 	
-	item_manager.update_hud(weapon_data)
+	item_manager.update_hud(item_data)
