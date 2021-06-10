@@ -26,7 +26,7 @@ func _ready():
 	get_parent().get_node("Camera/RayCast").add_exception(owner) # Adds exception of player to the shooting raycast
 	
 	all_items = {
-		"Unarmed" : preload("res://scene/items/unarmed/nothing.tscn"),
+		"Unarmed" : preload("res://scene/items/nothing/nothing.tscn"),
 		"Pistol_B" : preload("res://scene/items/armed/pistol/pistol_b/zapatilla.tscn"),
 		"Rifle_B" : preload("res://scene/items/armed/rifle/rifle_b/botella.tscn")
 	}
