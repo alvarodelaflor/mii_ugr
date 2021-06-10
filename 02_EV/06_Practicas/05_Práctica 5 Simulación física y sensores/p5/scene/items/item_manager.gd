@@ -200,13 +200,13 @@ func drop_item():
 
 
 # Switch item / Replace item
-func switch_item(weapon_data):
+func switch_item(item_data):
 	
 	# Checks whether there's any empty slot available
 	# If there is, then we simply add that new weapon to the empty slot
 	for i in items:
 		if is_instance_valid(items[i]) == false:
-			add_item(weapon_data)
+			add_item(item_data)
 			return
 	
 	
@@ -215,13 +215,13 @@ func switch_item(weapon_data):
 	if current_item.name == "Unarmed":
 		items["Primary"].drop_weapon()
 		yield(get_tree(), "idle_frame")
-		add_item(weapon_data)
+		add_item(item_data)
 	
 	
 	# If the weapon to be picked up and the current weapon are same
 	# Theb the ammo of the new weapon is added to the currently equipped weapon
-	elif current_item.item_name == weapon_data["Name"]:
-		add_ammo(weapon_data["Ammo"] + weapon_data["ExtraAmmo"])
+	elif current_item.item_name == item_data["Name"]:
+		add_ammo(item_data["Ammo"] + item_data["ExtraAmmo"])
 	
 	
 	# If we already have an equipped weapon, then we drop it
@@ -230,7 +230,7 @@ func switch_item(weapon_data):
 		drop_item()
 		
 		yield(get_tree(), "idle_frame")
-		add_item(weapon_data)
+		add_item(item_data)
 
 
 # Interaction Prompt
