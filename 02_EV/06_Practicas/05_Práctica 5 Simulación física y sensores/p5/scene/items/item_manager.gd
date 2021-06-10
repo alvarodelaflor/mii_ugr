@@ -203,29 +203,29 @@ func drop_item():
 func switch_item(item_data):
 	
 	# Checks whether there's any empty slot available
-	# If there is, then we simply add that new weapon to the empty slot
+	# If there is, then we simply add that new item to the empty slot
 	for i in items:
 		if is_instance_valid(items[i]) == false:
 			add_item(item_data)
 			return
 	
 	
-	# If we are unarmed, and pickup a weapon
-	# Then the weapon at the primary slot will be dropped and replaced with the new weapon
+	# If we are unarmed, and pickup a item
+	# Then the item at the primary slot will be dropped and replaced with the new item
 	if current_item.name == "Unarmed":
 		items["Primary"].drop_weapon()
 		yield(get_tree(), "idle_frame")
 		add_item(item_data)
 	
 	
-	# If the weapon to be picked up and the current weapon are same
-	# Theb the ammo of the new weapon is added to the currently equipped weapon
+	# If the item to be picked up and the current item are same
+	# Theb the ammo of the new item is added to the currently equipped item
 	elif current_item.item_name == item_data["Name"]:
 		add_ammo(item_data["Ammo"] + item_data["ExtraAmmo"])
 	
 	
-	# If we already have an equipped weapon, then we drop it
-	# And equip the new weapon
+	# If we already have an equipped item, then we drop it
+	# And equip the new item
 	else:
 		drop_item()
 		
@@ -242,7 +242,7 @@ func hide_interaction_prompt():
 	hud.hide_interaction_prompt()
 
 
-# Searches for weapon pickups, and based on player input executes further tasks (will be called from player.gd)
+# Searches for item pickups, and based on player input executes further tasks (will be called from player.gd)
 func process_item_pickup():
 	var from = global_transform.origin
 	var to = global_transform.origin - global_transform.basis.z.normalized() * 2.0
@@ -253,12 +253,12 @@ func process_item_pickup():
 		var body = collision["collider"]
 		
 		if body.has_method("get_item_pickup_data"):
-			var weapon_data = body.get_item_pickup_data()
+			var item_data = body.get_item_pickup_data()
 			
-			show_interaction_prompt(weapon_data["Name"])
+			show_interaction_prompt(item_data["Name"])
 			
 			if Input.is_action_just_pressed("interact"):
-				switch_item(weapon_data)
+				switch_item(item_data)
 				body.queue_free()
 		else:
 			hide_interaction_prompt()
@@ -266,17 +266,17 @@ func process_item_pickup():
 
 
 # Update HUD
-func update_hud(weapon_data):
-	var weapon_slot = "1"
+func update_hud(item_data):
+	var item_slot = "1"
 	
 	match current_item_slot:
 		"Empty":
-			weapon_slot = "1"
+			item_slot = "1"
 		"Primary":
-			weapon_slot = "2"
+			item_slot = "2"
 		"Secondary":
-			weapon_slot = "3"
+			item_slot = "3"
 	
-	hud.update_weapon_ui(weapon_data, weapon_slot)
+	hud.update_weapon_ui(item_data, item_slot)
 
 
