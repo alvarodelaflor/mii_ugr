@@ -11,13 +11,13 @@ var items = {}
 var hud
 
 # Item actual
-var current_item # Reference to the current weapon equipped
-var current_item_slot = "Empty" # The current weapon slot
+var current_item # Reference to the current item equipped
+var current_item_slot = "Empty" # The current item slot
 
 var changing_item = false
 var unequipped_item = false
 
-var item_index = 0 # For switching weapons through mouse wheel
+var item_index = 0 # For switching items through mouse wheel
 
 
 func _ready():
@@ -37,10 +37,10 @@ func _ready():
 		"Secondary" : $Empty
 	}
 	
-	# Initialize references for each weapons
+	# Initialize references for each items
 	for w in items:
 		if is_instance_valid(items[w]):
-			weapon_setup(items[w])
+			item_setup(items[w])
 	
 	# Set current weapon to unarmed
 	current_item = items["Empty"]
@@ -51,7 +51,7 @@ func _ready():
 
 
 # Initializes Weapon's values
-func weapon_setup(w):
+func item_setup(w):
 	w.weapon_manager = self
 	w.player = owner
 	w.ray = get_parent().get_node("Camera/RayCast")
@@ -139,44 +139,44 @@ func add_ammo(amount):
 
 
 
-# Add weapon to an existing empty slot
-func add_weapon(weapon_data):
+# Add item to an existing empty slot
+func add_item(weapon_data):
 	
 	if not weapon_data["Name"] in all_items:
 		return
 	
 	if is_instance_valid(items["Primary"]) == false:
 		
-		# Instance the new weapon
-		var weapon = Global.instantiate_node(all_items[weapon_data["Name"]], Vector3.ZERO, self)
+		# Instance the new item
+		var item = Global.instantiate_node(all_items[weapon_data["Name"]], Vector3.ZERO, self)
 		
-		# Initialize the new weapon references
-		weapon_setup(weapon)
-		weapon.ammo_in_mag = weapon_data["Ammo"]
-		weapon.extra_ammo = weapon_data["ExtraAmmo"]
-		weapon.mag_size = weapon_data["MagSize"]
-		weapon.transform.origin = weapon.equip_pos
+		# Initialize the new item references
+		item_setup(item)
+		item.ammo_in_mag = weapon_data["Ammo"]
+		item.extra_ammo = weapon_data["ExtraAmmo"]
+		item.mag_size = weapon_data["MagSize"]
+		item.transform.origin = item.equip_pos
 		
-		# Update the dictionary and change weapon
-		items["Primary"] = weapon
+		# Update the dictionary and change item
+		items["Primary"] = item
 		change_item("Primary")
 		
 		return
 	
 	if is_instance_valid(items["Secondary"]) == false:
 		
-		# Instance the new weapon
-		var weapon = Global.instantiate_node(all_items[weapon_data["Name"]], Vector3.ZERO, self)
+		# Instance the new item
+		var item = Global.instantiate_node(all_items[weapon_data["Name"]], Vector3.ZERO, self)
 		
-		# Initialize the new weapon references
-		weapon_setup(weapon)
-		weapon.ammo_in_mag = weapon_data["Ammo"]
-		weapon.extra_ammo = weapon_data["ExtraAmmo"]
-		weapon.mag_size = weapon_data["MagSize"]
-		weapon.transform.origin = weapon.equip_pos
+		# Initialize the new item references
+		item_setup(item)
+		item.ammo_in_mag = weapon_data["Ammo"]
+		item.extra_ammo = weapon_data["ExtraAmmo"]
+		item.mag_size = weapon_data["MagSize"]
+		item.transform.origin = item.equip_pos
 		
-		# Update the dictionary and change weapon
-		items["Secondary"] = weapon
+		# Update the dictionary and change item
+		items["Secondary"] = item
 		change_item("Secondary")
 		
 		return
@@ -206,7 +206,7 @@ func switch_weapon(weapon_data):
 	# If there is, then we simply add that new weapon to the empty slot
 	for i in items:
 		if is_instance_valid(items[i]) == false:
-			add_weapon(weapon_data)
+			add_item(weapon_data)
 			return
 	
 	
@@ -215,7 +215,7 @@ func switch_weapon(weapon_data):
 	if current_item.name == "Unarmed":
 		items["Primary"].drop_weapon()
 		yield(get_tree(), "idle_frame")
-		add_weapon(weapon_data)
+		add_item(weapon_data)
 	
 	
 	# If the weapon to be picked up and the current weapon are same
@@ -230,7 +230,7 @@ func switch_weapon(weapon_data):
 		drop_item()
 		
 		yield(get_tree(), "idle_frame")
-		add_weapon(weapon_data)
+		add_item(weapon_data)
 
 
 # Interaction Prompt
