@@ -1,8 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scene/player/player.gd" type="Script" id=1]
-[ext_resource path="res://scene/weapons/armed/pistol/pistol_a/pistol_a.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scene/weapons/armed/rifle/rifle_a/rifle_a.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/ui/hud/hud.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/weapons/unarmed/unarmed.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/weapons/item_manager.gd" type="Script" id=6]
@@ -48,23 +46,13 @@ script = ExtResource( 6 )
 
 [node name="Unarmed" parent="CamRoot/Items" instance=ExtResource( 5 )]
 
-[node name="Pistol_A" parent="CamRoot/Items" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.209, -0.134, -0.448 )
-visible = false
-muzzle_flash_path = NodePath("../../Items/Pistol_A/Root/Anchor/MuzzleFlash")
-
-[node name="Rifle_A" parent="CamRoot/Items" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182, -0.099, -0.327 )
-visible = false
-muzzle_flash_path = NodePath("../../Items/Rifle_A/Root/Anchor/MuzzleFlash")
-
 [node name="Pistol_B" parent="CamRoot/Items" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22, -0.621 )
 visible = false
 muzzle_flash_path = NodePath("../../Items/Pistol_B/Root/MuzzleFlash")
 
 [node name="Rifle_B" parent="CamRoot/Items" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.368, -0.208, -0.585 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.258, -0.385 )
 visible = false
 muzzle_flash_path = NodePath("../../Items/Rifle_B/Root/MuzzleFlash")
 
