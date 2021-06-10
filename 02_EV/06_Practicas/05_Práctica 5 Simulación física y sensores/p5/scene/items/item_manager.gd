@@ -42,7 +42,7 @@ func _ready():
 		if is_instance_valid(items[w]):
 			item_setup(items[w])
 	
-	# Set current weapon to unarmed
+	# Set current item to unarmed
 	current_item = items["Empty"]
 	change_item("Empty")
 	
@@ -50,12 +50,12 @@ func _ready():
 	set_process(false)
 
 
-# Initializes Weapon's values
-func item_setup(w):
-	w.weapon_manager = self
-	w.player = owner
-	w.ray = get_parent().get_node("Camera/RayCast")
-	w.visible = false
+# Initializes item's values
+func item_setup(i):
+	i.weapon_manager = self
+	i.player = owner
+	i.ray = get_parent().get_node("Camera/RayCast")
+	i.visible = false
 
 
 # Process will be called when changing weapons
