@@ -2,13 +2,14 @@
 
 [ext_resource path="res://auxiliar/elements/vestuario/trasera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://auxiliar/elements/vestuario/lateral.tscn" type="PackedScene" id=2]
-[ext_resource path="res://silla_blender_final_texture.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/elementos/silla_blender_final_texture.tscn" type="PackedScene" id=3]
 [ext_resource path="res://auxiliar/elements/vestuario/duchas.tscn" type="PackedScene" id=4]
 [ext_resource path="res://texturas/suelo/Tiles078_2K_Color.jpg" type="Texture" id=5]
 [ext_resource path="res://texturas/suelo/Tiles078_2K_Normal.jpg" type="Texture" id=6]
 [ext_resource path="res://texturas/suelo/Tiles078_2K_Displacement.jpg" type="Texture" id=7]
 [ext_resource path="res://texturas/suelo/Tiles078_2K_Roughness.jpg" type="Texture" id=8]
 [ext_resource path="res://auxiliar/elements/lamp.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 5 )

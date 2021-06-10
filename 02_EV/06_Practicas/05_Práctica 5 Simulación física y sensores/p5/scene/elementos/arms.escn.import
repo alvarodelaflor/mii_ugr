@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/arms.escn-1eb2f07c2859d5fa7a557a80ccd33dc6.scn"
+path="res://.import/arms.escn-545241906c6125cbd8864f1ea8ba0da1.scn"
 
 [deps]
 
-source_file="res://arms.escn"
-dest_files=[ "res://.import/arms.escn-1eb2f07c2859d5fa7a557a80ccd33dc6.scn" ]
+source_file="res://scene/elementos/arms.escn"
+dest_files=[ "res://.import/arms.escn-545241906c6125cbd8864f1ea8ba0da1.scn" ]
 
 [params]
 

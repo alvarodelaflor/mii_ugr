@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/cinta_correr_texture.escn-9dc6e43c72e7da5b2c6bd0a76e77fefc.scn"
+path="res://.import/cinta_correr_texture.escn-81f2393572529d0fdf98d1a946ccbdc2.scn"
 
 [deps]
 
-source_file="res://cinta_correr_texture.escn"
-dest_files=[ "res://.import/cinta_correr_texture.escn-9dc6e43c72e7da5b2c6bd0a76e77fefc.scn" ]
+source_file="res://scene/elementos/cinta_correr_texture.escn"
+dest_files=[ "res://.import/cinta_correr_texture.escn-81f2393572529d0fdf98d1a946ccbdc2.scn" ]
 
 [params]
 

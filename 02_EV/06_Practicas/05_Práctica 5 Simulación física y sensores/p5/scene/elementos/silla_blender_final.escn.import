@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/arms_textured.escn-c371b3f70a893927614a1d61e7228930.scn"
+path="res://.import/silla_blender_final.escn-2d5782d6e895f4436ce3e2769a7b6c98.scn"
 
 [deps]
 
-source_file="res://arms_textured.escn"
-dest_files=[ "res://.import/arms_textured.escn-c371b3f70a893927614a1d61e7228930.scn" ]
+source_file="res://scene/elementos/silla_blender_final.escn"
+dest_files=[ "res://.import/silla_blender_final.escn-2d5782d6e895f4436ce3e2769a7b6c98.scn" ]
 
 [params]
 
