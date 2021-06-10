@@ -18,7 +18,7 @@ func _ready():
 	hide_interaction_prompt()
 
 
-func update_weapon_ui(weapon_data, weapon_slot):
+func update_item_ui(weapon_data, weapon_slot):
 	slot_ui.text = weapon_slot
 	display_ui.texture = weapon_data["Image"]
 	

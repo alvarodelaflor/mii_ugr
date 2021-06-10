@@ -277,6 +277,6 @@ func update_hud(item_data):
 		"Secondary":
 			item_slot = "3"
 	
-	hud.update_weapon_ui(item_data, item_slot)
+	hud.update_item_ui(item_data, item_slot)
 
 
