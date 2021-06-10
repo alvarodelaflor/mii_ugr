@@ -58,7 +58,7 @@ func item_setup(i):
 	i.visible = false
 
 
-# Process will be called when changing weapons
+# Process will be called when changing items
 func _process(delta):
 	
 	if unequipped_item == false:
@@ -90,10 +90,10 @@ func change_item(new_weapon_slot):
 	current_item_slot = new_weapon_slot
 	changing_item = true
 	
-	items[current_item_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
+	items[current_item_slot].update_ammo() # Updates the item data on UI, as soon as we change a item
 	update_weapon_index()
 	
-	# Change Weapons
+	# Change items
 	if is_instance_valid(current_item):
 		unequipped_item = false
 		current_item.unequip()
@@ -103,7 +103,7 @@ func change_item(new_weapon_slot):
 
 
 
-# Scroll weapon change
+# Scroll item change
 func update_weapon_index():
 	match current_item_slot:
 		"Empty":
@@ -188,7 +188,7 @@ func drop_item():
 	if current_item_slot != "Empty":
 		current_item.drop_weapon()
 		
-		# Need to be set to Unarmed in order call change_weapon() function
+		# Need to be set to Unarmed in order call change_item() function
 		current_item = "Empty"
 		current_item = items["Empty"]
 		
@@ -199,8 +199,8 @@ func drop_item():
 
 
 
-# Switch Weapon / Replace Weapon
-func switch_weapon(weapon_data):
+# Switch item / Replace item
+func switch_item(weapon_data):
 	
 	# Checks whether there's any empty slot available
 	# If there is, then we simply add that new weapon to the empty slot
@@ -258,7 +258,7 @@ func process_item_pickup():
 			show_interaction_prompt(weapon_data["Name"])
 			
 			if Input.is_action_just_pressed("interact"):
-				switch_weapon(weapon_data)
+				switch_item(weapon_data)
 				body.queue_free()
 		else:
 			hide_interaction_prompt()
