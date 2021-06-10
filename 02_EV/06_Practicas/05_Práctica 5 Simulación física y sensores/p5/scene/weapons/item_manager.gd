@@ -27,9 +27,7 @@ func _ready():
 	
 	all_items = {
 		"Unarmed" : preload("res://scene/weapons/unarmed/unarmed.tscn"),
-		"Pistol_A" : preload("res://scene/weapons/armed/pistol/pistol_a/pistol_a.tscn"),
 		"Pistol_B" : preload("res://scene/weapons/armed/pistol/pistol_b/pistol_b.tscn"),
-		"Rifle_A" : preload("res://scene/weapons/armed/rifle/rifle_a/rifle_a.tscn"),
 		"Rifle_B" : preload("res://scene/weapons/armed/rifle/rifle_b/rifle_b.tscn")
 	}
 	
