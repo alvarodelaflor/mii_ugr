@@ -1,4 +1,4 @@
-extends Weapon
+extends Item
 
 
 func fire():

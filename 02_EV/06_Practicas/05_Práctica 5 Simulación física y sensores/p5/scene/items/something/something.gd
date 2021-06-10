@@ -1,4 +1,4 @@
-extends Weapon
+extends Item
 class_name Armed
 
 # Rigidbody Version

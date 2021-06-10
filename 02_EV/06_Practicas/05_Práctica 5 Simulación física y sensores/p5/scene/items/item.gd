@@ -1,5 +1,5 @@
 extends Spatial
-class_name Weapon
+class_name Item
 
 # References
 var item_manager = null
