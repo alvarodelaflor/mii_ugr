@@ -4,7 +4,6 @@
 [ext_resource path="res://scene/items/something/agua/agua_a/Bottle_v1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/items/item_pickup.gd" type="Script" id=4]
 
-
 [sub_resource type="Skin" id=1]
 resource_name = "Skin"
 bind_count = 2
@@ -18,7 +17,7 @@ bind/1/pose = Transform( 1.8618e-07, 0.999955, 0.00949605, 1.61604e-06, 0.009496
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.0460358, 0.119809, 0.0490243 )
 
-[node name="Rifle_B_Pickup" type="RigidBody"]
+[node name="Botella_Pickup" type="RigidBody"]
 script = ExtResource( 4 )
 weapon_name = "Rifle_B"
 

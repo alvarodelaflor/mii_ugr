@@ -18,11 +18,11 @@ transform = Transform( 50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, -0.199, 0 )
 
 [node name="Pickups" type="Spatial" parent="."]
 
-[node name="Weapons" type="Spatial" parent="Pickups"]
+[node name="Items" type="Spatial" parent="Pickups"]
 
-[node name="Pistol_B_Pickup" parent="Pickups/Weapons" instance=ExtResource( 6 )]
+[node name="Zapatilla_Pickup" parent="Pickups/Items" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456546, 0.334204, -10.9543 )
 
-[node name="Rifle_B_Pickup" parent="Pickups/Weapons" instance=ExtResource( 8 )]
+[node name="Botella_Pickup" parent="Pickups/Items" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449634, 0.427205, -11.857 )
 [connection signal="camara_2" from="Spatial" to="Player" method="_on_Spatial_camara_2"]

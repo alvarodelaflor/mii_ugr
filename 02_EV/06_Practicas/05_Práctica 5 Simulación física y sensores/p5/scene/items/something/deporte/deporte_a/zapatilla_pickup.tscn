@@ -3,11 +3,10 @@
 [ext_resource path="res://scene/items/item_pickup.gd" type="Script" id=1]
 [ext_resource path="res://scene/items/something/deporte/deporte_a/deporte.tscn" type="PackedScene" id=2]
 
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.0688017, 0.060294, 0.166393 )
 
-[node name="Pistol_B_Pickup" type="RigidBody"]
+[node name="Zapatilla_Pickup" type="RigidBody"]
 script = ExtResource( 1 )
 weapon_name = "Pistol_B"
 
