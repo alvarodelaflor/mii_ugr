@@ -12,13 +12,11 @@ script = ExtResource( 1 )
 item_name = "Botella"
 item_image = ExtResource( 2 )
 item_pickup = ExtResource( 5 )
-fire_rate = 2.75
 equip_pos = Vector3( 0.02, -0.258, -0.585 )
 impact_effect = ExtResource( 3 )
 muzzle_flash_path = NodePath("../Botella/Root/MuzzleFlash")
 equip_speed = 3.0
 unequip_speed = 3.0
-reload_speed = 2.0
 
 [node name="Bottle_v1" parent="Root/Body/Skeleton" index="0" instance=ExtResource( 4 )]
 

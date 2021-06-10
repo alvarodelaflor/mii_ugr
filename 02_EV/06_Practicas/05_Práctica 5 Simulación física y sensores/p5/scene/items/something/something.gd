@@ -7,17 +7,10 @@ export(PackedScene) var item_pickup
 # References
 var animation_player
 
-# Item States
-var is_firing = false
-var is_reloading = false
-
 # Item Parameters
 export var ammo_in_mag = 15
 export var extra_ammo = 30
 onready var mag_size = ammo_in_mag
-
-export var damage = 10
-export var fire_rate = 1.0
 
 # The offset of the item from the camera
 export var equip_pos = Vector3.ZERO
@@ -30,12 +23,10 @@ onready var muzzle_flash = get_node(muzzle_flash_path)
 # Optional
 export var equip_speed = 1.0
 export var unequip_speed = 1.0
-export var reload_speed = 1.0
 
 # Equip/Unequip Cycle
 func equip():
 	animation_player.play("Equip", -1.0, equip_speed)
-	is_reloading = false
 
 func unequip():
 	animation_player.play("Unequip", -1.0, unequip_speed)
@@ -52,16 +43,12 @@ func is_unequip_finished():
 	else:
 		return true
 
-
-
 # Show/Hide Item
 func show_item():
 	visible = true
 
 func hide_item():
 	visible = false
-
-
 
 # Animation Finished
 func on_animation_finish(anim_name):
@@ -70,32 +57,9 @@ func on_animation_finish(anim_name):
 			is_equipped = false
 		"Equip":
 			is_equipped = true
-		"Reload":
-			is_reloading = false
-			update_ammo("reload")
-
-
 
 # Update Ammo
 func update_ammo(action = "Refresh", additional_ammo = 0):
-	
-	match action:
-		"consume":
-			ammo_in_mag -= 1
-		
-		"reload":
-			var ammo_needed = mag_size - ammo_in_mag
-			
-			if extra_ammo > ammo_needed:
-				ammo_in_mag = mag_size
-				extra_ammo -= ammo_needed
-			else:
-				ammo_in_mag += extra_ammo
-				extra_ammo = 0
-		
-		"add":
-			extra_ammo += additional_ammo
-	
 	
 	var item_data = {
 		"Name" : item_name,
