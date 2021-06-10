@@ -196,6 +196,8 @@ func drop_item():
 		
 		# Update HUD
 		current_item.update_ammo()
+		
+		change_item("Empty")
 
 
 
