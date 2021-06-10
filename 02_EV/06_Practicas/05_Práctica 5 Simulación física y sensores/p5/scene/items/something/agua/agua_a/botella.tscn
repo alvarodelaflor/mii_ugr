@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/items/something/agua/agua.gd" type="Script" id=1]
-[ext_resource path="res://assets/models/weapons/ui/Rifle_B_UI.png" type="Texture" id=2]
+[ext_resource path="res://assets/models/items/bottle3.jpg" type="Texture" id=2]
 [ext_resource path="res://scene/items/muzzle_flash.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/items/something/agua/agua_a/Bottle_v1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/items/something/agua/agua_a/botella_pickup.tscn" type="PackedScene" id=5]
@@ -9,7 +9,7 @@
 
 [node name="Rifle_B" instance=ExtResource( 6 )]
 script = ExtResource( 1 )
-item_name = "Rifle_B"
+item_name = "Botella"
 weapon_image = ExtResource( 2 )
 weapon_pickup = ExtResource( 5 )
 fire_rate = 2.75
