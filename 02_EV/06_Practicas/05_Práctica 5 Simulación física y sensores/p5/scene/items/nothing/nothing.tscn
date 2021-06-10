@@ -6,4 +6,4 @@
 [node name="Unarmed" type="Spatial"]
 script = ExtResource( 1 )
 item_name = "Unarmed"
-weapon_image = ExtResource( 2 )
+item_image = ExtResource( 2 )

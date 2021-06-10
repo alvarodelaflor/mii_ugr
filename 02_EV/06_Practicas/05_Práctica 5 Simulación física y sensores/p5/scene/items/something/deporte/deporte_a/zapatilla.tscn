@@ -10,7 +10,7 @@
 [node name="Zapatilla" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
 item_name = "Zapatilla"
-weapon_image = ExtResource( 6 )
+item_image = ExtResource( 6 )
 item_pickup = ExtResource( 4 )
 fire_rate = 3.0
 equip_pos = Vector3( 0.01, -0.22, -0.621 )
