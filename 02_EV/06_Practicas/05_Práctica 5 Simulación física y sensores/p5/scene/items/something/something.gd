@@ -101,9 +101,6 @@ func is_unequip_finished():
 
 
 # Show/Hide Item
-func hide_weapon():
-	visible = false
-	
 func show_item():
 	visible = true
 
