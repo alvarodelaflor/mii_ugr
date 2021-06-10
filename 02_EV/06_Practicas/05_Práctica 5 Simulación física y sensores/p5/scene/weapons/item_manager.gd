@@ -235,7 +235,7 @@ func switch_weapon(weapon_data):
 
 # Interaction Prompt
 func show_interaction_prompt(weapon_name):
-	var desc = "Add Ammo" if current_item.weapon_name == weapon_name else "Equip"
+	var desc = "Add Ammo" if current_item.weapon_name == weapon_name else "Coger"
 	hud.show_interaction_prompt(desc)
 
 func hide_interaction_prompt():
