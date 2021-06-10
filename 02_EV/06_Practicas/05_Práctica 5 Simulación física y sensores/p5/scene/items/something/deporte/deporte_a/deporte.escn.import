@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/deporte.escn-f682b62faf75eda5f2c68d41c076168b.scn"
+path="res://.import/deporte.escn-68b27e6a14eb2074c9accb0b01965f96.scn"
 
 [deps]
 
-source_file="res://scene/items/something/deporte/pistol_b/deporte.escn"
-dest_files=[ "res://.import/deporte.escn-f682b62faf75eda5f2c68d41c076168b.scn" ]
+source_file="res://scene/items/something/deporte/deporte_a/deporte.escn"
+dest_files=[ "res://.import/deporte.escn-68b27e6a14eb2074c9accb0b01965f96.scn" ]
 
 [params]
 
