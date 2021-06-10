@@ -5,13 +5,11 @@
 [ext_resource path="res://scene/items/something/deporte/deporte_a/deporte.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/items/something/deporte/deporte_a/zapatilla_pickup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/items/something/deporte/deporte.gd" type="Script" id=5]
-[ext_resource path="res://assets/models/weapons/ui/Pistol_B_UI.png" type="Texture" id=6]
-
-
+[ext_resource path="res://assets/models/items/render 1.png" type="Texture" id=6]
 
 [node name="Pistol_B" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
-item_name = "Pistol_B"
+item_name = "Zapatilla"
 weapon_image = ExtResource( 6 )
 weapon_pickup = ExtResource( 4 )
 fire_rate = 3.0
