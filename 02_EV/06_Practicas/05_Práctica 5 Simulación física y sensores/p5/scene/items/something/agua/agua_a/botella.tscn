@@ -7,7 +7,7 @@
 [ext_resource path="res://scene/items/something/agua/agua_a/botella_pickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/models/weapons/rifle_b/Rifle_B.glb" type="PackedScene" id=6]
 
-[node name="Rifle_B" instance=ExtResource( 6 )]
+[node name="Botella" instance=ExtResource( 6 )]
 script = ExtResource( 1 )
 item_name = "Botella"
 weapon_image = ExtResource( 2 )
@@ -15,7 +15,7 @@ weapon_pickup = ExtResource( 5 )
 fire_rate = 2.75
 equip_pos = Vector3( 0.02, -0.258, -0.585 )
 impact_effect = ExtResource( 3 )
-muzzle_flash_path = NodePath("Root/MuzzleFlash")
+muzzle_flash_path = NodePath("../Botella/Root/MuzzleFlash")
 equip_speed = 3.0
 unequip_speed = 3.0
 reload_speed = 2.0

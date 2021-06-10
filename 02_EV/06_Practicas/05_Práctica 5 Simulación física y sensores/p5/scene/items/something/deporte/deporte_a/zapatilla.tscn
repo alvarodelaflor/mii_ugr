@@ -7,7 +7,7 @@
 [ext_resource path="res://scene/items/something/deporte/deporte.gd" type="Script" id=5]
 [ext_resource path="res://assets/models/items/render 1.png" type="Texture" id=6]
 
-[node name="Pistol_B" instance=ExtResource( 1 )]
+[node name="Zapatilla" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
 item_name = "Zapatilla"
 weapon_image = ExtResource( 6 )
@@ -15,7 +15,7 @@ weapon_pickup = ExtResource( 4 )
 fire_rate = 3.0
 equip_pos = Vector3( 0.01, -0.22, -0.621 )
 impact_effect = ExtResource( 2 )
-muzzle_flash_path = NodePath("Root/MuzzleFlash")
+muzzle_flash_path = NodePath("../Zapatilla/Root/MuzzleFlash")
 equip_speed = 3.0
 unequip_speed = 3.0
 reload_speed = 2.4
