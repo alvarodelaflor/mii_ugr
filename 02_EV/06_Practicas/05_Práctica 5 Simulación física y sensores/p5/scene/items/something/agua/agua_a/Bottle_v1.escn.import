@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Bottle_v1.escn-a3b357c6584a59e1c23e93ec6726b9a1.scn"
+path="res://.import/Bottle_v1.escn-f4a166cfb5705f9c46d344a89a81ff52.scn"
 
 [deps]
 
-source_file="res://scene/items/something/agua/rifle_b/Bottle_v1.escn"
-dest_files=[ "res://.import/Bottle_v1.escn-a3b357c6584a59e1c23e93ec6726b9a1.scn" ]
+source_file="res://scene/items/something/agua/agua_a/Bottle_v1.escn"
+dest_files=[ "res://.import/Bottle_v1.escn-f4a166cfb5705f9c46d344a89a81ff52.scn" ]
 
 [params]
 

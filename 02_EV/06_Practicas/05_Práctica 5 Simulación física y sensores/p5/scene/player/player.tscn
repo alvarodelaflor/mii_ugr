@@ -5,7 +5,7 @@
 [ext_resource path="res://scene/items/nothing/nothing.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/items/item_manager.gd" type="Script" id=6]
 [ext_resource path="res://scene/items/something/deporte/deporte_a/zapatilla.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scene/items/something/agua/rifle_b/botella.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/items/something/agua/agua_a/botella.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scene/elementos/arms_textured.tscn" type="PackedScene" id=9]
 
 

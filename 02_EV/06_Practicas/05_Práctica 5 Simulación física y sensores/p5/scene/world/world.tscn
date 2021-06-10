@@ -4,7 +4,7 @@
 [ext_resource path="res://scene/world/ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/items/something/deporte/deporte_a/zapatilla_pickup.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scene/items/something/agua/rifle_b/botella_pickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/items/something/agua/agua_a/botella_pickup.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Spatial"]
 
