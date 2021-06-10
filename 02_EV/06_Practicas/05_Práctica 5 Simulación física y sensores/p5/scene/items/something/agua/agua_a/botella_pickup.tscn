@@ -19,7 +19,7 @@ extents = Vector3( 0.0460358, 0.119809, 0.0490243 )
 
 [node name="Botella_Pickup" type="RigidBody"]
 script = ExtResource( 4 )
-item_name = "Rifle_B"
+item_name = "Botella"
 
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020773, 0, 0 )

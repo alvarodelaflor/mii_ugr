@@ -8,7 +8,7 @@ extents = Vector3( 0.0688017, 0.060294, 0.166393 )
 
 [node name="Zapatilla_Pickup" type="RigidBody"]
 script = ExtResource( 1 )
-item_name = "Pistol_B"
+item_name = "Zapatilla"
 ammo_in_mag = 8
 
 [node name="deporte" parent="." instance=ExtResource( 2 )]
