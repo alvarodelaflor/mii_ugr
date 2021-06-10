@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scene/items/armed/rifle/agua.gd" type="Script" id=1]
+[ext_resource path="res://scene/items/something/rifle/agua.gd" type="Script" id=1]
 [ext_resource path="res://assets/models/weapons/ui/Rifle_B_UI.png" type="Texture" id=2]
 [ext_resource path="res://scene/items/muzzle_flash.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scene/items/armed/rifle/rifle_b/Bottle_v1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/items/armed/rifle/rifle_b/botella_pickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/items/something/rifle/rifle_b/Bottle_v1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/items/something/rifle/rifle_b/botella_pickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/models/weapons/rifle_b/Rifle_B.glb" type="PackedScene" id=6]
 
 [node name="Rifle_B" instance=ExtResource( 6 )]
