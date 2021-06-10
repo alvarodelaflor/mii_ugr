@@ -35,8 +35,8 @@ func _ready():
 	
 	items = {
 		"Empty" : $Unarmed,
-		"Primary" : $Pistol_B,
-		"Secondary" : $Rifle_B
+		"Primary" : $Empty,
+		"Secondary" : $Empty
 	}
 	
 	# Initialize references for each weapons
