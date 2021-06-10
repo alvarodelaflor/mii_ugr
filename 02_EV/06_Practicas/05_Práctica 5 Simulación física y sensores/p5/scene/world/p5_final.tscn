@@ -129,7 +129,7 @@ __meta__ = {
 [node name="Grid" type="VBoxContainer" parent="Control"]
 margin_right = 191.0
 margin_bottom = 122.0
-rect_scale = Vector2( 0.52, 0.44 )
+rect_scale = Vector2( 1.03253, 0.865748 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -233,7 +233,7 @@ align = 1
 margin_top = 18.0
 margin_right = 60.0
 margin_bottom = 38.0
-text = "E"
+text = "F"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Grid"]
 margin_top = 101.0
@@ -294,16 +294,59 @@ margin_bottom = 38.0
 text = "Derecha"
 align = 1
 
-[node name="Button5" type="Button" parent="Control/Grid"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Grid"]
 margin_top = 143.0
 margin_right = 191.0
-margin_bottom = 163.0
+margin_bottom = 181.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Izquierda" type="VBoxContainer" parent="Control/Grid/HBoxContainer4"]
+margin_left = 59.0
+margin_right = 95.0
+margin_bottom = 38.0
+
+[node name="Button" type="Button" parent="Control/Grid/HBoxContainer4/Izquierda"]
+margin_right = 36.0
+margin_bottom = 20.0
+text = "E"
+
+[node name="Label" type="Label" parent="Control/Grid/HBoxContainer4/Izquierda"]
+margin_top = 24.0
+margin_right = 36.0
+margin_bottom = 38.0
+text = "Coger"
+align = 1
+
+[node name="Derecha" type="VBoxContainer" parent="Control/Grid/HBoxContainer4"]
+margin_left = 99.0
+margin_right = 131.0
+margin_bottom = 38.0
+
+[node name="Button3" type="Button" parent="Control/Grid/HBoxContainer4/Derecha"]
+margin_right = 32.0
+margin_bottom = 20.0
+text = "G"
+
+[node name="Label5" type="Label" parent="Control/Grid/HBoxContainer4/Derecha"]
+margin_top = 24.0
+margin_right = 32.0
+margin_bottom = 38.0
+text = "Tirar "
+align = 1
+
+[node name="Button5" type="Button" parent="Control/Grid"]
+margin_top = 185.0
+margin_right = 191.0
+margin_bottom = 205.0
 text = "SPACE"
 
 [node name="Label4" type="Label" parent="Control/Grid"]
-margin_top = 167.0
+margin_top = 209.0
 margin_right = 191.0
-margin_bottom = 181.0
+margin_bottom = 223.0
 text = "Salto"
 align = 1
 
