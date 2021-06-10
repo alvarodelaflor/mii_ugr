@@ -32,52 +32,6 @@ export var equip_speed = 1.0
 export var unequip_speed = 1.0
 export var reload_speed = 1.0
 
-
-
-# Fire Cycle
-func fire():
-	if not is_reloading:
-		if ammo_in_mag > 0:
-			if not is_firing:
-				is_firing = true
-				animation_player.get_animation("Fire").loop = true
-				animation_player.play("Fire", -1.0, fire_rate)
-			
-			return
-		
-		elif is_firing:
-			fire_stop()
-
-func fire_stop():
-	is_firing = false
-	animation_player.get_animation("Fire").loop = false
-
-
-func fire_bullet():    # Will be called from the animation track
-	muzzle_flash.emitting = true
-	update_ammo("consume")
-	
-	ray.force_raycast_update()
-	
-	if ray.is_colliding():
-		var impact = Global.instantiate_node(impact_effect, ray.get_collision_point())
-		impact.emitting = true
-
-
-
-
-# Reload
-func reload():
-	if ammo_in_mag < mag_size and extra_ammo > 0:
-		is_firing = false
-		
-		animation_player.play("Reload", -1.0, reload_speed)
-		is_reloading = true
-
-
-
-
-
 # Equip/Unequip Cycle
 func equip():
 	animation_player.play("Equip", -1.0, equip_speed)
