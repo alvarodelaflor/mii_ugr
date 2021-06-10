@@ -78,20 +78,20 @@ func _process(delta):
 
 
 
-func change_item(new_weapon_slot):
+func change_item(new_item_slot):
 	
-	if new_weapon_slot == current_item_slot:
+	if new_item_slot == current_item_slot:
 		current_item.update_ammo() # Refresh
 		return
 	
-	if is_instance_valid(items[new_weapon_slot]) == false:
+	if is_instance_valid(items[new_item_slot]) == false:
 		return
 	
-	current_item_slot = new_weapon_slot
+	current_item_slot = new_item_slot
 	changing_item = true
 	
 	items[current_item_slot].update_ammo() # Updates the item data on UI, as soon as we change a item
-	update_weapon_index()
+	update_item_index()
 	
 	# Change items
 	if is_instance_valid(current_item):
@@ -104,7 +104,7 @@ func change_item(new_weapon_slot):
 
 
 # Scroll item change
-func update_weapon_index():
+func update_item_index():
 	match current_item_slot:
 		"Empty":
 			item_index = 0
@@ -140,21 +140,21 @@ func add_ammo(amount):
 
 
 # Add item to an existing empty slot
-func add_item(weapon_data):
+func add_item(item_data):
 	
-	if not weapon_data["Name"] in all_items:
+	if not item_data["Name"] in all_items:
 		return
 	
 	if is_instance_valid(items["Primary"]) == false:
 		
 		# Instance the new item
-		var item = Global.instantiate_node(all_items[weapon_data["Name"]], Vector3.ZERO, self)
+		var item = Global.instantiate_node(all_items[item_data["Name"]], Vector3.ZERO, self)
 		
 		# Initialize the new item references
 		item_setup(item)
-		item.ammo_in_mag = weapon_data["Ammo"]
-		item.extra_ammo = weapon_data["ExtraAmmo"]
-		item.mag_size = weapon_data["MagSize"]
+		item.ammo_in_mag = item_data["Ammo"]
+		item.extra_ammo = item_data["ExtraAmmo"]
+		item.mag_size = item_data["MagSize"]
 		item.transform.origin = item.equip_pos
 		
 		# Update the dictionary and change item
@@ -166,13 +166,13 @@ func add_item(weapon_data):
 	if is_instance_valid(items["Secondary"]) == false:
 		
 		# Instance the new item
-		var item = Global.instantiate_node(all_items[weapon_data["Name"]], Vector3.ZERO, self)
+		var item = Global.instantiate_node(all_items[item_data["Name"]], Vector3.ZERO, self)
 		
 		# Initialize the new item references
 		item_setup(item)
-		item.ammo_in_mag = weapon_data["Ammo"]
-		item.extra_ammo = weapon_data["ExtraAmmo"]
-		item.mag_size = weapon_data["MagSize"]
+		item.ammo_in_mag = item_data["Ammo"]
+		item.extra_ammo = item_data["ExtraAmmo"]
+		item.mag_size = item_data["MagSize"]
 		item.transform.origin = item.equip_pos
 		
 		# Update the dictionary and change item
