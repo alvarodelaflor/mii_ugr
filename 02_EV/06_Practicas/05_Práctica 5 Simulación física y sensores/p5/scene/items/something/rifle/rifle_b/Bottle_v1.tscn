@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://scene/items/something/rifle/rifle_b/Bottle_v1.escn" type="PackedScene" id=1]
-
-[node name="Bottle_v1" instance=ExtResource( 1 )]

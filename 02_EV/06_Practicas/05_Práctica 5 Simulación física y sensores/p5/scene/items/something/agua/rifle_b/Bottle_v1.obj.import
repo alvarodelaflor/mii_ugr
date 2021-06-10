@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Bottle_v1.obj-140211e7b1017548b1372342dc7ccbcd.mesh"
+
+[deps]
+
+files=[ "res://.import/Bottle_v1.obj-140211e7b1017548b1372342dc7ccbcd.mesh" ]
+
+source_file="res://scene/items/something/agua/rifle_b/Bottle_v1.obj"
+dest_files=[ "res://.import/Bottle_v1.obj-140211e7b1017548b1372342dc7ccbcd.mesh", "res://.import/Bottle_v1.obj-140211e7b1017548b1372342dc7ccbcd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

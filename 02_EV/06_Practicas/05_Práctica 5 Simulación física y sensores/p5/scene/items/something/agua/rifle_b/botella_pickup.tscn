@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scene/items/something/rifle/rifle_b/Bottle_v1.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://scene/items/something/rifle/rifle_b/Bottle_v1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/items/something/agua/rifle_b/Bottle_v1.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://scene/items/something/agua/rifle_b/Bottle_v1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/items/item_pickup.gd" type="Script" id=4]
 
 
