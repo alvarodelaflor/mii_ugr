@@ -102,16 +102,15 @@ func process_items():
 	# Coger item
 	item_manager.process_item_pickup()
 
-
-
 func _input(event):
 	if event is InputEventMouseMotion:
-		# Rotates the view vertically
-		$CamRoot.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * -1))
-		$CamRoot.rotation_degrees.x = clamp($CamRoot.rotation_degrees.x, -75, 75)
-		
-		# Rotates the view horizontally
-		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
+		if(camera.current==true):
+			# Rotamos la camara verticalmente con restriccion de grados
+			$CamRoot.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * -1))
+			$CamRoot.rotation_degrees.x = clamp($CamRoot.rotation_degrees.x, -55, 45)
+			
+			# Rotamos la camara horizontalmente
+			self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
 	
 	if event is InputEventMouseButton:
 		if event.pressed:
