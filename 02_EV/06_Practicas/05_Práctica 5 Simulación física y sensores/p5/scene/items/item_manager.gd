@@ -220,7 +220,7 @@ func switch_weapon(weapon_data):
 	
 	# If the weapon to be picked up and the current weapon are same
 	# Theb the ammo of the new weapon is added to the currently equipped weapon
-	elif current_item.weapon_name == weapon_data["Name"]:
+	elif current_item.item_name == weapon_data["Name"]:
 		add_ammo(weapon_data["Ammo"] + weapon_data["ExtraAmmo"])
 	
 	
@@ -234,8 +234,8 @@ func switch_weapon(weapon_data):
 
 
 # Interaction Prompt
-func show_interaction_prompt(weapon_name):
-	var desc = "Add Ammo" if current_item.weapon_name == weapon_name else "Coger"
+func show_interaction_prompt(item_name):
+	var desc = "Add Ammo" if current_item.item_name == item_name else "Coger"
 	hud.show_interaction_prompt(desc)
 
 func hide_interaction_prompt():

@@ -11,7 +11,7 @@
 
 [node name="Pistol_B" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
-weapon_name = "Pistol_B"
+item_name = "Pistol_B"
 weapon_image = ExtResource( 6 )
 weapon_pickup = ExtResource( 4 )
 fire_rate = 3.0

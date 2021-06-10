@@ -26,6 +26,6 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -0.1
 
 [node name="deporte" parent="Camera" instance=ExtResource( 3 )]
 transform = Transform( -0.00226087, 0, -0.0408337, -0.0152384, 0.022605, 0.00190189, 0.0225273, 0.0152909, -0.00281161, -0.0770847, -0.17695, -0.46923 )
-weapon_name = null
+item_name = null
 ammo_in_mag = null
 extra_ammo = null

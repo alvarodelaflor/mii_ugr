@@ -10,7 +10,7 @@ var ray = null
 var is_equipped = false
 
 # Weapon Parameters
-export var weapon_name = "Weapon"
+export var item_name = "Weapon"
 export(Texture) var weapon_image = null
 
 
@@ -33,7 +33,7 @@ func is_unequip_finished():
 func update_ammo(action = "Refresh"):
 	
 	var weapon_data = {
-		"Name" : weapon_name,
+		"Name" : item_name,
 		"Image" : weapon_image
 	}
 	
