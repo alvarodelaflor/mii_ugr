@@ -23,10 +23,10 @@ transform = Transform( 50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, -0.253403, 0 )
 [node name="Weapons" type="Spatial" parent="Pickups"]
 
 [node name="Pistol_A_Pickup" parent="Pickups/Weapons" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139587, -12.0088 )
 
 [node name="Pistol_B_Pickup" parent="Pickups/Weapons" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456546, 0.334204, -10.9543 )
 
 [node name="Rifle_A_Pickup" parent="Pickups/Weapons" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 4 )

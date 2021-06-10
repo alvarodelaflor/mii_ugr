@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/deporte.escn-22f34b7b524820ad8e07d337f4237441.scn"
+path="res://.import/deporte.escn-4d622fbd0c5c76c5fce3501b5070e638.scn"
 
 [deps]
 
-source_file="res://deporte.escn"
-dest_files=[ "res://.import/deporte.escn-22f34b7b524820ad8e07d337f4237441.scn" ]
+source_file="res://scene/weapons/armed/pistol/pistol_a/deporte.escn"
+dest_files=[ "res://.import/deporte.escn-4d622fbd0c5c76c5fce3501b5070e638.scn" ]
 
 [params]
 
