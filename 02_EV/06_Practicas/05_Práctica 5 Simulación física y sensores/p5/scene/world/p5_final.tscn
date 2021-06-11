@@ -15,6 +15,14 @@ script/source = "extends Spatial
 signal camara_1
 signal camara_2
 
+signal allow
+signal disallow
+
+onready var child = get_node(\"Spatial\").get_node(\"running\").get_node(\"Tree\")
+
+export(NodePath) var running
+onready var node_running = get_node(\"Spatial/running/Tree\")
+
 func _ready():
 	pass
 	
@@ -36,6 +44,14 @@ func get_input_keyboard():
 
 func _on_Spatial_camara_1():
 	$CameraGimbal/InnerGimbal/Camera.current=true
+
+
+func _on_Spatial_allow():
+	get_node(\"Spatial\").get_node(\"running\").add_child(child)
+
+
+func _on_Spatial_disallow():
+	get_node(\"Spatial\").get_node(\"running\").remove_child(child)
 "
 
 [sub_resource type="SpatialMaterial" id=2]
@@ -536,4 +552,6 @@ anims/camara = SubResource( 7 )
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 anims/run = SubResource( 8 )
+[connection signal="allow" from="." to="." method="_on_Spatial_allow"]
 [connection signal="camara_1" from="." to="." method="_on_Spatial_camara_1"]
+[connection signal="disallow" from="." to="." method="_on_Spatial_disallow"]
