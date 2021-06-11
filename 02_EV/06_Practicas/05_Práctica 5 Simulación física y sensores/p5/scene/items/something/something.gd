@@ -8,9 +8,9 @@ export(PackedScene) var item_pickup
 var animation_player
 
 # Item Parameters
-export var wear_in_mag = 15
+export var wear_in_item = 15
 export var maximum_wear = 30
-onready var mag_size = wear_in_mag
+onready var mag_size = wear_in_item
 
 # The offset of the item from the camera
 export var equip_pos = Vector3.ZERO
@@ -64,7 +64,7 @@ func update_item(action = "Refresh", additional_wear = 0):
 	var item_data = {
 		"Name" : item_name,
 		"Image" : item_image,
-		"Wear" : str(wear_in_mag),
+		"Wear" : str(wear_in_item),
 		"MaximumWear" : str(maximum_wear)
 	}
 	
@@ -74,15 +74,8 @@ func update_item(action = "Refresh", additional_wear = 0):
 # Drops item on the ground, by instancing item_pickup, and removing itself from the tree
 func drop_item():
 	var pickup = Global.instantiate_node(item_pickup, global_transform.origin - player.global_transform.basis.z.normalized())
-	pickup.wear_in_mag = wear_in_mag
+	pickup.wear_in_item = wear_in_item
 	pickup.maximum_wear = maximum_wear
 	pickup.mag_size = mag_size
 	
 	queue_free()
-
-
-
-
-
-
-

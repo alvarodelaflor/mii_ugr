@@ -3,9 +3,9 @@ extends RigidBody
 
 # Item parameters that will be transferred if this item is picked
 export var item_name = "Item"
-export var wear_in_mag = 5
+export var wear_in_item = 5
 export var maximum_wear = 10
-onready var mag_size = wear_in_mag
+onready var mag_size = wear_in_item
 
 
 func _ready():
@@ -16,7 +16,7 @@ func _ready():
 func get_item_pickup_data():
 	return{
 		"Name" : item_name,
-		"Wear" : wear_in_mag,
+		"Wear" : wear_in_item,
 		"MaximumWear" : maximum_wear,
 		"MagSize" : mag_size
 	}

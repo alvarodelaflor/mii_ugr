@@ -152,7 +152,7 @@ func add_item(item_data):
 		
 		# Initialize the new item references
 		item_setup(item)
-		item.wear_in_mag = item_data["Wear"]
+		item.wear_in_item = item_data["Wear"]
 		item.maximum_wear = item_data["MaximumWear"]
 		item.mag_size = item_data["MagSize"]
 		item.transform.origin = item.equip_pos
@@ -170,7 +170,7 @@ func add_item(item_data):
 		
 		# Initialize the new item references
 		item_setup(item)
-		item.wear_in_mag = item_data["Wear"]
+		item.wear_in_item = item_data["Wear"]
 		item.maximum_wear = item_data["MaximumWear"]
 		item.mag_size = item_data["MagSize"]
 		item.transform.origin = item.equip_pos
