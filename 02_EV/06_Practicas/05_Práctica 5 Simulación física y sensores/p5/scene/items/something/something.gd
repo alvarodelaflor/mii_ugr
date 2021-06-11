@@ -10,7 +10,7 @@ var animation_player
 # Item Parameters
 export var wear_in_item = 15
 export var maximum_wear = 30
-onready var mag_size = wear_in_item
+onready var wear_size = wear_in_item
 
 # The offset of the item from the camera
 export var equip_pos = Vector3.ZERO
@@ -76,6 +76,6 @@ func drop_item():
 	var pickup = Global.instantiate_node(item_pickup, global_transform.origin - player.global_transform.basis.z.normalized())
 	pickup.wear_in_item = wear_in_item
 	pickup.maximum_wear = maximum_wear
-	pickup.mag_size = mag_size
+	pickup.wear_size = wear_size
 	
 	queue_free()

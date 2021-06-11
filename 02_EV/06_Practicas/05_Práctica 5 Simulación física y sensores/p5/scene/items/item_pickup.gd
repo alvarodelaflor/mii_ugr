@@ -5,7 +5,7 @@ extends RigidBody
 export var item_name = "Item"
 export var wear_in_item = 5
 export var maximum_wear = 10
-onready var mag_size = wear_in_item
+onready var wear_size = wear_in_item
 
 
 func _ready():
@@ -18,7 +18,7 @@ func get_item_pickup_data():
 		"Name" : item_name,
 		"Wear" : wear_in_item,
 		"MaximumWear" : maximum_wear,
-		"WearSize" : mag_size
+		"WearSize" : wear_size
 	}
 
 
