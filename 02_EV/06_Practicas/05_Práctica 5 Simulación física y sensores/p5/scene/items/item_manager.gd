@@ -129,8 +129,8 @@ func previous_item():
 	
 	change_item(items.keys()[item_index])
 
-# Ammo Pickup
-func add_ammo(amount):
+# Wear Pickup
+func add_wear(amount):
 	if is_instance_valid(current_item) == false || current_item.name == "Unarmed":
 		return false
 	
@@ -152,8 +152,8 @@ func add_item(item_data):
 		
 		# Initialize the new item references
 		item_setup(item)
-		item.ammo_in_mag = item_data["Ammo"]
-		item.extra_ammo = item_data["ExtraAmmo"]
+		item.wear_in_mag = item_data["Wear"]
+		item.maximum_wear = item_data["MaximumWear"]
 		item.mag_size = item_data["MagSize"]
 		item.transform.origin = item.equip_pos
 		
@@ -170,8 +170,8 @@ func add_item(item_data):
 		
 		# Initialize the new item references
 		item_setup(item)
-		item.ammo_in_mag = item_data["Ammo"]
-		item.extra_ammo = item_data["ExtraAmmo"]
+		item.wear_in_mag = item_data["Wear"]
+		item.maximum_wear = item_data["MaximumWear"]
 		item.mag_size = item_data["MagSize"]
 		item.transform.origin = item.equip_pos
 		
@@ -219,9 +219,9 @@ func switch_item(item_data):
 	
 	
 	# If the item to be picked up and the current item are same
-	# Theb the ammo of the new item is added to the currently equipped item
+	# Theb the wear of the new item is added to the currently equipped item
 	elif current_item.item_name == item_data["Name"]:
-		add_ammo(item_data["Ammo"] + item_data["ExtraAmmo"])
+		add_wear(item_data["Wear"] + item_data["MaximumWear"])
 	
 	
 	# If we already have an equipped item, then we drop it
@@ -235,7 +235,7 @@ func switch_item(item_data):
 
 # Interaction Prompt
 func show_interaction_prompt(item_name):
-	var desc = "Add Ammo" if current_item.item_name == item_name else "Coger"
+	var desc = "Add Wear" if current_item.item_name == item_name else "Coger"
 	hud.show_interaction_prompt(desc)
 
 func hide_interaction_prompt():

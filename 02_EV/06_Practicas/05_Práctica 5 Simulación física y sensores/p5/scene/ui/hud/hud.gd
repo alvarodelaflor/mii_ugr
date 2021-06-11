@@ -26,7 +26,7 @@ func update_item_ui(item_data, item_slot):
 		item_ui.text = ""
 		return
 	
-	item_ui.text = item_data["Name"] + ": " + item_data["Ammo"] + "/" + item_data["ExtraAmmo"]
+	item_ui.text = item_data["Name"] + ": " + item_data["Wear"] + "/" + item_data["MaximumWear"]
 
 
 # Show/Hide interaction prompt
