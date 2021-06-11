@@ -9,19 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Item",
-"class": "Armed",
-"language": "GDScript",
-"path": "res://scene/items/something/something.gd"
-}, {
 "base": "Spatial",
 "class": "Item",
 "language": "GDScript",
 "path": "res://scene/items/item.gd"
+}, {
+"base": "Item",
+"class": "Something",
+"language": "GDScript",
+"path": "res://scene/items/something/something.gd"
 } ]
 _global_script_class_icons={
-"Armed": "",
-"Item": ""
+"Item": "",
+"Something": ""
 }
 
 [application]

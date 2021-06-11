@@ -1,5 +1,5 @@
 extends Item
-class_name Armed
+class_name Something
 
 # Rigidbody Version
 export(PackedScene) var item_pickup

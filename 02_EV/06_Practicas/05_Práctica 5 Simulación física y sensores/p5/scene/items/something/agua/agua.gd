@@ -1,4 +1,4 @@
-extends Armed
+extends Something
 
 
 
