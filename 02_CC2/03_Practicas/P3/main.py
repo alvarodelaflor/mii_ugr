@@ -52,8 +52,11 @@ def count_different_crimes():
     collection = login()
     result = collection.aggregate(
         [{"$group": {"_id": "$crimedescr", "count": {"$sum": 1}}}, {"$sort": {"count": 1}}])
+    i = 0
     for res in result:
         print(res)
+        i += 1
+    print("Total de resultados: " + str(i))
 
 
 def most_crime_time():
@@ -72,6 +75,6 @@ def save():
 
 if __name__ == '__main__':
     #save()
-    #count_different_crimes()
+    count_different_crimes()
     most_crime_time()
 
