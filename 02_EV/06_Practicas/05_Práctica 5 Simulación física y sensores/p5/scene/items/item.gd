@@ -30,7 +30,7 @@ func is_unequip_finished():
 
 
 # Update Ammo
-func update_ammo(action = "Refresh"):
+func update_item(action = "Refresh"):
 	
 	var item_data = {
 		"Name" : item_name,

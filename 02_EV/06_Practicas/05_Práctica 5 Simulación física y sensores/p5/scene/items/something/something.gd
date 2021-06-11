@@ -59,7 +59,7 @@ func on_animation_finish(anim_name):
 			is_equipped = true
 
 # Update Ammo
-func update_ammo(action = "Refresh", additional_ammo = 0):
+func update_item(action = "Refresh", additional_ammo = 0):
 	
 	var item_data = {
 		"Name" : item_name,

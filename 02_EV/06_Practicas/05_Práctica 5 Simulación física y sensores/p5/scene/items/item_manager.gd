@@ -81,7 +81,7 @@ func _process(delta):
 func change_item(new_item_slot):
 	
 	if new_item_slot == current_item_slot:
-		current_item.update_ammo() # Refresh
+		current_item.update_item() # Refresh
 		return
 	
 	if is_instance_valid(items[new_item_slot]) == false:
@@ -90,7 +90,7 @@ func change_item(new_item_slot):
 	current_item_slot = new_item_slot
 	changing_item = true
 	
-	items[current_item_slot].update_ammo() # Updates the item data on UI, as soon as we change a item
+	items[current_item_slot].update_item() # Updates the item data on UI, as soon as we change a item
 	update_item_index()
 	
 	# Change items
@@ -134,7 +134,7 @@ func add_ammo(amount):
 	if is_instance_valid(current_item) == false || current_item.name == "Unarmed":
 		return false
 	
-	current_item.update_ammo("add", amount)
+	current_item.update_item("add", amount)
 	return true
 
 
@@ -193,7 +193,7 @@ func drop_item():
 		current_item = items["Empty"]
 		
 		# Update HUD
-		current_item.update_ammo()
+		current_item.update_item()
 		
 		change_item("Empty")
 
