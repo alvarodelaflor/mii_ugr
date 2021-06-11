@@ -49,11 +49,9 @@ script = ExtResource( 6 )
 [node name="Zapatilla" parent="CamRoot/Items" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22, -0.621 )
 visible = false
-muzzle_flash_path = NodePath("../../Items/Pistol_B/Root/MuzzleFlash")
 
 [node name="Botella" parent="CamRoot/Items" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.258, -0.385 )
 visible = false
-muzzle_flash_path = NodePath("../../Items/Rifle_B/Root/MuzzleFlash")
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
