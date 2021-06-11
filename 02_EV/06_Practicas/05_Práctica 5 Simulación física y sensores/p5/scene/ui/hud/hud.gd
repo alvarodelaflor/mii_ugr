@@ -22,7 +22,7 @@ func update_item_ui(item_data, item_slot):
 	slot_ui.text = item_slot
 	display_ui.texture = item_data["Image"]
 	
-	if item_data["Name"] == "Unarmed":
+	if item_data["Name"] == "Nothing":
 		item_ui.text = ""
 		return
 	

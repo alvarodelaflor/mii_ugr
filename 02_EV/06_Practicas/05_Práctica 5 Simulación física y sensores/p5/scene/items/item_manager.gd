@@ -26,13 +26,13 @@ func _ready():
 	get_parent().get_node("Camera/RayCast").add_exception(owner) # Adds exception of player to the shooting raycast
 	
 	all_items = {
-		"Unarmed" : preload("res://scene/items/nothing/nothing.tscn"),
+		"Nothing" : preload("res://scene/items/nothing/nothing.tscn"),
 		"Zapatilla" : preload("res://scene/items/something/deporte/deporte_a/zapatilla.tscn"),
 		"Botella" : preload("res://scene/items/something/agua/agua_a/botella.tscn")
 	}
 	
 	items = {
-		"Empty" : $Unarmed,
+		"Empty" : $Nothing,
 		"Primary" : $Empty,
 		"Secondary" : $Empty
 	}
@@ -42,7 +42,7 @@ func _ready():
 		if is_instance_valid(items[w]):
 			item_setup(items[w])
 	
-	# Set current item to unarmed
+	# Set current item to nothing
 	current_item = items["Empty"]
 	change_item("Empty")
 	
@@ -131,7 +131,7 @@ func previous_item():
 
 # Wear Pickup
 func add_wear(amount):
-	if is_instance_valid(current_item) == false || current_item.name == "Unarmed":
+	if is_instance_valid(current_item) == false || current_item.name == "Nothing":
 		return false
 	
 	current_item.update_item("add", amount)
@@ -188,7 +188,7 @@ func drop_item():
 	if current_item_slot != "Empty":
 		current_item.drop_item()
 		
-		# Need to be set to Unarmed in order call change_item() function
+		# Need to be set to Nothing in order call change_item() function
 		current_item = "Empty"
 		current_item = items["Empty"]
 		
@@ -210,9 +210,9 @@ func switch_item(item_data):
 			return
 	
 	
-	# If we are unarmed, and pickup a item
+	# If we are nothing, and pickup a item
 	# Then the item at the primary slot will be dropped and replaced with the new item
-	if current_item.name == "Unarmed":
+	if current_item.name == "Nothing":
 		items["Primary"].drop_item()
 		yield(get_tree(), "idle_frame")
 		add_item(item_data)

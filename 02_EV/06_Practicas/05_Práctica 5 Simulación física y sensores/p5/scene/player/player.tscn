@@ -44,7 +44,7 @@ cast_to = Vector3( 0, 0, -100 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.517733, -0.220617 )
 script = ExtResource( 6 )
 
-[node name="Unarmed" parent="CamRoot/Items" instance=ExtResource( 5 )]
+[node name="Nothing" parent="CamRoot/Items" instance=ExtResource( 5 )]
 
 [node name="Zapatilla" parent="CamRoot/Items" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22, -0.621 )
