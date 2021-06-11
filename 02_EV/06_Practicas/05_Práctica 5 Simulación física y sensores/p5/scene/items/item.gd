@@ -27,8 +27,6 @@ func is_equip_finished():
 func is_unequip_finished():
 	return true
 
-
-
 # Update Wear
 func update_item(action = "Refresh"):
 	

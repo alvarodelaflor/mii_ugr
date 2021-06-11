@@ -154,10 +154,10 @@ func add_item(item_data):
 		item_setup(item)
 		item.wear_in_item = item_data["Wear"]
 		item.maximum_wear = item_data["MaximumWear"]
-		item.mag_size = item_data["MagSize"]
+		item.mag_size = item_data["WearSize"]
 		item.transform.origin = item.equip_pos
 		
-		# Update the dictionary and change item
+		
 		items["Primary"] = item
 		change_item("Primary")
 		
@@ -165,67 +165,45 @@ func add_item(item_data):
 	
 	if is_instance_valid(items["Secondary"]) == false:
 		
-		# Instance the new item
 		var item = Global.instantiate_node(all_items[item_data["Name"]], Vector3.ZERO, self)
 		
-		# Initialize the new item references
 		item_setup(item)
 		item.wear_in_item = item_data["Wear"]
 		item.maximum_wear = item_data["MaximumWear"]
-		item.mag_size = item_data["MagSize"]
+		item.mag_size = item_data["WearSize"]
 		item.transform.origin = item.equip_pos
 		
-		# Update the dictionary and change item
 		items["Secondary"] = item
 		change_item("Secondary")
 		
 		return
 
-
-
-# Will be called from player.gd
 func drop_item():
 	if current_item_slot != "Empty":
 		current_item.drop_item()
 		
-		# Need to be set to Nothing in order call change_item() function
 		current_item = "Empty"
 		current_item = items["Empty"]
 		
-		# Update HUD
 		current_item.update_item()
 		
 		change_item("Empty")
 
-
-
-# Switch item / Replace item
 func switch_item(item_data):
 	
-	# Checks whether there's any empty slot available
-	# If there is, then we simply add that new item to the empty slot
 	for i in items:
 		if is_instance_valid(items[i]) == false:
 			add_item(item_data)
 			return
 	
-	
-	# If we are nothing, and pickup a item
-	# Then the item at the primary slot will be dropped and replaced with the new item
 	if current_item.name == "Nothing":
 		items["Primary"].drop_item()
 		yield(get_tree(), "idle_frame")
 		add_item(item_data)
 	
-	
-	# If the item to be picked up and the current item are same
-	# Theb the wear of the new item is added to the currently equipped item
 	elif current_item.item_name == item_data["Name"]:
 		add_wear(item_data["Wear"] + item_data["MaximumWear"])
 	
-	
-	# If we already have an equipped item, then we drop it
-	# And equip the new item
 	else:
 		drop_item()
 		
@@ -233,7 +211,6 @@ func switch_item(item_data):
 		add_item(item_data)
 
 
-# Interaction Prompt
 func show_interaction_prompt(item_name):
 	var desc = "Add Wear" if current_item.item_name == item_name else "Coger"
 	hud.show_interaction_prompt(desc)
@@ -241,8 +218,6 @@ func show_interaction_prompt(item_name):
 func hide_interaction_prompt():
 	hud.hide_interaction_prompt()
 
-
-# Searches for item pickups, and based on player input executes further tasks (will be called from player.gd)
 func process_item_pickup():
 	var from = global_transform.origin
 	var to = global_transform.origin - global_transform.basis.z.normalized() * 2.0
@@ -263,9 +238,6 @@ func process_item_pickup():
 		else:
 			hide_interaction_prompt()
 
-
-
-# Update HUD
 func update_hud(item_data):
 	var item_slot = "1"
 	
@@ -278,5 +250,3 @@ func update_hud(item_data):
 			item_slot = "3"
 	
 	hud.update_item_ui(item_data, item_slot)
-
-

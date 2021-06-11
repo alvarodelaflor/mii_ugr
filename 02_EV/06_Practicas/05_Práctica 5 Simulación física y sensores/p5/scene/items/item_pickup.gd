@@ -18,7 +18,7 @@ func get_item_pickup_data():
 		"Name" : item_name,
 		"Wear" : wear_in_item,
 		"MaximumWear" : maximum_wear,
-		"MagSize" : mag_size
+		"WearSize" : mag_size
 	}
 
 
