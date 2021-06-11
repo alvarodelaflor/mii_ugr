@@ -186,6 +186,8 @@ func drop_item():
 		current_item = items["Empty"]
 		
 		current_item.update_item()
+	
+		Global.delete_one_item()
 		
 		change_item("Empty")
 
@@ -235,6 +237,7 @@ func process_item_pickup():
 			if Input.is_action_just_pressed("interact"):
 				switch_item(item_data)
 				body.queue_free()
+				Global.add_one_item()
 		else:
 			hide_interaction_prompt()
 

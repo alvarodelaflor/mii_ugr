@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scene/elementos/run.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/elementos/cinta_correr_texture.tscn" type="PackedScene" id=2]
@@ -18,8 +18,35 @@
 [ext_resource path="res://texturas/suelo/alternativa/WoodFloor032_2K_Color.png" type="Texture" id=16]
 [ext_resource path="res://texturas/suelo/Tiles078_2K_Roughness.jpg" type="Texture" id=17]
 [ext_resource path="res://auxiliar/elements/running/lamp.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/stop.png" type="Texture" id=19]
+[ext_resource path="res://auxiliar/salas/p1_c_running.gd" type="Script" id=20]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Flotando"
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -3.44766, 3.70774, 8.45459, 0, 0, 0, 1, 0.1, 0.1, 0.1, 0.5, 1, -3.448, 3.708, 9, 0, 0, 0, 1, 0.1, 0.1, 0.1, 1, 1, -3.448, 3.708, 8.455, 0, 0, 0, 1, 0.1, 0.1, 0.1 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "Flotando"
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 1.92442, 4.68608, 8.45459, 0, 0, 0, 1, 0.1, 0.1, 0.1, 0.5, 1, 1.924, 4.686, 9, 0, 0, 0, 1, 0.1, 0.1, 0.1, 1, 1, 1.924, 4.686, 8.455, 0, 0, 0, 1, 0.1, 0.1, 0.1 )
+
+[sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.733333, 0.67451, 0.67451, 1 )
 albedo_texture = ExtResource( 16 )
 metallic_specular = 0.0
@@ -34,7 +61,7 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 14 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=8]
 albedo_texture = ExtResource( 6 )
 roughness_texture = ExtResource( 10 )
 normal_enabled = true
@@ -52,7 +79,7 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 9 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 13 )
 roughness_texture = ExtResource( 12 )
 normal_enabled = true
@@ -66,6 +93,31 @@ depth_flip_binormal = false
 depth_texture = ExtResource( 12 )
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 20 )
+
+[node name="Secret" type="Spatial" parent="."]
+
+[node name="Tapadera" type="CSGBox" parent="Secret"]
+transform = Transform( 1.25444, 0, 0, 0, 1, 0, 0, 0, 1, 0.056529, 3.38845, 8.06311 )
+use_collision = true
+width = 8.94039
+height = 6.79334
+depth = 0.001
+material = SubResource( 5 )
+
+[node name="No1" type="Sprite3D" parent="Secret"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.44788, 3.70791, 8.81535 )
+texture = ExtResource( 19 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Secret/No1"]
+anims/Flotando = SubResource( 6 )
+
+[node name="No2" type="Sprite3D" parent="Secret"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.924, 4.686, 8.455 )
+texture = ExtResource( 19 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Secret/No2"]
+anims/Flotando = SubResource( 9 )
 
 [node name="Tree" type="Spatial" parent="."]
 
@@ -88,7 +140,7 @@ use_collision = true
 width = 11.9196
 height = 0.030042
 depth = 16.0053
-material = SubResource( 1 )
+material = SubResource( 7 )
 
 [node name="cinta_correr_texture" parent="Tree" instance=ExtResource( 2 )]
 transform = Transform( 2.05957e-06, 0, -15.7058, 0, 12.9149, 0, 13.4261, 0, 1.76062e-06, 0, 0.0644928, 4.73986 )
@@ -143,7 +195,7 @@ transform = Transform( 0.08, 0, 0, 0, -1.74846e-07, -8.088, 0, 4, -3.53538e-07, 
 use_collision = true
 height = 4.05006
 depth = 0.989659
-material = SubResource( 2 )
+material = SubResource( 8 )
 
 [node name="trasera" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 4, 8 )
@@ -154,18 +206,18 @@ transform = Transform( -4.58564e-16, 4, 7.86805e-07, 3.49691e-09, 5.24537e-07, -
 use_collision = true
 height = 2.96596
 depth = 1.3334
-material = SubResource( 2 )
+material = SubResource( 8 )
 
 [node name="lateral_2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.08, 0, 0, 0, -1.74846e-07, -8.088, 0, 4, -3.53538e-07, -6, 4, 0 )
 use_collision = true
 height = 4.04289
 depth = 0.98922
-material = SubResource( 2 )
+material = SubResource( 8 )
 
 [node name="techo" parent="." instance=ExtResource( 3 )]
 transform = Transform( -3.49691e-09, -4, 0, 0.08, -1.74846e-07, 0, 0, 0, 8.088, 0, 8, 0 )
 use_collision = true
 height = 3.03735
 depth = 1.99908
-material = SubResource( 3 )
+material = SubResource( 4 )
