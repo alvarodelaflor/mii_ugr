@@ -1,6 +1,14 @@
 extends KinematicBody
 
-const MOUSE_SENSITIVITY = 0.1
+# Variables de la cámara
+var minLookAngle : float = -55.0
+var maxLookAngle : float = 45.0
+
+# Variables del ratón
+export var MOUSE_SENSITIVITY = 0.1 setget change_sensitivity
+
+func change_sensitivity(new_sensitivity):
+	MOUSE_SENSITIVITY = new_sensitivity
 
 # Variables fisicas
 const GRAVITY = -40.0
@@ -108,7 +116,7 @@ func _input(event):
 		if(camera.current==true):
 			# Rotamos la camara verticalmente con restriccion de grados
 			$CamRoot.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * -1))
-			$CamRoot.rotation_degrees.x = clamp($CamRoot.rotation_degrees.x, -55, 45)
+			$CamRoot.rotation_degrees.x = clamp($CamRoot.rotation_degrees.x, minLookAngle, maxLookAngle)
 			
 			# Rotamos la camara horizontalmente
 			self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))

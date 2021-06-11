@@ -304,8 +304,8 @@ __meta__ = {
 }
 
 [node name="Izquierda" type="VBoxContainer" parent="Control/Grid/HBoxContainer4"]
-margin_left = 59.0
-margin_right = 95.0
+margin_left = 6.0
+margin_right = 42.0
 margin_bottom = 38.0
 
 [node name="Button" type="Button" parent="Control/Grid/HBoxContainer4/Izquierda"]
@@ -321,8 +321,8 @@ text = "Coger"
 align = 1
 
 [node name="Derecha" type="VBoxContainer" parent="Control/Grid/HBoxContainer4"]
-margin_left = 99.0
-margin_right = 131.0
+margin_left = 46.0
+margin_right = 78.0
 margin_bottom = 38.0
 
 [node name="Button3" type="Button" parent="Control/Grid/HBoxContainer4/Derecha"]
@@ -337,17 +337,38 @@ margin_bottom = 38.0
 text = "Tirar "
 align = 1
 
-[node name="Button5" type="Button" parent="Control/Grid"]
-margin_top = 185.0
-margin_right = 191.0
-margin_bottom = 205.0
+[node name="Salto" type="VBoxContainer" parent="Control/Grid/HBoxContainer4"]
+margin_left = 82.0
+margin_right = 133.0
+margin_bottom = 38.0
+
+[node name="Button5" type="Button" parent="Control/Grid/HBoxContainer4/Salto"]
+margin_right = 51.0
+margin_bottom = 20.0
 text = "SPACE"
 
-[node name="Label4" type="Label" parent="Control/Grid"]
-margin_top = 209.0
-margin_right = 191.0
-margin_bottom = 223.0
+[node name="Label4" type="Label" parent="Control/Grid/HBoxContainer4/Salto"]
+margin_top = 24.0
+margin_right = 51.0
+margin_bottom = 38.0
 text = "Salto"
+align = 1
+
+[node name="Correr" type="VBoxContainer" parent="Control/Grid/HBoxContainer4"]
+margin_left = 137.0
+margin_right = 185.0
+margin_bottom = 38.0
+
+[node name="Button3" type="Button" parent="Control/Grid/HBoxContainer4/Correr"]
+margin_right = 48.0
+margin_bottom = 20.0
+text = "SHIFT"
+
+[node name="Label5" type="Label" parent="Control/Grid/HBoxContainer4/Correr"]
+margin_top = 24.0
+margin_right = 48.0
+margin_bottom = 38.0
+text = "Correr"
 align = 1
 
 [node name="Spatial" parent="." instance=ExtResource( 1 )]
