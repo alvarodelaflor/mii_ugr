@@ -2,26 +2,60 @@
 
 [ext_resource path="res://scene/items/something/agua/agua.gd" type="Script" id=1]
 [ext_resource path="res://assets/models/items/bottle3.jpg" type="Texture" id=2]
-[ext_resource path="res://scene/items/muzzle_flash.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/items/something/agua/agua_a/Bottle_v1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/items/something/agua/agua_a/botella_pickup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/models/weapons/rifle_b/Rifle_B.glb" type="PackedScene" id=6]
 
-[node name="Botella" instance=ExtResource( 6 )]
+[sub_resource type="Animation" id=1]
+resource_name = "Equip"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_item"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Unequip"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_item"
+} ]
+}
+
+[node name="Botella" type="Spatial"]
 script = ExtResource( 1 )
 item_name = "Botella"
 item_image = ExtResource( 2 )
 item_pickup = ExtResource( 5 )
 equip_pos = Vector3( 0.02, -0.258, -0.585 )
-impact_effect = ExtResource( 3 )
-muzzle_flash_path = NodePath("../Botella/Root/MuzzleFlash")
-equip_speed = 3.0
-unequip_speed = 3.0
 
-[node name="Bottle_v1" parent="Root/Body/Skeleton" index="0" instance=ExtResource( 4 )]
+[node name="Root" type="Spatial" parent="."]
 
-[node name="Mesh" parent="Root/Body/Skeleton" index="1"]
-visible = false
+[node name="Body" type="Spatial" parent="Root"]
 
-[node name="MuzzleFlash" parent="Root" index="1" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0519447, -0.633326 )
+[node name="Skeleton" type="Skeleton" parent="Root/Body"]
+
+[node name="Bottle_v1" parent="Root/Body/Skeleton" instance=ExtResource( 4 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Equip = SubResource( 1 )
+anims/Unequip = SubResource( 2 )
