@@ -10,7 +10,6 @@
 [ext_resource path="res://texturas/suelo/Tiles078_2K_Roughness.jpg" type="Texture" id=8]
 [ext_resource path="res://auxiliar/elements/lamp.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 5 )
 roughness_texture = ExtResource( 8 )
@@ -46,7 +45,7 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.25, -4.5 )
 transform = Transform( -3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 0, 1.25, 4.5 )
 
 [node name="Techo" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.88321, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.94844, 0 )
 use_collision = true
 width = 12.0152
 height = 0.0886727
