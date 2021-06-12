@@ -7,6 +7,9 @@ var maxLookAngle : float = 45.0
 # Variables del ratón
 export var MOUSE_SENSITIVITY = 0.1 setget change_sensitivity
 
+var teletransport_status = false
+var portal = 0
+
 func change_sensitivity(new_sensitivity):
 	MOUSE_SENSITIVITY = new_sensitivity
 
@@ -52,6 +55,7 @@ func _physics_process(delta):
 	process_jump(delta)
 	# Modificar inventario
 	process_items()
+	process_teletransport(delta)
 
 func process_movement_inputs():
 	dir = Vector3.ZERO
@@ -81,6 +85,22 @@ func process_movement(delta):
 	velocity.z = current_vel.z
 	
 	velocity = move_and_slide(velocity, Vector3.UP, true, 4, deg2rad(45))
+
+func teletransport():
+	teletransport_status = true
+	
+func process_teletransport(delta):
+	if teletransport_status:
+		print("Se esta teletrasnportando")
+		if portal == 0:
+			print("Cambio al portal inferior")
+			$".".global_transform.origin.y = global_transform.origin.y - 40
+			portal = 1
+		else:
+			print("Cambio al portal superior")
+			$".".global_transform.origin.y = global_transform.origin.y + 40
+			portal = 0
+	teletransport_status = false
 
 func process_jump(delta):
 	# Applimos la gravedad
@@ -132,3 +152,8 @@ func _input(event):
 
 func _on_Spatial_camara_2():
 	$CamRoot/Camera.current=true
+
+
+func _on_Area_body_entered(body):
+	if (body.get_name() == "Player"):
+		teletransport()
