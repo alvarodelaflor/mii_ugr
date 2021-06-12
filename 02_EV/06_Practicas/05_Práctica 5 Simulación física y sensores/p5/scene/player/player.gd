@@ -94,10 +94,12 @@ func process_teletransport(delta):
 		print("Se esta teletrasnportando")
 		if portal == 0:
 			print("Cambio al portal inferior")
+			$".".global_transform.origin.z = global_transform.origin.z - 2
 			$".".global_transform.origin.y = global_transform.origin.y - 40
 			portal = 1
 		else:
 			print("Cambio al portal superior")
+			$".".global_transform.origin.z = global_transform.origin.z + 2
 			$".".global_transform.origin.y = global_transform.origin.y + 40
 			portal = 0
 	teletransport_status = false
@@ -153,7 +155,10 @@ func _input(event):
 func _on_Spatial_camara_2():
 	$CamRoot/Camera.current=true
 
+func _on_Area1_body_entered(body):
+	if (body.get_name() == "Player"):
+		teletransport()
 
-func _on_Area_body_entered(body):
+func _on_Area2_body_entered(body):
 	if (body.get_name() == "Player"):
 		teletransport()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scene/world/p5_final.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/world/ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/elementos/portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/elementos/Community_School.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://scene/items/something/deporte/deporte_a/zapatilla_pickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/items/something/agua/agua_a/botella_pickup.tscn" type="PackedScene" id=8]
 
@@ -15,22 +16,32 @@ extents = Vector3( 0.197836, 0.211782, 0.231073 )
 
 [node name="World" type="Spatial"]
 
-[node name="portal" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 12.7399, 0.957737, 0 )
+[node name="CSGMesh" type="CSGMesh" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -42.473, -40.3404, -32.5715 )
+use_collision = true
+mesh = ExtResource( 5 )
 
-[node name="Area" type="Area" parent="portal"]
+[node name="CSGMesh2" type="CSGMesh" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -22.5172, -40.3404, 57.4518 )
+use_collision = true
+mesh = ExtResource( 5 )
+
+[node name="portal" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4643, 0.957737, 6.77123 )
+
+[node name="Area1" type="Area" parent="portal"]
 transform = Transform( -4.55678, 0, -9.55071e-07, 0, 7.17081, 0, -9.55071e-07, 0, 1.30541, -0.0384916, 1.63809, -0.290137 )
 
-[node name="CollisionShape" type="CollisionShape" parent="portal/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="portal/Area1"]
 shape = SubResource( 2 )
 
 [node name="portal2" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 12.451, -40, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.464, -40, 6.771 )
 
-[node name="Area" type="Area" parent="portal2"]
+[node name="Area2" type="Area" parent="portal2"]
 transform = Transform( -4.55678, 0, -9.55071e-07, 0, 7.17081, 0, -9.55071e-07, 0, 1.30541, -0.0384916, 1.63809, -0.290137 )
 
-[node name="CollisionShape" type="CollisionShape" parent="portal2/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="portal2/Area2"]
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
@@ -42,7 +53,7 @@ transform = Transform( -0.57599, 0, -0.817457, 0, 1, 0, 0.817457, 0, -0.57599, -
 transform = Transform( 50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, -0.199, 0 )
 
 [node name="Ground2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, -40, 0 )
+transform = Transform( 232.579, 0, 0, 0, 0.2, 0, 0, 0, 2109, 31.6585, -40, 0 )
 
 [node name="Pickups" type="Spatial" parent="."]
 
@@ -61,7 +72,8 @@ gravity_point = true
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00668587, 0, 0 )
 shape = SubResource( 1 )
-[connection signal="body_entered" from="portal/Area" to="Player" method="_on_Area_body_entered"]
+[connection signal="body_entered" from="portal/Area1" to="Player" method="_on_Area1_body_entered"]
+[connection signal="body_entered" from="portal2/Area2" to="Player" method="_on_Area2_body_entered"]
 [connection signal="camara_2" from="Spatial" to="Player" method="_on_Spatial_camara_2"]
 [connection signal="body_entered" from="Area" to="Spatial" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="Spatial" method="_on_Area_body_exited"]
