@@ -1,3 +1,6 @@
 from django.contrib import admin
+from senderos_web.models import Visita, Comentario, VisitaForm
 
-# Register your models here.
+
+admin.site.register(Visita)
+admin.site.register(Comentario)

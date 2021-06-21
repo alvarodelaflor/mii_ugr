@@ -1,4 +1,5 @@
 Django>=3.0,<4.0
+django-crispy-forms
 psycopg2-binary>=2.8
 mongoengine
 django-allauth
@@ -6,3 +7,5 @@ djangorestframework>=3.1,<4.0
 blinker==1.4
 djangorestframework-simplejwt>=4.6,<5.0
 django-cors-headers>=3.7, <4.0
+Pillow==8.1.1
+sorl-thumbnail

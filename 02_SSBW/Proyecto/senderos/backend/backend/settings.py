@@ -26,6 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+TIME_ZONE = 'Europe/Berlin'
+LANGUAGE_CODE = 'es-es'
 
 # Application definition
 
@@ -36,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'senderos_web'
+    'senderos_web',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

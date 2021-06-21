@@ -14,11 +14,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
+from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static
 from senderos_web import views
+from rest_framework import routers
+
+#router_visita = routers.DefaultRouter()
+#router_visita.register(r'visitas', views.VisitaViewSet)
+
+#router_commentario = routers.DefaultRouter()
+#router_commentario.register(r'comentarios', views.ComentarioViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index),
-]
+    path('', views.index, name='index'),
+    path('index', views.index, name='index'),
+#    path('visita/<int:visita_id>/', views.detalle_visita, name='detalle'),
+    path('add_visita', views.add_visita, name='add_visita'),
+#    path('edit_visita/<int:visita_id>/', views.edit_visita, name='edit_visita'),
+#    path('delete_visit/<int:visita_id>', views.delete_visita, name='delete_visita'),
+#    path('admin/', admin.site.urls),
+#    path('accounts/', include('django.contrib.auth.urls')),
+#    path('api_visitas/', include(router_visita.urls)),
+#    path('api_visitas/', include(router_commentario.urls)),
+#    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+#    path('api_visitas/likes/<int:visita_id>/', views.get_likes, name='likes'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
