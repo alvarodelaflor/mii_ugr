@@ -1,0 +1,123 @@
+{% extends "senderos_web/base.html" %}
+{% load static %}
+{% load thumbnail %}
+
+
+{% block content %}
+<div class="row">
+    <!-- Detalle de la visita -->
+    <div class="col-lg-12">
+        <div class="row">
+            {% if mi_visita %}
+            <div id="visita_card" class="card mb-3" style="width: 100%;">
+                <div class="row no-gutters">
+                    <div class="col-md-5">
+                        <img src="{{ mi_visita.foto.url }}" class="card-img" alt="{{ im.name }}">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body" style="height: 200px;">
+                            <h4 class="card-title">{{ mi_visita.nombre }}</h4>
+                            <p class="card-text" align="justify">{{ mi_visita.descripcion }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><i class='fa fa-heart' style="color: red;"></i>
+                                <label id="num_likes">{{ mi_visita.likes }}</label>
+                            </small>
+                            {% if user.is_authenticated and user.is_staff %}
+                            <a href="{% url 'edit_visita' mi_visita.id %}">
+                                <button type="button" class="btn btn-primary btn-sm float-right " data_but="btn-xs">
+                                    <i class="fa fa-pencil"></i>
+                                    Editar</button>
+                            </a>
+
+                            <a href="{% url 'delete_visita' mi_visita.id %}">
+                                <button type="button" class="btn btn-danger btn-sm float-right " data_but="btn-xs"
+                                    style="margin-right: 5px;">
+                                    <i class='fa fa-trash'></i>
+                                    Eliminar</button>
+                            </a>
+                            {% endif %}
+                            <button id="btn_Dislike" type="button" class="btn btn-secondary btn-sm float-right"
+                                style="margin-right: 5px;" data_but="btn-xs">
+                                <i class='fa fa-thumbs-o-down'></i> No me gusta</button>
+                            <button id="btn_Like" type="button" class="btn btn-secondary btn-sm float-right"
+                                style="margin-right: 5px;" data_but="btn-xs">
+                                <i class='fa fa-thumbs-o-up'></i> Me gusta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <!------------------------------------------------------------------------------------------------->
+            <!--Comentarios la ubicación -->
+            {% if comentarios %}
+            <div class="card mb-3" style="width: 100%; color: #fff;background-color: #52565e;">
+                <div class="row ">
+                    <div class="col-md-12">
+                        <h4 style="margin-top: 10px;" align="center">Comentarios</h4>
+                    </div>
+                </div>
+            </div>
+            {% for comentario in comentarios %}
+            <div id="visita_card_comentario" class="card mb-3" style="width: 100%;">
+                <div class="row no-gutters">
+                    <div class="col-sd-1">
+                    </div>
+                    <div class="col-sd-11">
+                        <div class="card-body">
+                            <p class="card-text" align="justify">{{ comentario.texto }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <!------------------------------------------------------------------------------------------------->
+        </div><!-- /.row -->
+    </div><!-- /.col-lg-9 -->
+</div><!-- /.row -->
+
+<script>
+    $(document).ready(function () {
+        var visita;
+        var num_likes = "{{ mi_visita.likes }}";
+        likes = Number(num_likes);
+
+        var liketotal = document.getElementById('num_likes');
+        liketotal.innerHTML = likes;
+        $("#btn_Like, #btn_Dislike").css('cursor', 'pointer');
+        $("#btn_Like").on('click', function (e) {
+            likes += 1;
+            //liketotal.innerHTML = likes; // Tarea 7
+            send_value(likes); // Tarea 8
+        });
+        $("#btn_Dislike").on('click', function (e) {
+            likes -= 1;
+            //liketotal.innerHTML = likes;  // Tarea 7
+            send_value(likes); // Tarea 8
+        });
+
+        // realizamos la modificación de los likes usando el API
+        function send_value(value) {
+            $.ajax({
+                'url': "{% url 'likes' mi_visita.id %}", // el end-point
+                'type': 'PUT',
+                'dataType': 'json', // Content-Type de vuelta
+                'data': JSON.stringify({
+                    'likes': value
+                }), // el api espera un string json
+                'success': function (data) { // call-back, se ejecuta con el response
+                    //console.log(data + " success send");
+                    liketotal.innerHTML = likes;
+                },
+                error: function (result) {
+                    alert(JSON.stringify(result))
+                    //console.log(result.responseJSON + " error send");
+                }
+            })
+        }
+
+    });
+</script>
+
+{% endblock %}

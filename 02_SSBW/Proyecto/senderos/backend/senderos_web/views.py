@@ -61,7 +61,7 @@ def detalle_visita(request, visita_id):
         logger.warning("Visita no ubicada, ubicamos la visita en Granada")
         lat = '37.183054'
         lon = '-3.6021928'
-    template = loader.get_template('senderos_web/detalle_visita.html')
+    template = loader.get_template('senderos_web/show_visit.html')
     context = {
         'visitasCompletas': visitasCompletas,
         'mi_visita': mi_visita,
