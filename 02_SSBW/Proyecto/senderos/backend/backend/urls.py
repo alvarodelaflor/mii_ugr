@@ -29,11 +29,11 @@ from rest_framework import routers
 urlpatterns = [
     path('', views.index, name='index'),
     path('index', views.index, name='index'),
-#    path('visita/<int:visita_id>/', views.detalle_visita, name='detalle'),
+    path('visita/<visita_id>/', views.detalle_visita, name='detalle'),
     path('add_visita', views.add_visita, name='add_visita'),
 #    path('edit_visita/<int:visita_id>/', views.edit_visita, name='edit_visita'),
 #    path('delete_visit/<int:visita_id>', views.delete_visita, name='delete_visita'),
-#    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 #    path('accounts/', include('django.contrib.auth.urls')),
 #    path('api_visitas/', include(router_visita.urls)),
 #    path('api_visitas/', include(router_commentario.urls)),

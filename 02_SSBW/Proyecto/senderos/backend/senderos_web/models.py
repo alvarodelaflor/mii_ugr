@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import uuid
+
 from django.db import models
 
 from sorl.thumbnail import ImageField
@@ -18,6 +20,7 @@ def validate_capitalized(value):
 
 # Create your models here.
 class Visita(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     nombre = models.CharField(max_length=155, unique=True)
     descripcion = models.CharField(
         max_length=1000, validators=[validate_capitalized])
