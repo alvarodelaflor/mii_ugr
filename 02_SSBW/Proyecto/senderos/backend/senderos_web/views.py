@@ -6,7 +6,15 @@ from senderos_web.models import Visita, Comentario, VisitaForm
 
 
 def index(request):
-    return render(request, "senderos_web/index.html")
+    visitasCompletas = Visita.objects.order_by('nombre')
+    template = loader.get_template("senderos_web/index.html")
+    context = {
+        'visitasCompletas': visitasCompletas,
+        #'lista_visitas': lista_visitas,
+        #'num_comentarios': num_comentarios,
+        #'num_visitas' : num_visitas,
+    }
+    return HttpResponse(template.render(context, request) )
 
 
 def add_visita(request):
@@ -18,7 +26,7 @@ def add_visita(request):
         form = VisitaForm(request.POST, request.FILES)  # bound the form
         if form.is_valid():
             post = form.save(commit=False)
-            post.owner = request.user
+#            post.owner = request.user
             post.save()
             msg = "Nueva visita creada correctamente"
             messages.success(request, msg)
