@@ -28,6 +28,7 @@ from rest_framework import routers
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('home', views.index, name='home'),
     path('index', views.index, name='index'),
     path('visita/<visita_id>/', views.detalle_visita, name='detalle'),
     path('add_visita', views.add_visita, name='add_visita'),
@@ -39,4 +40,5 @@ urlpatterns = [
 #    path('api_visitas/', include(router_commentario.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api_visitas/likes/<visita_id>/', views.get_likes, name='likes'),
+    path('signup/', views.signup, name='signup'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

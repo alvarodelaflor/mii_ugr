@@ -55,6 +55,11 @@
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                     </ul>
                     {% if not user.is_authenticated %}
+                    <form class="d-flex" action="/signup/"><form class="d-flex" action="/accounts/login/">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>Sign UP
+                        </button>
+                    </form>
                     <form class="d-flex" action="/accounts/login/">
                     {% endif %}
                     {% if user.is_authenticated %}
