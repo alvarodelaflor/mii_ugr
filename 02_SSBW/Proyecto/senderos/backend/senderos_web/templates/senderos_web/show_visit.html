@@ -37,6 +37,7 @@
                                     Eliminar</button>
                             </a>
                             {% endif %}
+                            <input type="hidden" id="myVar" name="variable" value="{% url 'likes' mi_visita.id %}">
                             <button id="btn_Dislike" type="button" class="btn btn-secondary btn-sm float-right"
                                 style="margin-right: 5px;" data_but="btn-xs">
                                 <i class='fa fa-thumbs-o-down'></i> No me gusta</button>
@@ -76,48 +77,5 @@
         </div><!-- /.row -->
     </div><!-- /.col-lg-9 -->
 </div><!-- /.row -->
-
-<script>
-    $(document).ready(function () {
-        var visita;
-        var num_likes = "{{ mi_visita.likes }}";
-        likes = Number(num_likes);
-
-        var liketotal = document.getElementById('num_likes');
-        liketotal.innerHTML = likes;
-        $("#btn_Like, #btn_Dislike").css('cursor', 'pointer');
-        $("#btn_Like").on('click', function (e) {
-            likes += 1;
-            //liketotal.innerHTML = likes; // Tarea 7
-            send_value(likes); // Tarea 8
-        });
-        $("#btn_Dislike").on('click', function (e) {
-            likes -= 1;
-            //liketotal.innerHTML = likes;  // Tarea 7
-            send_value(likes); // Tarea 8
-        });
-
-        // realizamos la modificación de los likes usando el API
-        function send_value(value) {
-            $.ajax({
-                'url': "{% url 'likes' mi_visita.id %}", // el end-point
-                'type': 'PUT',
-                'dataType': 'json', // Content-Type de vuelta
-                'data': JSON.stringify({
-                    'likes': value
-                }), // el api espera un string json
-                'success': function (data) { // call-back, se ejecuta con el response
-                    //console.log(data + " success send");
-                    liketotal.innerHTML = likes;
-                },
-                error: function (result) {
-                    alert(JSON.stringify(result))
-                    //console.log(result.responseJSON + " error send");
-                }
-            })
-        }
-
-    });
-</script>
 
 {% endblock %}
