@@ -100,8 +100,8 @@ def add_visita(request):
     return HttpResponse(template.render(context, request))
 
 
-@login_required
-@staff_member_required
+#@login_required
+#@staff_member_required
 def edit_visita(request, visita_id):
     visitasCompletas = Visita.objects.order_by('nombre')
     num_comentarios = Comentario.objects.all().count()
@@ -134,8 +134,8 @@ def edit_visita(request, visita_id):
     return HttpResponse(template.render(context, request))
 
 
-@login_required
-@staff_member_required
+#@login_required
+#@staff_member_required
 def delete_visita(request, visita_id):
     visit = Visita.objects.get(pk=visita_id)
     name = visit.nombre
