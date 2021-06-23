@@ -80,6 +80,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
@@ -88,7 +89,16 @@ DATABASES = {
         'PORT': 27017,
     }
 }
+"""
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'bezkoder_db',
+        'HOST': 'mongo',
+        'PORT': 27017,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
