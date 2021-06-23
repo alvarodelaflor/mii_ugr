@@ -54,11 +54,21 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                     </ul>
-                    <form class="d-flex">
+                    {% if not user.is_authenticated %}
+                    <form class="d-flex" action="/accounts/login/">
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <form class="d-flex" action="{% url 'logout' %}">
+                    {% endif %}
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            {% if user.is_authenticated %}
+                            Log Out ({{ user.username }})
+                            {% endif %}
+                            {% if not user.is_authenticated %}
+                            Log in
+                            {% endif %}
+                            <!-- <span class="badge bg-dark text-white ms-1 rounded-pill">0</span> -->
                         </button>
                     </form>
                 </div>

@@ -28,6 +28,8 @@ ALLOWED_HOSTS = ['*']
 
 TIME_ZONE = 'Europe/Berlin'
 LANGUAGE_CODE = 'es-es'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 
