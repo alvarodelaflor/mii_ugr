@@ -23,7 +23,7 @@
                             <small class="text-muted"><i class='fa fa-heart' style="color: red;"></i>
                                 <label id="num_likes">{{ mi_visita.likes }}</label>
                             </small>
-                            <!--% if user.is_authenticated and user.is_staff %}-->
+                            {% if user.is_authenticated%}
                             <a href="{% url 'edit_visita' mi_visita.id %}">
                                 <button type="button" class="btn btn-primary btn-sm float-right " data_but="btn-xs">
                                     <i class="fa fa-pencil"></i>
@@ -36,7 +36,6 @@
                                     <i class='fa fa-trash'></i>
                                     Eliminar</button>
                             </a>
-                            <!--% endif %}-->
                             <input type="hidden" id="myVar" name="variable" value="{% url 'likes' mi_visita.id %}">
                             <button id="btn_Dislike" type="button" class="btn btn-secondary btn-sm float-right"
                                 style="margin-right: 5px;" data_but="btn-xs">
@@ -44,6 +43,7 @@
                             <button id="btn_Like" type="button" class="btn btn-secondary btn-sm float-right"
                                 style="margin-right: 5px;" data_but="btn-xs">
                                 <i class='fa fa-thumbs-o-up'></i> Me gusta</button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

@@ -43,16 +43,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Filtrar</a>
+                            {% if user.is_authenticated %}
                             <li class="nav-item"><a class="nav-link" href="add_visita">Añadir ruta</a></li>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">Todas las rutas</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Más valoradas</a></li>
-                                <li><a class="dropdown-item" href="#!">Más comentadas</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                            {% endif %}
                     </ul>
                     {% if not user.is_authenticated %}
                     <form class="d-flex" action="/signup/"><form class="d-flex" action="/accounts/login/">

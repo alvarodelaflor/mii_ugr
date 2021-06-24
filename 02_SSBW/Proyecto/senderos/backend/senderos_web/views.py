@@ -13,7 +13,7 @@ from senderos_web.serializers import ComentarioSerializer, VisitaSerializer, Lik
 from rest_framework.parsers import JSONParser
 #from senderos_web.permisions import IsOwnerOrReadOnly
 from django.views.decorators.csrf import csrf_exempt
-#from decouple import config
+#from decouple import conf
 import os
 import requests
 import json
@@ -75,7 +75,7 @@ def detalle_visita(request, visita_id):
     return HttpResponse(template.render(context, request))
 
 
-#@login_required
+@login_required
 #@staff_member_required
 def add_visita(request):
     visitasCompletas = Visita.objects.order_by('nombre')
@@ -101,7 +101,7 @@ def add_visita(request):
     return HttpResponse(template.render(context, request))
 
 
-#@login_required
+@login_required
 #@staff_member_required
 def edit_visita(request, visita_id):
     visitasCompletas = Visita.objects.order_by('nombre')
@@ -135,7 +135,7 @@ def edit_visita(request, visita_id):
     return HttpResponse(template.render(context, request))
 
 
-#@login_required
+@login_required
 #@staff_member_required
 def delete_visita(request, visita_id):
     visit = Visita.objects.get(pk=visita_id)
