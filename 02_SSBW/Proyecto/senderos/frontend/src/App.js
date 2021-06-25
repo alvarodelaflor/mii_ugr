@@ -61,7 +61,6 @@ class App extends Component {
 							<input type="search" className="form-control rounded"
 								   placeholder="Introduzca el término de búsqueda" aria-label="Search"
 								   aria-describedby="search-addon" onChange={this.handleSearch.bind(this)}/>
-							<button type="button" className="btn btn-outline-primary">search</button>
 						</div>
 					</div>
 					<section className="py-5">
