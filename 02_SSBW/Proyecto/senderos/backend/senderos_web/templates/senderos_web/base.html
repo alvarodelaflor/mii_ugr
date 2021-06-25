@@ -50,7 +50,7 @@
                     {% if not user.is_authenticated %}
                     <form class="d-flex" action="/signup/"><form class="d-flex" action="/accounts/login/">
                         <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>Sign UP
+                            <i class="bi bi-person-plus me-1"></i>Sign UP
                         </button>
                     </form>
                     <form class="d-flex" action="/accounts/login/">
@@ -59,7 +59,7 @@
                     <form class="d-flex" action="{% url 'logout' %}">
                     {% endif %}
                         <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
+                            <i class="bi-door-open-fill me-1"></i>
                             {% if user.is_authenticated %}
                             Log Out ({{ user.username }})
                             {% endif %}
