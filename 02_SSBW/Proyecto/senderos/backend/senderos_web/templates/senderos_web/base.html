@@ -44,7 +44,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item dropdown">
                             {% if user.is_authenticated %}
-                            <li class="nav-item"><a class="nav-link" href="add_visita">Añadir ruta</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/add_visita">Añadir ruta</a></li>
                             {% endif %}
                     </ul>
                     {% if not user.is_authenticated %}
@@ -81,7 +81,7 @@
         <!-- --------------------------------------------------------------------------- -->
 
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
+        <footer class="py-5 bg-dark" style="clear: both; position: absolute; bottom: 0px; width: 100%; height: 60px">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Álvaro de la Flor Bonilla</p></div>
         </footer>
         <!-- Bootstrap core JS-->

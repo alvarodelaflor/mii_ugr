@@ -25,7 +25,7 @@ class Visita(models.Model):
     descripcion = models.CharField(
         max_length=1000, validators=[validate_capitalized])
     likes = models.IntegerField(default=0)
-    foto = ImageField(upload_to='fotos', blank=True,
+    foto = ImageField(upload_to='fotos', blank=False,
                       validators=[FileExtensionValidator(allowed_extensions=['jpg', 'png'])])
     owner = models.ForeignKey('auth.User', related_name='visita',
                               on_delete=models.CASCADE)
