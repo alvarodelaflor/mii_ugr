@@ -38,14 +38,16 @@
                         <form id="edit_visita" action="{% url 'edit_visita' visit.id %}" method="post"
                             enctype="multipart/form-data" style="margin: 20px;">
                             {% csrf_token %}
+                            <div style="text-align: center; margin-bottom: 3mm">
                             {{ form|crispy }}
-                            <a href="{% url 'index' %}">
-                                <button type="button" class="btn btn-danger float-right " data_but="btn-xs"
-                                    style="margin-bottom: 10px;"><i class='fa fa-remove'></i> Cancelar</button>
-                            </a>
-                            <button type="submit" class="btn btn-primary float-right " data_but="btn-xs"
+                            <button type="submit" class="btn btn-primary mt-3" data_but="btn-xs"
                                 style="margin-right: 5px;margin-bottom: 10px;"><i class='fa fa-floppy-o'></i>
                                 Guardar</button>
+                            <a href="{% url 'index' %}">
+                                <button type="button" class="btn btn-danger mt-3" data_but="btn-xs"
+                                    style="margin-bottom: 10px;"><i class='fa fa-remove'></i> Cancelar</button>
+                            </a>
+                            </div>
                         </form>
                     </div>
                 </div>

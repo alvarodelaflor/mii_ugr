@@ -20,19 +20,16 @@
                     <div class="col-md-12 center_div">
                         <form id="add_visita" action="{% url 'add_visita' %}" method="post"
                             enctype="multipart/form-data" style="margin: 20px;">
-
                             {% csrf_token %}
                             <div style="text-align: center; margin-bottom: 3mm">
-                                {{ form|crispy }}
-                                <div class="mt-3">
-                                    <button type="submit" class="btn btn-primary float" data_but="btn-xs"
-                                        style="margin-right: 5px;margin-bottom: 10px;"><i class='fa fa-floppy-o'></i>
-                                        Guardar</button>
-                                    <a href="{% url 'index' %}">
-                                        <button type="button" class="btn btn-danger" data_but="btn-xs"
-                                            style="margin-bottom: 10px;"><i class='fa fa-remove'></i> Cancelar</button>
-                                    </a>
-                                </div>
+                            {{ form|crispy }}
+                            <button type="submit" class="btn btn-primary mt-3" data_but="btn-xs"
+                                style="margin-right: 5px;margin-bottom: 10px;"><i class='fa fa-floppy-o'></i>
+                                Guardar</button>
+                            <a href="{% url 'index' %}">
+                                <button type="button" class="btn btn-danger mt-3" data_but="btn-xs"
+                                    style="margin-bottom: 10px;"><i class='fa fa-remove'></i> Cancelar</button>
+                            </a>
                             </div>
                         </form>
                     </div>
