@@ -4,78 +4,102 @@
 
 
 {% block content %}
+
+
 <div class="row">
-    <!-- Detalle de la visita -->
     <div class="col-lg-12">
         <div class="row">
-            {% if mi_visita %}
-            <div id="visita_card" class="card mb-3" style="width: 100%;">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="{{ mi_visita.foto.url }}" class="card-img" alt="{{ im.name }}">
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card-body" style="height: 200px;">
-                            <h4 class="card-title">{{ mi_visita.nombre }}</h4>
-                            <p class="card-text" align="justify">{{ mi_visita.descripcion }}</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted"><i class='fa fa-heart' style="color: red;"></i>
-                                <label id="num_likes">{{ mi_visita.likes }}</label>
-                            </small>
-                            {% if user.is_authenticated%}
-                            <a href="{% url 'edit_visita' mi_visita.id %}">
-                                <button type="button" class="btn btn-primary btn-sm float-right " data_but="btn-xs">
-                                    <i class="fa fa-pencil"></i>
-                                    Editar</button>
-                            </a>
-
-                            <a href="{% url 'delete_visita' mi_visita.id %}">
-                                <button type="button" class="btn btn-danger btn-sm float-right " data_but="btn-xs"
-                                    style="margin-right: 5px;">
-                                    <i class='fa fa-trash'></i>
-                                    Eliminar</button>
-                            </a>
-                            <input type="hidden" id="myVar" name="variable" value="{% url 'likes' mi_visita.id %}">
-                            <button id="btn_Dislike" type="button" class="btn btn-secondary btn-sm float-right"
-                                style="margin-right: 5px;" data_but="btn-xs">
-                                <i class='fa fa-thumbs-o-down'></i> No me gusta</button>
-                            <button id="btn_Like" type="button" class="btn btn-secondary btn-sm float-right"
-                                style="margin-right: 5px;" data_but="btn-xs">
-                                <i class='fa fa-thumbs-o-up'></i> Me gusta</button>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            <!------------------------------------------------------------------------------------------------->
-            <!--Comentarios la ubicación -->
-            {% if comentarios %}
             <div class="card mb-3" style="width: 100%; color: #fff;background-color: #52565e;">
                 <div class="row ">
                     <div class="col-md-12">
-                        <h4 style="margin-top: 10px;" align="center">Comentarios</h4>
+                        <h4 style="margin-top: 10px;" align="center">{{mi_visita.nombre}}</h4>
                     </div>
                 </div>
             </div>
-            {% for comentario in comentarios %}
-            <div id="visita_card_comentario" class="card mb-3" style="width: 100%;">
-                <div class="row no-gutters">
-                    <div class="col-sd-1">
+
+            <div id="visita_card_edit" class="card mb-3" style="width: 100%;">
+                <div class="row ">
+                    <div class="col-md-6 center_div">
+                        <img src="{{ mi_visita.foto.url }}" class="card-img" alt="{{ im.name }}">
+                        {% if user.is_authenticated%}
+                            <div class="mt-3 mb-3" style="align-content: center; text-align: center">
+                                <a href="{% url 'edit_visita' mi_visita.id %}">
+                                    <button type="button" class="btn btn-primary" data_but="btn-xs">
+                                        Editar</button>
+                                </a>
+                                <a href="{% url 'delete_visita' mi_visita.id %}">
+                                    <button type="button" class="btn btn-danger" data_but="btn-xs"
+                                        style="margin-right: 5px;">
+                                        Eliminar</button>
+                                </a>
+                            </div>
+                        {% endif %}
                     </div>
-                    <div class="col-sd-11">
-                        <div class="card-body">
-                            <p class="card-text" align="justify">{{ comentario.texto }}</p>
+                    <div class="col-md-6 center_div">
+                        <div class="card-body" style="height: 200px;">
+                            <div class="row">
+                                <div class="card mb-3" style="width: 100%; color: #fff;background-color: #52565e;">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <h4 style="margin-top: 10px;" align="center">Descripción de {{ mi_visita.owner }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <p class="card-text" align="justify">{{ mi_visita.descripcion }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card mb-3" style="width: 100%; color: #fff;background-color: #52565e;">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <h4 style="margin-top: 10px;" align="center">Valoración de la comunidad</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <p class="card-text" align="justify">Número de likes:
+                                                <small class="text-muted"><i class='fa fa-heart' style="color: red;"></i>
+                                                    <label id="num_likes">{{ mi_visita.likes }}</label>
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            {% if user.is_authenticated%}
+                                            <input type="hidden" id="myVar" name="variable" value="{% url 'likes' mi_visita.id %}">
+                                            <button id="btn_Dislike" type="button" class="btn btn-secondary btn-sm float-right"
+                                                style="margin-right: 5px;" data_but="btn-xs">
+                                                <i class='fa fa-thumbs-o-down'></i> No me gusta</button>
+                                            <button id="btn_Like" type="button" class="btn btn-secondary btn-sm float-right"
+                                                style="margin-right: 5px;" data_but="btn-xs">
+                                                <i class='fa fa-thumbs-o-up'></i> Me gusta</button>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-            {% endif %}
-            <!------------------------------------------------------------------------------------------------->
-        </div><!-- /.row -->
-    </div><!-- /.col-lg-9 -->
-</div><!-- /.row -->
+        </div>
+    </div>
+</div>
 
 {% endblock %}
