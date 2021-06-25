@@ -23,6 +23,22 @@ services:
     depends_on:
       - mongo
 
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
+    depends_on:
+      - web
+      - nginx
+
   mongo:
     image: mongo:4.2
     ports:
