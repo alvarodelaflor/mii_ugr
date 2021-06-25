@@ -38,6 +38,9 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
+def get_visits(request):
+    lista_visitas = Visita.objects
+
 
 def detalle_visita(request, visita_id):
     visitasCompletas = Visita.objects.order_by('nombre')
@@ -149,11 +152,11 @@ def delete_visita(request, visita_id):
 class VisitaViewSet(viewsets.ModelViewSet):
     queryset = Visita.objects.all().order_by('id')
     serializer_class = VisitaSerializer
-#    permission_classes = [
-#        permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        serializer.save(owner=self.request._user)
 
 
 class ComentarioViewSet(viewsets.ModelViewSet):

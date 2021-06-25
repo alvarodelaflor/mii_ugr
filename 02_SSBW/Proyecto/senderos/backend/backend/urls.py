@@ -18,10 +18,13 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 from senderos_web import views
+from senderos_web.views import VisitaViewSet
 from rest_framework import routers
 
-#router_visita = routers.DefaultRouter()
-#router_visita.register(r'visitas', views.VisitaViewSet)
+router = routers.DefaultRouter()
+router.register('excursiones', VisitaViewSet)
+router_visita = routers.DefaultRouter()
+router_visita.register(r'visitas', views.VisitaViewSet)
 
 #router_commentario = routers.DefaultRouter()
 #router_commentario.register(r'comentarios', views.ComentarioViewSet)
@@ -36,9 +39,8 @@ urlpatterns = [
     path('delete_visit/<visita_id>', views.delete_visita, name='delete_visita'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-#    path('api_visitas/', include(router_visita.urls)),
-#    path('api_visitas/', include(router_commentario.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/', include(router.urls)),
+#    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api_visitas/likes/<visita_id>/', views.get_likes, name='likes'),
     path('signup/', views.signup, name='signup'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

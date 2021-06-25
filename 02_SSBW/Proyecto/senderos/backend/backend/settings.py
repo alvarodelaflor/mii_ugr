@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
     'sorl.thumbnail',
     'senderos_web',
     'crispy_forms',
@@ -89,8 +91,8 @@ DATABASES = {
         'PORT': 27017,
     }
 }
-"""
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
