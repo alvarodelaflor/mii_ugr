@@ -20,7 +20,9 @@
                     <div class="col-md-12 center_div">
                         <form action="" method="post" enctype="multipart/form-data" style="margin: 20px;">
                             {% csrf_token %}
-                            {{ form|crispy }}
+                            <div style="text-align: center; margin-bottom: 3mm">
+                                {{ form|crispy }}
+                            </div>
                             <button type="submit" class="btn btn-primary float-right " data_but="btn-xs"
                                 style="margin-right: 5px;margin-bottom: 10px;margin-left: 45%;margin-right: 45%;">
                                 Login</button>
