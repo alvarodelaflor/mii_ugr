@@ -1,0 +1,25 @@
+
+Imágenes de SO para virtualbox
+
+Descarga una imagen de ubuntu y otra de fedora para usarlas en las siguientes clases.
+
+Forma manual de abrir el archivo VDI en VirtualBox:
+
+Copia el archivo VDI en el repositorio del disco duro virtual de VirtualBox
+
+Lanza VirtualBox y crea una nueva máquina virtual. Elije un sistema operativo entre las opciones dadas y haz clic en el botón Siguiente
+
+En Disco Duro Virtual, seleccione Usar el disco duro existente y luego haga clic en el icono de la carpeta a la derecha
+
+Ahora, se abre una ventana del Administrador de Medios Virtuales. En ella, haga clic en el botón Agregar y luego seleccione el archivo VDI que desea abrir
+
+De nuevo, se abre la ventana del Disco Duro Virtual en la que se muestra su nuevo VDI y luego se pulsa en Siguiente
+
+Ahora, ya puedes usar la nueva máquina virtual.
+
+La clave es osboxes.org
+
+hay un usuario osboxes Password - osboxes.org
+
+Os recomiendo que cambiéis el idioma a Español (España)
+Haga clic en el enlace https://www.osboxes.org/virtualbox-images/ para abrir el recurso.

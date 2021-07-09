@@ -1,0 +1,21 @@
+
+¿Sabes que existen algoritmos de encriptación que están rotos?
+RSA-240
+
+Mostrar modo
+Imagen de JANUSZEWSKI, MARCIN MICHAL
+RSA-240
+de JANUSZEWSKI, MARCIN MICHAL - lunes, 29 de marzo de 2021, 13:29
+Número de respuestas: 0
+Imagen de -
+
+Emmanuel Thomé del Instituto Nacional de Investigación en Ciencias de la Computación y Automatización de Francia junto con sus compañeros de trabajo consiguió romper una clave RSA-240, cuyo tamaño es de 795 bits y tiene 240 dígitos decimales. Los investigadores también calcularon el logaritmo discreto del mismo tamaño.
+
+El cómputo se realizó en clústeres de computadores en Francia, Alemania y Estados Unidos. El tiempo total equivale a 35 millones de horas (4000 años) en un solo núcleo tomando como referencia el 2.1 GHz Intel Xeon Gold 6130. La rotura del RSA-240 duró 8 millones de horas de núcleo y el cómputo del logaritmo discreto 27 millones de horas de núcleo.
+
+Para los cálculos se utilizó el algoritmo de criba general del cuerpo de números mediante un Software de código abierto llamado CADO-NFS.
+
+
+Artículo 1 https://www.newscientist.com/article/2226458-number-crunchers-set-new-record-for-cracking-online-encryption-keys/
+
+Artículo 2 https://www.rankred.com/crack-the-largest-encryption-key-rsa-240/

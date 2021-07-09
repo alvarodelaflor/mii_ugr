@@ -1,0 +1,9 @@
+
+DES
+de CORTES SANCHEZ, ARTURO - martes, 13 de abril de 2021, 22:18
+Número de respuestas: 0
+Imagen de -
+
+Data Encryption Standard, abreviado como DES es un algoritmo de encriptado de clave simétrica, fue desarrollado en los años 70 por IBM con el objetivo de cumplir con la necesidad del gobierno de los Estados Unidos de tener un estándar de cifrado de información confidencial. El principal problema de este algoritmo es que su clave es de tan solo 56 bits, por lo que con la potencia de los ordenadores actuales, un ataque de fuerza bruta solo toma alrededor de un día, además, existen otros tipos de ataques aun mas rápidos basados en el criptoanálisis. En el 2002 fue reemplazado por AES
+
+https://en.wikipedia.org/wiki/Data_Encryption_Standard

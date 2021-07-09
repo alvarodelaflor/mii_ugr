@@ -1,0 +1,19 @@
+¿Sabes que existen algoritmos de encriptación que están rotos?
+RSA 4096b - Ataque acústico
+
+Mostrar modo
+Imagen de MONTERO PARODI, JUAN JOSE
+RSA 4096b - Ataque acústico
+de MONTERO PARODI, JUAN JOSE - domingo, 28 de marzo de 2021, 13:11
+Número de respuestas: 0
+Imagen de -
+
+Varios investigadores de la universidad de Tel Aviv publicaron un artículo (enlace) explicando cómo han roto con éxito el RSA de 4096b analizando el sonido de la CPU emitido durante la ejecución de rutinas de descifrado.
+
+Los investigadores verificaron la extracción de una clave RSA de 4096 bits de un portátil con un ataque de canal lateral acústico que permite la grabación de ruido proveniente del dispositivo durante el descifrado usando un smartphone colocado cerca (con micrófonos se consiguen hasta 4 metros de distancia).
+
+Probaron que se puede descubrir una clave RSA larga en menos de una hora con el método llamado "ataque de criptoanálisis acústico". Esto se debe a que hay una fuga de sonido generada por componentes electrónicos como condensadores y bobinas al alimentar un voltaje constante a la CPU, estando directamente correlacionado con la clave RSA en uso.
+
+Este método aplica para los descifrados "ElGamal" y "GnuPG".
+
+Como nota, la señal usada para la investigación no incluye el ruido generado por componentes mecánicos tales como ventilador, discos duros, altavoces...

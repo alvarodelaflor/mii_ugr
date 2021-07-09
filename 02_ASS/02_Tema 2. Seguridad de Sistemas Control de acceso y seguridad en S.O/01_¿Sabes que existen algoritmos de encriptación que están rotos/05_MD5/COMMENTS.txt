@@ -1,0 +1,11 @@
+¿Sabes que existen algoritmos de encriptación que están rotos?
+MD5
+
+Mostrar modo
+Imagen de BUENO VARGAS, GUILLERMO
+MD5
+de BUENO VARGAS, GUILLERMO - sábado, 27 de marzo de 2021, 16:49
+Número de respuestas: 0
+Imagen de -
+
+MD5 es una función criptográfica hash ampliamente usada aún, se caracteriza por ser rápida pero no utiliza la "sal" (salt). Empezó siendo considerada como segura hasta que en 2004 se descubrió que mediante su mecanismo de colisiones era vulnerable a ataques. Las contraseñas medianas (típicas de los usuarios semi-conscientes de la seguridad que no usan un administrador de contraseñas) cifradas por este algoritmo por ejemplo, se pueden descifrar en menos de 30 minutos. Aún se sigue utilizando para verificar que el envío de archivos ha sido correcto y no hay corrupción de datos.
