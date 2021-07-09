@@ -1,0 +1,22 @@
+Para ejecutar el proyecto desde el principio y que funcione en Hadoop.ugr.es debe:
+
+	Borrar todos los archivos salvo:
+		create_new_df.py
+		main.py
+		Makefile
+	
+	Establecer las varibles de Spark usando estas dos órdenes:
+
+		export PYSPARK_PYTHON=python3.8
+		export PYSPARK_DRIVER_PYTHON=python3.8
+
+Finalmente para ejecutar solo tendrá que hacer:
+
+	make all
+
+Si tiene algún problema, contacte conmigo a través de:
+
+	alvarodelaflor@gmail.com
+	alvdebon@corre.ugr.es
+
+Un saludo, Álvaro.
