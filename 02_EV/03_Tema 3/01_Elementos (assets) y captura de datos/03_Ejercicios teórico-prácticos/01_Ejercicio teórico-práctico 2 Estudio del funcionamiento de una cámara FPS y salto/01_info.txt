@@ -1,0 +1,8 @@
+Ejercicio teórico-práctico 2: Estudio del funcionamiento de una cámara FPS y salto
+Este ejercicio consta de dos partes:
+
+1. Creación de un cámara FPS.
+Estudia el siguiente tutorial, que te será de ayuda para la práctica 3:
+https://docs.godotengine.org/en/stable/tutorials/3d/fps_tutorial/part_one.html
+
+2. Plantea a nivel teórico el movimiento de cámara con ratón en Godot, ayúdate de esquemas. Escribe en pseudocódigo como se implementaría una tecla de salto sin utilizar un motor de física (en base simplemente a transformaciones de traslación), para ello estudia el movimiento de tiro parabólico: https://en.wikipedia.org/wiki/Projectile_motion

@@ -1,0 +1,15 @@
+Ejercicio teórico-práctico 3: Estudio de un sistema ECS en Godot
+Escribe el pseudocódigo de un objeto Singleton de Godot que permita gestionar un ECS. Define (e indica) para ello tres componentes y dos sistemas diferentes (el primer sistema trataría el comportamiento de dos de los componentes y el segundo sistema el comportamiento del tercer componente). Asume que las entidades se crearán y destruirán de forma dinámica en el mundo, y que también será dinámica la asignación de componentes a las entidades (todo según la interacción del usuario en tiempo real).
+
+Explica qué señales que habría que tener y dónde, qué grupos tendríamos y qué métodos tendría nuestro singleton. También explica que tipo de estructura necesitamos para cada entidad y sistema.
+
+Para este ejercicio utiliza la siguiente plantilla:
+1. Mis tres componentes son: X, Y, Z
+2. Mis entidades se representan computacionalmente como: X
+3. Mis sistemas se representan computacionalmente como: X
+4. Los métodos y su justificación son las siguientes:
+- Método 1:
+- Método 2:
+...
+5. El pseudo algoritmo sería el siguiente:
+

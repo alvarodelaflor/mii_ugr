@@ -1,0 +1,7 @@
+ 	
+
+Para intentar mejorar mis próximas prácticas, he decidido que en lugar de plantearlo todo a nivel de pseudocódigo sería mejor realizarlo completamente funcional. Espero que sea válida mi propuesta.
+
+En el archivo comprimido, además de todo el desarrollo he adjuntado una demo donde se muestra el funcionamiento de todo.
+
+Un saludo, Álvaro.
