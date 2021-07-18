@@ -1,0 +1,8 @@
+{% block extra_head %} {% endblock %} {% block body %} {% if messages %}
+Messages:
+
+    {% for message in messages %}
+    {{message}}
+    {% endfor %} 
+
+{% endif %} {% block content %} {% endblock %} {% endblock %} {% block extra_body %} {% endblock %} 
