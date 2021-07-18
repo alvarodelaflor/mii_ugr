@@ -1,0 +1,107 @@
+Enlaces
+How to consume a RESTful API in React
+https://pusher.com/tutorials/consume-restful-api-react
+
+Public APIs
+https://github.com/public-apis/public-apis
+
+The Modern JavaScript Tutorial
+https://javascript.info/
+
+---------------------------------------------------------------------------------------
+
+What is the JavaScript version of sleep()?
+https://stackoverflow.com/questions/951021/what-is-the-ja...
+
+Tutorial: Django REST with React (Django 2.0 and a sprinkle of testing)
+https://www.valentinog.com/blog/tutorial-api-django-rest-...
+
+Web Development In 2020 - A Practical Guide
+https://www.youtube.com/watch?v=0pThnRneDjw
+
+Learn web development
+https://developer.mozilla.org/en-US/docs/Learn
+
+Praise for Test-Driven Development with Python
+https://www.obeythetestinggoat.com/book/praise.harry.html
+
+
+
+Quickstart: Compose and Django
+https://docs.docker.com/compose/django/
+
+
+A Complete Beginner's Guide to Django (muy bueno)
+https://simpleisbetterthancomplex.com/series/beginners-gu...
+
+Django tutorial
+http://tutorial.djangogirls.org/es/index.html
+
+
+Using MongoDB as your primary Django database
+https://staltz.com/djangoconfi-mongoengine/#/
+
+------------------------------------------------------------------------------------------------------------------------
+
+Adding JWT-based Authentication to Django Rest Framework
+https://www.techiediaries.com/django-rest-framework-jwt-t...
+
+http://geezhawk.github.io/user-authentication-with-react-...
+
+User Authentication with Django REST Framework
+https://michaelwashburnjr.com/django-user-authentication/
+
+Cookies vs Tokens: The Definitive Guide
+https://auth0.com/blog/cookies-vs-tokens-definitive-guide/
+
+Auth Headers vs JWT vs Sessions - Choosing Right Auth Technique for APIs
+https://hashedin.com/2016/07/05/choosing-right-authentica...
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Navigating the React.JS Ecosystem
+https://www.toptal.com/react/navigating-the-react-ecosystem
+
+A Primer on the React Ecosystem: Part 1 of 3
+http://patternhatch.com/2016/07/06/a-primer-on-the-react-...
+
+Top 10 ES6 Features Every Busy JavaScript Developer Must Know
+https://webapplog.com/es6/
+
+React.js Introduction For People Who Know Just Enough jQuery To Get By
+http://chibicode.com/react-js-introduction-for-people-who...
+
+Intro to react
+https://github.com/ericvicenti/intro-to-react
+
+Redux
+http://redux.js.org/docs/introduction/
+
+How To Add Redux To Create React App
+http://www.penta-code.com/how-to-add-redux-to-create-reac...
+--------------------------------------------------------------------------------------------
+
+Setting up Python 3, Django and Gunicorn on Ubuntu 16.04 LTS
+https://www.fullstackpython.com/blog/python-3-django-guni...
+
+Docker: why you should use Monit instead of supervisord
+https://blog.deimos.fr/2016/01/13/docker-why-you-should-u...
+--------------------------------------------------------------------------------------------------
+
+Django Logging
+https://www.fullstackpython.com/logging.html
+
+Django Rest quick start
+https://realpython.com/blog/python/django-rest-framework-...
+
+Django + MongoDB = Django REST Framework Mongoengine
+https://medium.com/@vasjaforutube/django-mongodb-django-r...
+
+-------------------------------------------------------------------------------------------
+
+Maquinas virtuales para vagrant
+http://www.vagrantbox.es/
+(hay que instalar previamente virtualbox y las guest-addtions
+
+Conectar máquina virtual de VirtualBox al Host usando SSH
+http://elblogdejulioxus.noip.me/?p=105

@@ -1,0 +1,47 @@
+Ayuda
+Temario teoría
+TEMARIO TEÓRICO:
+
+• Tema 1. Ingeniería Web: Características de un aplicación web, tecnologías implicadas. Protocolos e interfaces. Diseño de aplicaciones web
+
+• Tema 2. Componentes: Plantillas, middleware, autentificación, registro, frameworks MVC
+
+• Tema 3. Bases de datos SQL y No-SQL, manejo con ORMs
+
+• Tema 5. Programación en el navegador. Aplicaciones Single-Page
+
+• Tema 6. Despliegue, integración en la nube, internacionalización y pruebas.
+
+
+
+TEMARIO PRÁCTICO:
+
+    Frameworks: Django, plantillas, autentificación de usuarios
+    Uso de Bases de Datos no-SQL en entornos web
+    Servicios REST para CRUD
+    Front-end: Ajax, Jquery
+    Front-end: React
+    Despliegue en contenedores
+
+
+
+El objeto de las prácticas es hacer durante el curso una aplicación web que incluya en lo posible:
+
+    Plantillas, frameworks adaptables
+
+    Autentificación y autorización de usuarios
+
+    Logging (registro de sucesos)
+
+    Uso de librerias para formularios de entrada
+
+    Uso de bases de datos SQL y NO-SQL con ORMs
+
+    Programación del navegador (javascript, JQuery)
+
+    Interface RESTfull
+
+    Versión 'single-page' (React)
+
+    Despliegue con servidor web
+
